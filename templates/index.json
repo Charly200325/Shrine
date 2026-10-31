@@ -386,84 +386,6 @@
         "who-2"
       ]
     },
-    "d117fc68-5055-40cf-9b97-cb86820b7297": {
-      "type": "voltag-cible",
-      "settings": {},
-      "blocks": {
-        "point-0": {
-          "type": "point",
-          "settings": {
-            "title": "Capteur infrarouge",
-            "text": "Détecte les tirs adverses, sans contact ni projectile.",
-            "x": 50,
-            "y": 20
-          }
-        },
-        "point-1": {
-          "type": "point",
-          "settings": {
-            "title": "Contour lumineux",
-            "text": "S'allume dans la couleur de votre équipe, visible de loin et dans le noir.",
-            "x": 23,
-            "y": 37
-          }
-        },
-        "point-2": {
-          "type": "point",
-          "settings": {
-            "title": "Afficheur de vies",
-            "text": "Le décompte se fait en direct. Plus personne ne discute le score.",
-            "x": 50,
-            "y": 48
-          }
-        },
-        "point-3": {
-          "type": "point",
-          "settings": {
-            "title": "Vibration",
-            "text": "Chaque impact se sent autant qu'il se voit.",
-            "x": 77,
-            "y": 37
-          }
-        },
-        "point-4": {
-          "type": "point",
-          "settings": {
-            "title": "Haut-parleur",
-            "text": "Tirs, touches et élimination sonorisés pour l'ambiance d'arène.",
-            "x": 77,
-            "y": 62
-          }
-        },
-        "point-5": {
-          "type": "point",
-          "settings": {
-            "title": "Sangles réglables",
-            "text": "S'ajustent d'un enfant de 8 ans à un adulte, sans outil.",
-            "x": 23,
-            "y": 62
-          }
-        },
-        "point-6": {
-          "type": "point",
-          "settings": {
-            "title": "Format léger",
-            "text": "Assez compact pour courir, se baisser et se cacher pendant des heures.",
-            "x": 50,
-            "y": 78
-          }
-        }
-      },
-      "block_order": [
-        "point-0",
-        "point-1",
-        "point-2",
-        "point-3",
-        "point-4",
-        "point-5",
-        "point-6"
-      ]
-    },
     "13c8298b-eb55-4558-9ee8-77d928871312": {
       "type": "voltag-avis",
       "settings": {
@@ -553,7 +475,6 @@
     "f6b07b60-9941-4c97-a988-81bd39477cf2",
     "f709e7f3-a96b-4ffa-94f9-b126075833b6",
     "31419b3a-dce7-44e2-907c-e719b813ff2e",
-    "d117fc68-5055-40cf-9b97-cb86820b7297",
     "13c8298b-eb55-4558-9ee8-77d928871312",
     "b86f716c-3401-4290-895c-c78ac5a3a4c8"
   ]
