@@ -137,6 +137,41 @@
       <div class="r-list">{{ section.settings.app_embed }}</div>
     {%- endif -%}
 
+    {%- comment -%} Avis saisis en masse : nom|note|titre|texte|source par ligne {%- endcomment -%}
+    {%- assign bulk_rows = section.settings.bulk | strip | newline_to_br | split: '<br />' -%}
+    {%- assign bulk_n = 0 -%}
+    {%- for row in bulk_rows -%}{%- assign rr = row | strip -%}{%- if rr != blank -%}{%- assign bulk_n = bulk_n | plus: 1 -%}{%- endif -%}{%- endfor -%}
+
+    {%- if bulk_n > 0 -%}
+      <div class="r-list">
+        {%- for row in bulk_rows -%}
+          {%- assign rr = row | strip -%}
+          {%- if rr != blank -%}
+            {%- assign c = rr | split: '|' -%}
+            {%- assign n_stars = c[1] | plus: 0 -%}
+            {%- if n_stars < 1 -%}{%- assign n_stars = 5 -%}{%- endif -%}
+            <div class="r-item">
+              <div class="r-stars" role="img" aria-label="{{ n_stars }} étoiles sur 5">
+                {%- for i in (1..5) -%}
+                  <svg viewBox="0 0 24 24" class="{% if i > n_stars %}off{% endif %}">
+                    <path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/>
+                  </svg>
+                {%- endfor -%}
+              </div>
+              <div class="r-who">
+                {{ c[0] | strip }}
+                {%- assign src = c[4] | strip -%}
+                {%- if src != blank -%}<span class="r-from">{{ section.settings.from_word }} {{ src }}</span>{%- endif -%}
+              </div>
+              {%- assign ttl = c[2] | strip -%}
+              {%- if ttl != blank -%}<p class="r-t">{{ ttl }}</p>{%- endif -%}
+              <p class="r-b">{{ c[3] | strip }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
     {%- assign rv = 0 -%}
     {%- for block in section.blocks -%}{%- if block.type == 'review' -%}{%- assign rv = rv | plus: 1 -%}{%- endif -%}{%- endfor -%}
 
@@ -179,7 +214,7 @@
       </div>
     {%- endif -%}
 
-    {%- if rv == 0 and section.settings.app_embed == blank -%}
+    {%- if rv == 0 and bulk_n == 0 and section.settings.app_embed == blank -%}
       <div class="r-empty">
         <p>{{ section.settings.empty_text }}</p>
       </div>
@@ -217,6 +252,10 @@
     { "type": "text", "id": "highlights_source", "label": "Mention de provenance",
       "info": "Indiquez d'où viennent ces extraits. S'ils sont choisis par vos soins, dites-le.",
       "default": "Extraits choisis parmi les avis reçus ces derniers mois" },
+
+    { "type": "header", "content": "Avis en liste" },
+    { "type": "textarea", "id": "bulk", "label": "Avis, un par ligne",
+      "info": "Format : Nom|Note sur 5|Titre|Texte de l'avis|Source. Pour un avis reçu directement, laissez la source vide." },
 
     { "type": "header", "content": "Application d'avis" },
     { "type": "liquid", "id": "app_embed", "label": "Code de l'application",
