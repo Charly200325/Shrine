@@ -1,95 +1,161 @@
 {%- comment -%} VOLTAG — Comment jouer | sections/voltag-etapes.liquid {%- endcomment -%}
 
 <style>
-  #vte-{{ section.id }} {
-    --bg: {{ section.settings.bg }}; --surface: #121826; --line: #1E2A3C;
-    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
-    background: var(--bg); color: var(--text);
-    padding: 72px 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  }
-  #vte-{{ section.id }} * { box-sizing: border-box; }
-  #vte-{{ section.id }} .vte-wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
-  #vte-{{ section.id }} .vte-eyebrow {
-    font-size: 12px; font-weight: 800; letter-spacing: .18em; color: var(--neon);
-    text-transform: uppercase; margin-bottom: 14px;
-  }
-  #vte-{{ section.id }} h2 {
-    font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; letter-spacing: -0.02em;
-    margin: 0 0 40px; line-height: 1.1; max-width: 740px;
-  }
-  #vte-{{ section.id }} .vte-steps {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px;
-    counter-reset: vte;
-  }
-  #vte-{{ section.id }} .vte-step {
-    border: 1px solid var(--line); border-radius: 18px; background: var(--surface);
-    padding: 26px 22px; position: relative;
-  }
-  #vte-{{ section.id }} .vte-step::before {
-    counter-increment: vte; content: counter(vte, decimal-leading-zero);
-    display: block; font-size: 30px; font-weight: 800; color: var(--neon);
-    line-height: 1; margin-bottom: 16px; font-variant-numeric: tabular-nums;
-  }
-  #vte-{{ section.id }} .vte-step h3 {
-    font-size: 15px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
-    margin: 0 0 10px;
-  }
-  #vte-{{ section.id }} .vte-step p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+#ve-{{ section.id }}{--t:{{ section.settings.cycle }}s;--cy:{{ section.settings.accent }};
+  background:{{ section.settings.bg }};color:#fff;padding:64px 0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+#ve-{{ section.id }} *{box-sizing:border-box}
+#ve-{{ section.id }} p{margin:0}
+#ve-{{ section.id }} .e-in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;align-items:center}
+#ve-{{ section.id }} .e-eye{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--cy);
+  text-shadow:0 0 10px color-mix(in srgb,var(--cy) 50%,transparent)}
+#ve-{{ section.id }} h2{margin:0;text-align:center;font-weight:800;letter-spacing:-.02em;line-height:1.08;font-size:clamp(28px,4.4vw,46px);text-wrap:balance}
+#ve-{{ section.id }} .e-lz{display:block;width:min(220px,55%);height:3px;margin:16px auto 36px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,#FF2D55,#FFD60A,#39FF14,#00A3FF,transparent);
+  background-size:200% 100%;animation:ve-flow-{{ section.id }} 3s linear infinite}
 
-  #vte-{{ section.id }} .vte-cards {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 56px;
-  }
-  #vte-{{ section.id }} .vte-card {
-    border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow: hidden;
-  }
-  #vte-{{ section.id }} .vte-card .vte-ph {
-    aspect-ratio: 4 / 3; background: #0C1320; display: grid; place-items: center;
-  }
-  #vte-{{ section.id }} .vte-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  #vte-{{ section.id }} .vte-card .vte-body { padding: 20px; }
-  #vte-{{ section.id }} .vte-kicker {
-    font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--neon);
-    text-transform: uppercase; margin-bottom: 8px;
-  }
-  #vte-{{ section.id }} .vte-card h3 { font-size: 18px; font-weight: 800; margin: 0 0 8px; }
-  #vte-{{ section.id }} .vte-card p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+#ve-{{ section.id }} .e-row{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;width:100%}
+#ve-{{ section.id }} .e-track{position:absolute;left:4%;right:4%;top:92px;height:2px;background:#1c2335;border-radius:2px;overflow:hidden;z-index:0}
+#ve-{{ section.id }} .e-track::after{content:"";position:absolute;top:0;left:0;height:100%;width:30%;
+  background:linear-gradient(90deg,transparent,#ff3b3b,#fff,transparent);box-shadow:0 0 10px #ff3b3b;
+  animation:ve-run-{{ section.id }} var(--t) linear infinite}
+
+#ve-{{ section.id }} .e-step{position:relative;z-index:1;border-radius:18px;padding:1.5px;overflow:hidden;isolation:isolate;background:#1c2335}
+#ve-{{ section.id }} .e-step::before{content:"";position:absolute;inset:-150%;z-index:-1;opacity:0;
+  background:conic-gradient(from 0deg,transparent 0 78%,rgba(255,255,255,.15) 86%,rgba(255,255,255,.7) 94%,#fff 98%,transparent 100%);
+  animation:ve-sweep-{{ section.id }} 7s cubic-bezier(.45,0,.25,1) infinite}
+#ve-{{ section.id }} .e-step:nth-child(3)::before{animation-delay:-1.75s}
+#ve-{{ section.id }} .e-step:nth-child(4)::before{animation-delay:-3.5s}
+#ve-{{ section.id }} .e-step:nth-child(5)::before{animation-delay:-5.25s}
+#ve-{{ section.id }} .e-body{background:#0d1424;border-radius:16.5px;padding:18px 16px 20px;height:100%;
+  display:flex;flex-direction:column;align-items:center;text-align:center}
+#ve-{{ section.id }} .e-num{align-self:flex-start;font-size:12px;font-weight:800;color:var(--cy);letter-spacing:.1em}
+#ve-{{ section.id }} .e-stage{position:relative;width:100%;height:110px;display:grid;place-items:center;margin:4px 0 10px}
+#ve-{{ section.id }} .e-name{margin:0 0 4px;font-size:18px;font-weight:900;letter-spacing:.08em}
+#ve-{{ section.id }} .e-desc{margin:0;color:#9aa4bb;font-size:13.5px;line-height:1.5}
+
+/* --- 01 viser --- */
+#ve-{{ section.id }} .e-aim{width:74px;height:74px;fill:none;stroke:#39FF14;stroke-width:2;
+  filter:drop-shadow(0 0 6px #39FF14);animation:ve-aim-{{ section.id }} var(--t) ease-in-out infinite}
+/* --- 02 tirer --- */
+#ve-{{ section.id }} .e-gun{width:86px;fill:#fff;filter:drop-shadow(0 0 5px rgba(255,255,255,.4));position:relative;z-index:1;
+  margin-right:60px;animation:ve-recoil-{{ section.id }} var(--t) ease-out infinite}
+#ve-{{ section.id }} .e-beam{position:absolute;left:50%;top:44%;height:3px;width:46%;margin-left:-8px;border-radius:3px;
+  transform-origin:left;background:linear-gradient(90deg,#fff,#ff3b3b 25%,transparent);box-shadow:0 0 10px #ff3b3b;
+  animation:ve-beam-{{ section.id }} var(--t) ease-out infinite}
+/* --- 03 touché --- */
+#ve-{{ section.id }} .e-vest{position:relative;width:80px;height:86px;background:#111827;border:3px solid #3a2028;
+  display:grid;place-items:center;clip-path:polygon(22% 0,78% 0,100% 26%,100% 74%,78% 100%,22% 100%,0 74%,0 26%);
+  animation:ve-vest-{{ section.id }} var(--t) ease-out infinite}
+#ve-{{ section.id }} .e-vest svg{width:30px;height:30px;fill:none;stroke:#ff3b3b;stroke-width:2.2}
+#ve-{{ section.id }} .e-buzz{position:absolute;top:50%;width:14px;height:2px;background:#ff3b3b;opacity:0;
+  animation:ve-buzz-{{ section.id }} var(--t) ease-out infinite}
+#ve-{{ section.id }} .e-buzz.l{left:calc(50% - 64px);box-shadow:0 -8px 0 #ff3b3b,0 8px 0 #ff3b3b}
+#ve-{{ section.id }} .e-buzz.r{left:calc(50% + 50px);box-shadow:0 -8px 0 #ff3b3b,0 8px 0 #ff3b3b}
+/* --- 04 vie en moins --- */
+#ve-{{ section.id }} .e-lcd{position:relative;width:98px;height:62px;border-radius:10px;background:#160b0e;border:2px solid #3a2028;
+  overflow:hidden;box-shadow:inset 0 0 14px rgba(255,59,59,.2)}
+#ve-{{ section.id }} .e-lcd span{position:absolute;inset:0;display:grid;place-items:center;
+  font:800 36px/1 ui-monospace,'Courier New',monospace;color:#ff3b3b;text-shadow:0 0 10px #ff3b3b;letter-spacing:.06em}
+#ve-{{ section.id }} .e-lcd .a{animation:ve-a-{{ section.id }} var(--t) steps(1,end) infinite}
+#ve-{{ section.id }} .e-lcd .b{opacity:0;animation:ve-b-{{ section.id }} var(--t) steps(1,end) infinite}
+#ve-{{ section.id }} .e-heart{position:absolute;width:26px;height:24px;fill:#ff3b3b;filter:drop-shadow(0 0 6px #ff3b3b);
+  left:calc(50% + 40px);top:18px;animation:ve-heart-{{ section.id }} var(--t) ease-out infinite}
+
+/* --- cartes publics (optionnelles) --- */
+#ve-{{ section.id }} .e-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:48px;width:100%}
+#ve-{{ section.id }} .e-card{border:1px solid #1E2A3C;border-radius:18px;background:#0d1424;overflow:hidden}
+#ve-{{ section.id }} .e-card .e-ph{aspect-ratio:4/3;background:#0C1320;display:grid;place-items:center}
+#ve-{{ section.id }} .e-card img{width:100%;height:100%;object-fit:cover;display:block}
+#ve-{{ section.id }} .e-card .e-cb{padding:20px}
+#ve-{{ section.id }} .e-kick{font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--cy);text-transform:uppercase;margin-bottom:8px}
+#ve-{{ section.id }} .e-card h3{font-size:18px;font-weight:800;margin:0 0 8px}
+#ve-{{ section.id }} .e-card p{color:#8FA7BC;font-size:14.5px;line-height:1.6}
+
+@keyframes ve-flow-{{ section.id }}{to{background-position:200% 0}}
+@keyframes ve-sweep-{{ section.id }}{0%{transform:rotate(0);opacity:0}4%{opacity:1}40%{transform:rotate(360deg);opacity:1}46%,100%{transform:rotate(360deg);opacity:0}}
+@keyframes ve-run-{{ section.id }}{0%{left:-30%}100%{left:100%}}
+@keyframes ve-aim-{{ section.id }}{0%,100%{transform:scale(1.25) rotate(0);opacity:.6}20%,60%{transform:scale(1) rotate(90deg);opacity:1}}
+@keyframes ve-recoil-{{ section.id }}{0%,22%{transform:none}25%{transform:translateX(-6px) rotate(-5deg)}32%,100%{transform:none}}
+@keyframes ve-beam-{{ section.id }}{0%,24%{transform:scaleX(0);opacity:1}32%{transform:scaleX(1);opacity:1}42%,100%{transform:scaleX(1);opacity:0}}
+@keyframes ve-vest-{{ section.id }}{0%,44%{border-color:#3a2028;box-shadow:none;background:#111827}
+  48%{border-color:#ff3b3b;box-shadow:0 0 26px rgba(255,59,59,.8),inset 0 0 18px rgba(255,59,59,.5);background:#2a0f14;transform:translateX(-3px)}
+  50%{transform:translateX(3px)}52%{transform:translateX(-2px)}54%{transform:none}
+  70%,100%{border-color:#3a2028;box-shadow:none;background:#111827}}
+@keyframes ve-buzz-{{ section.id }}{0%,46%{opacity:0}48%,60%{opacity:1}66%,100%{opacity:0}}
+@keyframes ve-a-{{ section.id }}{0%,72%{opacity:1}73%,100%{opacity:0}}
+@keyframes ve-b-{{ section.id }}{0%,72%{opacity:0}73%,100%{opacity:1}}
+@keyframes ve-heart-{{ section.id }}{0%,72%{transform:scale(1)}76%{transform:scale(1.4)}82%{transform:scale(.9)}88%,100%{transform:scale(1)}}
+
+@media (max-width:899px){
+  #ve-{{ section.id }}{padding:44px 0}
+  #ve-{{ section.id }} .e-in{padding:0 16px}
+  #ve-{{ section.id }} .e-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  #ve-{{ section.id }} .e-track{display:none}
+  #ve-{{ section.id }} .e-stage{height:96px}
+  #ve-{{ section.id }} .e-name{font-size:16px}
+  #ve-{{ section.id }} .e-desc{font-size:12.5px}
+  #ve-{{ section.id }} .e-body{padding:14px 12px 16px}
+}
+@media (prefers-reduced-motion:reduce){
+  #ve-{{ section.id }} *,#ve-{{ section.id }} *::before,#ve-{{ section.id }} *::after{animation:none !important}
+  #ve-{{ section.id }} .e-lcd .b{opacity:0}
+}
 </style>
 
-<section id="vte-{{ section.id }}">
-  <div class="vte-wrap">
-    {%- if section.settings.eyebrow != blank -%}
-      <div class="vte-eyebrow">{{ section.settings.eyebrow }}</div>
-    {%- endif -%}
+<section id="ve-{{ section.id }}">
+  <div class="e-in">
+    {%- if section.settings.eyebrow != blank -%}<p class="e-eye">{{ section.settings.eyebrow }}</p>{%- endif -%}
     <h2>{{ section.settings.heading }}</h2>
+    <span class="e-lz" aria-hidden="true"></span>
 
-    <div class="vte-steps">
+    <div class="e-row">
+      <span class="e-track" aria-hidden="true"></span>
+      {%- assign sn = 0 -%}
       {%- for block in section.blocks -%}
         {%- if block.type == 'step' -%}
-          <div class="vte-step" {{ block.shopify_attributes }}>
-            <h3>{{ block.settings.title }}</h3>
-            <p>{{ block.settings.text }}</p>
+          {%- assign sn = sn | plus: 1 -%}
+          <div class="e-step" {{ block.shopify_attributes }}>
+            <div class="e-body">
+              <span class="e-num">{{ sn | prepend: '0' | slice: -2, 2 }}</span>
+              <div class="e-stage" aria-hidden="true">
+                {%- case block.settings.visual -%}
+                  {%- when 'fire' -%}
+                    <svg class="e-gun" viewBox="0 0 64 32"><path d="M11 9h30l3 3h6v5H30l-2 3h-5l-2 9h-9l3-12-4-3z"/></svg>
+                    <i class="e-beam"></i>
+                  {%- when 'hit' -%}
+                    <div class="e-vest"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div>
+                    <i class="e-buzz l"></i><i class="e-buzz r"></i>
+                  {%- when 'lives' -%}
+                    <div class="e-lcd"><span class="a">03</span><span class="b">02</span></div>
+                    <svg class="e-heart" viewBox="0 0 24 22"><path d="M12 21.5 10.4 20C4.6 14.8 1 11.5 1 7.4 1 4 3.6 1.5 7 1.5c1.9 0 3.7.9 5 2.3 1.3-1.4 3.1-2.3 5-2.3 3.4 0 6 2.5 6 5.9 0 4.1-3.6 7.4-9.4 12.6z"/></svg>
+                  {%- else -%}
+                    <svg class="e-aim" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="4"/><path d="M24 2v10M24 36v10M2 24h10M36 24h10"/></svg>
+                {%- endcase -%}
+              </div>
+              <p class="e-name" style="color:{{ block.settings.color }}">{{ block.settings.title }}</p>
+              <p class="e-desc">{{ block.settings.text }}</p>
+            </div>
           </div>
         {%- endif -%}
       {%- endfor -%}
     </div>
 
-    {%- assign card_count = 0 -%}
-    {%- for block in section.blocks -%}{%- if block.type == 'audience' -%}{%- assign card_count = card_count | plus: 1 -%}{%- endif -%}{%- endfor -%}
-
-    {%- if card_count > 0 -%}
-      <div class="vte-cards">
+    {%- assign cn = 0 -%}
+    {%- for block in section.blocks -%}{%- if block.type == 'audience' -%}{%- assign cn = cn | plus: 1 -%}{%- endif -%}{%- endfor -%}
+    {%- if cn > 0 -%}
+      <div class="e-cards">
         {%- for block in section.blocks -%}
           {%- if block.type == 'audience' -%}
-            <div class="vte-card" {{ block.shopify_attributes }}>
-              <div class="vte-ph">
+            <div class="e-card" {{ block.shopify_attributes }}>
+              <div class="e-ph">
                 {%- if block.settings.image -%}
                   {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,800', alt: block.settings.title }}
                 {%- else -%}
                   {{ 'image' | placeholder_svg_tag }}
                 {%- endif -%}
               </div>
-              <div class="vte-body">
-                {%- if block.settings.kicker != blank -%}<div class="vte-kicker">{{ block.settings.kicker }}</div>{%- endif -%}
+              <div class="e-cb">
+                {%- if block.settings.kicker != blank -%}<div class="e-kick">{{ block.settings.kicker }}</div>{%- endif -%}
                 <h3>{{ block.settings.title }}</h3>
                 <p>{{ block.settings.text }}</p>
               </div>
@@ -107,31 +173,41 @@
   "tag": "section",
   "settings": [
     { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
-    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
-    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "Chaque tir compte" },
-    { "type": "text", "id": "heading", "label": "Titre", "default": "Le score se compte tout seul. Plus personne ne triche." }
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#00E5FF" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "RETOUR EN TEMPS RÉEL" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Chaque tir compte. Automatiquement." },
+    { "type": "range", "id": "cycle", "label": "Durée du cycle", "min": 3, "max": 10, "step": 1, "default": 5, "unit": "s" }
   ],
   "blocks": [
-    { "type": "step", "name": "Étape", "settings": [
-      { "type": "text", "id": "title", "label": "Titre", "default": "Visez" },
-      { "type": "textarea", "id": "text", "label": "Texte", "default": "Repérez un adversaire." }
+    { "type": "step", "name": "Étape", "limit": 4, "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "VISEZ" },
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Description de l'étape." },
+      { "type": "color", "id": "color", "label": "Couleur du titre", "default": "#39FF14" },
+      { "type": "select", "id": "visual", "label": "Animation",
+        "options": [
+          { "value": "aim", "label": "Viseur qui pivote" },
+          { "value": "fire", "label": "Blaster qui tire" },
+          { "value": "hit", "label": "Cible touchée" },
+          { "value": "lives", "label": "Vies qui décomptent" }
+        ], "default": "aim" }
     ]},
     { "type": "audience", "name": "Carte public", "settings": [
       { "type": "image_picker", "id": "image", "label": "Image" },
-      { "type": "text", "id": "kicker", "label": "Surtitre", "default": "8 à 10 ans" },
+      { "type": "text", "id": "kicker", "label": "Surtitre", "default": "8 À 10 ANS" },
       { "type": "text", "id": "title", "label": "Titre", "default": "Le héros des anniversaires" },
-      { "type": "textarea", "id": "text", "label": "Texte", "default": "Simple à prendre en main, lumières et sons immédiats." }
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Description." }
     ]}
   ],
   "presets": [
     { "name": "VOLTAG — Comment jouer", "blocks": [
-      { "type": "step", "settings": { "title": "Visez", "text": "Repérez la cible de poitrine d'un adversaire, jusqu'à plusieurs dizaines de mètres." } },
-      { "type": "step", "settings": { "title": "Tirez", "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif." } },
-      { "type": "step", "settings": { "title": "Touché", "text": "La cible s'allume, vibre et émet un son. L'impact est sans ambiguïté." } },
-      { "type": "step", "settings": { "title": "Vie en moins", "text": "L'afficheur décompte. À zéro, le joueur est éliminé jusqu'à la prochaine manche." } },
-      { "type": "audience", "settings": { "kicker": "8 à 10 ans", "title": "Le héros des anniversaires", "text": "Simple à prendre en main, infrarouge sans danger, lumières et sons qui les rendent fous." } },
-      { "type": "audience", "settings": { "kicker": "11 à 14 ans", "title": "Du canapé au terrain", "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans écran." } },
-      { "type": "audience", "settings": { "kicker": "Soirée en famille", "title": "Parents contre enfants", "text": "Les impacts sont comptés par les cibles, donc le match est équitable. Les adultes jouent aussi." } }
+      { "type": "step", "settings": { "title": "VISEZ", "color": "#39FF14", "visual": "aim",
+        "text": "Repérez un adversaire, jusqu'à plusieurs dizaines de mètres." } },
+      { "type": "step", "settings": { "title": "TIREZ", "color": "#FFD60A", "visual": "fire",
+        "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif." } },
+      { "type": "step", "settings": { "title": "TOUCHÉ", "color": "#FF2D55", "visual": "hit",
+        "text": "La cible s'allume, vibre et émet un son." } },
+      { "type": "step", "settings": { "title": "VIE EN MOINS", "color": "#00A3FF", "visual": "lives",
+        "text": "L'afficheur décompte. Plus personne ne discute." } }
     ]}
   ]
 }
