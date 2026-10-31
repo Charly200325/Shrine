@@ -9,6 +9,50 @@
  */
 {
   "sections": {
+    "532f4438-d099-44ab-8e4b-822744dd2de2": {
+      "type": "voltag-equipes",
+      "blocks": {
+        "team-0": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE BLEUE",
+            "color": "#00a3ff",
+            "video": "shopify://files/videos/teambleu.mp4",
+            "video_url": ""
+          }
+        },
+        "team-1": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE ROUGE",
+            "color": "#ff2d55",
+            "video": "shopify://files/videos/teamrouge.mp4",
+            "video_url": ""
+          }
+        },
+        "team-2": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE VERTE",
+            "color": "#39ff14",
+            "video": "shopify://files/videos/teamvert.mp4",
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "team-0",
+        "team-1",
+        "team-2"
+      ],
+      "settings": {
+        "bg": "#05060a",
+        "neon": "#00e5ff",
+        "heading": "Choisis ton camp. Équipe-toi. Allume l'arène.",
+        "tagline": "Vrai infrarouge. Vraies parties.",
+        "disclaimer": "VOLTAG détecte les impacts par signaux infrarouges, et non par faisceau laser. Les traits lumineux visibles dans ces vidéos sont un effet visuel ajouté : le produit n'émet aucun rayon."
+      }
+    },
     "3a070bd7-f9a4-408a-8474-e05df5d2f598": {
       "type": "voltag-arene",
       "blocks": {
@@ -117,52 +161,8 @@
         "copy_label": "Copier",
         "copied_label": "Copié",
         "cta_label": "Voir les packs →",
-        "cta_link": "",
+        "cta_link": "shopify://products/laser-gun",
         "note": "VOLTAG détecte les impacts par signaux infrarouges, et non par faisceau laser. Les traits lumineux de cette animation sont un effet visuel : le produit n'émet aucun rayon."
-      }
-    },
-    "532f4438-d099-44ab-8e4b-822744dd2de2": {
-      "type": "voltag-equipes",
-      "blocks": {
-        "team-0": {
-          "type": "team",
-          "settings": {
-            "label": "ÉQUIPE BLEUE",
-            "color": "#00a3ff",
-            "video": "shopify://files/videos/teambleu.mp4",
-            "video_url": ""
-          }
-        },
-        "team-1": {
-          "type": "team",
-          "settings": {
-            "label": "ÉQUIPE ROUGE",
-            "color": "#ff2d55",
-            "video": "shopify://files/videos/teamrouge.mp4",
-            "video_url": ""
-          }
-        },
-        "team-2": {
-          "type": "team",
-          "settings": {
-            "label": "ÉQUIPE VERTE",
-            "color": "#39ff14",
-            "video": "shopify://files/videos/teamvert.mp4",
-            "video_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "team-0",
-        "team-1",
-        "team-2"
-      ],
-      "settings": {
-        "bg": "#05060a",
-        "neon": "#00e5ff",
-        "heading": "Choisis ton camp. Équipe-toi. Allume l'arène.",
-        "tagline": "Vrai infrarouge. Vraies parties.",
-        "disclaimer": "VOLTAG détecte les impacts par signaux infrarouges, et non par faisceau laser. Les traits lumineux visibles dans ces vidéos sont un effet visuel ajouté : le produit n'émet aucun rayon."
       }
     },
     "3bed9d06-bab0-460d-bacd-140b1c4746f0": {
@@ -273,6 +273,7 @@
         "mode-2",
         "mode-3"
       ],
+      "disabled": true,
       "settings": {
         "bg": "#05060a",
         "neon": "#00e5ff",
@@ -457,7 +458,7 @@
         "col_b": "Blasters en mousse",
         "col_c": "Jeux vidéo",
         "cta_text": "Choisir mon pack VOLTAG",
-        "cta_link": "",
+        "cta_link": "shopify://products/laser-gun",
         "note": ""
       }
     },
@@ -723,8 +724,8 @@
     }
   },
   "order": [
-    "3a070bd7-f9a4-408a-8474-e05df5d2f598",
     "532f4438-d099-44ab-8e4b-822744dd2de2",
+    "3a070bd7-f9a4-408a-8474-e05df5d2f598",
     "3bed9d06-bab0-460d-bacd-140b1c4746f0",
     "ea116af5-1e95-468b-9eac-c68d1f0ccf85",
     "f6b07b60-9941-4c97-a988-81bd39477cf2",
