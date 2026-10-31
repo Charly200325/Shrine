@@ -64,11 +64,8 @@
 
 /* ---- état vide ---- */
 #va-{{ section.id }} .r-item.r-hide{display:none}
-#va-{{ section.id }} .r-item.r-reveal{animation:va-reveal-{{ section.id }} .45s cubic-bezier(.2,.9,.3,1) backwards}
-#va-{{ section.id }} .r-item.r-reveal:nth-child(2){animation-delay:.06s}
-#va-{{ section.id }} .r-item.r-reveal:nth-child(3){animation-delay:.12s}
-#va-{{ section.id }} .r-item.r-reveal:nth-child(4){animation-delay:.18s}
-#va-{{ section.id }} .r-item.r-reveal:nth-child(5){animation-delay:.24s}
+#va-{{ section.id }} .r-item.r-reveal{animation:va-reveal-{{ section.id }} .45s cubic-bezier(.2,.9,.3,1) backwards;
+  animation-delay:calc(var(--i,0) * .06s)}
 @keyframes va-reveal-{{ section.id }}{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 #va-{{ section.id }} .r-fade{position:relative;height:0}
@@ -164,6 +161,8 @@
     {%- for row in bulk_rows -%}{%- assign rr = row | strip -%}{%- if rr != blank -%}{%- assign bulk_n = bulk_n | plus: 1 -%}{%- endif -%}{%- endfor -%}
 
     {%- assign cut = section.settings.visible_count -%}
+    {%- assign rv = 0 -%}
+    {%- for block in section.blocks -%}{%- if block.type == 'review' -%}{%- assign rv = rv | plus: 1 -%}{%- endif -%}{%- endfor -%}
     {%- if bulk_n > 0 -%}
       <div class="r-list" data-r-list>
         {%- assign shown = 0 -%}
@@ -194,27 +193,16 @@
           {%- endif -%}
         {%- endfor -%}
       </div>
-      <div class="r-fade{% if bulk_n > cut %} on{% endif %}" data-r-fade></div>
-      {%- if bulk_n > cut -%}
-        {%- assign rest = bulk_n | minus: cut -%}
-        <div class="r-more">
-          <button type="button" data-r-more aria-expanded="false">
-            <span data-r-label>{{ section.settings.more_label }}</span>
-            <span class="r-left" data-r-left>({{ rest }})</span>
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-          </button>
-        </div>
-      {%- endif -%}
     {%- endif -%}
 
-    {%- assign rv = 0 -%}
-    {%- for block in section.blocks -%}{%- if block.type == 'review' -%}{%- assign rv = rv | plus: 1 -%}{%- endif -%}{%- endfor -%}
 
     {%- if rv > 0 -%}
       <div class="r-list">
+        {%- assign shown = bulk_n -%}
         {%- for block in section.blocks -%}
           {%- if block.type == 'review' -%}
-            <div class="r-item" {{ block.shopify_attributes }}>
+            {%- assign shown = shown | plus: 1 -%}
+            <div class="r-item{% if shown > cut %} r-hide{% endif %}"{% if shown > cut %} data-r-extra{% endif %} {{ block.shopify_attributes }}>
               <div class="r-stars" role="img" aria-label="{{ block.settings.stars }} étoiles sur 5">
                 {%- for i in (1..5) -%}
                   <svg viewBox="0 0 24 24" class="{% if i > block.settings.stars %}off{% endif %}">
@@ -249,6 +237,19 @@
       </div>
     {%- endif -%}
 
+    {%- assign total = bulk_n | plus: rv -%}
+    {%- if total > cut -%}
+      {%- assign rest = total | minus: cut -%}
+      <div class="r-fade on" data-r-fade></div>
+      <div class="r-more">
+        <button type="button" data-r-more aria-expanded="false">
+          <span data-r-label>{{ section.settings.more_label }}</span>
+          <span class="r-left" data-r-left>({{ rest }})</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+      </div>
+    {%- endif -%}
+
     {%- if rv == 0 and bulk_n == 0 and section.settings.app_embed == blank -%}
       <div class="r-empty">
         <p>{{ section.settings.empty_text }}</p>
@@ -279,7 +280,8 @@
   btn.addEventListener('click', function () {
     if (!open) {
       var batch = extra.slice(at, at + STEP);
-      batch.forEach(function (el) {
+      batch.forEach(function (el, k) {
+        el.style.setProperty('--i', k);
         el.classList.remove('r-hide');
         el.classList.add('r-reveal');
         el.addEventListener('animationend', function h() {
