@@ -1533,6 +1533,50 @@
         "promo_code": "",
         "rules": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>"
       }
+    },
+    "voltag_pourqui_KeWirH": {
+      "type": "voltag-pourqui",
+      "blocks": {
+        "who_AbP6Et": {
+          "type": "who",
+          "settings": {
+            "color": "#00a3ff",
+            "tag": "8 À 10 ANS",
+            "title": "Le héros des anniversaires",
+            "text": "Simple à prendre en main, infrarouge sans danger, et des lumières et des sons qui les rendent fous."
+          }
+        },
+        "who_Egrn9e": {
+          "type": "who",
+          "settings": {
+            "color": "#ff2d55",
+            "tag": "11 À 14 ANS",
+            "title": "Du canapé au terrain",
+            "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans le moindre écran."
+          }
+        },
+        "who_GKYmTN": {
+          "type": "who",
+          "settings": {
+            "color": "#39ff14",
+            "tag": "SOIRÉE EN FAMILLE",
+            "title": "Parents contre enfants, enfin équitable",
+            "text": "Les impacts sont comptés par les cibles, donc personne ne conteste. Les adultes jouent aussi."
+          }
+        }
+      },
+      "block_order": [
+        "who_AbP6Et",
+        "who_Egrn9e",
+        "who_GKYmTN"
+      ],
+      "name": "VOLTAG — Pour qui ?",
+      "settings": {
+        "bg": "#05060A",
+        "eyebrow_color": "#FF2D55",
+        "eyebrow": "LE CADEAU QU'ILS UTILISERONT VRAIMENT",
+        "heading": "VOLTAG, c'est pour qui ?"
+      }
     }
   },
   "order": [
@@ -1552,6 +1596,7 @@
     "voltag_modes_wg9J8D",
     "voltag_faq_dHnEX7",
     "voltag_cible_aMPxEe",
-    "voltag_mini_jeu_YzRfPR"
+    "voltag_mini_jeu_YzRfPR",
+    "voltag_pourqui_KeWirH"
   ]
 }
