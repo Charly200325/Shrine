@@ -1432,6 +1432,104 @@
         "promo_code": "",
         "rules": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>"
       }
+    },
+    "voltag_arsenal_qC8Mfw": {
+      "type": "voltag-arsenal",
+      "blocks": {
+        "feature_PX9qJm": {
+          "type": "feature",
+          "settings": {
+            "title": "4 joueurs, 4 couleurs",
+            "text": "Quatre blasters et quatre cibles qui s'allument chacune dans sa couleur, pour du chacun pour soi ou du 2 contre 2."
+          }
+        },
+        "feature_Bjwpmg": {
+          "type": "feature",
+          "settings": {
+            "title": "Impact signalé à l'instant",
+            "text": "La cible s'allume, vibre et sonne dès que vous êtes touché, et les vies se décomptent en direct."
+          }
+        },
+        "feature_Kw6MkR": {
+          "type": "feature",
+          "settings": {
+            "title": "4 modes de tir",
+            "text": "Passez du pistolet à la mitraillette, au fusil de précision ou au lance-roquettes pour changer de tactique en pleine partie."
+          }
+        },
+        "weapon_AeHRkd": {
+          "type": "weapon",
+          "settings": {
+            "name": "PISTOLET",
+            "color": "#ffd60a",
+            "shape": "pistol",
+            "ammo": "12 MUNITIONS",
+            "ammo_dots": 3,
+            "lives": "1 VIE PAR TIR",
+            "life_dots": 1,
+            "beam_y": 28
+          }
+        },
+        "weapon_BiUBCP": {
+          "type": "weapon",
+          "settings": {
+            "name": "MITRAILLETTE",
+            "color": "#ff2d55",
+            "shape": "smg",
+            "ammo": "6 MUNITIONS",
+            "ammo_dots": 3,
+            "lives": "2 VIES PAR TIR",
+            "life_dots": 2,
+            "beam_y": 40
+          }
+        },
+        "weapon_wkxidm": {
+          "type": "weapon",
+          "settings": {
+            "name": "FUSIL DE PRÉCISION",
+            "color": "#00a3ff",
+            "shape": "sniper",
+            "ammo": "6 MUNITIONS",
+            "ammo_dots": 3,
+            "lives": "2 VIES PAR TIR",
+            "life_dots": 2,
+            "beam_y": 42
+          }
+        },
+        "weapon_4CrP3Y": {
+          "type": "weapon",
+          "settings": {
+            "name": "LANCE-ROQUETTES",
+            "color": "#39ff14",
+            "shape": "rocket",
+            "ammo": "1 MUNITION",
+            "ammo_dots": 1,
+            "lives": "3 VIES PAR TIR",
+            "life_dots": 3,
+            "beam_y": 37
+          }
+        }
+      },
+      "block_order": [
+        "feature_PX9qJm",
+        "feature_Bjwpmg",
+        "feature_Kw6MkR",
+        "weapon_AeHRkd",
+        "weapon_BiUBCP",
+        "weapon_wkxidm",
+        "weapon_4CrP3Y"
+      ],
+      "name": "VOLTAG — Arsenal",
+      "settings": {
+        "bg": "#05060A",
+        "accent": "#00E5FF",
+        "panel_accent": "#39FF14",
+        "eyebrow": "CONÇU POUR LES BATAILLES À LA MAISON",
+        "heading": "L'arène de laser game, dans votre salon",
+        "intro": "VOLTAG ramène la tension d'une vraie partie en arène chez vous ou dans le jardin. Chaque blaster se jumelle à une cible connectée qui s'allume, vibre et sonne à l'instant où vous êtes touché : chaque tir compte et personne ne conteste le score. Formez les équipes, changez d'arme en pleine partie et jouez quand vous voulez. Sangles réglables, des enfants dès 8 ans aux adultes qui refusent de perdre.",
+        "ars_title": "MODES DE TIR",
+        "ars_sub": "Choisissez votre style de jeu."
+      }
     }
   },
   "order": [
@@ -1450,6 +1548,7 @@
     "voltag_comparatif_9XRkmk",
     "voltag_faq_dHnEX7",
     "voltag_cible_aMPxEe",
-    "voltag_mini_jeu_YzRfPR"
+    "voltag_mini_jeu_YzRfPR",
+    "voltag_arsenal_qC8Mfw"
   ]
 }
