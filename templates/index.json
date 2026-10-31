@@ -1,1 +1,557 @@
-{"sections":{"cfca4268-6358-426c-98ab-d292aeef11e5":{"type":"slideshow","blocks":{"template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1":{"type":"slide","settings":{"image_overlay_opacity":0,"heading":"Image slide","title_highlight_color":"#6D388B","heading_size":"h1","subheading":"Tell your brand's story through images","button_label":"Button label","link":"","button_style_secondary":false,"atc_button_label":"","atc_product":"","atc_skip_cart":false,"box_align":"middle-center","show_text_box":true,"text_alignment":"center","color_scheme":"background-1","transparent_container_color":"white","text_alignment_mobile":"center","custom_colors_background":"#FFFFFF","custom_gradient_background":"","custom_colors_text":"#2E2A39","custom_colors_solid_button_background":"#dd1d1d","custom_colors_solid_button_text":"#ffffff","custom_colors_outline_button":"#dd1d1d"}},"template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2":{"type":"slide","settings":{"image_overlay_opacity":0,"heading":"Image slide","title_highlight_color":"#6D388B","heading_size":"h1","subheading":"Tell your brand's story through images","button_label":"Button label","link":"","button_style_secondary":false,"atc_button_label":"","atc_product":"","atc_skip_cart":false,"box_align":"middle-center","show_text_box":true,"text_alignment":"center","color_scheme":"background-1","transparent_container_color":"white","text_alignment_mobile":"center","custom_colors_background":"#FFFFFF","custom_gradient_background":"","custom_colors_text":"#2E2A39","custom_colors_solid_button_background":"#dd1d1d","custom_colors_solid_button_text":"#ffffff","custom_colors_outline_button":"#dd1d1d"}}},"block_order":["template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-1","template--21507361505575__cfca4268-6358-426c-98ab-d292aeef11e5-slide-2"],"settings":{"visibility":"always-display","layout":"full_bleed","slide_height":"medium","slider_visual":"dots","desktop_pagination_position":"over","auto_rotate":false,"change_slides_speed":5,"show_text_below":true,"mobile_pagination_position":"under","accessibility_info":"Slideshow about our brand"}},"d2d3417b-e92f-428c-b221-5bceffb552be":{"type":"comparison-table","blocks":{"template--21507361505575__d2d3417b-e92f-428c-b221-5bceffb552be-row-1":{"type":"row","settings":{"benefit":"Benefit","us":true,"others":false}},"template--21507361505575__d2d3417b-e92f-428c-b221-5bceffb552be-row-2":{"type":"row","settings":{"benefit":"Benefit","us":true,"others":false}},"template--21507361505575__d2d3417b-e92f-428c-b221-5bceffb552be-row-3":{"type":"row","settings":{"benefit":"Benefit","us":true,"others":false}}},"block_order":["template--21507361505575__d2d3417b-e92f-428c-b221-5bceffb552be-row-1","template--21507361505575__d2d3417b-e92f-428c-b221-5bceffb552be-row-2","template--21507361505575__d2d3417b-e92f-428c-b221-5bceffb552be-row-3"],"settings":{"display_id":false,"visibility":"always-display","title":"Comparison table","title_highlight_color":"#6D388B","heading_size":"h1","text":"<p>Talk about how and why is your brand better than the others.<\/p>","button_label":"","link":"","button_style_secondary":false,"atc_button_label":"","atc_product":"","atc_skip_cart":false,"color_scheme":"background-1","layout":"table_second","style":"centered","us_label":"[shop_name]","us_label_size":18,"logo_width":90,"mobile_logo_width":60,"others_label":"Others","others_label_size":18,"others_logo_width":90,"others_mobile_logo_width":60,"checkmark_style":"regular","checkmark_color":"#ffffff","checkmark_bg_color":"#53af01","x_style":"regular","x_color":"#121212","x_bg_color":"#dbdbdb","opposite_icon_colors":"original","highlighted_color_scheme":"accent-1","highlighted_separator_opacity":0,"highlighted_overlay_opacity":0,"other_cells_color_scheme":"background-1","regular_separator_opacity":10,"regular_overlay_opacity":0,"minimalistic_border_opacity":16,"padding_top":36,"padding_bottom":36,"custom_colors_background":"#FFFFFF","custom_gradient_background":"","custom_colors_text":"#2E2A39","custom_colors_solid_button_background":"#dd1d1d","custom_colors_solid_button_text":"#ffffff","custom_colors_outline_button":"#dd1d1d","custom_colors_highlighted_background":"#2E2A39","custom_colors_highlighted_text":"#FFFFFF","custom_colors_others_background":"#FFFFFF","custom_colors_others_text":"#2E2A39"}},"6aa09428-a417-429d-9159-a4e8afd49590":{"type":"icon-bar","blocks":{"template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-1":{"type":"column","settings":{"icon":"check_circle","filled_icon":false,"title":"Icon","text":"<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"}},"template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-2":{"type":"column","settings":{"icon":"check_circle","filled_icon":false,"title":"Icon","text":"<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"}},"template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-3":{"type":"column","settings":{"icon":"check_circle","filled_icon":false,"title":"Icon","text":"<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"}},"template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-4":{"type":"column","settings":{"icon":"check_circle","filled_icon":false,"title":"Icon","text":"<p>Pair text with an icon to focus on your chosen product, collection, or blog post<p>"}}},"block_order":["template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-1","template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-2","template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-3","template--21507361505575__6aa09428-a417-429d-9159-a4e8afd49590-column-4"],"settings":{"display_id":false,"visibility":"always-display","title":"Icon bar","title_highlight_color":"#6D388B","heading_size":"h1","text":"","color_scheme":"background-1","icon_layout":"vertical","icon_size":"medium","icon_color":"accent-1","cards_color_scheme":"background-1","type":"slide","autoplay":false,"autoplay_speed":5,"arrows_color_scheme":"inverse","transparent_arrows":true,"dots_color_scheme":"inverse","desktop_full_page":false,"columns_desktop":4,"slider_desktop":false,"per_move_desktop":1,"desktop_spacing":40,"desktop_side_padding":0,"desktop_padding_calc":true,"desktop_adaptive_height":false,"desktop_dots_position":"under","desktop_arrows_position":"sides","columns_mobile":"1","slider_mobile":true,"enable_mobile_preview":false,"mobile_adaptive_height":false,"mobile_dots_position":"under","mobile_arrows_position":"under","padding_top":36,"padding_bottom":36,"custom_colors_background":"#FFFFFF","custom_gradient_background":"","custom_colors_text":"#2E2A39","custom_cards_colors_background":"#F3F3F3","custom_cards_gradient_background":"","custom_cards_colors_text":"#2E2A39"}},"0f1fc9e4-bc4c-4052-9747-62d1f8472caa":{"type":"results","blocks":{"template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-1":{"type":"row","settings":{"percentage":90,"row_text":"<p>Noticed that this product has significantly improved their life.<\/p>"}},"template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-2":{"type":"row","settings":{"percentage":90,"row_text":"<p>Noticed that this product has significantly improved their life.<\/p>"}},"template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-3":{"type":"row","settings":{"percentage":90,"row_text":"<p>Noticed that this product has significantly improved their life.<\/p>"}}},"block_order":["template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-1","template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-2","template--21507361505575__0f1fc9e4-bc4c-4052-9747-62d1f8472caa-row-3"],"settings":{"display_id":false,"visibility":"always-display","title":"Results","title_highlight_color":"#6D388B","heading_size":"h1","text":"<p>Talk about results of your customers and how your product improved their life.<\/p>","color_scheme":"background-1","layout":"results_second","results_headline":"Results heading","results_title_highlight_color":"#6D388B","results_headline_size":"h2","results_text":"","results_headline_alignment":"left","caption":"<p>Caption about the results and\/or link for their proof.<\/p>","button_label":"","link":"","button_style_secondary":false,"atc_button_label":"","atc_product":"","atc_skip_cart":false,"padding_top":36,"padding_bottom":36,"custom_colors_background":"#FFFFFF","custom_gradient_background":"","custom_colors_text":"#2E2A39","custom_colors_accent":"#dd1d1d","custom_colors_solid_button_background":"#dd1d1d","custom_colors_solid_button_text":"#ffffff","custom_colors_outline_button":"#dd1d1d"}},"ee8d9ca6-4a41-401f-83a3-37e138a112b9":{"type":"contact-form","settings":{"display_id":false,"visibility":"always-display","title":"Contact form","title_highlight_color":"#6D388B","heading_size":"h1","button_full_width":true,"color_scheme":"background-1","padding_top":36,"padding_bottom":36,"custom_colors_background":"#FFFFFF","custom_gradient_background":"","custom_colors_text":"#2E2A39","custom_colors_solid_button_background":"#dd1d1d","custom_colors_solid_button_text":"#ffffff"}}},"order":["cfca4268-6358-426c-98ab-d292aeef11e5","d2d3417b-e92f-428c-b221-5bceffb552be","6aa09428-a417-429d-9159-a4e8afd49590","0f1fc9e4-bc4c-4052-9747-62d1f8472caa","ee8d9ca6-4a41-401f-83a3-37e138a112b9"]}
+{
+  "sections": {
+    "3a070bd7-f9a4-408a-8474-e05df5d2f598": {
+      "type": "voltag-arene",
+      "settings": {},
+      "blocks": {
+        "point-0": {
+          "type": "point",
+          "settings": {
+            "title": "CAPTEUR INFRAROUGE",
+            "text": "Détecte les tirs adverses, sans contact ni projectile."
+          }
+        },
+        "point-1": {
+          "type": "point",
+          "settings": {
+            "title": "LED D'ÉQUIPE",
+            "text": "S'allume dans votre couleur, visible de loin et dans le noir."
+          }
+        },
+        "point-2": {
+          "type": "point",
+          "settings": {
+            "title": "SANGLES RÉGLABLES",
+            "text": "S'ajustent d'un enfant de 8 ans à un adulte."
+          }
+        },
+        "point-3": {
+          "type": "point",
+          "settings": {
+            "title": "AFFICHEUR DE VIES",
+            "text": "Le décompte se fait en direct, plus personne ne discute."
+          }
+        },
+        "point-4": {
+          "type": "point",
+          "settings": {
+            "title": "VIBREUR",
+            "text": "Chaque impact se sent autant qu'il se voit."
+          }
+        },
+        "point-5": {
+          "type": "point",
+          "settings": {
+            "title": "HAUT-PARLEUR",
+            "text": "Tirs, touches et élimination sonorisés."
+          }
+        },
+        "point-6": {
+          "type": "point",
+          "settings": {
+            "title": "FORMAT LÉGER",
+            "text": "Assez compact pour courir et se cacher des heures."
+          }
+        }
+      },
+      "block_order": [
+        "point-0",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4",
+        "point-5",
+        "point-6"
+      ]
+    },
+    "532f4438-d099-44ab-8e4b-822744dd2de2": {
+      "type": "voltag-equipes",
+      "settings": {},
+      "blocks": {
+        "team-0": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE BLEUE",
+            "color": "#00A3FF"
+          }
+        },
+        "team-1": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE ROUGE",
+            "color": "#FF2D55"
+          }
+        },
+        "team-2": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE VERTE",
+            "color": "#39FF14"
+          }
+        }
+      },
+      "block_order": [
+        "team-0",
+        "team-1",
+        "team-2"
+      ]
+    },
+    "3bed9d06-bab0-460d-bacd-140b1c4746f0": {
+      "type": "voltag-etapes",
+      "settings": {},
+      "blocks": {
+        "step-0": {
+          "type": "step",
+          "settings": {
+            "title": "VISEZ",
+            "color": "#39FF14",
+            "visual": "aim",
+            "text": "Repérez un adversaire, jusqu'à plusieurs dizaines de mètres."
+          }
+        },
+        "step-1": {
+          "type": "step",
+          "settings": {
+            "title": "TIREZ",
+            "color": "#FFD60A",
+            "visual": "fire",
+            "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif."
+          }
+        },
+        "step-2": {
+          "type": "step",
+          "settings": {
+            "title": "TOUCHÉ",
+            "color": "#FF2D55",
+            "visual": "hit",
+            "text": "La cible s'allume, vibre et émet un son."
+          }
+        },
+        "step-3": {
+          "type": "step",
+          "settings": {
+            "title": "VIE EN MOINS",
+            "color": "#00A3FF",
+            "visual": "lives",
+            "text": "L'afficheur décompte. Plus personne ne discute."
+          }
+        }
+      },
+      "block_order": [
+        "step-0",
+        "step-1",
+        "step-2",
+        "step-3"
+      ]
+    },
+    "ea116af5-1e95-468b-9eac-c68d1f0ccf85": {
+      "type": "voltag-modes",
+      "settings": {},
+      "blocks": {
+        "mode-0": {
+          "type": "mode",
+          "settings": {
+            "name": "Pistolet",
+            "accent": "#00A3FF",
+            "stat_1_value": "12",
+            "stat_2_value": "1"
+          }
+        },
+        "mode-1": {
+          "type": "mode",
+          "settings": {
+            "name": "Mitraillette",
+            "accent": "#FF2D55",
+            "stat_1_value": "6",
+            "stat_2_value": "2"
+          }
+        },
+        "mode-2": {
+          "type": "mode",
+          "settings": {
+            "name": "Fusil de précision",
+            "accent": "#39FF14",
+            "stat_1_value": "6",
+            "stat_2_value": "2"
+          }
+        },
+        "mode-3": {
+          "type": "mode",
+          "settings": {
+            "name": "Lance-roquettes",
+            "accent": "#FFD60A",
+            "stat_1_value": "1",
+            "stat_2_value": "3"
+          }
+        }
+      },
+      "block_order": [
+        "mode-0",
+        "mode-1",
+        "mode-2",
+        "mode-3"
+      ]
+    },
+    "f6b07b60-9941-4c97-a988-81bd39477cf2": {
+      "type": "voltag-arsenal",
+      "settings": {},
+      "blocks": {
+        "feature-0": {
+          "type": "feature",
+          "settings": {
+            "title": "4 joueurs, 4 couleurs",
+            "text": "Quatre blasters et quatre cibles qui s'allument chacune dans sa couleur, pour du chacun pour soi ou du 2 contre 2."
+          }
+        },
+        "feature-1": {
+          "type": "feature",
+          "settings": {
+            "title": "Impact signalé à l'instant",
+            "text": "La cible s'allume, vibre et sonne dès que vous êtes touché, et les vies se décomptent en direct."
+          }
+        },
+        "feature-2": {
+          "type": "feature",
+          "settings": {
+            "title": "4 modes de tir",
+            "text": "Passez du pistolet à la mitraillette, au fusil de précision ou au lance-roquettes pour changer de tactique en pleine partie."
+          }
+        },
+        "weapon-3": {
+          "type": "weapon",
+          "settings": {
+            "name": "PISTOLET",
+            "color": "#FFD60A",
+            "shape": "pistol",
+            "ammo": "12 MUNITIONS",
+            "ammo_dots": 3,
+            "lives": "1 VIE PAR TIR",
+            "life_dots": 1,
+            "beam_y": 28
+          }
+        },
+        "weapon-4": {
+          "type": "weapon",
+          "settings": {
+            "name": "MITRAILLETTE",
+            "color": "#FF2D55",
+            "shape": "smg",
+            "ammo": "6 MUNITIONS",
+            "ammo_dots": 3,
+            "lives": "2 VIES PAR TIR",
+            "life_dots": 2,
+            "beam_y": 40
+          }
+        },
+        "weapon-5": {
+          "type": "weapon",
+          "settings": {
+            "name": "FUSIL DE PRÉCISION",
+            "color": "#00A3FF",
+            "shape": "sniper",
+            "ammo": "6 MUNITIONS",
+            "ammo_dots": 3,
+            "lives": "2 VIES PAR TIR",
+            "life_dots": 2,
+            "beam_y": 42
+          }
+        },
+        "weapon-6": {
+          "type": "weapon",
+          "settings": {
+            "name": "LANCE-ROQUETTES",
+            "color": "#39FF14",
+            "shape": "rocket",
+            "ammo": "1 MUNITION",
+            "ammo_dots": 1,
+            "lives": "3 VIES PAR TIR",
+            "life_dots": 3,
+            "beam_y": 37
+          }
+        }
+      },
+      "block_order": [
+        "feature-0",
+        "feature-1",
+        "feature-2",
+        "weapon-3",
+        "weapon-4",
+        "weapon-5",
+        "weapon-6"
+      ]
+    },
+    "f709e7f3-a96b-4ffa-94f9-b126075833b6": {
+      "type": "voltag-comparatif",
+      "settings": {},
+      "blocks": {
+        "row-0": {
+          "type": "row",
+          "settings": {
+            "label": "Éloigne les enfants des écrans",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row-1": {
+          "type": "row",
+          "settings": {
+            "label": "Aucun projectile à ramasser",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "row-2": {
+          "type": "row",
+          "settings": {
+            "label": "Impacts comptés automatiquement",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "row-3": {
+          "type": "row",
+          "settings": {
+            "label": "Se joue dedans comme dehors",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row-4": {
+          "type": "row",
+          "settings": {
+            "label": "Toute la famille peut jouer",
+            "us": true,
+            "b": false,
+            "c": false
+          }
+        },
+        "row-5": {
+          "type": "row",
+          "settings": {
+            "label": "Rien qui puisse atteindre le visage",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        }
+      },
+      "block_order": [
+        "row-0",
+        "row-1",
+        "row-2",
+        "row-3",
+        "row-4",
+        "row-5"
+      ]
+    },
+    "31419b3a-dce7-44e2-907c-e719b813ff2e": {
+      "type": "voltag-pourqui",
+      "settings": {},
+      "blocks": {
+        "who-0": {
+          "type": "who",
+          "settings": {
+            "color": "#00A3FF",
+            "tag": "8 À 10 ANS",
+            "title": "Le héros des anniversaires",
+            "text": "Simple à prendre en main, infrarouge sans danger, et des lumières et des sons qui les rendent fous."
+          }
+        },
+        "who-1": {
+          "type": "who",
+          "settings": {
+            "color": "#FF2D55",
+            "tag": "11 À 14 ANS",
+            "title": "Du canapé au terrain",
+            "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans le moindre écran."
+          }
+        },
+        "who-2": {
+          "type": "who",
+          "settings": {
+            "color": "#39FF14",
+            "tag": "SOIRÉE EN FAMILLE",
+            "title": "Parents contre enfants, enfin équitable",
+            "text": "Les impacts sont comptés par les cibles, donc personne ne conteste. Les adultes jouent aussi."
+          }
+        }
+      },
+      "block_order": [
+        "who-0",
+        "who-1",
+        "who-2"
+      ]
+    },
+    "d117fc68-5055-40cf-9b97-cb86820b7297": {
+      "type": "voltag-cible",
+      "settings": {},
+      "blocks": {
+        "point-0": {
+          "type": "point",
+          "settings": {
+            "title": "Capteur infrarouge",
+            "text": "Détecte les tirs adverses, sans contact ni projectile.",
+            "x": 50,
+            "y": 20
+          }
+        },
+        "point-1": {
+          "type": "point",
+          "settings": {
+            "title": "Contour lumineux",
+            "text": "S'allume dans la couleur de votre équipe, visible de loin et dans le noir.",
+            "x": 23,
+            "y": 37
+          }
+        },
+        "point-2": {
+          "type": "point",
+          "settings": {
+            "title": "Afficheur de vies",
+            "text": "Le décompte se fait en direct. Plus personne ne discute le score.",
+            "x": 50,
+            "y": 48
+          }
+        },
+        "point-3": {
+          "type": "point",
+          "settings": {
+            "title": "Vibration",
+            "text": "Chaque impact se sent autant qu'il se voit.",
+            "x": 77,
+            "y": 37
+          }
+        },
+        "point-4": {
+          "type": "point",
+          "settings": {
+            "title": "Haut-parleur",
+            "text": "Tirs, touches et élimination sonorisés pour l'ambiance d'arène.",
+            "x": 77,
+            "y": 62
+          }
+        },
+        "point-5": {
+          "type": "point",
+          "settings": {
+            "title": "Sangles réglables",
+            "text": "S'ajustent d'un enfant de 8 ans à un adulte, sans outil.",
+            "x": 23,
+            "y": 62
+          }
+        },
+        "point-6": {
+          "type": "point",
+          "settings": {
+            "title": "Format léger",
+            "text": "Assez compact pour courir, se baisser et se cacher pendant des heures.",
+            "x": 50,
+            "y": 78
+          }
+        }
+      },
+      "block_order": [
+        "point-0",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4",
+        "point-5",
+        "point-6"
+      ]
+    },
+    "13c8298b-eb55-4558-9ee8-77d928871312": {
+      "type": "voltag-avis",
+      "settings": {}
+    },
+    "b86f716c-3401-4290-895c-c78ac5a3a4c8": {
+      "type": "voltag-faq",
+      "settings": {},
+      "blocks": {
+        "qa-0": {
+          "type": "qa",
+          "settings": {
+            "icon": "box",
+            "show_teams": true,
+            "question": "Que contient la boîte ?",
+            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED.</p><p><strong>Duo :</strong> 2 blasters et 2 cibles, pour un duel. <strong>Squad :</strong> 4 blasters et 4 cibles dans les quatre couleurs. <strong>Arène :</strong> 8 blasters et 8 cibles.</p><p>Les piles ne sont pas fournies.</p>"
+          }
+        },
+        "qa-1": {
+          "type": "qa",
+          "settings": {
+            "icon": "check",
+            "question": "Comment se déroule une partie ?",
+            "answer": "<p>Chacun choisit sa couleur, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, l'afficheur décompte les vies restantes, et le son et la vibration rendent la touche indiscutable.</p>"
+          }
+        },
+        "qa-2": {
+          "type": "qa",
+          "settings": {
+            "icon": "heart",
+            "question": "Est-ce sans danger pour les enfants ?",
+            "answer": "<p>Oui. VOLTAG fonctionne par <strong>signaux infrarouges</strong>, comme une télécommande de télévision : aucun faisceau laser, aucun projectile, donc rien qui puisse blesser ou se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>, et les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>"
+          }
+        },
+        "qa-3": {
+          "type": "qa",
+          "settings": {
+            "icon": "target",
+            "show_modes": true,
+            "question": "Peut-on changer de mode de tir ?",
+            "answer": "<p>Oui. Chaque blaster passe d'un mode à l'autre entre <strong>quatre modes de tir</strong>, chacun avec ses munitions et sa puissance, ce qui permet de changer de tactique en pleine partie.</p>"
+          }
+        },
+        "qa-4": {
+          "type": "qa",
+          "settings": {
+            "icon": "bolt",
+            "question": "Faut-il des piles ?",
+            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Aucune recharge n'est nécessaire : vous les insérez et vous jouez.</p>"
+          }
+        },
+        "qa-5": {
+          "type": "qa",
+          "settings": {
+            "icon": "globe",
+            "question": "Peut-on jouer en intérieur et en extérieur ?",
+            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc conviennent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode, de quoi s'éparpiller et jouer à cache-cache.</p>"
+          }
+        },
+        "qa-6": {
+          "type": "qa",
+          "settings": {
+            "icon": "truck",
+            "question": "Livraison et retours",
+            "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez de <strong>30 jours</strong> à compter de la réception pour changer d'avis, soit plus que les 14 jours du droit de rétractation légal. Contactez-nous et nous organisons le retour ou l'échange.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa-0",
+        "qa-1",
+        "qa-2",
+        "qa-3",
+        "qa-4",
+        "qa-5",
+        "qa-6"
+      ]
+    }
+  },
+  "order": [
+    "3a070bd7-f9a4-408a-8474-e05df5d2f598",
+    "532f4438-d099-44ab-8e4b-822744dd2de2",
+    "3bed9d06-bab0-460d-bacd-140b1c4746f0",
+    "ea116af5-1e95-468b-9eac-c68d1f0ccf85",
+    "f6b07b60-9941-4c97-a988-81bd39477cf2",
+    "f709e7f3-a96b-4ffa-94f9-b126075833b6",
+    "31419b3a-dce7-44e2-907c-e719b813ff2e",
+    "d117fc68-5055-40cf-9b97-cb86820b7297",
+    "13c8298b-eb55-4558-9ee8-77d928871312",
+    "b86f716c-3401-4290-895c-c78ac5a3a4c8"
+  ]
+}
