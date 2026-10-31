@@ -1,0 +1,298 @@
+{%- comment -%} VOLTAG — Arsenal | sections/voltag-arsenal.liquid {%- endcomment -%}
+
+<style>
+#vx-{{ section.id }}{background:{{ section.settings.bg }};color:#fff;padding:64px 0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+#vx-{{ section.id }} *{box-sizing:border-box}
+#vx-{{ section.id }} p{margin:0}
+#vx-{{ section.id }} .x-in{max-width:1120px;margin:0 auto;padding:0 20px}
+#vx-{{ section.id }} .x-head{max-width:720px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center}
+#vx-{{ section.id }} .x-eye{margin:0 0 14px;font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--cy);text-shadow:0 0 10px color-mix(in srgb,var(--cy) 55%,transparent)}
+#vx-{{ section.id }} h2{margin:0;font-weight:800;letter-spacing:-.02em;line-height:1.08;font-size:clamp(28px,4.4vw,48px);color:#fff;text-wrap:balance}
+#vx-{{ section.id }}{--cy:{{ section.settings.accent }};--gn:{{ section.settings.panel_accent }}}
+#vx-{{ section.id }} .x-lz{display:block;width:min(240px,60%);height:3px;margin:18px auto 20px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,#FF2D55,#FFD60A,#39FF14,#00A3FF,var(--cy),transparent);
+  background-size:200% 100%;animation:vx-flow-{{ section.id }} 3s linear infinite;box-shadow:0 0 12px color-mix(in srgb,var(--cy) 60%,transparent)}
+#vx-{{ section.id }} .x-text{color:#9aa4bb;font-size:16px;line-height:1.7}
+#vx-{{ section.id }} .x-cols{margin-top:48px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+
+/* --- carte de gauche --- */
+#vx-{{ section.id }} .x-card{position:relative;border-radius:18px;padding:1.5px;overflow:hidden;isolation:isolate;background:#1c2335}
+#vx-{{ section.id }} .x-card::before{content:"";position:absolute;inset:-150%;z-index:-1;opacity:0;
+  background:conic-gradient(from 0deg,transparent 0 78%,rgba(255,255,255,.15) 86%,rgba(255,255,255,.7) 94%,#fff 98%,transparent 100%);
+  animation:vx-sweep-{{ section.id }} 7s cubic-bezier(.45,0,.25,1) infinite}
+#vx-{{ section.id }} .x-card-in{background:#0d1424;border-radius:16.5px;padding:8px 28px}
+#vx-{{ section.id }} .x-feat{display:flex;gap:16px;padding:22px 0;border-bottom:1px solid #1d2740}
+#vx-{{ section.id }} .x-feat:last-child{border-bottom:0}
+#vx-{{ section.id }} .x-check{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--cy) 8%,transparent);border:1px solid color-mix(in srgb,var(--cy) 35%,transparent);
+  box-shadow:0 0 12px color-mix(in srgb,var(--cy) 25%,transparent)}
+#vx-{{ section.id }} .x-check svg{width:20px;height:20px;fill:none;stroke:var(--cy);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#vx-{{ section.id }} .x-ft{margin:4px 0 6px;font-size:18px;font-weight:800;line-height:1.3;color:#fff}
+#vx-{{ section.id }} .x-ft b{color:var(--cy);margin-right:10px;text-shadow:0 0 8px color-mix(in srgb,var(--cy) 60%,transparent)}
+#vx-{{ section.id }} .x-fx{margin:0;color:#9aa4bb;font-size:14.5px;line-height:1.6}
+
+/* --- panneau arsenal --- */
+#vx-{{ section.id }} .x-ars{position:relative;isolation:isolate;border-radius:20px;padding:28px;
+  background:radial-gradient(120% 90% at 50% 0%,#141b30 0%,#070a12 70%);border:1px solid #1f2a40;
+  box-shadow:0 0 30px color-mix(in srgb,var(--gn) 14%,transparent),inset 0 0 60px rgba(0,0,0,.6);overflow:hidden}
+#vx-{{ section.id }} .x-grid{position:absolute;inset:-40px;z-index:-1;opacity:.35;pointer-events:none;
+  background-image:linear-gradient(rgba(0,163,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(0,163,255,.12) 1px,transparent 1px);
+  background-size:40px 40px;-webkit-mask-image:radial-gradient(circle at 50% 40%,#000 0%,transparent 75%);
+  mask-image:radial-gradient(circle at 50% 40%,#000 0%,transparent 75%);animation:vx-grid-{{ section.id }} 6s linear infinite}
+#vx-{{ section.id }} .x-hud{position:absolute;width:44px;height:44px;border:2px solid var(--gn);filter:drop-shadow(0 0 6px var(--gn));
+  pointer-events:none;animation:vx-hud-{{ section.id }} 2.6s ease-in-out infinite}
+#vx-{{ section.id }} .x-hud--tl{top:12px;left:12px;border-right:0;border-bottom:0;border-top-left-radius:10px}
+#vx-{{ section.id }} .x-hud--tr{top:12px;right:12px;border-left:0;border-bottom:0;border-top-right-radius:10px}
+#vx-{{ section.id }} .x-hud--bl{bottom:12px;left:12px;border-right:0;border-top:0;border-bottom-left-radius:10px}
+#vx-{{ section.id }} .x-hud--br{bottom:12px;right:12px;border-left:0;border-top:0;border-bottom-right-radius:10px}
+#vx-{{ section.id }} .x-ah{display:flex;align-items:center;justify-content:center;gap:14px;margin:4px 0 24px}
+#vx-{{ section.id }} .x-anum{font-size:68px;font-weight:900;font-style:italic;line-height:.9;color:var(--gn);
+  text-shadow:0 0 18px color-mix(in srgb,var(--gn) 70%,transparent);animation:vx-flick-{{ section.id }} 5s linear infinite}
+#vx-{{ section.id }} .x-atitle{margin:0;font-size:clamp(22px,2.6vw,32px);font-weight:900;font-style:italic;line-height:1;color:#fff}
+#vx-{{ section.id }} .x-asub{margin:6px 0 0;color:#c9d1e4;font-size:15px}
+
+/* --- cartes d'armes --- */
+#vx-{{ section.id }} .x-ws{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#vx-{{ section.id }} .x-w{--t:6s;--d:calc(var(--i) * 1.5s);position:relative;isolation:isolate;overflow:hidden;text-align:center;
+  border-radius:14px;padding:16px 14px;background:color-mix(in srgb,var(--c) 6%,#080c16);border:2px solid var(--c);
+  box-shadow:0 0 14px color-mix(in srgb,var(--c) 45%,transparent),inset 0 0 18px color-mix(in srgb,var(--c) 14%,transparent);
+  animation:vx-card-{{ section.id }} var(--t) ease-out var(--d) infinite}
+#vx-{{ section.id }} .x-w::before{content:"";position:absolute;inset:-60%;z-index:-1;opacity:.35;
+  background:conic-gradient(from 0deg,transparent 0 70%,var(--c) 85%,transparent 100%);animation:vx-spin-{{ section.id }} 5s linear infinite}
+#vx-{{ section.id }} .x-w::after{content:"";position:absolute;inset:2px;z-index:-1;border-radius:11px;background:color-mix(in srgb,var(--c) 6%,#080c16)}
+#vx-{{ section.id }} .x-wi{position:relative;display:block;width:64%;max-width:120px;margin:2px auto 8px;animation:vx-recoil-{{ section.id }} var(--t) ease-out var(--d) infinite}
+#vx-{{ section.id }} .x-wi svg{position:relative;z-index:1;display:block;width:100%;height:auto;filter:drop-shadow(0 0 6px rgba(255,255,255,.35))}
+#vx-{{ section.id }} .x-beam{position:absolute;z-index:0;left:96%;top:var(--by);height:3px;width:220%;margin-top:-1.5px;border-radius:3px;
+  transform-origin:left center;transform:scaleX(0);opacity:0;
+  background:linear-gradient(90deg,#fff,var(--c) 18%,color-mix(in srgb,var(--c) 40%,transparent) 70%,transparent);
+  box-shadow:0 0 8px var(--c),0 0 16px var(--c);animation:vx-beam-{{ section.id }} var(--t) ease-out var(--d) infinite}
+#vx-{{ section.id }} .x-flash{position:absolute;z-index:2;left:96%;top:var(--by);width:26px;height:26px;margin:-13px 0 0 -13px;border-radius:50%;
+  opacity:0;transform:scale(.2);background:radial-gradient(circle,#fff 0 18%,var(--c) 40%,transparent 70%);
+  animation:vx-flash-{{ section.id }} var(--t) ease-out var(--d) infinite}
+#vx-{{ section.id }} .x-wn{margin:0 0 10px;padding-bottom:10px;font-size:18px;font-weight:900;letter-spacing:.04em;color:var(--c);
+  text-shadow:0 0 10px color-mix(in srgb,var(--c) 70%,transparent);border-bottom:1px solid color-mix(in srgb,var(--c) 60%,transparent)}
+#vx-{{ section.id }} .x-st{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+#vx-{{ section.id }} .x-st li{display:grid;grid-template-columns:62px 1fr;align-items:center;gap:8px;text-align:left}
+#vx-{{ section.id }} .x-sym{display:inline-flex;gap:3px;justify-content:center;align-items:center}
+#vx-{{ section.id }} .x-bul{width:8px;height:18px;fill:#f2f4f8}
+#vx-{{ section.id }} .x-ammo .x-bul:last-child{animation:vx-shot-{{ section.id }} var(--t) steps(1,end) var(--d) infinite}
+#vx-{{ section.id }} .x-hrt{width:17px;height:16px;fill:var(--c);filter:drop-shadow(0 0 4px var(--c));animation:vx-beat-{{ section.id }} var(--t) ease-out var(--d) infinite}
+#vx-{{ section.id }} .x-hrt:nth-child(2){animation-delay:calc(var(--d) + .08s)}
+#vx-{{ section.id }} .x-hrt:nth-child(3){animation-delay:calc(var(--d) + .16s)}
+#vx-{{ section.id }} .x-st b{color:#fff;font-weight:800;font-size:13px;letter-spacing:.03em;line-height:1.2}
+#vx-{{ section.id }}.js .x-w{opacity:0;transform:translateY(18px) scale(.94)}
+#vx-{{ section.id }}.js .x-hud{opacity:0}
+#vx-{{ section.id }}.js .x-ars.on .x-w{opacity:1;transform:none;transition:opacity .5s ease,transform .6s cubic-bezier(.2,1.4,.4,1);transition-delay:calc(var(--i) * .15s + .2s)}
+#vx-{{ section.id }}.js .x-ars.on .x-hud{opacity:1;transition:opacity .4s ease}
+
+@keyframes vx-flow-{{ section.id }}{to{background-position:200% 0}}
+@keyframes vx-spin-{{ section.id }}{to{transform:rotate(360deg)}}
+@keyframes vx-sweep-{{ section.id }}{0%{transform:rotate(0);opacity:0}4%{opacity:1}40%{transform:rotate(360deg);opacity:1}46%,100%{transform:rotate(360deg);opacity:0}}
+@keyframes vx-grid-{{ section.id }}{to{background-position:0 40px,40px 0}}
+@keyframes vx-hud-{{ section.id }}{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes vx-flick-{{ section.id }}{0%,18%,22%,62%,64%,100%{opacity:1}20%,63%{opacity:.35}}
+@keyframes vx-card-{{ section.id }}{0%{box-shadow:0 0 14px color-mix(in srgb,var(--c) 45%,transparent),inset 0 0 18px color-mix(in srgb,var(--c) 14%,transparent)}
+  4%{box-shadow:0 0 34px color-mix(in srgb,var(--c) 90%,transparent),inset 0 0 30px color-mix(in srgb,var(--c) 35%,transparent)}
+  18%,100%{box-shadow:0 0 14px color-mix(in srgb,var(--c) 45%,transparent),inset 0 0 18px color-mix(in srgb,var(--c) 14%,transparent)}}
+@keyframes vx-recoil-{{ section.id }}{0%{transform:none}2%{transform:translateX(-6px) rotate(-4deg)}8%,100%{transform:none}}
+@keyframes vx-beam-{{ section.id }}{0%{transform:scaleX(0);opacity:1}6%{transform:scaleX(1);opacity:1}14%,100%{transform:scaleX(1);opacity:0}}
+@keyframes vx-flash-{{ section.id }}{0%{opacity:0;transform:scale(.2)}2%{opacity:1;transform:scale(1.2)}7%,100%{opacity:0;transform:scale(.4)}}
+@keyframes vx-shot-{{ section.id }}{0%{opacity:1}2%{opacity:.15}20%,100%{opacity:1}}
+@keyframes vx-beat-{{ section.id }}{0%{transform:scale(1)}5%{transform:scale(1.35)}10%{transform:scale(.95)}15%,100%{transform:scale(1)}}
+
+@media (max-width:899px){
+  #vx-{{ section.id }}{padding:44px 0}
+  #vx-{{ section.id }} .x-in{padding:0 16px}
+  #vx-{{ section.id }} .x-text{font-size:15px}
+  #vx-{{ section.id }} .x-cols{grid-template-columns:1fr;gap:28px;margin-top:32px}
+  #vx-{{ section.id }} .x-card-in{padding:4px 18px}
+  #vx-{{ section.id }} .x-feat{padding:18px 0;gap:12px}
+  #vx-{{ section.id }} .x-ft{font-size:16px}
+  #vx-{{ section.id }} .x-fx{font-size:14px}
+  #vx-{{ section.id }} .x-ars{padding:22px 16px}
+  #vx-{{ section.id }} .x-hud{width:30px;height:30px}
+  #vx-{{ section.id }} .x-anum{font-size:52px}
+  #vx-{{ section.id }} .x-ws{gap:10px}
+  #vx-{{ section.id }} .x-w{padding:12px 10px}
+  #vx-{{ section.id }} .x-wn{font-size:14px}
+  #vx-{{ section.id }} .x-st li{grid-template-columns:38px 1fr;gap:5px}
+  #vx-{{ section.id }} .x-sym{gap:2px}
+  #vx-{{ section.id }} .x-bul{width:5px;height:13px}
+  #vx-{{ section.id }} .x-hrt{width:11px;height:10px}
+  #vx-{{ section.id }} .x-st b{font-size:10.5px;white-space:nowrap;letter-spacing:.01em}
+}
+@media (prefers-reduced-motion:reduce){
+  #vx-{{ section.id }} *,#vx-{{ section.id }} *::before,#vx-{{ section.id }} *::after{animation:none !important}
+  #vx-{{ section.id }} .x-beam,#vx-{{ section.id }} .x-flash{display:none}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="vx-bul-{{ section.id }}" viewBox="0 0 10 24"><path d="M5 0C2.6 2.4 1.5 5.2 1.5 8.5V22h7V8.5C8.5 5.2 7.4 2.4 5 0z"/></symbol>
+  <symbol id="vx-hrt-{{ section.id }}" viewBox="0 0 24 22"><path d="M12 21.5 10.4 20C4.6 14.8 1 11.5 1 7.4 1 4 3.6 1.5 7 1.5c1.9 0 3.7.9 5 2.3 1.3-1.4 3.1-2.3 5-2.3 3.4 0 6 2.5 6 5.9 0 4.1-3.6 7.4-9.4 12.6z"/></symbol>
+</svg>
+
+<section id="vx-{{ section.id }}" class="js">
+  <div class="x-in">
+    <header class="x-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="x-eye">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      <span class="x-lz" aria-hidden="true"></span>
+      {%- if section.settings.intro != blank -%}<div class="x-text"><p>{{ section.settings.intro }}</p></div>{%- endif -%}
+    </header>
+
+    <div class="x-cols">
+      <div class="x-card">
+        <div class="x-card-in">
+          {%- assign n = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'feature' -%}
+              {%- assign n = n | plus: 1 -%}
+              <div class="x-feat" {{ block.shopify_attributes }}>
+                <span class="x-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.6 2.6L16 9.7"/></svg>
+                </span>
+                <div>
+                  <p class="x-ft"><b>{{ n | prepend: '0' | slice: -2, 2 }}</b>{{ block.settings.title }}</p>
+                  <p class="x-fx">{{ block.settings.text }}</p>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+
+      <div>
+        <div class="x-ars" data-ars>
+          <span class="x-grid" aria-hidden="true"></span>
+          <span class="x-hud x-hud--tl" aria-hidden="true"></span>
+          <span class="x-hud x-hud--tr" aria-hidden="true"></span>
+          <span class="x-hud x-hud--bl" aria-hidden="true"></span>
+          <span class="x-hud x-hud--br" aria-hidden="true"></span>
+
+          {%- assign wn = 0 -%}
+          {%- for block in section.blocks -%}{%- if block.type == 'weapon' -%}{%- assign wn = wn | plus: 1 -%}{%- endif -%}{%- endfor -%}
+
+          <div class="x-ah">
+            <span class="x-anum">{{ wn }}</span>
+            <div>
+              <p class="x-atitle">{{ section.settings.ars_title }}</p>
+              <p class="x-asub">{{ section.settings.ars_sub }}</p>
+            </div>
+          </div>
+
+          <div class="x-ws">
+            {%- assign w = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'weapon' -%}
+                <div class="x-w" style="--c:{{ block.settings.color }};--i:{{ w }};--by:{{ block.settings.beam_y }}%" {{ block.shopify_attributes }}>
+                  <span class="x-wi" aria-hidden="true">
+                    {%- case block.settings.shape -%}
+                      {%- when 'smg' -%}
+                        <svg viewBox="0 0 64 32" fill="#fff"><path d="M3 12h9l2-2h5V8h7v2h15l2-2h5v2h11v3h3v3h-3v1H45l-2 2h-5l-2 7 2 5h-6l-2-6v-3h-4l-1 3-6 5-3-3 4-5h-4l-2-3H5l-2 2z"/></svg>
+                      {%- when 'sniper' -%}
+                        <svg viewBox="0 0 64 32" fill="#fff"><path d="M2 13h10l2-3h6V8h9v2h11l2-2h17v3h4v4h-4v1H46l-2 2h-6l-2 6 2 5h-6l-2-6v-3h-5l-1 3-5 4-3-3 4-5h-5l-3-3H2z"/></svg>
+                      {%- when 'rocket' -%}
+                        <svg viewBox="0 0 64 32" fill="#fff" fill-rule="evenodd"><path d="M7 11c0-3 2-5 5-5h21l3 2h20c3 0 6 3 6 6s-3 6-6 6H36l-2 2h-9l-1 4 2 5h-7l-2-7v-3h-5l-5-2zm31 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+                      {%- else -%}
+                        <svg viewBox="0 0 64 32" fill="#fff"><path d="M11 9h30l3 3h6v5H30l-2 3h-5l-2 9h-9l3-12-4-3z"/></svg>
+                    {%- endcase -%}
+                    <i class="x-beam"></i><i class="x-flash"></i>
+                  </span>
+                  <p class="x-wn">{{ block.settings.name }}</p>
+                  <ul class="x-st">
+                    <li>
+                      <span class="x-sym x-ammo">
+                        {%- assign dots = block.settings.ammo_dots | at_most: 3 | at_least: 1 -%}
+                        {%- for i in (1..dots) -%}
+                          <svg class="x-bul"><use href="#vx-bul-{{ section.id }}"/></svg>
+                        {%- endfor -%}
+                      </span>
+                      <b>{{ block.settings.ammo }}</b>
+                    </li>
+                    <li>
+                      <span class="x-sym">
+                        {%- assign hs = block.settings.life_dots | at_most: 3 | at_least: 1 -%}
+                        {%- for i in (1..hs) -%}
+                          <svg class="x-hrt"><use href="#vx-hrt-{{ section.id }}"/></svg>
+                        {%- endfor -%}
+                      </span>
+                      <b>{{ block.settings.lives }}</b>
+                    </li>
+                  </ul>
+                </div>
+                {%- assign w = w | plus: 1 -%}
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('vx-{{ section.id }}');
+  if (!root) return;
+  var panel = root.querySelector('[data-ars]');
+  if (!('IntersectionObserver' in window)) { panel.classList.add('on'); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { panel.classList.add('on'); io.disconnect(); } });
+  }, { threshold: 0.3 });
+  io.observe(panel);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — Arsenal",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#00E5FF" },
+    { "type": "color", "id": "panel_accent", "label": "Accent du panneau", "default": "#39FF14" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "CONÇU POUR LES BATAILLES À LA MAISON" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "L'arène de laser game, dans votre salon" },
+    { "type": "textarea", "id": "intro", "label": "Introduction",
+      "default": "VOLTAG ramène la tension d'une vraie partie en arène chez vous ou dans le jardin. Chaque blaster se jumelle à une cible connectée qui s'allume, vibre et sonne à l'instant où vous êtes touché : chaque tir compte et personne ne conteste le score. Formez les équipes, changez d'arme en pleine partie et jouez quand vous voulez. Sangles réglables, des enfants dès 8 ans aux adultes qui refusent de perdre." },
+
+    { "type": "header", "content": "Panneau arsenal" },
+    { "type": "text", "id": "ars_title", "label": "Titre du panneau", "default": "MODES DE TIR" },
+    { "type": "text", "id": "ars_sub", "label": "Sous-titre du panneau", "default": "Choisissez votre style de jeu." }
+  ],
+  "blocks": [
+    { "type": "feature", "name": "Point fort", "limit": 5, "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "4 joueurs, 4 couleurs" },
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Description du point fort." }
+    ]},
+    { "type": "weapon", "name": "Arme", "limit": 4, "settings": [
+      { "type": "text", "id": "name", "label": "Nom", "default": "PISTOLET" },
+      { "type": "color", "id": "color", "label": "Couleur", "default": "#FFD60A" },
+      { "type": "select", "id": "shape", "label": "Silhouette",
+        "options": [
+          { "value": "pistol", "label": "Pistolet" },
+          { "value": "smg", "label": "Mitraillette" },
+          { "value": "sniper", "label": "Fusil de précision" },
+          { "value": "rocket", "label": "Lance-roquettes" }
+        ], "default": "pistol" },
+      { "type": "text", "id": "ammo", "label": "Munitions", "default": "12 MUNITIONS" },
+      { "type": "range", "id": "ammo_dots", "label": "Balles affichées", "min": 1, "max": 3, "step": 1, "default": 3 },
+      { "type": "text", "id": "lives", "label": "Dégâts", "default": "1 VIE PAR TIR" },
+      { "type": "range", "id": "life_dots", "label": "Cœurs affichés", "min": 1, "max": 3, "step": 1, "default": 1 },
+      { "type": "range", "id": "beam_y", "label": "Hauteur du tir", "min": 20, "max": 60, "step": 1, "default": 30, "unit": "%" }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Arsenal", "blocks": [
+      { "type": "feature", "settings": { "title": "4 joueurs, 4 couleurs", "text": "Quatre blasters et quatre cibles qui s'allument chacune dans sa couleur, pour du chacun pour soi ou du 2 contre 2." } },
+      { "type": "feature", "settings": { "title": "Impact signalé à l'instant", "text": "La cible s'allume, vibre et sonne dès que vous êtes touché, et les vies se décomptent en direct." } },
+      { "type": "feature", "settings": { "title": "4 modes de tir", "text": "Passez du pistolet à la mitraillette, au fusil de précision ou au lance-roquettes pour changer de tactique en pleine partie." } },
+      { "type": "weapon", "settings": { "name": "PISTOLET", "color": "#FFD60A", "shape": "pistol", "ammo": "12 MUNITIONS", "ammo_dots": 3, "lives": "1 VIE PAR TIR", "life_dots": 1, "beam_y": 28 } },
+      { "type": "weapon", "settings": { "name": "MITRAILLETTE", "color": "#FF2D55", "shape": "smg", "ammo": "6 MUNITIONS", "ammo_dots": 3, "lives": "2 VIES PAR TIR", "life_dots": 2, "beam_y": 40 } },
+      { "type": "weapon", "settings": { "name": "FUSIL DE PRÉCISION", "color": "#00A3FF", "shape": "sniper", "ammo": "6 MUNITIONS", "ammo_dots": 3, "lives": "2 VIES PAR TIR", "life_dots": 2, "beam_y": 42 } },
+      { "type": "weapon", "settings": { "name": "LANCE-ROQUETTES", "color": "#39FF14", "shape": "rocket", "ammo": "1 MUNITION", "ammo_dots": 1, "lives": "3 VIES PAR TIR", "life_dots": 3, "beam_y": 37 } }
+    ]}
+  ]
+}
+{% endschema %}
