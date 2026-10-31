@@ -962,8 +962,8 @@
       ],
       "name": "VOLTAG — Comment jouer",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "eyebrow": "Chaque tir compte",
         "heading": "Le score se compte tout seul. Plus personne ne triche."
       }
@@ -1024,8 +1024,8 @@
       ],
       "name": "VOLTAG — Modes de tir",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "eyebrow": "4 modes de tir",
         "heading": "Changez d'arme en pleine partie",
         "intro": "Un bouton sur le blaster fait défiler quatre modes. Chacun a ses munitions et sa puissance : à vous de choisir entre tirer souvent ou frapper fort.",
@@ -1100,8 +1100,8 @@
       ],
       "name": "VOLTAG — Comparatif",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "eyebrow": "Pourquoi les familles changent",
         "heading": "VOLTAG face aux alternatives",
         "badge": "NOTRE CHOIX",
@@ -1168,12 +1168,134 @@
       ],
       "name": "VOLTAG — FAQ",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "eyebrow": "Vos questions",
         "heading": "Tout ce qu'il faut savoir avant de commander",
         "open_first": true,
         "foot": "<p>Une autre question ? Écrivez-nous, nous répondons sous 24 heures ouvrées.</p>"
+      }
+    },
+    "voltag_cible_aMPxEe": {
+      "type": "voltag-cible",
+      "blocks": {
+        "point_6azDiJ": {
+          "type": "point",
+          "settings": {
+            "title": "Capteur infrarouge",
+            "text": "Détecte les tirs adverses, sans contact ni projectile.",
+            "x": 50,
+            "y": 20
+          }
+        },
+        "point_P7XC8i": {
+          "type": "point",
+          "settings": {
+            "title": "Contour lumineux",
+            "text": "S'allume dans la couleur de votre équipe, visible de loin et dans le noir.",
+            "x": 23,
+            "y": 37
+          }
+        },
+        "point_HUxGRq": {
+          "type": "point",
+          "settings": {
+            "title": "Afficheur de vies",
+            "text": "Le décompte se fait en direct. Plus personne ne discute le score.",
+            "x": 50,
+            "y": 48
+          }
+        },
+        "point_kkJYtk": {
+          "type": "point",
+          "settings": {
+            "title": "Vibration",
+            "text": "Chaque impact se sent autant qu'il se voit.",
+            "x": 77,
+            "y": 37
+          }
+        },
+        "point_mBUHeW": {
+          "type": "point",
+          "settings": {
+            "title": "Haut-parleur",
+            "text": "Tirs, touches et élimination sonorisés pour l'ambiance d'arène.",
+            "x": 77,
+            "y": 62
+          }
+        },
+        "point_XgT6h7": {
+          "type": "point",
+          "settings": {
+            "title": "Sangles réglables",
+            "text": "S'ajustent d'un enfant de 8 ans à un adulte, sans outil.",
+            "x": 23,
+            "y": 62
+          }
+        },
+        "point_9PBamE": {
+          "type": "point",
+          "settings": {
+            "title": "Format léger",
+            "text": "Assez compact pour courir, se baisser et se cacher pendant des heures.",
+            "x": 50,
+            "y": 78
+          }
+        }
+      },
+      "block_order": [
+        "point_6azDiJ",
+        "point_P7XC8i",
+        "point_HUxGRq",
+        "point_kkJYtk",
+        "point_mBUHeW",
+        "point_XgT6h7",
+        "point_9PBamE"
+      ],
+      "name": "VOLTAG — La cible",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "eyebrow": "Anatomie de la cible",
+        "heading": "Sept détails qui font la différence",
+        "size_note": "Environ 10 × 9 cm — sangles réglables, enfants dès 8 ans et adultes.",
+        "scan_seconds": 4,
+        "autoplay": true,
+        "autoplay_ms": 3000,
+        "show_teams": true,
+        "team_1": "Équipe jaune",
+        "team_2": "Équipe verte",
+        "team_3": "Équipe bleue",
+        "team_4": "Équipe rouge"
+      }
+    },
+    "voltag_mini_jeu_YzRfPR": {
+      "type": "voltag-mini-jeu",
+      "name": "VOLTAG — Mini-bataille",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "eyebrow": "GAGNEZ VOTRE REMISE",
+        "heading": "Finissez premier, repartez avec le code",
+        "subheading": "Une manche de 15 secondes. Touchez tout sauf votre propre couleur.",
+        "start_title": "Choisissez votre équipe",
+        "start_text": "Tirez sur les cibles allumées dans les autres couleurs. Toucher votre propre couleur coûte un point.",
+        "start_button": "Lancer la manche",
+        "win_title": "Première place !",
+        "win_text": "Votre code est valable sur tous les packs pendant la session.",
+        "lose_title": "Pas cette fois",
+        "lose_text": "Il faut la première place pour décrocher le code. Rejouez autant que vous voulez.",
+        "cta_text": "Voir les packs",
+        "cta_link": "",
+        "team_1": "Jaune",
+        "team_2": "Verte",
+        "team_3": "Bleue",
+        "team_4": "Rouge",
+        "duration": 15,
+        "flip_ms": 800,
+        "rival_skill": 55,
+        "promo_code": "",
+        "rules": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>"
       }
     }
   },
@@ -1189,6 +1311,8 @@
     "voltag_etapes_q3zUgf",
     "voltag_modes_wg9J8D",
     "voltag_comparatif_9XRkmk",
-    "voltag_faq_dHnEX7"
+    "voltag_faq_dHnEX7",
+    "voltag_cible_aMPxEe",
+    "voltag_mini_jeu_YzRfPR"
   ]
 }
