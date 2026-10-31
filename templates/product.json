@@ -1790,7 +1790,8 @@
             "stars": 5,
             "verified": false,
             "title": "",
-            "body": "Texte de l'avis."
+            "body": "Texte de l'avis.",
+            "source": ""
           }
         }
       },
@@ -1808,8 +1809,11 @@
         "write_label": "Donner mon avis",
         "write_link": "",
         "verified_label": "ACHAT VÉRIFIÉ",
+        "from_word": "via",
+        "source_notice": "Certains avis ci-dessous portent sur le même modèle et proviennent",
         "highlights_title": "Ce qui revient le plus",
         "highlights_source": "Extraits choisis parmi les avis reçus ces derniers mois",
+        "bulk": "",
         "app_embed": "",
         "empty_text": "Les premiers avis arriveront après vos premières commandes. Installez une application d'avis pour les collecter automatiquement après livraison."
       }
