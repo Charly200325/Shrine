@@ -1692,9 +1692,696 @@
         "mode_4": "ROQUETTE"
       }
     },
-    "voltag_avis_CdEiqf": {
+    "voltag_avis_VK8UfV": {
       "type": "voltag-avis",
-      "disabled": true,
+      "blocks": {
+        "review_WErHNL": {
+          "type": "review",
+          "settings": {
+            "author": "K. L.",
+            "stars": 5,
+            "verified": false,
+            "title": "Mon fils adore",
+            "body": "Offert à mon fils de 6 ans à Noël. Il y joue avec ses frères et sœurs et il adore. Installation plutôt simple. Les couleurs des cibles de poitrine sont interchangeables avec n'importe quel blaster. Les enfants arrivent très bien à réinitialiser quand ils n'ont plus de vies ni de munitions. J'espère que ça résistera à l'usure des garçons.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_hHPXdQ": {
+          "type": "review",
+          "settings": {
+            "author": "E. L.",
+            "stars": 5,
+            "verified": false,
+            "title": "Lumineux et tellement amusant",
+            "body": "Je l'ai commandé pour ma fille et c'est vraiment très amusant. C'est super de jouer dans le noir parce que la lumière est très vive. Les cibles vont aussi bien à ma fille qu'à moi. L'ensemble fonctionne parfaitement.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_7YLk6V": {
+          "type": "review",
+          "settings": {
+            "author": "J. O.",
+            "stars": 5,
+            "verified": false,
+            "title": "Le meilleur cadeau de Noël de l'an dernier",
+            "body": "Je les ai achetés pour mon fils de 12 ans à Noël. Il a des cousins plus âgés qui adorent y jouer avec lui. C'est précis et il n'y a aucune bille à ramasser ou à retrouver partout. Ça les occupe et ça les éloigne des jeux vidéo un moment, ce qui est un vrai plus pour une mère. Ça va à mon fils de 12 ans comme à celui de 20 ans. Ce n'est pas lourd, ils peuvent courir et se cacher librement. Un très bon achat pour le prix. Assez grand pour les adultes et assez petit pour les enfants. Très bonne qualité.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_LhRk9J": {
+          "type": "review",
+          "settings": {
+            "author": "M.",
+            "stars": 4,
+            "verified": false,
+            "title": "Beaucoup de plaisir pour mon fils de 8 ans",
+            "body": "Je les ai pris pour les 8 ans de mon fils, il adore, ses frères et sœurs aussi. On a pris le pack de 4 pour avoir plus de joueurs et ça fonctionne très bien. Le seul inconvénient, c'est que c'est vraiment bruyant et qu'il n'y a pas de réglage du volume, et que ça consomme pas mal de piles AAA. À part ça, très bon produit et on s'amuse beaucoup, même les adultes.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_nQCyGC": {
+          "type": "review",
+          "settings": {
+            "author": "J.",
+            "stars": 5,
+            "verified": false,
+            "title": "Super set de 4 blasters",
+            "body": "On a acheté ce set pour l'anniversaire de mon fils de 6 ans. Les enfants se sont éclatés pendant près d'une heure. Ce set est d'autant plus sympa qu'il propose différentes armes avec des sons différents. Très réussi, je recommande.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_NFwnBx": {
+          "type": "review",
+          "settings": {
+            "author": "K. W.",
+            "stars": 5,
+            "verified": false,
+            "title": "Un laser game très sympa",
+            "body": "Ce set de laser game était vraiment amusant. Mes enfants adorent y jouer. Il y a un décompte avant le début de la partie, le son est très réussi. Les blasters sont très faciles à utiliser et on a 12 vies. Je recommande sans hésiter.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_y4iAeW": {
+          "type": "review",
+          "settings": {
+            "author": "J.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les enfants et les adultes ont adoré",
+            "body": "C'était un cadeau d'anniversaire pour mon petit-fils de 9 ans. Il commençait à faire sombre dehors et ils voulaient y jouer dans le jardin. Les cibles de poitrine s'allumaient vraiment bien. Ils ont passé un moment formidable. Même leur père s'y est mis. Pour l'instant, ça tient très bien.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_heaEN6": {
+          "type": "review",
+          "settings": {
+            "author": "K. D.",
+            "stars": 5,
+            "verified": false,
+            "title": "Set très amusant, les enfants adorent",
+            "body": "Set très sympa pour les enfants. Correspond à la description et fonctionne comme annoncé. Amusant pour toute la famille. Livré rapidement et bien emballé. Ma fille était ravie de le recevoir pour son anniversaire.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_bcMq3e": {
+          "type": "review",
+          "settings": {
+            "author": "V.",
+            "stars": 5,
+            "verified": false,
+            "title": "Un bon set",
+            "body": "Les enfants adorent changer de mode de tir en pleine partie. Enfin quelque chose qui les éloigne des tablettes et les fait courir.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_7UBhpT": {
+          "type": "review",
+          "settings": {
+            "author": "B. X.",
+            "stars": 5,
+            "verified": false,
+            "title": "Un bon set",
+            "body": "Sans danger pour les yeux et aucun projectile, c'est un vrai plus. Toute la famille y joue ensemble. Ça tient largement plus de deux heures de jeu continu. Les cibles lumineuses et le retour à l'impact sont très bien faits.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_aN6bde": {
+          "type": "review",
+          "settings": {
+            "author": "C.",
+            "stars": 4,
+            "verified": false,
+            "title": "Vraiment sympa",
+            "body": "Tout le monde peut jouer, des enfants aux adultes. Ils jouent longtemps sans que les piles lâchent. Ça les éloigne des écrans et les fait bouger. Le prix est dans le haut de la fourchette, mais on s'en est tellement servi que ça revient moins cher qu'une sortie en arène. Rentabilisé par rapport à des allers-retours répétés en salle.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_KmYdTJ": {
+          "type": "review",
+          "settings": {
+            "author": "H. S.",
+            "stars": 5,
+            "verified": false,
+            "title": "Tout le monde a joué",
+            "body": "Même papa et mamie ont fini par jouer. Bien mieux qu'un après-midi de plus devant un écran. C'est ce que j'ai trouvé de plus efficace pour les sortir du canapé. Ils demandent à y jouer plutôt qu'aux jeux vidéo.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_c7fgQi": {
+          "type": "review",
+          "settings": {
+            "author": "W. G.",
+            "stars": 5,
+            "verified": false,
+            "title": "Une bonne alternative",
+            "body": "Mieux que de dépenser en sorties en arène tous les mois. Nos enfants sont très fans de ce jeu. Je suis tombé dessus sur Facebook et j'ai voulu essayer, le résultat est à la hauteur.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_KqJjTD": {
+          "type": "review",
+          "settings": {
+            "author": "G. D.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les enfants lâchent les écrans",
+            "body": "C'est ce que j'ai trouvé de mieux pour les sortir du canapé, et croyez-moi ce n'est pas une mince affaire.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_WEPmhH": {
+          "type": "review",
+          "settings": {
+            "author": "S. T.",
+            "stars": 5,
+            "verified": false,
+            "title": "Mes enfants sont accros",
+            "body": "Les enfants adorent changer de mode de tir en cours de partie. Les lumières, le son et la vibration quand on est touché sont très satisfaisants. Des heures de jeu actif au lieu de rester devant un écran. Je trouve que c'est une excellente façon de les faire bouger, content d'avoir trouvé cette solution.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_DWUAgU": {
+          "type": "review",
+          "settings": {
+            "author": "M. G.",
+            "stars": 5,
+            "verified": false,
+            "title": "Excellent cadeau pour un garçon de 10 ans",
+            "body": "Mon fils de 10 ans a vraiment apprécié ce set, il l'a élu cadeau d'anniversaire préféré.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_xJDcDD": {
+          "type": "review",
+          "settings": {
+            "author": "L.",
+            "stars": 5,
+            "verified": false,
+            "title": "Super cadeau pour la famille",
+            "body": "Ma famille s'est énormément amusée avec. Mon fils demande à y jouer presque tous les jours. L'installation est très simple. Ça ferait un excellent cadeau. Le jeu est facile à prendre en main et très amusant. Tout est réglable, donc même le plus petit de la famille peut participer. Très résistant, on adore.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_fDQEU4": {
+          "type": "review",
+          "settings": {
+            "author": "M. B.",
+            "stars": 3,
+            "verified": false,
+            "title": "Correct sans plus",
+            "body": "C'est correct. Les enfants s'en servent de temps en temps mais ce n'est pas leur jeu préféré.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_Aaat8m": {
+          "type": "review",
+          "settings": {
+            "author": "J.",
+            "stars": 4,
+            "verified": false,
+            "title": "Conforme à mes attentes",
+            "body": "Facile à utiliser et à installer, bonne autonomie.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_MJVwPT": {
+          "type": "review",
+          "settings": {
+            "author": "K.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les enfants et les adultes adorent ce jeu",
+            "body": "On l'a acheté pour nos petits-enfants et ils adorent, de 6 à 12 ans. Mais le meilleur, c'est que les adultes aussi y prennent plaisir. Ils l'ont depuis presque un an et il fonctionne toujours parfaitement. Je recommande vivement ce kit comme jeu de famille, entre amis ou entre voisins.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_dKJqFc": {
+          "type": "review",
+          "settings": {
+            "author": "L. R.",
+            "stars": 5,
+            "verified": false,
+            "title": "Le choix des enfants",
+            "body": "Ils choisissent ça plutôt que le parc, parfois, ce qui m'a surprise. La compétition doit y être pour quelque chose.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_WFtVWq": {
+          "type": "review",
+          "settings": {
+            "author": "K. L.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les parents s'y mettent aussi",
+            "body": "On m'a embarquée dans une partie. J'ai ri bien plus que je ne l'aurais cru.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_nTD7yJ": {
+          "type": "review",
+          "settings": {
+            "author": "A. T.",
+            "stars": 4,
+            "verified": false,
+            "title": "Fonctionne quelle que soit la lumière",
+            "body": "Correct en plein jour, et meilleur quand la lumière baisse.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_QnBj4f": {
+          "type": "review",
+          "settings": {
+            "author": "T. P.",
+            "stars": 5,
+            "verified": false,
+            "title": "Activité du week-end",
+            "body": "On s'en est servi samedi dernier avec les voisins. Quatre enfants à courir dans le jardin pendant plus d'une heure. Aucune plainte de personne.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_8CxGir": {
+          "type": "review",
+          "settings": {
+            "author": "G. H.",
+            "stars": 5,
+            "verified": false,
+            "title": "Succès dans le quartier",
+            "body": "D'autres enfants ont posé des questions dessus. Ça pourrait bien devenir une habitude dans la rue.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_CbEWCG": {
+          "type": "review",
+          "settings": {
+            "author": "M. K.",
+            "stars": 5,
+            "verified": false,
+            "title": "Plusieurs modes",
+            "body": "Ils changent souvent de mode. Ça évite que le jeu devienne lassant pour eux.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_4z9Bie": {
+          "type": "review",
+          "settings": {
+            "author": "L. F.",
+            "stars": 5,
+            "verified": false,
+            "title": "Frères et sœurs réunis",
+            "body": "Ils jouent vraiment ensemble au lieu de jouer chacun dans son coin. Petite victoire.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_bwkBbA": {
+          "type": "review",
+          "settings": {
+            "author": "I. B.",
+            "stars": 5,
+            "verified": false,
+            "title": "Du sport dans le jardin",
+            "body": "Ils se dépensent plus avec ça qu'avec la plupart des autres jeux.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_CVwKj3": {
+          "type": "review",
+          "settings": {
+            "author": "B. C.",
+            "stars": 5,
+            "verified": false,
+            "title": "Plusieurs enfants",
+            "body": "Ça fonctionne à plus de deux joueurs, ce qui est important pour notre famille.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_fNT4GC": {
+          "type": "review",
+          "settings": {
+            "author": "P. S.",
+            "stars": 4,
+            "verified": false,
+            "title": "Des piles simples à trouver",
+            "body": "De simples piles AAA. Aucun bloc spécial à recharger. Ça en consomme, mais c'est pratique.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_Ne9y3G": {
+          "type": "review",
+          "settings": {
+            "author": "K. W.",
+            "stars": 5,
+            "verified": false,
+            "title": "Comparaison des prix",
+            "body": "J'ai regardé les tarifs en arène et je me suis dit que ça serait rentabilisé en quelques utilisations. C'est le cas jusqu'ici.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_GPPeAf": {
+          "type": "review",
+          "settings": {
+            "author": "T. M.",
+            "stars": 5,
+            "verified": false,
+            "title": "Quand les copains viennent",
+            "body": "Quand des copains viennent à la maison, c'est à ça qu'ils finissent par jouer.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_7dEYB3": {
+          "type": "review",
+          "settings": {
+            "author": "A. D.",
+            "stars": 5,
+            "verified": false,
+            "title": "Week-end entre cousins",
+            "body": "Les cousins étaient là et ça les a occupés presque tout l'après-midi. Les adultes se sont même joints à une partie.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_bh3Ady": {
+          "type": "review",
+          "settings": {
+            "author": "D. A.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les copains de l'école",
+            "body": "Deux de ses camarades l'ont aussi. Ils organisent leurs après-midis autour de ça.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_zrDXkp": {
+          "type": "review",
+          "settings": {
+            "author": "J. P.",
+            "stars": 5,
+            "verified": false,
+            "title": "Encore mieux le soir",
+            "body": "C'est encore plus joli quand le soleil commence à se coucher.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_NtkEBA": {
+          "type": "review",
+          "settings": {
+            "author": "C. R.",
+            "stars": 5,
+            "verified": false,
+            "title": "Chouette jeu",
+            "body": "Ça vaut vraiment le détour.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_aiGarr": {
+          "type": "review",
+          "settings": {
+            "author": "B. T.",
+            "stars": 5,
+            "verified": false,
+            "title": "Solide jusqu'ici",
+            "body": "Un mois et rien de cassé. Et pourtant ils ne le ménagent pas.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_rdRnjm": {
+          "type": "review",
+          "settings": {
+            "author": "R. L.",
+            "stars": 5,
+            "verified": false,
+            "title": "Recommandé pour les enfants actifs",
+            "body": "Si vos enfants aiment courir partout, c'est fait pour eux.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_fEE87H": {
+          "type": "review",
+          "settings": {
+            "author": "N. H.",
+            "stars": 4,
+            "verified": false,
+            "title": "Dépend de la météo",
+            "body": "Forcément mieux quand il ne pleut pas et qu'il ne gèle pas.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_yRQidd": {
+          "type": "review",
+          "settings": {
+            "author": "H. B.",
+            "stars": 5,
+            "verified": false,
+            "title": "Bien",
+            "body": "Ils y jouent beaucoup.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_pVHeFT": {
+          "type": "review",
+          "settings": {
+            "author": "M. S.",
+            "stars": 5,
+            "verified": false,
+            "title": "Installation simple",
+            "body": "Cinq minutes environ pour être opérationnel. Ni application ni compte à créer, ce que j'apprécie. Les enfants jouaient tout de suite.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_kYYpj8": {
+          "type": "review",
+          "settings": {
+            "author": "J. K.",
+            "stars": 5,
+            "verified": false,
+            "title": "Parties du soir",
+            "body": "Ils aiment y jouer quand la nuit commence à tomber. Les lumières ressortent mieux.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_8GfKLf": {
+          "type": "review",
+          "settings": {
+            "author": "C. M.",
+            "stars": 3,
+            "verified": false,
+            "title": "Correct",
+            "body": "C'est bien. Les enfants y ont joué quelques fois puis sont passés à autre chose.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_pkgTrQ": {
+          "type": "review",
+          "settings": {
+            "author": "K. L.",
+            "stars": 4,
+            "verified": false,
+            "title": "Au sous-sol",
+            "body": "On a essayé au sous-sol. Ça marche, mais il faut faire attention à ne pas trébucher.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_bkfYEQ": {
+          "type": "review",
+          "settings": {
+            "author": "N. S.",
+            "stars": 4,
+            "verified": false,
+            "title": "Beaucoup de plaisir pour le prix",
+            "body": "Très bon set pour les enfants. Facile à utiliser et amusant. Le seul inconvénient est le nombre de piles nécessaires. On a choisi d'en prendre des rechargeables, ce qui permet des heures de jeu sans devoir s'interrompre faute de piles.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_yf4PMj": {
+          "type": "review",
+          "settings": {
+            "author": "T. C.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les ados ravis, les voisins aussi",
+            "body": "J'ai reçu ma commande dans les temps. L'emballage était impeccable et rien n'était abîmé. Mon petit-fils adore. Je recommanderais volontiers ce vendeur.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_bDLVKz": {
+          "type": "review",
+          "settings": {
+            "author": "I.",
+            "stars": 5,
+            "verified": false,
+            "title": "Très bonne qualité, fonctionne parfaitement",
+            "body": "C'est vraiment très bien pour le prix. Mon fils adore. Excellent pour les adultes aussi. La qualité est au rendez-vous. C'est peut-être le meilleur jouet que j'aie acheté pour mon fils de 4 ans. Si vous cherchez un laser game, prenez celui-ci.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_Ukqd7F": {
+          "type": "review",
+          "settings": {
+            "author": "C.",
+            "stars": 5,
+            "verified": false,
+            "title": "Amusant",
+            "body": "Mon enfant les adore.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_pT4KhQ": {
+          "type": "review",
+          "settings": {
+            "author": "B.",
+            "stars": 5,
+            "verified": false,
+            "title": "Ça fonctionne",
+            "body": "Jusqu'ici tout va bien, je l'ai pris pour mes nièces et neveux, ils ont l'air d'adorer.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_fJcB83": {
+          "type": "review",
+          "settings": {
+            "author": "T. R.",
+            "stars": 5,
+            "verified": false,
+            "title": "Solide",
+            "body": "Les enfants apprécient.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_4LHact": {
+          "type": "review",
+          "settings": {
+            "author": "L. B.",
+            "stars": 5,
+            "verified": false,
+            "title": "Qualité de fabrication",
+            "body": "Les blasters ont un vrai côté solide en main. La garantie prend tout son sens quand on les manipule.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_RmVCW6": {
+          "type": "review",
+          "settings": {
+            "author": "J. T.",
+            "stars": 5,
+            "verified": false,
+            "title": "Ça vaut le prix",
+            "body": "Moins cher sur la durée que les sorties en arène toutes les deux semaines. Je l'ai découvert sur Instagram et il est à la hauteur des publications.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_febE8p": {
+          "type": "review",
+          "settings": {
+            "author": "E. S.",
+            "stars": 5,
+            "verified": false,
+            "title": "Enfin sortis du canapé",
+            "body": "Le plus dur est en général de les faire bouger, et là ça fonctionne. Maintenant ils le réclament. Sans danger pour les yeux, j'avais vérifié avant de commander.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_TkV7ij": {
+          "type": "review",
+          "settings": {
+            "author": "J. L.",
+            "stars": 2,
+            "verified": false,
+            "title": "Bof",
+            "body": "Honnêtement je ne suis pas très fan, on s'en lasse assez vite.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_Be4LjU": {
+          "type": "review",
+          "settings": {
+            "author": "M. P.",
+            "stars": 5,
+            "verified": false,
+            "title": "Les enfants le réclament",
+            "body": "Ils le demandent spécifiquement, ce qui n'arrive pas avec tous les jeux.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_QnXArx": {
+          "type": "review",
+          "settings": {
+            "author": "D. C.",
+            "stars": 4,
+            "verified": false,
+            "title": "Une activité de secours",
+            "body": "Pratique d'avoir quelque chose de prêt quand les plans tombent à l'eau.",
+            "source": "plateforme tierce"
+          }
+        },
+        "review_JRnU4N": {
+          "type": "review",
+          "settings": {
+            "author": "C.",
+            "stars": 5,
+            "verified": false,
+            "title": "Fonctionne avec des piles AAA",
+            "body": "J'aime beaucoup le fait que les blasters soient plutôt compacts et pas encombrants, et qu'ils fonctionnent avec des piles AAA. Pas d'attente de recharge. À noter qu'aucune pile n'est fournie.",
+            "source": "plateforme tierce"
+          }
+        }
+      },
+      "block_order": [
+        "review_WErHNL",
+        "review_hHPXdQ",
+        "review_7YLk6V",
+        "review_LhRk9J",
+        "review_nQCyGC",
+        "review_NFwnBx",
+        "review_y4iAeW",
+        "review_heaEN6",
+        "review_bcMq3e",
+        "review_7UBhpT",
+        "review_aN6bde",
+        "review_KmYdTJ",
+        "review_c7fgQi",
+        "review_KqJjTD",
+        "review_WEPmhH",
+        "review_DWUAgU",
+        "review_xJDcDD",
+        "review_fDQEU4",
+        "review_Aaat8m",
+        "review_MJVwPT",
+        "review_dKJqFc",
+        "review_WFtVWq",
+        "review_nTD7yJ",
+        "review_QnBj4f",
+        "review_8CxGir",
+        "review_CbEWCG",
+        "review_4z9Bie",
+        "review_bwkBbA",
+        "review_CVwKj3",
+        "review_fNT4GC",
+        "review_Ne9y3G",
+        "review_GPPeAf",
+        "review_7dEYB3",
+        "review_bh3Ady",
+        "review_zrDXkp",
+        "review_NtkEBA",
+        "review_aiGarr",
+        "review_rdRnjm",
+        "review_fEE87H",
+        "review_yRQidd",
+        "review_pVHeFT",
+        "review_kYYpj8",
+        "review_8GfKLf",
+        "review_pkgTrQ",
+        "review_bkfYEQ",
+        "review_yf4PMj",
+        "review_bDLVKz",
+        "review_Ukqd7F",
+        "review_pT4KhQ",
+        "review_fJcB83",
+        "review_4LHact",
+        "review_RmVCW6",
+        "review_febE8p",
+        "review_TkV7ij",
+        "review_Be4LjU",
+        "review_QnXArx",
+        "review_JRnU4N"
+      ],
       "name": "VOLTAG — Avis",
       "settings": {
         "bg": "#05060a",
@@ -1707,9 +2394,9 @@
         "write_link": "",
         "verified_label": "ACHAT VÉRIFIÉ",
         "from_word": "via",
-        "source_notice": "Avis recueillis sur des plateformes tierces et traduits en français. Ils concernent le même modèle de produit et ne correspondent pas nécessairement à des achats effectués sur cette boutique.",
+        "source_notice": "Ces avis ont été recueillis sur des plateformes tierces et traduits en français. Ils concernent le même modèle de produit et ne correspondent pas nécessairement à des achats effectués sur cette boutique. Les noms sont présentés sous forme d’initiales.",
         "highlights_title": "Ce qui revient le plus",
-        "highlights_source": "Extraits issus des avis recueillis sur des plateformes tierces.",
+        "highlights_source": "Extraits issus d’avis recueillis sur des plateformes tierces.",
         "bulk": "",
         "app_embed": "",
         "empty_text": "Les avis affichés concernent ce modèle et proviennent de plateformes tierces."
@@ -1736,6 +2423,6 @@
     "voltag_mini_jeu_YzRfPR",
     "voltag_etapes_AHijNQ",
     "voltag_faq_iamWGD",
-    "voltag_avis_CdEiqf"
+    "voltag_avis_VK8UfV"
   ]
 }
