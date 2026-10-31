@@ -1265,28 +1265,36 @@
           "type": "step",
           "settings": {
             "title": "Visez",
-            "text": "Repérez la cible de poitrine d'un adversaire, jusqu'à plusieurs dizaines de mètres."
+            "text": "Repérez la cible de poitrine d'un adversaire, jusqu'à plusieurs dizaines de mètres.",
+            "color": "#39ff14",
+            "visual": "aim"
           }
         },
         "step_pyx7PL": {
           "type": "step",
           "settings": {
             "title": "Tirez",
-            "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif."
+            "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif.",
+            "color": "#39ff14",
+            "visual": "aim"
           }
         },
         "step_7VUW7T": {
           "type": "step",
           "settings": {
             "title": "Touché",
-            "text": "La cible s'allume, vibre et émet un son. L'impact est sans ambiguïté."
+            "text": "La cible s'allume, vibre et émet un son. L'impact est sans ambiguïté.",
+            "color": "#39ff14",
+            "visual": "aim"
           }
         },
         "step_pBxFqk": {
           "type": "step",
           "settings": {
             "title": "Vie en moins",
-            "text": "L'afficheur décompte. À zéro, le joueur est éliminé jusqu'à la prochaine manche."
+            "text": "L'afficheur décompte. À zéro, le joueur est éliminé jusqu'à la prochaine manche.",
+            "color": "#39ff14",
+            "visual": "aim"
           }
         },
         "audience_zpPEmb": {
@@ -1327,9 +1335,10 @@
       "name": "VOLTAG — Comment jouer",
       "settings": {
         "bg": "#05060a",
-        "neon": "#00e5ff",
+        "accent": "#00e5ff",
         "eyebrow": "Chaque tir compte",
-        "heading": "Le score se compte tout seul. Plus personne ne triche."
+        "heading": "Le score se compte tout seul. Plus personne ne triche.",
+        "cycle": 5
       }
     },
     "voltag_modes_wg9J8D": {
@@ -1404,42 +1413,70 @@
           "type": "qa",
           "settings": {
             "question": "Est-ce que c'est sans danger pour les enfants ?",
-            "answer": "<p>Oui. VOLTAG utilise des <strong>signaux infrarouges</strong>, exactement comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et rien n'est projeté : il n'y a donc ni fléchette ni bille susceptible de blesser ou de se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>. Les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>"
+            "answer": "<p>Oui. VOLTAG utilise des <strong>signaux infrarouges</strong>, exactement comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et rien n'est projeté : il n'y a donc ni fléchette ni bille susceptible de blesser ou de se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>. Les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
           }
         },
         "qa_x7wN7x": {
           "type": "qa",
           "settings": {
             "question": "Que contient la boîte ?",
-            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe : bleu, rouge, vert et jaune.</p><p><strong>Duo</strong> : 2 blasters et 2 cibles. <strong>Squad</strong> : 4 blasters et 4 cibles. <strong>Arène</strong> : 8 blasters et 8 cibles.</p>"
+            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe : bleu, rouge, vert et jaune.</p><p><strong>Duo</strong> : 2 blasters et 2 cibles. <strong>Squad</strong> : 4 blasters et 4 cibles. <strong>Arène</strong> : 8 blasters et 8 cibles.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
           }
         },
         "qa_tqmePH": {
           "type": "qa",
           "settings": {
             "question": "Faut-il des piles ?",
-            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Prévoyez-en un jeu complet pour pouvoir jouer dès la réception.</p>"
+            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Prévoyez-en un jeu complet pour pouvoir jouer dès la réception.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
           }
         },
         "qa_FgV8UB": {
           "type": "qa",
           "settings": {
             "question": "Comment se déroule une partie ?",
-            "answer": "<p>Chacun choisit sa couleur d'équipe, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, vibre et émet un son, et l'afficheur décompte les vies restantes. Personne ne discute le score.</p>"
+            "answer": "<p>Chacun choisit sa couleur d'équipe, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, vibre et émet un son, et l'afficheur décompte les vies restantes. Personne ne discute le score.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
           }
         },
         "qa_g4kY8j": {
           "type": "qa",
           "settings": {
             "question": "Peut-on jouer en intérieur et en extérieur ?",
-            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc fonctionnent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode de tir, de quoi s'éparpiller et jouer à cache-cache.</p>"
+            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc fonctionnent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode de tir, de quoi s'éparpiller et jouer à cache-cache.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
           }
         },
         "qa_VDdtkg": {
           "type": "qa",
           "settings": {
             "question": "Livraison et retours",
-            "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez d'un <strong>droit de rétractation de 14 jours</strong> à compter de la réception, conformément au code de la consommation. En cas de problème, contactez-nous et nous organisons le retour ou l'échange.</p>"
+            "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez d'un <strong>droit de rétractation de 14 jours</strong> à compter de la réception, conformément au code de la consommation. En cas de problème, contactez-nous et nous organisons le retour ou l'échange.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "qa_4TRBKg": {
+          "type": "qa",
+          "settings": {
+            "question": "Votre question",
+            "answer": "<p>Votre réponse.</p>",
+            "icon": "box",
+            "show_teams": false,
+            "show_modes": false
           }
         }
       },
@@ -1449,17 +1486,22 @@
         "qa_tqmePH",
         "qa_FgV8UB",
         "qa_g4kY8j",
-        "qa_VDdtkg"
+        "qa_VDdtkg",
+        "qa_4TRBKg"
       ],
       "disabled": true,
       "name": "VOLTAG — FAQ",
       "settings": {
         "bg": "#05060a",
         "neon": "#00e5ff",
-        "eyebrow": "Vos questions",
         "heading": "Tout ce qu'il faut savoir avant de commander",
+        "sub": "Tout ce qu'il faut savoir avant de commander votre pack VOLTAG",
         "open_first": true,
-        "foot": "<p>Une autre question ? Écrivez-nous, nous répondons sous 24 heures ouvrées.</p>"
+        "foot": "<p>Une autre question ? Écrivez-nous, nous répondons sous 24 heures ouvrées.</p>",
+        "mode_1": "PISTOLET",
+        "mode_2": "MITRAILLETTE",
+        "mode_3": "PRÉCISION",
+        "mode_4": "ROQUETTE"
       }
     },
     "voltag_cible_aMPxEe": {
