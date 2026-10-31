@@ -1,0 +1,526 @@
+{%- comment -%}
+  VOLTAG — Section produit principale
+  À placer dans : sections/voltag-produit.liquid
+  Compatible Shrine / Dawn / tout thème Online Store 2.0
+{%- endcomment -%}
+
+{%- liquid
+  assign cur = product.selected_or_first_available_variant
+  assign has_compare = false
+  if cur.compare_at_price > cur.price
+    assign has_compare = true
+  endif
+-%}
+
+<style>
+  #vt-{{ section.id }} {
+    --vt-bg: {{ section.settings.color_bg }};
+    --vt-surface: {{ section.settings.color_surface }};
+    --vt-line: #1E2A3C;
+    --vt-text: #EAF4FF;
+    --vt-muted: #8FA7BC;
+    --vt-neon: {{ section.settings.color_neon }};
+    --vt-red: #FF2D55;
+    --vt-green: #39FF14;
+    --vt-yellow: #FFD60A;
+    --vt-radius: 16px;
+    background: var(--vt-bg);
+    color: var(--vt-text);
+    padding: 32px 0 56px;
+    font-family: {{ section.settings.font_stack }};
+  }
+  #vt-{{ section.id }} * { box-sizing: border-box; }
+  .vt-wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+  .vt-grid { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  @media (min-width: 900px) {
+    .vt-grid { grid-template-columns: 1.05fr 1fr; gap: 48px; align-items: start; }
+    .vt-media { position: sticky; top: 24px; }
+  }
+
+  /* ---------- Galerie ---------- */
+  .vt-stage {
+    position: relative; border-radius: var(--vt-radius); overflow: hidden;
+    background: var(--vt-surface); border: 1px solid var(--vt-line); aspect-ratio: 1 / 1;
+  }
+  .vt-stage img { width: 100%; height: 100%; object-fit: cover; display: none; }
+  .vt-stage img.is-active { display: block; }
+  .vt-badge {
+    position: absolute; top: 14px; left: 14px; z-index: 2;
+    background: var(--vt-neon); color: #05060A; font-size: 12px; font-weight: 800;
+    letter-spacing: .08em; padding: 7px 12px; border-radius: 999px;
+  }
+  .vt-thumbs {
+    display: grid; grid-auto-flow: column; grid-auto-columns: 84px; gap: 10px;
+    margin-top: 12px; overflow-x: auto; scrollbar-width: thin; padding-bottom: 4px;
+  }
+  .vt-thumbs button {
+    padding: 0; border-radius: 12px; overflow: hidden; cursor: pointer;
+    border: 2px solid var(--vt-line); background: var(--vt-surface); aspect-ratio: 1 / 1;
+  }
+  .vt-thumbs button[aria-current="true"] { border-color: var(--vt-neon); }
+  .vt-thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ---------- Infos ---------- */
+  .vt-rating { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--vt-muted); }
+  .vt-stars { color: var(--vt-yellow); letter-spacing: 2px; font-size: 15px; }
+  .vt-title {
+    font-size: clamp(30px, 5vw, 44px); line-height: 1.05; font-weight: 800;
+    letter-spacing: -0.02em; margin: 14px 0 10px;
+  }
+  .vt-sub { color: var(--vt-muted); font-size: 16px; line-height: 1.6; margin: 0 0 22px; }
+
+  .vt-price { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .vt-price-now { font-size: 34px; font-weight: 800; }
+  .vt-price-was { font-size: 19px; color: var(--vt-muted); text-decoration: line-through; }
+  .vt-save {
+    font-size: 13px; font-weight: 800; color: #05060A; background: var(--vt-green);
+    padding: 5px 10px; border-radius: 999px;
+  }
+  .vt-unit { font-size: 13px; color: var(--vt-muted); margin-bottom: 22px; }
+
+  /* ---------- Stock réel ---------- */
+  .vt-stock { margin: 0 0 24px; }
+  .vt-stock-bar { height: 7px; border-radius: 999px; background: #1A2433; overflow: hidden; }
+  .vt-stock-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--vt-neon), var(--vt-green)); }
+  .vt-stock-txt { font-size: 13px; color: var(--vt-muted); margin-top: 8px; }
+
+  /* ---------- Packs ---------- */
+  .vt-packs-label {
+    font-size: 12px; font-weight: 800; letter-spacing: .14em; color: var(--vt-muted);
+    text-transform: uppercase; margin-bottom: 12px;
+  }
+  .vt-packs { display: grid; gap: 12px; margin-bottom: 24px; }
+  .vt-pack {
+    position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center;
+    gap: 14px; padding: 16px; border: 2px solid var(--vt-line); border-radius: var(--vt-radius);
+    background: var(--vt-surface); cursor: pointer; transition: border-color .15s, background .15s;
+  }
+  .vt-pack:hover { border-color: #33465E; }
+  .vt-pack input { position: absolute; opacity: 0; pointer-events: none; }
+  .vt-pack:has(input:checked) { border-color: var(--vt-neon); background: #0E1A26; }
+  .vt-pack:has(input:disabled) { opacity: .45; cursor: not-allowed; }
+  .vt-dot {
+    width: 22px; height: 22px; border-radius: 50%; border: 2px solid #3A4D66;
+    display: grid; place-items: center; flex: none;
+  }
+  .vt-pack:has(input:checked) .vt-dot { border-color: var(--vt-neon); }
+  .vt-pack:has(input:checked) .vt-dot::after {
+    content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--vt-neon);
+  }
+  .vt-pack-name { font-size: 16px; font-weight: 800; }
+  .vt-pack-desc { font-size: 13px; color: var(--vt-muted); margin-top: 3px; }
+  .vt-pack-price { text-align: right; font-size: 17px; font-weight: 800; white-space: nowrap; }
+  .vt-pack-was { display: block; font-size: 13px; font-weight: 500; color: var(--vt-muted); text-decoration: line-through; }
+  .vt-tag {
+    position: absolute; top: -10px; right: 14px; background: var(--vt-neon); color: #05060A;
+    font-size: 11px; font-weight: 800; letter-spacing: .06em; padding: 4px 9px; border-radius: 999px;
+  }
+
+  /* ---------- CTA ---------- */
+  .vt-atc {
+    width: 100%; border: 0; border-radius: 999px; cursor: pointer;
+    background: var(--vt-neon); color: #05060A; font-size: 17px; font-weight: 800;
+    letter-spacing: .02em; padding: 19px 24px; transition: transform .12s, filter .15s;
+  }
+  .vt-atc:hover { filter: brightness(1.08); }
+  .vt-atc:active { transform: scale(.985); }
+  .vt-atc[disabled] { background: #2A3747; color: #7B8EA3; cursor: not-allowed; }
+  .vt-atc.is-busy { opacity: .7; pointer-events: none; }
+  .vt-err { color: var(--vt-red); font-size: 14px; margin-top: 10px; display: none; }
+
+  .vt-pay { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px; opacity: .85; }
+  .vt-pay img, .vt-pay svg { height: 24px; width: auto; }
+
+  .vt-trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; }
+  .vt-trust div {
+    text-align: center; font-size: 12.5px; line-height: 1.35; color: var(--vt-muted);
+    padding: 14px 8px; border: 1px solid var(--vt-line); border-radius: 12px; background: var(--vt-surface);
+  }
+  .vt-trust strong { display: block; color: var(--vt-text); font-size: 13px; margin-bottom: 3px; }
+
+  /* ---------- Accordéons ---------- */
+  .vt-acc { margin-top: 28px; border-top: 1px solid var(--vt-line); }
+  .vt-acc details { border-bottom: 1px solid var(--vt-line); }
+  .vt-acc summary {
+    list-style: none; cursor: pointer; padding: 18px 0; font-size: 16px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .vt-acc summary::-webkit-details-marker { display: none; }
+  .vt-acc summary::after {
+    content: "+"; font-size: 22px; font-weight: 400; color: var(--vt-neon); flex: none; line-height: 1;
+  }
+  .vt-acc details[open] summary::after { content: "–"; }
+  .vt-acc .vt-acc-body { padding: 0 0 20px; color: var(--vt-muted); font-size: 15px; line-height: 1.65; }
+  .vt-acc .vt-acc-body strong { color: var(--vt-text); }
+  .vt-acc .vt-acc-body p { margin: 0 0 10px; }
+  .vt-acc .vt-acc-body p:last-child { margin-bottom: 0; }
+</style>
+
+<section id="vt-{{ section.id }}">
+  <div class="vt-wrap">
+    <div class="vt-grid">
+
+      {%- comment -%} ============ GALERIE ============ {%- endcomment -%}
+      <div class="vt-media">
+        <div class="vt-stage" data-vt-stage>
+          {%- if section.settings.badge_text != blank -%}
+            <span class="vt-badge">{{ section.settings.badge_text }}</span>
+          {%- endif -%}
+          {%- if product.media.size > 0 -%}
+            {%- for media in product.media -%}
+              <img src="{{ media | image_url: width: 1400 }}"
+                   alt="{{ media.alt | default: product.title | escape }}"
+                   width="1400" height="1400"
+                   class="{% if forloop.first %}is-active{% endif %}"
+                   loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+                   data-vt-slide="{{ forloop.index0 }}">
+            {%- endfor -%}
+          {%- else -%}
+            {{ 'product-1' | placeholder_svg_tag: 'vt-placeholder' }}
+          {%- endif -%}
+        </div>
+
+        {%- if product.media.size > 1 -%}
+          <div class="vt-thumbs" data-vt-thumbs>
+            {%- for media in product.media -%}
+              <button type="button" data-vt-go="{{ forloop.index0 }}"
+                      aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                      aria-label="Image {{ forloop.index }}">
+                <img src="{{ media | image_url: width: 200 }}" alt="" width="200" height="200" loading="lazy">
+              </button>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} ============ INFOS ============ {%- endcomment -%}
+      <div class="vt-info">
+
+        {%- if section.settings.show_rating -%}
+          <div class="vt-rating">
+            <span class="vt-stars" aria-hidden="true">★★★★★</span>
+            <span>{{ section.settings.rating_text }}</span>
+          </div>
+        {%- endif -%}
+
+        <h1 class="vt-title">{{ product.title }}</h1>
+
+        {%- if section.settings.subtitle != blank -%}
+          <p class="vt-sub">{{ section.settings.subtitle }}</p>
+        {%- endif -%}
+
+        <div class="vt-price">
+          <span class="vt-price-now" data-vt-price>{{ cur.price | money }}</span>
+          <span class="vt-price-was" data-vt-compare {% unless has_compare %}hidden{% endunless %}>
+            {{ cur.compare_at_price | money }}
+          </span>
+          <span class="vt-save" data-vt-save {% unless has_compare %}hidden{% endunless %}>
+            −{{ cur.compare_at_price | minus: cur.price | times: 100.0 | divided_by: cur.compare_at_price | round }} %
+          </span>
+        </div>
+        <div class="vt-unit" data-vt-unit></div>
+
+        {%- comment -%}
+          Barre de stock basée sur l'inventaire RÉEL de la variante.
+          Ne s'affiche que si le stock est suivi et réellement bas.
+        {%- endcomment -%}
+        {%- if section.settings.show_stock -%}
+          <div class="vt-stock" data-vt-stock hidden>
+            <div class="vt-stock-bar"><div class="vt-stock-fill" data-vt-stock-fill style="width:0%"></div></div>
+            <div class="vt-stock-txt" data-vt-stock-txt></div>
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} ============ PACKS ============ {%- endcomment -%}
+        {%- if product.variants.size > 1 -%}
+          <div class="vt-packs-label">{{ section.settings.packs_label }}</div>
+          <div class="vt-packs" data-vt-packs>
+            {%- for v in product.variants -%}
+              {%- liquid
+                assign pct = 0
+                if v.compare_at_price > v.price
+                  assign pct = v.compare_at_price | minus: v.price | times: 100.0 | divided_by: v.compare_at_price | round
+                endif
+                assign meta_desc = v.metafields.custom.pack_description
+                assign meta_tag  = v.metafields.custom.pack_badge
+              -%}
+              <label class="vt-pack">
+                {%- if meta_tag != blank -%}<span class="vt-tag">{{ meta_tag }}</span>{%- endif -%}
+                <input type="radio" name="vt-variant-{{ section.id }}"
+                       value="{{ v.id }}"
+                       data-price="{{ v.price }}"
+                       data-compare="{{ v.compare_at_price | default: 0 }}"
+                       data-available="{{ v.available }}"
+                       data-inventory="{{ v.inventory_quantity }}"
+                       data-policy="{{ v.inventory_policy }}"
+                       data-management="{{ v.inventory_management }}"
+                       data-title="{{ v.title | escape }}"
+                       {% unless v.available %}disabled{% endunless %}
+                       {% if v.id == cur.id %}checked{% endif %}>
+                <span class="vt-dot" aria-hidden="true"></span>
+                <span>
+                  <span class="vt-pack-name">{{ v.title }}</span>
+                  {%- if meta_desc != blank -%}
+                    <span class="vt-pack-desc">{{ meta_desc }}</span>
+                  {%- elsif v.available == false -%}
+                    <span class="vt-pack-desc">Épuisé</span>
+                  {%- endif -%}
+                </span>
+                <span class="vt-pack-price">
+                  {{ v.price | money }}
+                  {%- if pct > 0 -%}<span class="vt-pack-was">{{ v.compare_at_price | money }}</span>{%- endif -%}
+                </span>
+              </label>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} ============ AJOUT PANIER ============ {%- endcomment -%}
+        <form data-vt-form>
+          <input type="hidden" name="id" value="{{ cur.id }}" data-vt-id>
+          <input type="hidden" name="quantity" value="1">
+          <button type="submit" class="vt-atc" data-vt-atc {% unless cur.available %}disabled{% endunless %}>
+            {%- if cur.available -%}{{ section.settings.atc_text }}{%- else -%}Épuisé{%- endif -%}
+          </button>
+          <div class="vt-err" data-vt-err role="alert"></div>
+        </form>
+
+        {%- if section.settings.show_payment_icons -%}
+          <div class="vt-pay">
+            {%- for type in shop.enabled_payment_types -%}
+              {{ type | payment_type_svg_tag: class: 'vt-pay-icon' }}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="vt-trust">
+          <div><strong>{{ section.settings.trust_1_title }}</strong>{{ section.settings.trust_1_text }}</div>
+          <div><strong>{{ section.settings.trust_2_title }}</strong>{{ section.settings.trust_2_text }}</div>
+          <div><strong>{{ section.settings.trust_3_title }}</strong>{{ section.settings.trust_3_text }}</div>
+        </div>
+
+        {%- comment -%} ============ ACCORDÉONS ============ {%- endcomment -%}
+        <div class="vt-acc">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'accordion' -%}
+              <details {{ block.shopify_attributes }} {% if block.settings.open %}open{% endif %}>
+                <summary>{{ block.settings.heading }}</summary>
+                <div class="vt-acc-body">{{ block.settings.content }}</div>
+              </details>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('vt-{{ section.id }}');
+  if (!root) return;
+
+  var moneyFormat = {{ shop.money_format | json }};
+  var lowStockAt  = {{ section.settings.low_stock_threshold | default: 30 }};
+  var unitLabel   = {{ section.settings.unit_label | json }};
+
+  function money(cents) {
+    var v = (cents / 100).toFixed(2).replace('.', ',');
+    return moneyFormat.replace(/\{\{\s*amount[^}]*\}\}/, v).replace(/<[^>]+>/g, '').trim() || (v + ' €');
+  }
+
+  /* ---------- Galerie ---------- */
+  var stage  = root.querySelector('[data-vt-stage]');
+  var thumbs = root.querySelector('[data-vt-thumbs]');
+  if (thumbs) {
+    thumbs.addEventListener('click', function (e) {
+      var btn = e.target.closest('[data-vt-go]');
+      if (!btn) return;
+      var i = btn.getAttribute('data-vt-go');
+      stage.querySelectorAll('[data-vt-slide]').forEach(function (img) {
+        img.classList.toggle('is-active', img.getAttribute('data-vt-slide') === i);
+      });
+      thumbs.querySelectorAll('[data-vt-go]').forEach(function (b) {
+        b.setAttribute('aria-current', b === btn ? 'true' : 'false');
+      });
+    });
+  }
+
+  /* ---------- Packs ---------- */
+  var idField  = root.querySelector('[data-vt-id]');
+  var priceEl  = root.querySelector('[data-vt-price]');
+  var cmpEl    = root.querySelector('[data-vt-compare]');
+  var saveEl   = root.querySelector('[data-vt-save]');
+  var unitEl   = root.querySelector('[data-vt-unit]');
+  var atc      = root.querySelector('[data-vt-atc]');
+  var stockBox = root.querySelector('[data-vt-stock]');
+  var stockFil = root.querySelector('[data-vt-stock-fill]');
+  var stockTxt = root.querySelector('[data-vt-stock-txt]');
+
+  function render(input) {
+    if (!input) return;
+    var price     = parseInt(input.dataset.price, 10);
+    var compare   = parseInt(input.dataset.compare, 10) || 0;
+    var available = input.dataset.available === 'true';
+    var inv       = parseInt(input.dataset.inventory, 10);
+    var tracked   = input.dataset.management !== '';
+
+    idField.value = input.value;
+    priceEl.textContent = money(price);
+
+    if (compare > price) {
+      cmpEl.textContent = money(compare);
+      cmpEl.hidden = false;
+      saveEl.textContent = '\u2212' + Math.round((compare - price) / compare * 100) + ' %';
+      saveEl.hidden = false;
+    } else {
+      cmpEl.hidden = true;
+      saveEl.hidden = true;
+    }
+
+    /* prix par joueur, déduit du nombre dans le titre de la variante */
+    if (unitEl) {
+      var m = (input.dataset.title || '').match(/(\d+)/);
+      unitEl.textContent = (m && unitLabel)
+        ? unitLabel.replace('{price}', money(Math.round(price / parseInt(m[1], 10))))
+        : '';
+    }
+
+    atc.disabled = !available;
+    atc.textContent = available ? {{ section.settings.atc_text | json }} : 'Épuisé';
+
+    /* stock réel uniquement */
+    if (stockBox) {
+      if (tracked && available && !isNaN(inv) && inv > 0 && inv <= lowStockAt) {
+        stockBox.hidden = false;
+        stockFil.style.width = Math.max(6, Math.round(inv / lowStockAt * 100)) + '%';
+        stockTxt.textContent = 'Plus que ' + inv + ' en stock';
+      } else {
+        stockBox.hidden = true;
+      }
+    }
+  }
+
+  root.querySelectorAll('[data-vt-packs] input').forEach(function (input) {
+    input.addEventListener('change', function () { render(input); });
+  });
+  render(root.querySelector('[data-vt-packs] input:checked'));
+
+  /* ---------- Ajout au panier ---------- */
+  var form = root.querySelector('[data-vt-form]');
+  var err  = root.querySelector('[data-vt-err]');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    err.style.display = 'none';
+    atc.classList.add('is-busy');
+
+    fetch('/cart/add.js', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ items: [{ id: Number(idField.value), quantity: 1 }] })
+    })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, data: d }; }); })
+      .then(function (res) {
+        atc.classList.remove('is-busy');
+        if (!res.ok) {
+          err.textContent = res.data.description || "Impossible d'ajouter ce pack au panier.";
+          err.style.display = 'block';
+          return;
+        }
+        openDrawer();
+      })
+      .catch(function () {
+        atc.classList.remove('is-busy');
+        window.location.href = '/cart';
+      });
+  });
+
+  /* Shrine et la plupart des thèmes écoutent l'un de ces signaux.
+     Si aucun tiroir ne s'ouvre, on bascule sur la page panier. */
+  function openDrawer() {
+    var opened = false;
+    ['cart:refresh', 'cart:build', 'ajaxProduct:added', 'cart-drawer:open'].forEach(function (name) {
+      document.dispatchEvent(new CustomEvent(name, { bubbles: true, detail: { open: true } }));
+    });
+    if (window.Shopify && window.Shopify.theme && typeof window.Shopify.theme.cartDrawer === 'object') {
+      try { window.Shopify.theme.cartDrawer.open(); opened = true; } catch (e) {}
+    }
+    var drawer = document.querySelector('cart-drawer, #CartDrawer, .cart-drawer, [data-cart-drawer]');
+    if (drawer) {
+      if (typeof drawer.open === 'function') { try { drawer.open(); opened = true; } catch (e) {} }
+      if (!opened && drawer.classList) { drawer.classList.add('active', 'is-open', 'open'); opened = true; }
+    }
+    if (!opened) window.location.href = '/cart';
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — Produit",
+  "tag": "section",
+  "settings": [
+    { "type": "header", "content": "Couleurs" },
+    { "type": "color", "id": "color_bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "color_surface", "label": "Surface", "default": "#121826" },
+    { "type": "color", "id": "color_neon", "label": "Accent néon", "default": "#00E5FF" },
+    { "type": "text", "id": "font_stack", "label": "Police",
+      "default": "'Helvetica Neue', Helvetica, Arial, sans-serif" },
+
+    { "type": "header", "content": "En-tête produit" },
+    { "type": "text", "id": "badge_text", "label": "Pastille sur l'image", "default": "ÉDITION 4 COULEURS" },
+    { "type": "checkbox", "id": "show_rating", "label": "Afficher la note", "default": true },
+    { "type": "text", "id": "rating_text", "label": "Texte de la note",
+      "info": "N'indiquez une note que si elle provient de vrais avis vérifiés.",
+      "default": "Noté 4,8/5 par nos clients" },
+    { "type": "textarea", "id": "subtitle", "label": "Accroche",
+      "default": "Transformez le salon ou le jardin en arène de laser game. Cibles lumineuses, vibrations et bande-son à chaque tir touché." },
+
+    { "type": "header", "content": "Packs" },
+    { "type": "text", "id": "packs_label", "label": "Titre du sélecteur", "default": "Choisissez votre pack" },
+    { "type": "text", "id": "unit_label", "label": "Mention prix unitaire",
+      "info": "Utilisez {price} pour insérer le prix calculé.",
+      "default": "Soit {price} par joueur" },
+    { "type": "checkbox", "id": "show_stock", "label": "Afficher le stock restant", "default": true,
+      "info": "Affiché uniquement si le stock est suivi dans Shopify et réellement bas. Aucun chiffre inventé." },
+    { "type": "range", "id": "low_stock_threshold", "label": "Seuil de stock bas",
+      "min": 5, "max": 100, "step": 5, "default": 30, "unit": "u" },
+
+    { "type": "header", "content": "Bouton" },
+    { "type": "text", "id": "atc_text", "label": "Texte du bouton", "default": "Ajouter au panier" },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "Logos de paiement", "default": true },
+
+    { "type": "header", "content": "Réassurance" },
+    { "type": "text", "id": "trust_1_title", "label": "Bloc 1 — titre", "default": "Livraison suivie" },
+    { "type": "text", "id": "trust_1_text", "label": "Bloc 1 — texte", "default": "Numéro de suivi sur chaque commande" },
+    { "type": "text", "id": "trust_2_title", "label": "Bloc 2 — titre", "default": "Paiement sécurisé" },
+    { "type": "text", "id": "trust_2_text", "label": "Bloc 2 — texte", "default": "Transaction chiffrée" },
+    { "type": "text", "id": "trust_3_title", "label": "Bloc 3 — titre", "default": "Retour 14 jours" },
+    { "type": "text", "id": "trust_3_text", "label": "Bloc 3 — texte", "default": "Droit de rétractation légal" }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordéon",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Titre", "default": "Que contient la boîte ?" },
+        { "type": "richtext", "id": "content", "label": "Contenu",
+          "default": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>" },
+        { "type": "checkbox", "id": "open", "label": "Ouvert par défaut", "default": false }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "VOLTAG — Produit",
+      "blocks": [
+        { "type": "accordion" },
+        { "type": "accordion" },
+        { "type": "accordion" }
+      ]
+    }
+  ]
+}
+{% endschema %}
