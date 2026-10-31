@@ -2398,6 +2398,10 @@
         "highlights_title": "Ce qui revient le plus",
         "highlights_source": "Extraits issus d’avis recueillis sur des plateformes tierces.",
         "bulk": "",
+        "visible_count": 3,
+        "more_label": "Voir plus d'avis",
+        "less_label": "Réduire",
+        "step_count": 3,
         "app_embed": "",
         "empty_text": "Les avis affichés concernent ce modèle et proviennent de plateformes tierces."
       }
