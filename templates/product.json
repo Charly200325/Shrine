@@ -201,7 +201,7 @@
         "bl_custom_html_css_js_liquid_block_code_j9QLPX": {
           "type": "shopify://apps/bl-custom-html-css-js-liquid/blocks/block-code/96fc73ef-2727-4174-82ec-12cfce5b3426",
           "settings": {
-            "html_code": "<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Lazrtag – Barre de stock</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;display=swap\" rel=\"stylesheet\">\n<style>\n  body {\n    margin: 0;\n    padding: 40px 16px;\n    background: #0b0f19;\n    font-family: 'Poppins', system-ui, sans-serif;\n  }\n\n  .lzu {\n    max-width: 520px;\n    margin: 14px auto;\n    padding: 14px 18px 16px;\n    box-sizing: border-box;\n    background: #1a1d29;\n    border: 1px solid rgba(255, 255, 255, .18);\n    border-radius: 16px;\n    font-family: 'Poppins', system-ui, sans-serif;\n    letter-spacing: 0;\n    color: #fff;\n  }\n  .lzu p { margin: 0; }\n\n  .lzu__top {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    gap: 12px;\n    margin-bottom: 10px;\n  }\n  .lzu__label {\n    font-size: clamp(11px, 3.2vw, 14px);\n    font-weight: 700;\n    letter-spacing: .04em;\n    color: #ffd24a;\n    text-transform: uppercase;\n  }\n  .lzu__pct {\n    font-size: clamp(11px, 3.2vw, 14px);\n    font-weight: 600;\n    white-space: nowrap;\n  }\n  .lzu__pct b { color: #ffd24a; font-weight: 700; }\n\n  .lzu__bar {\n    height: 10px;\n    background: rgba(255, 255, 255, .1);\n    border-radius: 999px;\n    overflow: hidden;\n  }\n  .lzu__bar i {\n    display: block;\n    height: 100%;\n    width: 0;\n    border-radius: 999px;\n    background: linear-gradient(90deg, #ffb703, #ffd24a);\n    box-shadow: 0 0 10px rgba(255, 210, 74, .45);\n    transition: width 1.2s cubic-bezier(.22, 1, .36, 1);\n  }\n\n  .lzu__note {\n    margin-top: 10px;\n    font-size: clamp(11px, 3vw, 13px);\n    font-weight: 600;\n    color: rgba(255, 255, 255, .85);\n  }\n  .lzu__note b { color: #ffd24a; font-weight: 700; }\n</style>\n\n\n\n<div class=\"lzu\" id=\"lzu-x\" data-pct=\"89\">\n  <div class=\"lzu__top\">\n    <p class=\"lzu__label\">PRÉVENTE BLACK FRIDAY</p>\n    <p class=\"lzu__pct\"><b>89 %</b> déjà réservés</p>\n  </div>\n  <div class=\"lzu__bar\"><i style=\"width: 89%;\"></i></div>\n  <p class=\"lzu__note\">Plus que <b>11 %</b> du stock de prévente à ce prix</p>\n</div>\n\n<script>\n(function () {\n  var root = document.getElementById('lzu-x');\n  var pct = parseFloat(root.getAttribute('data-pct')) || 0;\n  var bar = root.querySelector('.lzu__bar i');\n  bar.style.width = '0';\n  requestAnimationFrame(function () {\n    requestAnimationFrame(function () { bar.style.width = pct + '%'; });\n  });\n})();\n</script>",
+            "html_code": "<body>\n\n\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Lazrtag – Barre de stock</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&amp;display=swap\" rel=\"stylesheet\">\n<style>\n  body {\n    margin: 0;\n    padding: 40px 16px;\n    background: #0b0f19;\n    font-family: 'Poppins', system-ui, sans-serif;\n  }\n\n  .lzu {\n    width: 100%;\n    max-width: 540px;\n    margin: 14px auto;\n    padding: 0 4px;\n    box-sizing: border-box;\n    font-family: 'Poppins', system-ui, sans-serif;\n    color: #9aa3b8;\n  }\n  .lzu p { margin: 0; }\n\n  .lzu__top {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    gap: 12px;\n    margin-bottom: 8px;\n  }\n  .lzu__label {\n    font-size: clamp(9px, 2.5vw, 12px);\n    font-weight: 600;\n    letter-spacing: .16em;\n    text-transform: uppercase;\n    color: #9aa3b8;\n  }\n  .lzu__pct {\n    font-size: clamp(10px, 3vw, 14px);\n    font-weight: 600;\n    letter-spacing: 0;\n    white-space: nowrap;\n    color: #d3d8ea;\n  }\n  .lzu__pct b { color: #f9d65c; font-weight: 700; }\n\n  .lzu__bar {\n    height: 6px;\n    background: #1a1d27;\n    border-radius: 999px;\n    overflow: hidden;\n  }\n  .lzu__bar i {\n    display: block;\n    height: 100%;\n    width: 0;\n    border-radius: 999px;\n    background: #f9d65c;\n    transition: width 1.2s cubic-bezier(.22, 1, .36, 1);\n  }\n\n  .lzu__note {\n    margin-top: 14px;\n    font-size: clamp(9.5px, 2.7vw, 14px);\n    font-weight: 500;\n    letter-spacing: 0;\n    color: #9aa3b8;\n  }\n  .lzu__note b { color: #fff; font-weight: 700; }\n</style>\n\n\n\n<div class=\"lzu\" id=\"lzu-x\" data-pct=\"89\">\n  <div class=\"lzu__top\">\n    <p class=\"lzu__label\">Offre Black Friday</p>\n    <p class=\"lzu__pct\"><b>89 %</b> déjà vendus</p>\n  </div>\n  <div class=\"lzu__bar\"><i style=\"width: 89%;\"></i></div>\n  <p class=\"lzu__note\">Plus que <b>11 %</b> du stock disponible à ce prix</p>\n</div>\n\n<script>\n(function () {\n  var root = document.getElementById('lzu-x');\n  var pct = parseFloat(root.getAttribute('data-pct')) || 0;\n  var bar = root.querySelector('.lzu__bar i');\n  bar.style.width = '0';\n  requestAnimationFrame(function () {\n    requestAnimationFrame(function () { bar.style.width = pct + '%'; });\n  });\n})();\n</script>\n\n\n</body>",
             "css_code": "",
             "js_code": "",
             "liquid_code": ""
@@ -224,6 +224,14 @@
             "secondary_btn_custom_color": "#dd1d1d",
             "margin_top": 24,
             "margin_bottom": 24
+          }
+        },
+        "payment_badges_WcUizC": {
+          "type": "payment_badges",
+          "settings": {
+            "enabled_payment_types": "",
+            "margin_top": 15,
+            "margin_bottom": 15
           }
         },
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5": {
@@ -258,54 +266,17 @@
             "mobile_transparent_bg": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "margin_top": 24,
-            "margin_bottom": 24
-          }
-        },
-        "reviews_8UgFbe": {
-          "type": "reviews",
-          "settings": {
-            "color_scheme": "background-1",
-            "show_custom_bg": false,
-            "custom_bg_color": "#f2f2f2",
-            "corner_radius": 12,
-            "border_width": 0,
-            "border_color": "#b7b7b7",
-            "avatar_alignment": "top",
-            "avatar_corner_radius": 40,
-            "star_color": "#ffcc00",
-            "stars_translate": 0,
-            "checkmark_color": "#6d388b",
-            "checkmark_icon_color": "#ffffff",
-            "slider_type": "slide",
-            "autoplay": false,
-            "autoplay_speed": 5,
-            "display_arrows": false,
-            "display_dots": true,
-            "author_1": "<em>Author</em> [stars]",
-            "text_1": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "author_2": "<em>Author</em> [stars]",
-            "text_2": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "author_3": "<em>Author</em> [stars]",
-            "text_3": "<p>Share positive thoughts and feedback from your customer.</p>",
-            "margin_top": 24,
-            "margin_bottom": 24
-          }
-        },
         "de158e68-5d0d-4819-a625-e2dabdff87d1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "Que contient la boîte ?",
             "heading_size": "medium",
-            "icon": "check_box",
+            "icon": "",
             "filled_icon": false,
             "collapse_icon": "carret",
             "display_top_border": true,
             "open": false,
-            "content": "",
+            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
             "page": "",
             "margin_top": 24,
             "margin_bottom": 0
@@ -322,9 +293,8 @@
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
         "bl_custom_html_css_js_liquid_block_code_j9QLPX",
         "buy_buttons",
+        "payment_badges_WcUizC",
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
-        "description",
-        "reviews_8UgFbe",
         "de158e68-5d0d-4819-a625-e2dabdff87d1"
       ],
       "custom_css": [],
