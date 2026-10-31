@@ -1,0 +1,138 @@
+{%- comment -%} VOLTAG — Comment ça marche | sections/voltag-etapes.liquid {%- endcomment -%}
+
+<style>
+  #vte-{{ section.id }} {
+    --bg: {{ section.settings.bg }}; --surface: #121826; --line: #1E2A3C;
+    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
+    background: var(--bg); color: var(--text);
+    padding: 72px 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vte-{{ section.id }} * { box-sizing: border-box; }
+  #vte-{{ section.id }} .vte-wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+  #vte-{{ section.id }} .vte-eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: .18em; color: var(--neon);
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  #vte-{{ section.id }} h2 {
+    font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+    margin: 0 0 40px; line-height: 1.1; max-width: 740px;
+  }
+  #vte-{{ section.id }} .vte-steps {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px;
+    counter-reset: vte;
+  }
+  #vte-{{ section.id }} .vte-step {
+    border: 1px solid var(--line); border-radius: 18px; background: var(--surface);
+    padding: 26px 22px; position: relative;
+  }
+  #vte-{{ section.id }} .vte-step::before {
+    counter-increment: vte; content: counter(vte, decimal-leading-zero);
+    display: block; font-size: 30px; font-weight: 800; color: var(--neon);
+    line-height: 1; margin-bottom: 16px; font-variant-numeric: tabular-nums;
+  }
+  #vte-{{ section.id }} .vte-step h3 {
+    font-size: 15px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  #vte-{{ section.id }} .vte-step p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+
+  #vte-{{ section.id }} .vte-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 56px;
+  }
+  #vte-{{ section.id }} .vte-card {
+    border: 1px solid var(--line); border-radius: 18px; background: var(--surface); overflow: hidden;
+  }
+  #vte-{{ section.id }} .vte-card .vte-ph {
+    aspect-ratio: 4 / 3; background: #0C1320; display: grid; place-items: center;
+  }
+  #vte-{{ section.id }} .vte-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #vte-{{ section.id }} .vte-card .vte-body { padding: 20px; }
+  #vte-{{ section.id }} .vte-kicker {
+    font-size: 11px; font-weight: 800; letter-spacing: .14em; color: var(--neon);
+    text-transform: uppercase; margin-bottom: 8px;
+  }
+  #vte-{{ section.id }} .vte-card h3 { font-size: 18px; font-weight: 800; margin: 0 0 8px; }
+  #vte-{{ section.id }} .vte-card p { margin: 0; color: var(--muted); font-size: 14.5px; line-height: 1.6; }
+</style>
+
+<section id="vte-{{ section.id }}">
+  <div class="vte-wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="vte-eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+
+    <div class="vte-steps">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'step' -%}
+          <div class="vte-step" {{ block.shopify_attributes }}>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    {%- assign card_count = 0 -%}
+    {%- for block in section.blocks -%}{%- if block.type == 'audience' -%}{%- assign card_count = card_count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+
+    {%- if card_count > 0 -%}
+      <div class="vte-cards">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'audience' -%}
+            <div class="vte-card" {{ block.shopify_attributes }}>
+              <div class="vte-ph">
+                {%- if block.settings.image -%}
+                  {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy', widths: '400,800', alt: block.settings.title }}
+                {%- else -%}
+                  {{ 'image' | placeholder_svg_tag }}
+                {%- endif -%}
+              </div>
+              <div class="vte-body">
+                {%- if block.settings.kicker != blank -%}<div class="vte-kicker">{{ block.settings.kicker }}</div>{%- endif -%}
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "VOLTAG — Comment ça marche",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "Chaque tir compte" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Le score se compte tout seul. Plus personne ne triche." }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Étape", "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "Visez" },
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Repérez un adversaire." }
+    ]},
+    { "type": "audience", "name": "Carte public", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "text", "id": "kicker", "label": "Surtitre", "default": "8 à 10 ans" },
+      { "type": "text", "id": "title", "label": "Titre", "default": "Le héros des anniversaires" },
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Simple à prendre en main, lumières et sons immédiats." }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Comment ça marche", "blocks": [
+      { "type": "step", "settings": { "title": "Visez", "text": "Repérez la cible de poitrine d'un adversaire, jusqu'à plusieurs dizaines de mètres." } },
+      { "type": "step", "settings": { "title": "Tirez", "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif." } },
+      { "type": "step", "settings": { "title": "Touché", "text": "La cible s'allume, vibre et émet un son. L'impact est sans ambiguïté." } },
+      { "type": "step", "settings": { "title": "Vie en moins", "text": "L'afficheur décompte. À zéro, le joueur est éliminé jusqu'à la prochaine manche." } },
+      { "type": "audience", "settings": { "kicker": "8 à 10 ans", "title": "Le héros des anniversaires", "text": "Simple à prendre en main, infrarouge sans danger, lumières et sons qui les rendent fous." } },
+      { "type": "audience", "settings": { "kicker": "11 à 14 ans", "title": "Du canapé au terrain", "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans écran." } },
+      { "type": "audience", "settings": { "kicker": "Soirée en famille", "title": "Parents contre enfants", "text": "Les impacts sont comptés par les cibles, donc le match est équitable. Les adultes jouent aussi." } }
+    ]}
+  ]
+}
+{% endschema %}

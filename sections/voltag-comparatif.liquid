@@ -1,0 +1,124 @@
+{%- comment -%} VOLTAG — Tableau comparatif | sections/voltag-comparatif.liquid {%- endcomment -%}
+
+<style>
+  #vtc-{{ section.id }} {
+    --bg: {{ section.settings.bg }}; --surface: #121826; --line: #1E2A3C;
+    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
+    background: var(--bg); color: var(--text);
+    padding: 72px 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vtc-{{ section.id }} * { box-sizing: border-box; }
+  #vtc-{{ section.id }} .vtc-wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  #vtc-{{ section.id }} .vtc-eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: .18em; color: var(--neon);
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  #vtc-{{ section.id }} h2 {
+    font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+    margin: 0 0 36px; line-height: 1.1;
+  }
+  #vtc-{{ section.id }} .vtc-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  #vtc-{{ section.id }} table {
+    width: 100%; min-width: 580px; border-collapse: separate; border-spacing: 0;
+  }
+  #vtc-{{ section.id }} th, #vtc-{{ section.id }} td {
+    padding: 15px 14px; text-align: center; font-size: 14px; border-bottom: 1px solid var(--line);
+  }
+  #vtc-{{ section.id }} th:first-child, #vtc-{{ section.id }} td:first-child {
+    text-align: left; color: var(--muted); font-weight: 500; width: 40%;
+  }
+  #vtc-{{ section.id }} thead th {
+    font-size: 13px; font-weight: 800; letter-spacing: .04em; color: var(--muted);
+    padding-bottom: 18px; vertical-align: bottom;
+  }
+  #vtc-{{ section.id }} thead th.vtc-us {
+    color: #05060A; background: var(--neon);
+    border-radius: 14px 14px 0 0; font-size: 15px; position: relative; padding-top: 34px;
+  }
+  #vtc-{{ section.id }} thead th.vtc-us span {
+    position: absolute; top: 10px; left: 0; right: 0;
+    font-size: 10px; letter-spacing: .14em; opacity: .75;
+  }
+  #vtc-{{ section.id }} td.vtc-us { background: #0E1A26; }
+  #vtc-{{ section.id }} tbody tr:last-child td.vtc-us { border-radius: 0 0 14px 14px; }
+  #vtc-{{ section.id }} .vtc-yes { color: var(--neon); font-size: 19px; font-weight: 800; }
+  #vtc-{{ section.id }} .vtc-no  { color: #46586E; font-size: 19px; }
+  #vtc-{{ section.id }} .vtc-cta {
+    display: inline-block; margin-top: 34px; background: var(--neon); color: #05060A;
+    font-size: 16px; font-weight: 800; padding: 17px 32px; border-radius: 999px; text-decoration: none;
+  }
+  #vtc-{{ section.id }} .vtc-cta:hover { filter: brightness(1.08); }
+</style>
+
+<section id="vtc-{{ section.id }}">
+  <div class="vtc-wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="vtc-eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+
+    <div class="vtc-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th class="vtc-us"><span>{{ section.settings.badge }}</span>{{ section.settings.col_us }}</th>
+            <th>{{ section.settings.col_b }}</th>
+            <th>{{ section.settings.col_c }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for block in section.blocks -%}
+            <tr {{ block.shopify_attributes }}>
+              <td>{{ block.settings.label }}</td>
+              <td class="vtc-us">{% if block.settings.us %}<span class="vtc-yes" role="img" aria-label="oui">✓</span>{% else %}<span class="vtc-no" role="img" aria-label="non">✕</span>{% endif %}</td>
+              <td>{% if block.settings.b %}<span class="vtc-yes" role="img" aria-label="oui">✓</span>{% else %}<span class="vtc-no" role="img" aria-label="non">✕</span>{% endif %}</td>
+              <td>{% if block.settings.c %}<span class="vtc-yes" role="img" aria-label="oui">✓</span>{% else %}<span class="vtc-no" role="img" aria-label="non">✕</span>{% endif %}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <a class="vtc-cta" href="{{ section.settings.cta_link | default: '#' }}">{{ section.settings.cta_text }}</a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "VOLTAG — Comparatif",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "Pourquoi les familles changent" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "VOLTAG face aux alternatives" },
+    { "type": "text", "id": "badge", "label": "Pastille colonne principale", "default": "NOTRE CHOIX" },
+    { "type": "text", "id": "col_us", "label": "Colonne 1", "default": "VOLTAG" },
+    { "type": "text", "id": "col_b", "label": "Colonne 2", "default": "Blasters en mousse" },
+    { "type": "text", "id": "col_c", "label": "Colonne 3", "default": "Jeux vidéo" },
+    { "type": "text", "id": "cta_text", "label": "Bouton — texte", "default": "Choisir mon pack" },
+    { "type": "url", "id": "cta_link", "label": "Bouton — lien" }
+  ],
+  "blocks": [
+    { "type": "row", "name": "Ligne", "settings": [
+      { "type": "text", "id": "label", "label": "Critère", "default": "Critère" },
+      { "type": "checkbox", "id": "us", "label": "VOLTAG", "default": true },
+      { "type": "checkbox", "id": "b", "label": "Colonne 2", "default": false },
+      { "type": "checkbox", "id": "c", "label": "Colonne 3", "default": false }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Comparatif", "blocks": [
+      { "type": "row", "settings": { "label": "Éloigne les enfants des écrans", "us": true, "b": true, "c": false } },
+      { "type": "row", "settings": { "label": "Aucun projectile à ramasser", "us": true, "b": false, "c": true } },
+      { "type": "row", "settings": { "label": "Score et vies comptés automatiquement", "us": true, "b": false, "c": true } },
+      { "type": "row", "settings": { "label": "Se joue dedans comme dehors", "us": true, "b": true, "c": false } },
+      { "type": "row", "settings": { "label": "Parents et enfants à armes égales", "us": true, "b": true, "c": false } },
+      { "type": "row", "settings": { "label": "Rien qui puisse atteindre le visage", "us": true, "b": false, "c": true } }
+    ]}
+  ]
+}
+{% endschema %}

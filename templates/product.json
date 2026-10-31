@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
     "main": {
@@ -561,7 +552,8 @@
         "custom_colors_solid_button_background": "#dd1d1d",
         "custom_colors_solid_button_text": "#ffffff",
         "custom_colors_outline_button": "#dd1d1d"
-      }
+      },
+      "disabled": true
     },
     "eba88da5-80ac-47fc-aa75-997cfe7b2e59": {
       "type": "image-slider",
@@ -649,7 +641,8 @@
         "custom_colors_background": "#ffffff",
         "custom_gradient_background": "",
         "custom_colors_text": "#121212"
-      }
+      },
+      "disabled": true
     },
     "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a": {
       "type": "icons-with-content",
@@ -736,7 +729,8 @@
         "custom_colors_solid_button_background": "#dd1d1d",
         "custom_colors_solid_button_text": "#ffffff",
         "custom_colors_outline_button": "#dd1d1d"
-      }
+      },
+      "disabled": true
     },
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
       "type": "testimonials",
@@ -816,7 +810,8 @@
         "custom_cards_colors_background": "#f3f3f3",
         "custom_cards_gradient_background": "",
         "custom_cards_colors_text": "#2e2a39"
-      }
+      },
+      "disabled": true
     },
     "b321ab88-2b59-4dba-bade-54885c874ca5": {
       "type": "section-divider",
@@ -831,40 +826,41 @@
         "custom_background_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
-      }
+      },
+      "disabled": true
     },
     "voltag_produit_PDKKMW": {
       "type": "voltag-produit",
       "blocks": {
-        "accordion_QHpbaB": {
+        "acc_boite": {
           "type": "accordion",
           "settings": {
             "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "content": "<p><strong>Duo</strong> : 2 blasters infrarouges et 2 cibles de poitrine à LED, pour un duel.</p><p><strong>Squad</strong> : 4 blasters et 4 cibles dans les quatre couleurs d'équipe, pour jouer en 2 contre 2.</p><p><strong>Arène</strong> : 8 blasters et 8 cibles, pour les anniversaires et les grandes batailles de famille.</p><p>Piles AAA non fournies.</p>",
+            "open": true
+          }
+        },
+        "acc_secu": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Est-ce sans danger pour les enfants ?",
+            "content": "<p>Oui. VOLTAG fonctionne à l'<strong>infrarouge, comme une télécommande de télévision</strong> : aucun laser, aucun projectile, rien qui puisse blesser ou se perdre. Les sangles réglables vont des enfants dès 8 ans aux adultes.</p>",
             "open": false
           }
         },
-        "accordion_qr48zh": {
+        "acc_livr": {
           "type": "accordion",
           "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
-            "open": false
-          }
-        },
-        "accordion_hmnJYP": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "heading": "Livraison et retours",
+            "content": "<p>Chaque commande part avec un <strong>numéro de suivi</strong>. Vous disposez de <strong>14 jours</strong> pour changer d'avis, conformément au droit de rétractation.</p>",
             "open": false
           }
         }
       },
       "block_order": [
-        "accordion_QHpbaB",
-        "accordion_qr48zh",
-        "accordion_hmnJYP"
+        "acc_boite",
+        "acc_secu",
+        "acc_livr"
       ],
       "name": "VOLTAG — Produit",
       "settings": {
@@ -889,16 +885,267 @@
         "trust_3_title": "Retour 14 jours",
         "trust_3_text": "Droit de rétractation légal"
       }
+    },
+    "vt_etapes": {
+      "type": "voltag-etapes",
+      "blocks": {
+        "b1": {
+          "type": "step",
+          "settings": {
+            "title": "Visez",
+            "text": "Repérez la cible de poitrine d'un adversaire, jusqu'à plusieurs dizaines de mètres."
+          }
+        },
+        "b2": {
+          "type": "step",
+          "settings": {
+            "title": "Tirez",
+            "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif."
+          }
+        },
+        "b3": {
+          "type": "step",
+          "settings": {
+            "title": "Touché",
+            "text": "La cible s'allume, vibre et émet un son. L'impact est sans ambiguïté."
+          }
+        },
+        "b4": {
+          "type": "step",
+          "settings": {
+            "title": "Vie en moins",
+            "text": "L'afficheur décompte. À zéro, le joueur est éliminé jusqu'à la manche suivante."
+          }
+        },
+        "b5": {
+          "type": "audience",
+          "settings": {
+            "kicker": "8 à 10 ans",
+            "title": "Le héros des anniversaires",
+            "text": "Simple à prendre en main, infrarouge sans danger, lumières et sons qui les rendent fous."
+          }
+        },
+        "b6": {
+          "type": "audience",
+          "settings": {
+            "kicker": "11 à 14 ans",
+            "title": "Du canapé au terrain",
+            "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans écran."
+          }
+        },
+        "b7": {
+          "type": "audience",
+          "settings": {
+            "kicker": "Soirée en famille",
+            "title": "Parents contre enfants",
+            "text": "Les impacts sont comptés par les cibles, donc le match est équitable. Les adultes jouent aussi."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7"
+      ],
+      "settings": {}
+    },
+    "vt_modes": {
+      "type": "voltag-modes",
+      "blocks": {
+        "b1": {
+          "type": "mode",
+          "settings": {
+            "name": "Pistolet",
+            "accent": "#00A3FF",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "12",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "1"
+          }
+        },
+        "b2": {
+          "type": "mode",
+          "settings": {
+            "name": "Mitraillette",
+            "accent": "#FF2D55",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "6",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "2"
+          }
+        },
+        "b3": {
+          "type": "mode",
+          "settings": {
+            "name": "Fusil de précision",
+            "accent": "#39FF14",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "6",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "2"
+          }
+        },
+        "b4": {
+          "type": "mode",
+          "settings": {
+            "name": "Lance-roquettes",
+            "accent": "#FFD60A",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "1",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "3"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {}
+    },
+    "vt_comparatif": {
+      "type": "voltag-comparatif",
+      "blocks": {
+        "b1": {
+          "type": "row",
+          "settings": {
+            "label": "Éloigne les enfants des écrans",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "b2": {
+          "type": "row",
+          "settings": {
+            "label": "Aucun projectile à ramasser",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "b3": {
+          "type": "row",
+          "settings": {
+            "label": "Score et vies comptés automatiquement",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "b4": {
+          "type": "row",
+          "settings": {
+            "label": "Se joue dedans comme dehors",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "b5": {
+          "type": "row",
+          "settings": {
+            "label": "Parents et enfants à armes égales",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "b6": {
+          "type": "row",
+          "settings": {
+            "label": "Rien qui puisse atteindre le visage",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {}
+    },
+    "vt_faq": {
+      "type": "voltag-faq",
+      "blocks": {
+        "b1": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce que c'est sans danger pour les enfants ?",
+            "answer": "<p>Oui. VOLTAG utilise des <strong>signaux infrarouges</strong>, exactement comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et rien n'est projeté : il n'y a ni fléchette ni bille susceptible de blesser ou de se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>. Les sangles réglables s'adaptent aux enfants comme aux adultes.</p>"
+          }
+        },
+        "b2": {
+          "type": "qa",
+          "settings": {
+            "question": "Que contient la boîte ?",
+            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe : bleu, rouge, vert et jaune.</p><p><strong>Duo</strong> : 2 blasters et 2 cibles. <strong>Squad</strong> : 4 blasters et 4 cibles. <strong>Arène</strong> : 8 blasters et 8 cibles.</p>"
+          }
+        },
+        "b3": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il des piles ?",
+            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Prévoyez-en un jeu complet pour pouvoir jouer dès la réception.</p>"
+          }
+        },
+        "b4": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment se déroule une partie ?",
+            "answer": "<p>Chacun choisit sa couleur d'équipe, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, vibre et émet un son, et l'afficheur décompte les vies restantes. Personne ne discute le score.</p>"
+          }
+        },
+        "b5": {
+          "type": "qa",
+          "settings": {
+            "question": "Peut-on jouer en intérieur et en extérieur ?",
+            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc fonctionnent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode de tir.</p>"
+          }
+        },
+        "b6": {
+          "type": "qa",
+          "settings": {
+            "question": "Livraison et retours",
+            "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez d'un <strong>droit de rétractation de 14 jours</strong> à compter de la réception. En cas de problème, contactez-nous et nous organisons le retour ou l'échange.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6"
+      ],
+      "settings": {}
     }
   },
   "order": [
+    "voltag_produit_PDKKMW",
+    "vt_etapes",
+    "vt_modes",
+    "vt_comparatif",
+    "vt_faq",
     "main",
     "related-products",
     "8beb6911-28c6-482c-976a-e5421ad3e8df",
     "eba88da5-80ac-47fc-aa75-997cfe7b2e59",
     "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a",
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
-    "b321ab88-2b59-4dba-bade-54885c874ca5",
-    "voltag_produit_PDKKMW"
+    "b321ab88-2b59-4dba-bade-54885c874ca5"
   ]
 }

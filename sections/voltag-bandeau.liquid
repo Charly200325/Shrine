@@ -1,0 +1,69 @@
+{%- comment -%} VOLTAG — Bandeau défilant | sections/voltag-bandeau.liquid {%- endcomment -%}
+
+<style>
+  #vtb-{{ section.id }} {
+    --b: {{ section.settings.bg }};
+    --f: {{ section.settings.fg }};
+    background: var(--b); color: var(--f);
+    overflow: hidden; padding: 11px 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vtb-{{ section.id }} .vtb-track {
+    display: flex; width: max-content;
+    animation: vtb-move-{{ section.id }} {{ section.settings.speed }}s linear infinite;
+  }
+  #vtb-{{ section.id }}:hover .vtb-track { animation-play-state: paused; }
+  #vtb-{{ section.id }} .vtb-set { display: flex; flex: none; }
+  #vtb-{{ section.id }} .vtb-item {
+    display: flex; align-items: center; gap: 28px; padding: 0 14px;
+    font-size: 12.5px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  #vtb-{{ section.id }} .vtb-item::after {
+    content: ""; width: 5px; height: 5px; border-radius: 50%;
+    background: currentColor; opacity: .5;
+  }
+  @keyframes vtb-move-{{ section.id }} { to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) {
+    #vtb-{{ section.id }} .vtb-track { animation: none; }
+  }
+</style>
+
+<div id="vtb-{{ section.id }}">
+  <div class="vtb-track">
+    {%- for i in (1..2) -%}
+      <div class="vtb-set" {% if forloop.last %}aria-hidden="true"{% endif %}>
+        {%- for j in (1..4) -%}
+          {%- for block in section.blocks -%}
+            <span class="vtb-item" {{ block.shopify_attributes }}>{{ block.settings.text }}</span>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "VOLTAG — Bandeau",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#00E5FF" },
+    { "type": "color", "id": "fg", "label": "Texte", "default": "#05060A" },
+    { "type": "range", "id": "speed", "label": "Durée du défilement", "min": 15, "max": 90, "step": 5, "default": 40, "unit": "s" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Mention", "settings": [
+      { "type": "text", "id": "text", "label": "Texte", "default": "Livraison suivie" }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Bandeau", "blocks": [
+      { "type": "item", "settings": { "text": "Livraison suivie offerte" } },
+      { "type": "item", "settings": { "text": "Paiement sécurisé" } },
+      { "type": "item", "settings": { "text": "Retour sous 14 jours" } },
+      { "type": "item", "settings": { "text": "Expédié depuis l'Europe" } }
+    ]}
+  ]
+}
+{% endschema %}

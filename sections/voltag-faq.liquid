@@ -1,0 +1,124 @@
+{%- comment -%} VOLTAG — FAQ | sections/voltag-faq.liquid {%- endcomment -%}
+
+<style>
+  #vtf-{{ section.id }} {
+    --bg: {{ section.settings.bg }}; --line: #1E2A3C;
+    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
+    background: var(--bg); color: var(--text);
+    padding: 72px 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vtf-{{ section.id }} * { box-sizing: border-box; }
+  #vtf-{{ section.id }} .vtf-wrap { max-width: 820px; margin: 0 auto; padding: 0 16px; }
+  #vtf-{{ section.id }} .vtf-eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: .18em; color: var(--neon);
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  #vtf-{{ section.id }} h2 {
+    font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+    margin: 0 0 32px; line-height: 1.1;
+  }
+  #vtf-{{ section.id }} details { border-bottom: 1px solid var(--line); }
+  #vtf-{{ section.id }} details:first-of-type { border-top: 1px solid var(--line); }
+  #vtf-{{ section.id }} summary {
+    list-style: none; cursor: pointer; padding: 20px 0; font-size: 17px; font-weight: 700;
+    display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  }
+  #vtf-{{ section.id }} summary::-webkit-details-marker { display: none; }
+  #vtf-{{ section.id }} summary::after {
+    content: "+"; font-size: 24px; font-weight: 400; color: var(--neon); flex: none; line-height: 1;
+  }
+  #vtf-{{ section.id }} details[open] summary::after { content: "–"; }
+  #vtf-{{ section.id }} .vtf-body {
+    padding: 0 0 22px; color: var(--muted); font-size: 15.5px; line-height: 1.7; max-width: 92%;
+  }
+  #vtf-{{ section.id }} .vtf-body strong { color: var(--text); }
+  #vtf-{{ section.id }} .vtf-body a { color: var(--neon); }
+  #vtf-{{ section.id }} .vtf-body p { margin: 0 0 12px; }
+  #vtf-{{ section.id }} .vtf-body p:last-child { margin-bottom: 0; }
+  #vtf-{{ section.id }} .vtf-foot {
+    margin-top: 32px; font-size: 15px; color: var(--muted);
+  }
+  #vtf-{{ section.id }} .vtf-foot a { color: var(--neon); font-weight: 700; }
+</style>
+
+<section id="vtf-{{ section.id }}">
+  <div class="vtf-wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="vtf-eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+
+    {%- for block in section.blocks -%}
+      <details {{ block.shopify_attributes }} {% if forloop.first and section.settings.open_first %}open{% endif %}>
+        <summary>{{ block.settings.question }}</summary>
+        <div class="vtf-body">{{ block.settings.answer }}</div>
+      </details>
+    {%- endfor -%}
+
+    {%- if section.settings.foot != blank -%}
+      <p class="vtf-foot">{{ section.settings.foot }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- comment -%} Balisage pour les résultats enrichis Google {%- endcomment -%}
+{%- capture faq_json -%}
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for block in section.blocks -%}
+    {
+      "@type": "Question",
+      "name": {{ block.settings.question | strip_html | json }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ block.settings.answer | strip_html | strip_newlines | json }} }
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
+{%- endcapture -%}
+<script type="application/ld+json">{{ faq_json }}</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — FAQ",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "Vos questions" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Tout ce qu'il faut savoir avant de commander" },
+    { "type": "checkbox", "id": "open_first", "label": "Ouvrir la première question", "default": true },
+    { "type": "richtext", "id": "foot", "label": "Note de bas de section",
+      "default": "<p>Une autre question ? Écrivez-nous, nous répondons sous 24 heures ouvrées.</p>" }
+  ],
+  "blocks": [
+    { "type": "qa", "name": "Question", "settings": [
+      { "type": "text", "id": "question", "label": "Question", "default": "Votre question" },
+      { "type": "richtext", "id": "answer", "label": "Réponse", "default": "<p>Votre réponse.</p>" }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — FAQ", "blocks": [
+      { "type": "qa", "settings": {
+        "question": "Est-ce que c'est sans danger pour les enfants ?",
+        "answer": "<p>Oui. VOLTAG utilise des <strong>signaux infrarouges</strong>, exactement comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et rien n'est projeté : il n'y a donc ni fléchette ni bille susceptible de blesser ou de se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>. Les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>" } },
+      { "type": "qa", "settings": {
+        "question": "Que contient la boîte ?",
+        "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe : bleu, rouge, vert et jaune.</p><p><strong>Duo</strong> : 2 blasters et 2 cibles. <strong>Squad</strong> : 4 blasters et 4 cibles. <strong>Arène</strong> : 8 blasters et 8 cibles.</p>" } },
+      { "type": "qa", "settings": {
+        "question": "Faut-il des piles ?",
+        "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Prévoyez-en un jeu complet pour pouvoir jouer dès la réception.</p>" } },
+      { "type": "qa", "settings": {
+        "question": "Comment se déroule une partie ?",
+        "answer": "<p>Chacun choisit sa couleur d'équipe, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, vibre et émet un son, et l'afficheur décompte les vies restantes. Personne ne discute le score.</p>" } },
+      { "type": "qa", "settings": {
+        "question": "Peut-on jouer en intérieur et en extérieur ?",
+        "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc fonctionnent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode de tir, de quoi s'éparpiller et jouer à cache-cache.</p>" } },
+      { "type": "qa", "settings": {
+        "question": "Livraison et retours",
+        "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez d'un <strong>droit de rétractation de 14 jours</strong> à compter de la réception, conformément au code de la consommation. En cas de problème, contactez-nous et nous organisons le retour ou l'échange.</p>" } }
+    ]}
+  ]
+}
+{% endschema %}

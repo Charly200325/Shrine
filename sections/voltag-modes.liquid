@@ -1,0 +1,111 @@
+{%- comment -%} VOLTAG — Modes de tir | sections/voltag-modes.liquid {%- endcomment -%}
+
+<style>
+  #vtm-{{ section.id }} {
+    --bg: {{ section.settings.bg }};
+    --surface: #121826; --line: #1E2A3C;
+    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
+    background: var(--bg); color: var(--text);
+    padding: 72px 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vtm-{{ section.id }} * { box-sizing: border-box; }
+  #vtm-{{ section.id }} .vtm-wrap { max-width: 1240px; margin: 0 auto; padding: 0 16px; }
+  #vtm-{{ section.id }} .vtm-eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: .18em; color: var(--neon);
+    text-transform: uppercase; margin-bottom: 14px;
+  }
+  #vtm-{{ section.id }} h2 {
+    font-size: clamp(28px, 4.4vw, 42px); font-weight: 800; letter-spacing: -0.02em;
+    margin: 0 0 12px; line-height: 1.1;
+  }
+  #vtm-{{ section.id }} .vtm-intro {
+    color: var(--muted); font-size: 16px; line-height: 1.6; max-width: 620px; margin: 0 0 40px;
+  }
+  #vtm-{{ section.id }} .vtm-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;
+  }
+  #vtm-{{ section.id }} .vtm-card {
+    border: 1px solid var(--line); border-radius: 18px; background: var(--surface);
+    padding: 24px 20px 20px; position: relative; overflow: hidden;
+  }
+  #vtm-{{ section.id }} .vtm-card::before {
+    content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+    background: var(--accent, var(--neon));
+  }
+  #vtm-{{ section.id }} .vtm-num {
+    font-size: 12px; font-weight: 800; color: var(--muted); letter-spacing: .1em; margin-bottom: 10px;
+  }
+  #vtm-{{ section.id }} .vtm-name {
+    font-size: 20px; font-weight: 800; margin: 0 0 16px; letter-spacing: -0.01em;
+  }
+  #vtm-{{ section.id }} .vtm-stat {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 10px 0; border-top: 1px solid var(--line); font-size: 13px; color: var(--muted);
+  }
+  #vtm-{{ section.id }} .vtm-stat b { color: var(--text); font-size: 17px; font-weight: 800; }
+  #vtm-{{ section.id }} .vtm-note {
+    margin-top: 28px; font-size: 13px; color: var(--muted); line-height: 1.6; max-width: 760px;
+  }
+</style>
+
+<section id="vtm-{{ section.id }}">
+  <div class="vtm-wrap">
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="vtm-eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+    {%- if section.settings.intro != blank -%}
+      <p class="vtm-intro">{{ section.settings.intro }}</p>
+    {%- endif -%}
+
+    <div class="vtm-grid">
+      {%- for block in section.blocks -%}
+        <div class="vtm-card" style="--accent: {{ block.settings.accent }}" {{ block.shopify_attributes }}>
+          <div class="vtm-num">MODE {{ forloop.index | prepend: '0' | slice: -2, 2 }}</div>
+          <h3 class="vtm-name">{{ block.settings.name }}</h3>
+          <div class="vtm-stat"><span>{{ block.settings.stat_1_label }}</span><b>{{ block.settings.stat_1_value }}</b></div>
+          <div class="vtm-stat"><span>{{ block.settings.stat_2_label }}</span><b>{{ block.settings.stat_2_value }}</b></div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.note != blank -%}
+      <p class="vtm-note">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "VOLTAG — Modes de tir",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "4 modes de tir" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Changez d'arme en pleine partie" },
+    { "type": "textarea", "id": "intro", "label": "Introduction",
+      "default": "Un bouton sur le blaster fait défiler quatre modes. Chacun a ses munitions et sa puissance : à vous de choisir entre tirer souvent ou frapper fort." },
+    { "type": "textarea", "id": "note", "label": "Mention légale",
+      "default": "VOLTAG fonctionne à l'infrarouge, comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et aucun projectile n'est tiré." }
+  ],
+  "blocks": [
+    { "type": "mode", "name": "Mode", "settings": [
+      { "type": "text", "id": "name", "label": "Nom", "default": "Pistolet" },
+      { "type": "color", "id": "accent", "label": "Couleur", "default": "#00A3FF" },
+      { "type": "text", "id": "stat_1_label", "label": "Statistique 1 — libellé", "default": "Munitions" },
+      { "type": "text", "id": "stat_1_value", "label": "Statistique 1 — valeur", "default": "12" },
+      { "type": "text", "id": "stat_2_label", "label": "Statistique 2 — libellé", "default": "Vies retirées par tir" },
+      { "type": "text", "id": "stat_2_value", "label": "Statistique 2 — valeur", "default": "1" }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Modes de tir", "blocks": [
+      { "type": "mode", "settings": { "name": "Pistolet", "accent": "#00A3FF", "stat_1_value": "12", "stat_2_value": "1" } },
+      { "type": "mode", "settings": { "name": "Mitraillette", "accent": "#FF2D55", "stat_1_value": "6", "stat_2_value": "2" } },
+      { "type": "mode", "settings": { "name": "Fusil de précision", "accent": "#39FF14", "stat_1_value": "6", "stat_2_value": "2" } },
+      { "type": "mode", "settings": { "name": "Lance-roquettes", "accent": "#FFD60A", "stat_1_value": "1", "stat_2_value": "3" } }
+    ]}
+  ]
+}
+{% endschema %}
