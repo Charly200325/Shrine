@@ -1,0 +1,313 @@
+{%- comment -%} VOLTAG — Anatomie de la cible | sections/voltag-cible.liquid {%- endcomment -%}
+
+<style>
+  #vtk-{{ section.id }} {
+    --bg: {{ section.settings.bg }}; --surface: #0C1320; --line: #1E2A3C;
+    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
+    background: var(--bg); color: var(--text); padding: 76px 0; overflow: hidden;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vtk-{{ section.id }} * { box-sizing: border-box; }
+  #vtk-{{ section.id }} .k-wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
+
+  /* --- bandeau d'equipes qui tourne --- */
+  #vtk-{{ section.id }} .k-teams {
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    font-size: 12px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase;
+    margin-bottom: 26px; min-height: 22px;
+  }
+  #vtk-{{ section.id }} .k-teams span { color: #35475C; transition: color .45s, text-shadow .45s; }
+  #vtk-{{ section.id }} .k-teams span.on { text-shadow: 0 0 14px currentColor; }
+  #vtk-{{ section.id }} .k-teams em { color: #22334A; font-style: normal; }
+
+  #vtk-{{ section.id }} .k-eyebrow {
+    font-size: 12px; font-weight: 800; letter-spacing: .18em; color: var(--neon);
+    text-transform: uppercase; text-align: center; margin-bottom: 12px;
+  }
+  #vtk-{{ section.id }} h2 {
+    font-size: clamp(27px, 4.3vw, 41px); font-weight: 800; letter-spacing: -0.02em;
+    margin: 0 auto 44px; line-height: 1.1; text-align: center; max-width: 680px;
+  }
+
+  #vtk-{{ section.id }} .k-grid { display: grid; grid-template-columns: 1fr; gap: 34px; align-items: center; }
+  @media (min-width: 900px) { #vtk-{{ section.id }} .k-grid { grid-template-columns: 1.08fr .92fr; gap: 54px; } }
+
+  /* --- scene --- */
+  #vtk-{{ section.id }} .k-stage {
+    position: relative; border-radius: 24px; border: 1px solid var(--line);
+    background:
+      radial-gradient(120% 90% at 50% 0%, #15243A 0%, var(--surface) 62%),
+      var(--surface);
+    aspect-ratio: 1 / 1; overflow: hidden;
+  }
+  #vtk-{{ section.id }} .k-stage > img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  #vtk-{{ section.id }} .k-art { position: absolute; inset: 9%; }
+  #vtk-{{ section.id }} .k-art svg { width: 100%; height: 100%; display: block; }
+
+  /* grille de fond */
+  #vtk-{{ section.id }} .k-grid-bg {
+    position: absolute; inset: 0; opacity: .3; pointer-events: none;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(70% 70% at 50% 50%, #000 35%, transparent 100%);
+    -webkit-mask-image: radial-gradient(70% 70% at 50% 50%, #000 35%, transparent 100%);
+  }
+
+  /* --- balayage --- */
+  #vtk-{{ section.id }} .k-scan {
+    position: absolute; left: 0; right: 0; height: 32%; pointer-events: none; opacity: 0;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      color-mix(in srgb, var(--neon) 9%, transparent) 55%,
+      color-mix(in srgb, var(--neon) 34%, transparent) 92%,
+      var(--neon) 100%);
+    filter: blur(.4px);
+  }
+  #vtk-{{ section.id }}.is-live .k-scan {
+    opacity: 1; animation: vtk-scan-{{ section.id }} {{ section.settings.scan_seconds }}s cubic-bezier(.45,0,.2,1) infinite;
+  }
+  @keyframes vtk-scan-{{ section.id }} {
+    0%   { transform: translateY(-34%); opacity: 0; }
+    12%  { opacity: 1; }
+    88%  { opacity: 1; }
+    100% { transform: translateY(312%); opacity: 0; }
+  }
+
+  /* --- points --- */
+  #vtk-{{ section.id }} .k-dot {
+    position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px;
+    border: 0; padding: 0; cursor: pointer; background: transparent;
+    display: grid; place-items: center; z-index: 3;
+  }
+  #vtk-{{ section.id }} .k-dot::before {
+    content: ""; position: absolute; inset: 0; border-radius: 50%;
+    border: 1px solid var(--neon); opacity: .35; transform: scale(.6); transition: transform .25s, opacity .25s;
+  }
+  #vtk-{{ section.id }} .k-dot b {
+    position: relative; width: 24px; height: 24px; border-radius: 50%;
+    background: #05101A; border: 2px solid var(--neon); color: var(--neon);
+    font-size: 11px; font-weight: 800; display: grid; place-items: center;
+    transition: background .2s, color .2s, box-shadow .2s;
+  }
+  #vtk-{{ section.id }} .k-dot:hover::before,
+  #vtk-{{ section.id }} .k-dot.on::before { transform: scale(1); opacity: .9; }
+  #vtk-{{ section.id }} .k-dot.on b {
+    background: var(--neon); color: #05060A; box-shadow: 0 0 18px var(--neon);
+  }
+
+  /* --- liste --- */
+  #vtk-{{ section.id }} .k-list { display: grid; gap: 8px; }
+  #vtk-{{ section.id }} .k-item {
+    display: grid; grid-template-columns: 30px 1fr; gap: 14px; align-items: start;
+    width: 100%; text-align: left; cursor: pointer; font-family: inherit;
+    border: 1px solid transparent; border-radius: 14px; background: transparent;
+    padding: 14px 16px; transition: background .18s, border-color .18s;
+  }
+  #vtk-{{ section.id }} .k-item:hover { background: #0C1320; }
+  #vtk-{{ section.id }} .k-item.on { background: #0E1A26; border-color: var(--neon); }
+  #vtk-{{ section.id }} .k-item .n {
+    width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center;
+    border: 1px solid var(--line); color: var(--muted); font-size: 11px; font-weight: 800;
+    transition: background .18s, color .18s, border-color .18s;
+  }
+  #vtk-{{ section.id }} .k-item.on .n { background: var(--neon); color: #05060A; border-color: var(--neon); }
+  #vtk-{{ section.id }} .k-item h3 { font-size: 15.5px; font-weight: 800; margin: 2px 0 0; }
+  #vtk-{{ section.id }} .k-item p {
+    margin: 5px 0 0; color: var(--muted); font-size: 14px; line-height: 1.55;
+    max-height: 0; overflow: hidden; opacity: 0; transition: max-height .3s, opacity .25s, margin .3s;
+  }
+  #vtk-{{ section.id }} .k-item.on p { max-height: 120px; opacity: 1; }
+
+  #vtk-{{ section.id }} .k-size {
+    margin-top: 22px; font-size: 13px; color: var(--muted); letter-spacing: .04em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #vtk-{{ section.id }}.is-live .k-scan { animation: none; opacity: .35; }
+    #vtk-{{ section.id }} .k-item p { transition: none; }
+  }
+</style>
+
+<section id="vtk-{{ section.id }}">
+  <div class="k-wrap">
+
+    {%- if section.settings.show_teams -%}
+      <div class="k-teams" data-k-teams>
+        <span style="color:#00A3FF">{{ section.settings.team_3 }}</span><em>/</em>
+        <span style="color:#FF2D55">{{ section.settings.team_4 }}</span><em>/</em>
+        <span style="color:#39FF14">{{ section.settings.team_2 }}</span><em>/</em>
+        <span style="color:#FFD60A">{{ section.settings.team_1 }}</span>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.eyebrow != blank -%}
+      <div class="k-eyebrow">{{ section.settings.eyebrow }}</div>
+    {%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+
+    <div class="k-grid">
+      <div class="k-stage" data-k-stage>
+        <div class="k-grid-bg"></div>
+
+        {%- if section.settings.image -%}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', widths: '600,1200', alt: section.settings.heading }}
+        {%- else -%}
+          {%- comment -%} Illustration vectorielle d'origine, remplacée dès qu'une photo est choisie {%- endcomment -%}
+          <div class="k-art" aria-hidden="true">
+            <svg viewBox="0 0 400 400">
+              <defs>
+                <linearGradient id="kbody-{{ section.id }}" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1B2838"/><stop offset="100%" stop-color="#0A1018"/>
+                </linearGradient>
+              </defs>
+              <path d="M60 300 Q40 210 92 150" fill="none" stroke="#13202E" stroke-width="22" stroke-linecap="round"/>
+              <path d="M340 300 Q360 210 308 150" fill="none" stroke="#13202E" stroke-width="22" stroke-linecap="round"/>
+              <path d="M120 66 H280 L340 134 V250 L252 334 H148 L60 250 V134 Z"
+                    fill="url(#kbody-{{ section.id }})" stroke="#2C4055" stroke-width="5"/>
+              <path d="M142 96 H258 L312 148 V240 L238 304 H162 L88 240 V148 Z"
+                    fill="none" stroke="{{ section.settings.neon }}" stroke-width="7" opacity=".95"/>
+              <rect x="150" y="160" width="100" height="62" rx="9" fill="#05080D" stroke="#223243" stroke-width="3"/>
+              <text x="200" y="208" text-anchor="middle" font-family="'Courier New', monospace"
+                    font-size="44" font-weight="700" fill="#FF3B30" letter-spacing="3">03</text>
+              <circle cx="118" cy="128" r="8" fill="#0A131D" stroke="#2C4055" stroke-width="3"/>
+              <circle cx="282" cy="128" r="8" fill="#0A131D" stroke="#2C4055" stroke-width="3"/>
+              <rect x="176" y="250" width="48" height="9" rx="4.5" fill="#223243"/>
+              <rect x="186" y="268" width="28" height="7" rx="3.5" fill="#1A2838"/>
+            </svg>
+          </div>
+        {%- endif -%}
+
+        <div class="k-scan"></div>
+
+        {%- for block in section.blocks -%}
+          <button type="button" class="k-dot" data-k-dot="{{ forloop.index0 }}"
+                  style="left: {{ block.settings.x }}%; top: {{ block.settings.y }}%"
+                  aria-label="{{ block.settings.title | escape }}" {{ block.shopify_attributes }}>
+            <b>{{ forloop.index }}</b>
+          </button>
+        {%- endfor -%}
+      </div>
+
+      <div>
+        <div class="k-list" data-k-list>
+          {%- for block in section.blocks -%}
+            <button type="button" class="k-item" data-k-item="{{ forloop.index0 }}">
+              <span class="n">{{ forloop.index }}</span>
+              <span>
+                <h3>{{ block.settings.title }}</h3>
+                <p>{{ block.settings.text }}</p>
+              </span>
+            </button>
+          {%- endfor -%}
+        </div>
+        {%- if section.settings.size_note != blank -%}
+          <div class="k-size">{{ section.settings.size_note }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('vtk-{{ section.id }}');
+  if (!root) return;
+
+  /* --- balayage au defilement --- */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { root.classList.toggle('is-live', e.isIntersecting); });
+    }, { threshold: 0.25 }).observe(root.querySelector('[data-k-stage]'));
+  } else {
+    root.classList.add('is-live');
+  }
+
+  /* --- points et liste synchronises --- */
+  var dots  = Array.prototype.slice.call(root.querySelectorAll('[data-k-dot]'));
+  var items = Array.prototype.slice.call(root.querySelectorAll('[data-k-item]'));
+  var cur = -1, autoId = null;
+
+  function select(i, manual) {
+    cur = i;
+    dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+    items.forEach(function (t, k) { t.classList.toggle('on', k === i); });
+    if (manual && autoId) { clearInterval(autoId); autoId = null; }
+  }
+
+  dots.forEach(function (d, i) {
+    d.addEventListener('click', function () { select(i, true); });
+    d.addEventListener('mouseenter', function () { if (autoId) select(i, false); });
+  });
+  items.forEach(function (t, i) { t.addEventListener('click', function () { select(i, true); }); });
+
+  if (items.length) {
+    select(0, false);
+    {%- if section.settings.autoplay -%}
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      autoId = setInterval(function () { select((cur + 1) % items.length, false); }, {{ section.settings.autoplay_ms }});
+    }
+    {%- endif -%}
+  }
+
+  /* --- couleurs d'equipe en rotation --- */
+  var teams = root.querySelector('[data-k-teams]');
+  if (teams && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var spans = teams.querySelectorAll('span'), t = 0;
+    setInterval(function () {
+      spans.forEach(function (s, k) { s.classList.toggle('on', k === t); });
+      t = (t + 1) % spans.length;
+    }, 900);
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — La cible",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
+    { "type": "image_picker", "id": "image", "label": "Photo de la cible",
+      "info": "Sans photo, une illustration vectorielle s'affiche à la place." },
+
+    { "type": "header", "content": "Textes" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "Anatomie de la cible" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Sept détails qui font la différence" },
+    { "type": "text", "id": "size_note", "label": "Mention sous la liste", "default": "Environ 10 × 9 cm — sangles réglables, enfants dès 8 ans et adultes." },
+
+    { "type": "header", "content": "Balayage et animation" },
+    { "type": "range", "id": "scan_seconds", "label": "Durée du balayage", "min": 2, "max": 10, "step": 1, "default": 4, "unit": "s" },
+    { "type": "checkbox", "id": "autoplay", "label": "Faire défiler les points tout seul", "default": true },
+    { "type": "range", "id": "autoplay_ms", "label": "Intervalle du défilement", "min": 1500, "max": 6000, "step": 500, "default": 2800, "unit": "ms" },
+
+    { "type": "header", "content": "Bandeau d'équipes" },
+    { "type": "checkbox", "id": "show_teams", "label": "Afficher le bandeau", "default": true },
+    { "type": "text", "id": "team_1", "label": "Jaune", "default": "Équipe jaune" },
+    { "type": "text", "id": "team_2", "label": "Verte", "default": "Équipe verte" },
+    { "type": "text", "id": "team_3", "label": "Bleue", "default": "Équipe bleue" },
+    { "type": "text", "id": "team_4", "label": "Rouge", "default": "Équipe rouge" }
+  ],
+  "blocks": [
+    { "type": "point", "name": "Point", "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "Élément" },
+      { "type": "textarea", "id": "text", "label": "Description", "default": "Description." },
+      { "type": "range", "id": "x", "label": "Position horizontale", "min": 0, "max": 100, "step": 1, "default": 50, "unit": "%" },
+      { "type": "range", "id": "y", "label": "Position verticale", "min": 0, "max": 100, "step": 1, "default": 50, "unit": "%" }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — La cible", "blocks": [
+      { "type": "point", "settings": { "title": "Capteur infrarouge", "text": "Détecte les tirs adverses, sans contact ni projectile.", "x": 50, "y": 20 } },
+      { "type": "point", "settings": { "title": "Contour lumineux", "text": "S'allume dans la couleur de votre équipe, visible de loin et dans le noir.", "x": 23, "y": 37 } },
+      { "type": "point", "settings": { "title": "Afficheur de vies", "text": "Le décompte se fait en direct. Plus personne ne discute le score.", "x": 50, "y": 48 } },
+      { "type": "point", "settings": { "title": "Vibration", "text": "Chaque impact se sent autant qu'il se voit.", "x": 77, "y": 37 } },
+      { "type": "point", "settings": { "title": "Haut-parleur", "text": "Tirs, touches et élimination sonorisés pour l'ambiance d'arène.", "x": 77, "y": 62 } },
+      { "type": "point", "settings": { "title": "Sangles réglables", "text": "S'ajustent d'un enfant de 8 ans à un adulte, sans outil.", "x": 23, "y": 62 } },
+      { "type": "point", "settings": { "title": "Format léger", "text": "Assez compact pour courir, se baisser et se cacher pendant des heures.", "x": 50, "y": 78 } }
+    ]}
+  ]
+}
+{% endschema %}

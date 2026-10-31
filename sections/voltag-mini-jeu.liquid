@@ -1,0 +1,460 @@
+{%- comment -%} VOLTAG — Mini-bataille | sections/voltag-mini-jeu.liquid {%- endcomment -%}
+
+<style>
+  #vtg-{{ section.id }} {
+    --bg: {{ section.settings.bg }}; --surface: #121826; --line: #1E2A3C;
+    --text: #EAF4FF; --muted: #8FA7BC; --neon: {{ section.settings.neon }};
+    --t1: #FFD60A; --t2: #39FF14; --t3: #00A3FF; --t4: #FF2D55;
+    background: var(--bg); color: var(--text); padding: 72px 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  #vtg-{{ section.id }} * { box-sizing: border-box; }
+  #vtg-{{ section.id }} .g-wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+
+  #vtg-{{ section.id }} .g-head { text-align: center; margin-bottom: 30px; }
+  #vtg-{{ section.id }} .g-eyebrow {
+    display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .18em;
+    text-transform: uppercase; color: #05060A; background: var(--neon);
+    padding: 6px 14px; border-radius: 999px; margin-bottom: 16px;
+  }
+  #vtg-{{ section.id }} h2 {
+    font-size: clamp(26px, 4.2vw, 40px); font-weight: 800; letter-spacing: -0.02em;
+    margin: 0 0 10px; line-height: 1.1;
+  }
+  #vtg-{{ section.id }} .g-sub { color: var(--muted); font-size: 16px; margin: 0; }
+
+  #vtg-{{ section.id }} .g-board {
+    border: 1px solid var(--line); border-radius: 22px; background: var(--surface);
+    padding: 22px; position: relative; overflow: hidden;
+  }
+
+  /* --- barre d'etat --- */
+  #vtg-{{ section.id }} .g-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 14px; flex-wrap: wrap; margin-bottom: 18px;
+  }
+  #vtg-{{ section.id }} .g-timer {
+    font-size: 30px; font-weight: 800; font-variant-numeric: tabular-nums;
+    color: var(--neon); line-height: 1; min-width: 92px;
+  }
+  #vtg-{{ section.id }} .g-timer.is-low { color: var(--t4); }
+  #vtg-{{ section.id }} .g-scores { display: flex; gap: 8px; flex-wrap: wrap; }
+  #vtg-{{ section.id }} .g-score {
+    display: flex; align-items: center; gap: 7px; padding: 7px 12px;
+    border-radius: 999px; background: #0B1220; border: 1px solid var(--line);
+    font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums;
+  }
+  #vtg-{{ section.id }} .g-score i {
+    width: 9px; height: 9px; border-radius: 50%; display: block; flex: none;
+  }
+  #vtg-{{ section.id }} .g-score.is-me { border-color: currentColor; }
+
+  /* --- arene --- */
+  #vtg-{{ section.id }} .g-arena {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+    aspect-ratio: 1 / 1; max-width: 440px; margin: 0 auto;
+  }
+  @media (min-width: 700px) { #vtg-{{ section.id }} .g-arena { max-width: 480px; } }
+
+  #vtg-{{ section.id }} .g-vest {
+    position: relative; border: 0; padding: 0; cursor: crosshair; background: transparent;
+    border-radius: 16px; display: grid; place-items: center;
+    transition: transform .08s;
+  }
+  #vtg-{{ section.id }} .g-vest:disabled { cursor: default; }
+  #vtg-{{ section.id }} .g-vest:active { transform: scale(.93); }
+  #vtg-{{ section.id }} .g-vest svg { width: 78%; height: 78%; display: block; }
+  #vtg-{{ section.id }} .g-vest .shell {
+    fill: #0A111C; stroke: #263548; stroke-width: 3; transition: stroke .12s, filter .12s;
+  }
+  #vtg-{{ section.id }} .g-vest .ring {
+    fill: none; stroke: currentColor; stroke-width: 7; opacity: 0;
+    transition: opacity .12s;
+  }
+  #vtg-{{ section.id }} .g-vest .num {
+    fill: #7E95AC; font-size: 30px; font-weight: 800; text-anchor: middle;
+    font-family: inherit; transition: fill .12s;
+  }
+  #vtg-{{ section.id }} .g-vest.is-lit .ring { opacity: 1; filter: drop-shadow(0 0 9px currentColor); }
+  #vtg-{{ section.id }} .g-vest.is-lit .num { fill: currentColor; }
+  #vtg-{{ section.id }} .g-vest.is-hit .shell { fill: #16202E; }
+
+  #vtg-{{ section.id }} .g-pop {
+    position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+    font-size: 15px; font-weight: 800; pointer-events: none; opacity: 0;
+  }
+  #vtg-{{ section.id }} .g-pop.go { animation: vtg-pop-{{ section.id }} .62s ease-out; }
+  @keyframes vtg-pop-{{ section.id }} {
+    0% { opacity: 1; transform: translate(-50%, 6px); }
+    100% { opacity: 0; transform: translate(-50%, -22px); }
+  }
+
+  /* --- voiles --- */
+  #vtg-{{ section.id }} .g-veil {
+    position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+    background: rgba(5, 6, 10, .93); padding: 28px 22px; z-index: 5;
+  }
+  #vtg-{{ section.id }} .g-veil[hidden] { display: none; }
+  #vtg-{{ section.id }} .g-veil h3 { font-size: 23px; font-weight: 800; margin: 0 0 8px; }
+  #vtg-{{ section.id }} .g-veil p { color: var(--muted); font-size: 15px; margin: 0 0 20px; line-height: 1.6; max-width: 440px; }
+
+  #vtg-{{ section.id }} .g-colors { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 22px; }
+  #vtg-{{ section.id }} .g-color {
+    width: 58px; height: 58px; border-radius: 50%; border: 3px solid transparent;
+    cursor: pointer; background: currentColor; position: relative;
+    box-shadow: 0 0 16px currentColor; transition: transform .12s;
+  }
+  #vtg-{{ section.id }} .g-color:hover { transform: scale(1.1); }
+  #vtg-{{ section.id }} .g-color[aria-pressed="true"] { border-color: #FFFFFF; }
+
+  #vtg-{{ section.id }} .g-btn {
+    border: 0; cursor: pointer; border-radius: 999px; background: var(--neon); color: #05060A;
+    font-size: 15px; font-weight: 800; padding: 15px 30px; font-family: inherit;
+  }
+  #vtg-{{ section.id }} .g-btn:hover { filter: brightness(1.08); }
+  #vtg-{{ section.id }} .g-btn.ghost {
+    background: transparent; color: var(--text); border: 1px solid var(--line);
+  }
+  #vtg-{{ section.id }} .g-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+  #vtg-{{ section.id }} .g-rank { list-style: none; padding: 0; margin: 0 0 20px; width: 100%; max-width: 330px; }
+  #vtg-{{ section.id }} .g-rank li {
+    display: flex; align-items: center; gap: 11px; padding: 9px 13px; border-radius: 11px;
+    font-size: 14px; font-weight: 700; margin-bottom: 6px; background: #0B1220;
+    border: 1px solid var(--line); font-variant-numeric: tabular-nums;
+  }
+  #vtg-{{ section.id }} .g-rank li.me { border-color: var(--neon); }
+  #vtg-{{ section.id }} .g-rank i { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  #vtg-{{ section.id }} .g-rank .pos { color: var(--muted); width: 20px; }
+  #vtg-{{ section.id }} .g-rank .pts { margin-left: auto; }
+
+  #vtg-{{ section.id }} .g-code {
+    display: inline-flex; align-items: center; gap: 12px; margin-bottom: 20px;
+    border: 2px dashed var(--neon); border-radius: 13px; padding: 13px 20px;
+    font-size: 21px; font-weight: 800; letter-spacing: .12em; color: var(--neon);
+  }
+  #vtg-{{ section.id }} .g-copy {
+    border: 0; background: var(--neon); color: #05060A; border-radius: 8px;
+    font-size: 11px; font-weight: 800; padding: 7px 11px; cursor: pointer; letter-spacing: .04em;
+    font-family: inherit;
+  }
+  #vtg-{{ section.id }} .g-rules {
+    margin-top: 18px; text-align: center; font-size: 13px; color: var(--muted); line-height: 1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #vtg-{{ section.id }} .g-pop.go { animation: none; }
+    #vtg-{{ section.id }} .g-vest { transition: none; }
+  }
+</style>
+
+<section id="vtg-{{ section.id }}">
+  <div class="g-wrap">
+    <div class="g-head">
+      {%- if section.settings.eyebrow != blank -%}
+        <div class="g-eyebrow">{{ section.settings.eyebrow }}</div>
+      {%- endif -%}
+      <h2>{{ section.settings.heading }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p class="g-sub">{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="g-board">
+      <div class="g-bar">
+        <div class="g-timer" data-g-timer>{{ section.settings.duration }},0</div>
+        <div class="g-scores" data-g-scores></div>
+      </div>
+
+      <div class="g-arena" data-g-arena></div>
+
+      {%- comment -%} Voile 1 : choix de la couleur {%- endcomment -%}
+      <div class="g-veil" data-g-veil="start">
+        <div>
+          <h3>{{ section.settings.start_title }}</h3>
+          <p>{{ section.settings.start_text }}</p>
+          <div class="g-colors" data-g-colors>
+            <button type="button" class="g-color" style="color: var(--t1)" data-g-pick="0" aria-pressed="false" aria-label="Équipe jaune"></button>
+            <button type="button" class="g-color" style="color: var(--t2)" data-g-pick="1" aria-pressed="false" aria-label="Équipe verte"></button>
+            <button type="button" class="g-color" style="color: var(--t3)" data-g-pick="2" aria-pressed="false" aria-label="Équipe bleue"></button>
+            <button type="button" class="g-color" style="color: var(--t4)" data-g-pick="3" aria-pressed="false" aria-label="Équipe rouge"></button>
+          </div>
+          <button type="button" class="g-btn" data-g-go disabled>{{ section.settings.start_button }}</button>
+        </div>
+      </div>
+
+      {%- comment -%} Voile 2 : resultat {%- endcomment -%}
+      <div class="g-veil" data-g-veil="end" hidden>
+        <div>
+          <h3 data-g-result></h3>
+          <p data-g-result-text></p>
+          <ol class="g-rank" data-g-rank></ol>
+          <div data-g-reward hidden>
+            <div class="g-code"><span data-g-code></span><button type="button" class="g-copy" data-g-copy>Copier</button></div>
+          </div>
+          <div class="g-actions">
+            <button type="button" class="g-btn ghost" data-g-again>Rejouer</button>
+            <a class="g-btn" href="{{ section.settings.cta_link | default: '#' }}">{{ section.settings.cta_text }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {%- if section.settings.rules != blank -%}
+      <div class="g-rules">{{ section.settings.rules }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('vtg-{{ section.id }}');
+  if (!root) return;
+
+  var TEAMS = [
+    { name: {{ section.settings.team_1 | json }}, css: 'var(--t1)' },
+    { name: {{ section.settings.team_2 | json }}, css: 'var(--t2)' },
+    { name: {{ section.settings.team_3 | json }}, css: 'var(--t3)' },
+    { name: {{ section.settings.team_4 | json }}, css: 'var(--t4)' }
+  ];
+  var CELLS    = 9;
+  var DURATION = {{ section.settings.duration | default: 15 }};
+  var FLIP     = {{ section.settings.flip_ms | default: 820 }};
+  var RIVAL    = {{ section.settings.rival_skill | default: 55 }};
+  var CODE     = {{ section.settings.promo_code | json }};
+  var WIN_T    = {{ section.settings.win_title | json }};
+  var WIN_X    = {{ section.settings.win_text | json }};
+  var LOSE_T   = {{ section.settings.lose_title | json }};
+  var LOSE_X   = {{ section.settings.lose_text | json }};
+
+  var arena   = root.querySelector('[data-g-arena]');
+  var scores  = root.querySelector('[data-g-scores]');
+  var timerEl = root.querySelector('[data-g-timer]');
+  var vStart  = root.querySelector('[data-g-veil="start"]');
+  var vEnd    = root.querySelector('[data-g-veil="end"]');
+  var goBtn   = root.querySelector('[data-g-go]');
+  var again   = root.querySelector('[data-g-again]');
+  var rankEl  = root.querySelector('[data-g-rank]');
+
+  var me = null, pts = [0, 0, 0, 0], cells = [], running = false;
+  var tEnd = 0, rafId = null, flipId = null, rivalId = null;
+
+  /* ---------- construction ---------- */
+  for (var i = 0; i < CELLS; i++) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'g-vest';
+    b.disabled = true;
+    b.setAttribute('aria-label', 'Cible ' + (i + 1));
+    b.innerHTML =
+      '<span class="g-pop" data-pop></span>' +
+      '<svg viewBox="0 0 100 100" aria-hidden="true">' +
+      '<path class="shell" d="M22 14 H78 L88 30 V70 L70 88 H30 L12 70 V30 Z"/>' +
+      '<path class="ring"  d="M30 24 H70 L80 36 V66 L65 80 H35 L20 66 V36 Z"/>' +
+      '<text class="num" x="50" y="62">0</text></svg>';
+    b.dataset.team = '';
+    arena.appendChild(b);
+    cells.push(b);
+  }
+
+  TEAMS.forEach(function (t, i) {
+    var d = document.createElement('div');
+    d.className = 'g-score';
+    d.style.color = t.css;
+    d.innerHTML = '<i style="background:' + t.css + '"></i><span style="color:var(--text)">' +
+                  t.name + '</span> <b data-pts="' + i + '" style="color:' + t.css + '">0</b>';
+    scores.appendChild(d);
+  });
+
+  function setPts() {
+    for (var i = 0; i < 4; i++) {
+      var el = scores.querySelector('[data-pts="' + i + '"]');
+      if (el) el.textContent = pts[i];
+    }
+    scores.querySelectorAll('.g-score').forEach(function (n, i) {
+      n.classList.toggle('is-me', i === me);
+    });
+  }
+
+  function lightCell(c) {
+    var t = Math.floor(Math.random() * 4);
+    c.dataset.team = String(t);
+    c.style.color = TEAMS[t].css;
+    c.classList.add('is-lit');
+    c.classList.remove('is-hit');
+    c.querySelector('.num').textContent = String(1 + Math.floor(Math.random() * 9));
+  }
+
+  function flipSome() {
+    var n = 2 + Math.floor(Math.random() * 3);
+    for (var k = 0; k < n; k++) lightCell(cells[Math.floor(Math.random() * cells.length)]);
+  }
+
+  function pop(c, txt, color) {
+    var p = c.querySelector('[data-pop]');
+    p.textContent = txt;
+    p.style.color = color;
+    p.classList.remove('go');
+    void p.offsetWidth;
+    p.classList.add('go');
+  }
+
+  /* ---------- tir du joueur ---------- */
+  arena.addEventListener('click', function (e) {
+    if (!running) return;
+    var c = e.target.closest('.g-vest');
+    if (!c || c.dataset.team === '') return;
+    var t = Number(c.dataset.team);
+    if (t === me) {
+      pts[me] = Math.max(0, pts[me] - 1);
+      pop(c, '−1', TEAMS[me].css);
+    } else {
+      pts[me] += 1;
+      pop(c, '+1', '#FFFFFF');
+    }
+    c.classList.remove('is-lit');
+    c.classList.add('is-hit');
+    c.dataset.team = '';
+    setPts();
+    setTimeout(function () { if (running) lightCell(c); }, 260);
+  });
+
+  /* ---------- adversaires ---------- */
+  function rivalTick() {
+    for (var i = 0; i < 4; i++) {
+      if (i === me) continue;
+      if (Math.random() * 100 < RIVAL) pts[i] += 1;
+    }
+    setPts();
+  }
+
+  /* ---------- deroulement ---------- */
+  function start() {
+    pts = [0, 0, 0, 0];
+    setPts();
+    cells.forEach(lightCell);
+    cells.forEach(function (c) { c.disabled = false; });
+    running = true;
+    vStart.hidden = true;
+    vEnd.hidden = true;
+    tEnd = performance.now() + DURATION * 1000;
+
+    flipId  = setInterval(flipSome, FLIP);
+    rivalId = setInterval(rivalTick, 900);
+
+    (function tick() {
+      var left = Math.max(0, tEnd - performance.now()) / 1000;
+      timerEl.textContent = left.toFixed(1).replace('.', ',');
+      timerEl.classList.toggle('is-low', left <= 5);
+      if (left <= 0) { finish(); return; }
+      rafId = requestAnimationFrame(tick);
+    })();
+  }
+
+  function finish() {
+    running = false;
+    cancelAnimationFrame(rafId);
+    clearInterval(flipId);
+    clearInterval(rivalId);
+    cells.forEach(function (c) { c.disabled = true; c.classList.remove('is-lit'); });
+    timerEl.textContent = '0,0';
+
+    var order = TEAMS.map(function (t, i) { return { i: i, n: t.name, p: pts[i], c: t.css }; })
+                     .sort(function (a, b) { return b.p - a.p; });
+    var place = order.findIndex(function (o) { return o.i === me; }) + 1;
+    var won = place === 1;
+
+    rankEl.innerHTML = order.map(function (o, k) {
+      return '<li class="' + (o.i === me ? 'me' : '') + '">' +
+             '<span class="pos">' + (k + 1) + '</span>' +
+             '<i style="background:' + o.c + '"></i>' +
+             '<span>' + o.n + (o.i === me ? ' (vous)' : '') + '</span>' +
+             '<span class="pts">' + o.p + '</span></li>';
+    }).join('');
+
+    root.querySelector('[data-g-result]').textContent = won ? WIN_T : LOSE_T;
+    root.querySelector('[data-g-result-text]').textContent = won ? WIN_X : LOSE_X;
+
+    var reward = root.querySelector('[data-g-reward]');
+    if (won && CODE) {
+      root.querySelector('[data-g-code]').textContent = CODE;
+      reward.hidden = false;
+    } else {
+      reward.hidden = true;
+    }
+    vEnd.hidden = false;
+  }
+
+  /* ---------- commandes ---------- */
+  root.querySelectorAll('[data-g-pick]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      me = Number(btn.dataset.gPick);
+      root.querySelectorAll('[data-g-pick]').forEach(function (b) {
+        b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+      });
+      goBtn.disabled = false;
+      setPts();
+    });
+  });
+
+  goBtn.addEventListener('click', start);
+  again.addEventListener('click', function () { vEnd.hidden = true; vStart.hidden = false; });
+
+  var copyBtn = root.querySelector('[data-g-copy]');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var txt = root.querySelector('[data-g-code]').textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(txt).then(function () {
+          copyBtn.textContent = 'Copié';
+          setTimeout(function () { copyBtn.textContent = 'Copier'; }, 1800);
+        });
+      }
+    });
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — Mini-bataille",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "neon", "label": "Accent", "default": "#00E5FF" },
+
+    { "type": "header", "content": "Textes" },
+    { "type": "text", "id": "eyebrow", "label": "Pastille", "default": "GAGNEZ VOTRE REMISE" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Finissez premier, repartez avec le code" },
+    { "type": "text", "id": "subheading", "label": "Sous-titre", "default": "Une manche de 15 secondes. Touchez tout sauf votre propre couleur." },
+    { "type": "text", "id": "start_title", "label": "Écran de départ — titre", "default": "Choisissez votre équipe" },
+    { "type": "textarea", "id": "start_text", "label": "Écran de départ — texte", "default": "Tirez sur les cibles allumées dans les autres couleurs. Toucher votre propre couleur coûte un point." },
+    { "type": "text", "id": "start_button", "label": "Bouton de départ", "default": "Lancer la manche" },
+    { "type": "text", "id": "win_title", "label": "Victoire — titre", "default": "Première place !" },
+    { "type": "textarea", "id": "win_text", "label": "Victoire — texte", "default": "Votre code est valable sur tous les packs pendant la session." },
+    { "type": "text", "id": "lose_title", "label": "Défaite — titre", "default": "Pas cette fois" },
+    { "type": "textarea", "id": "lose_text", "label": "Défaite — texte", "default": "Il faut la première place pour décrocher le code. Rejouez autant que vous voulez." },
+    { "type": "text", "id": "cta_text", "label": "Bouton vers les packs", "default": "Voir les packs" },
+    { "type": "url", "id": "cta_link", "label": "Lien du bouton" },
+
+    { "type": "header", "content": "Équipes" },
+    { "type": "text", "id": "team_1", "label": "Jaune", "default": "Jaune" },
+    { "type": "text", "id": "team_2", "label": "Verte", "default": "Verte" },
+    { "type": "text", "id": "team_3", "label": "Bleue", "default": "Bleue" },
+    { "type": "text", "id": "team_4", "label": "Rouge", "default": "Rouge" },
+
+    { "type": "header", "content": "Difficulté" },
+    { "type": "range", "id": "duration", "label": "Durée de la manche", "min": 10, "max": 30, "step": 5, "default": 15, "unit": "s" },
+    { "type": "range", "id": "flip_ms", "label": "Vitesse de changement", "min": 400, "max": 1400, "step": 100, "default": 820, "unit": "ms" },
+    { "type": "range", "id": "rival_skill", "label": "Niveau des adversaires", "min": 20, "max": 95, "step": 5, "default": 55, "unit": "%" },
+
+    { "type": "header", "content": "Récompense" },
+    { "type": "text", "id": "promo_code", "label": "Code de réduction",
+      "info": "Créez d'abord ce code dans Réductions, sinon il ne fonctionnera pas au paiement. Laissez vide pour désactiver la récompense.",
+      "default": "" },
+    { "type": "richtext", "id": "rules", "label": "Mention sous le jeu",
+      "default": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>" }
+  ],
+  "presets": [ { "name": "VOLTAG — Mini-bataille" } ]
+}
+{% endschema %}
