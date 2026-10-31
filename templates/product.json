@@ -48,11 +48,10 @@
             "liquid_code": ""
           }
         },
-        "pumper_bundles_app_block_qb_JhxxCc": {
-          "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
+        "moon_bundles_app_block_DyUGYm": {
+          "type": "shopify://apps/moon-bundles/blocks/app-block/aaf4cd95-8b9b-4a14-b929-0f7fc8fced27",
           "settings": {
-            "selected_product": "{{product}}",
-            "using_page_builder": false
+            "moonbundle_selected_product": "{{product}}"
           }
         },
         "price": {
@@ -300,7 +299,7 @@
         "a6eb81db-40e4-43e0-972f-32db010a4a56",
         "title",
         "bl_custom_html_css_js_liquid_block_code_jz4bWP",
-        "pumper_bundles_app_block_qb_JhxxCc",
+        "moon_bundles_app_block_DyUGYm",
         "price",
         "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
