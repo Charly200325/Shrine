@@ -219,70 +219,6 @@
         "cycle": 5
       }
     },
-    "ea116af5-1e95-468b-9eac-c68d1f0ccf85": {
-      "type": "voltag-modes",
-      "blocks": {
-        "mode-0": {
-          "type": "mode",
-          "settings": {
-            "name": "Pistolet",
-            "accent": "#00a3ff",
-            "stat_1_label": "Munitions",
-            "stat_1_value": "12",
-            "stat_2_label": "Vies retirées par tir",
-            "stat_2_value": "1"
-          }
-        },
-        "mode-1": {
-          "type": "mode",
-          "settings": {
-            "name": "Mitraillette",
-            "accent": "#ff2d55",
-            "stat_1_label": "Munitions",
-            "stat_1_value": "6",
-            "stat_2_label": "Vies retirées par tir",
-            "stat_2_value": "2"
-          }
-        },
-        "mode-2": {
-          "type": "mode",
-          "settings": {
-            "name": "Fusil de précision",
-            "accent": "#39ff14",
-            "stat_1_label": "Munitions",
-            "stat_1_value": "6",
-            "stat_2_label": "Vies retirées par tir",
-            "stat_2_value": "2"
-          }
-        },
-        "mode-3": {
-          "type": "mode",
-          "settings": {
-            "name": "Lance-roquettes",
-            "accent": "#ffd60a",
-            "stat_1_label": "Munitions",
-            "stat_1_value": "1",
-            "stat_2_label": "Vies retirées par tir",
-            "stat_2_value": "3"
-          }
-        }
-      },
-      "block_order": [
-        "mode-0",
-        "mode-1",
-        "mode-2",
-        "mode-3"
-      ],
-      "disabled": true,
-      "settings": {
-        "bg": "#05060a",
-        "neon": "#00e5ff",
-        "eyebrow": "4 modes de tir",
-        "heading": "Changez d'arme en pleine partie",
-        "intro": "Un bouton sur le blaster fait défiler quatre modes. Chacun a ses munitions et sa puissance : à vous de choisir entre tirer souvent ou frapper fort.",
-        "note": "VOLTAG fonctionne à l'infrarouge, comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et aucun projectile n'est tiré."
-      }
-    },
     "f6b07b60-9941-4c97-a988-81bd39477cf2": {
       "type": "voltag-arsenal",
       "blocks": {
@@ -378,6 +314,70 @@
         "intro": "VOLTAG ramène la tension d'une vraie partie en arène chez vous ou dans le jardin. Chaque blaster se jumelle à une cible connectée qui s'allume, vibre et sonne à l'instant où vous êtes touché : chaque tir compte et personne ne conteste le score. Formez les équipes, changez d'arme en pleine partie et jouez quand vous voulez. Sangles réglables, des enfants dès 8 ans aux adultes qui refusent de perdre.",
         "ars_title": "MODES DE TIR",
         "ars_sub": "Choisissez votre style de jeu."
+      }
+    },
+    "ea116af5-1e95-468b-9eac-c68d1f0ccf85": {
+      "type": "voltag-modes",
+      "blocks": {
+        "mode-0": {
+          "type": "mode",
+          "settings": {
+            "name": "Pistolet",
+            "accent": "#00a3ff",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "12",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "1"
+          }
+        },
+        "mode-1": {
+          "type": "mode",
+          "settings": {
+            "name": "Mitraillette",
+            "accent": "#ff2d55",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "6",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "2"
+          }
+        },
+        "mode-2": {
+          "type": "mode",
+          "settings": {
+            "name": "Fusil de précision",
+            "accent": "#39ff14",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "6",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "2"
+          }
+        },
+        "mode-3": {
+          "type": "mode",
+          "settings": {
+            "name": "Lance-roquettes",
+            "accent": "#ffd60a",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "1",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "3"
+          }
+        }
+      },
+      "block_order": [
+        "mode-0",
+        "mode-1",
+        "mode-2",
+        "mode-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "bg": "#05060a",
+        "neon": "#00e5ff",
+        "eyebrow": "4 modes de tir",
+        "heading": "Changez d'arme en pleine partie",
+        "intro": "Un bouton sur le blaster fait défiler quatre modes. Chacun a ses munitions et sa puissance : à vous de choisir entre tirer souvent ou frapper fort.",
+        "note": "VOLTAG fonctionne à l'infrarouge, comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et aucun projectile n'est tiré."
       }
     },
     "f709e7f3-a96b-4ffa-94f9-b126075833b6": {
@@ -726,11 +726,11 @@
   "order": [
     "532f4438-d099-44ab-8e4b-822744dd2de2",
     "3a070bd7-f9a4-408a-8474-e05df5d2f598",
-    "3bed9d06-bab0-460d-bacd-140b1c4746f0",
-    "ea116af5-1e95-468b-9eac-c68d1f0ccf85",
     "f6b07b60-9941-4c97-a988-81bd39477cf2",
+    "ea116af5-1e95-468b-9eac-c68d1f0ccf85",
     "f709e7f3-a96b-4ffa-94f9-b126075833b6",
     "31419b3a-dce7-44e2-907c-e719b813ff2e",
+    "3bed9d06-bab0-460d-bacd-140b1c4746f0",
     "d117fc68-5055-40cf-9b97-cb86820b7297",
     "13c8298b-eb55-4558-9ee8-77d928871312",
     "b86f716c-3401-4290-895c-c78ac5a3a4c8"
