@@ -23,10 +23,12 @@
   font:inherit;font-size:16px;padding:14px 16px;letter-spacing:.04em;transition:border-color .2s,box-shadow .2s}
 #vs-{{ section.id }} input:focus{outline:0;border-color:var(--cy);
   box-shadow:0 0 0 3px color-mix(in srgb,var(--cy) 18%,transparent)}
-#vs-{{ section.id }} button{flex:none;display:inline-flex;align-items:center;justify-content:center;
+#vs-{{ section.id }} button,
+#vs-{{ section.id }} .s-go{flex:none;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;
   padding:14px 30px;border-radius:14px;border:0;background:var(--star);color:#0b1120;
   font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:filter .2s,transform .15s,box-shadow .2s}
-#vs-{{ section.id }} button:hover{filter:brightness(1.05);transform:translateY(-2px);
+#vs-{{ section.id }} button:hover,
+#vs-{{ section.id }} .s-go:hover{filter:brightness(1.05);transform:translateY(-2px);
   box-shadow:0 6px 20px color-mix(in srgb,var(--star) 30%,transparent)}
 #vs-{{ section.id }} .s-hint{margin-top:12px;font-size:13px;color:#6b7690;line-height:1.6}
 #vs-{{ section.id }} .s-warn{display:none;margin-top:12px;font-size:13.5px;color:#FF2D55}
@@ -66,7 +68,8 @@
       <div class="s-field">
         <input type="text" id="vs-num-{{ section.id }}" data-s-input
                placeholder="{{ section.settings.ph_tracking }}" autocomplete="off" spellcheck="false">
-        <button type="button" data-s-go>{{ section.settings.btn_label }}</button>
+        <a class="s-go" data-s-go href="{{ section.settings.tracker_url }}"
+           target="_blank" rel="noopener">{{ section.settings.btn_label }}</a>
       </div>
       <p class="s-hint">{{ section.settings.hint }}</p>
       <p class="s-warn" data-s-warn>{{ section.settings.warn }}</p>
@@ -105,20 +108,36 @@
   var warn  = root.querySelector('[data-s-warn]');
   var base  = {{ section.settings.tracker_url | json }};
 
-  function go() {
-    var v = (input.value || '').trim().replace(/\s+/g, '');
+  function clean() { return (input.value || '').trim().replace(/\s+/g, ''); }
+
+  function sync() {
+    var v = clean();
+    btn.setAttribute('href', v ? base + encodeURIComponent(v) : base);
+  }
+
+  function go(e) {
+    var v = clean();
     if (v.length < 6) {
+      if (e) e.preventDefault();
       warn.style.display = 'block';
       input.focus();
-      return;
+      return false;
     }
     warn.style.display = 'none';
-    window.open(base + encodeURIComponent(v), '_blank', 'noopener');
+    sync();
+    return true;
   }
 
   btn.addEventListener('click', go);
-  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
-  input.addEventListener('input', function () { warn.style.display = 'none'; });
+  input.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    if (!go()) return;
+    var w = window.open(btn.href, '_blank', 'noopener');
+    if (!w) window.location.href = btn.href;
+  });
+  input.addEventListener('input', function () { warn.style.display = 'none'; sync(); });
+  sync();
 })();
 </script>
 
