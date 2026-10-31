@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "contact": {
+      "type": "voltag-contact",
+      "blocks": {
+        "b1": {
+          "type": "info",
+          "settings": {
+            "icon": "clock",
+            "title": "Délai de réponse",
+            "text": "Sous 24 heures ouvrées, du lundi au vendredi."
+          }
+        },
+        "b2": {
+          "type": "info",
+          "settings": {
+            "icon": "truck",
+            "title": "Suivi de commande",
+            "text": "Le numéro de suivi vous est envoyé par e-mail dès l'expédition."
+          }
+        },
+        "b3": {
+          "type": "info",
+          "settings": {
+            "icon": "back",
+            "title": "Retours",
+            "text": "Vous disposez de 30 jours après réception pour changer d'avis."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "contact"
+  ]
+}

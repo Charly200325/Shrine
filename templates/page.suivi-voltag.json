@@ -1,0 +1,47 @@
+{
+  "sections": {
+    "suivi": {
+      "type": "voltag-suivi",
+      "blocks": {
+        "b1": {
+          "type": "step",
+          "settings": {
+            "title": "Commande confirmée",
+            "text": "Vous recevez un e-mail de confirmation dans les minutes qui suivent votre achat."
+          }
+        },
+        "b2": {
+          "type": "step",
+          "settings": {
+            "title": "Préparation",
+            "text": "Votre colis est préparé puis remis au transporteur sous 1 à 2 jours ouvrés."
+          }
+        },
+        "b3": {
+          "type": "step",
+          "settings": {
+            "title": "Numéro de suivi",
+            "text": "Dès l'expédition, votre numéro de suivi vous est envoyé par e-mail."
+          }
+        },
+        "b4": {
+          "type": "step",
+          "settings": {
+            "title": "Livraison",
+            "text": "Vous suivez l'acheminement en direct avec le champ ci-dessus."
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "suivi"
+  ]
+}

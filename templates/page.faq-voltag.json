@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "faq": {
+      "type": "voltag-faq",
+      "blocks": {
+        "b1": {
+          "type": "qa",
+          "settings": {
+            "icon": "box",
+            "question": "Que contient la boîte ?",
+            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED.</p><p><strong>Duo :</strong> 2 blasters et 2 cibles. <strong>Squad :</strong> 4 blasters et 4 cibles dans les quatre couleurs. <strong>Arène :</strong> 8 blasters et 8 cibles.</p><p>Les piles ne sont pas fournies.</p>",
+            "show_teams": true,
+            "show_modes": false
+          }
+        },
+        "b2": {
+          "type": "qa",
+          "settings": {
+            "icon": "check",
+            "question": "Comment se déroule une partie ?",
+            "answer": "<p>Chacun choisit sa couleur, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, l'afficheur décompte les vies restantes, et le son et la vibration rendent la touche indiscutable.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "b3": {
+          "type": "qa",
+          "settings": {
+            "icon": "heart",
+            "question": "Est-ce sans danger pour les enfants ?",
+            "answer": "<p>Oui. VOLTAG fonctionne par <strong>signaux infrarouges</strong>, comme une télécommande de télévision : aucun faisceau laser, aucun projectile, donc rien qui puisse blesser ou se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>, et les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "b4": {
+          "type": "qa",
+          "settings": {
+            "icon": "target",
+            "question": "Peut-on changer de mode de tir ?",
+            "answer": "<p>Oui. Chaque blaster passe d'un mode à l'autre entre <strong>quatre modes de tir</strong>, chacun avec ses munitions et sa puissance, ce qui permet de changer de tactique en pleine partie.</p>",
+            "show_teams": false,
+            "show_modes": true
+          }
+        },
+        "b5": {
+          "type": "qa",
+          "settings": {
+            "icon": "bolt",
+            "question": "Faut-il des piles ?",
+            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Aucune recharge n'est nécessaire : vous les insérez et vous jouez.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "b6": {
+          "type": "qa",
+          "settings": {
+            "icon": "globe",
+            "question": "Peut-on jouer en intérieur et en extérieur ?",
+            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc conviennent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode, de quoi s'éparpiller et jouer à cache-cache.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "b7": {
+          "type": "qa",
+          "settings": {
+            "icon": "truck",
+            "question": "Quels sont les délais de livraison ?",
+            "answer": "<p>Votre commande est préparée sous 1 à 2 jours ouvrés, puis remise au transporteur. Vous recevez votre numéro de suivi par e-mail dès l'expédition et vous pouvez le saisir sur notre <a href=\"/pages/suivi\">page de suivi</a>.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "b8": {
+          "type": "qa",
+          "settings": {
+            "icon": "back",
+            "question": "Comment faire un retour ?",
+            "answer": "<p>Vous disposez de <strong>30 jours</strong> à compter de la réception pour changer d'avis, soit plus que les 14 jours du droit de rétractation légal. Écrivez-nous depuis la <a href=\"/pages/contact\">page contact</a> et nous organisons le retour ou l'échange.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "b9": {
+          "type": "qa",
+          "settings": {
+            "icon": "mail",
+            "question": "Je n'ai pas reçu d'e-mail de confirmation",
+            "answer": "<p>Vérifiez d'abord vos courriers indésirables. Si vous ne trouvez rien, écrivez-nous en précisant l'adresse e-mail utilisée lors de la commande et nous retrouvons votre achat.</p>",
+            "show_teams": false,
+            "show_modes": false
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9"
+      ],
+      "settings": {
+        "heading": "QUESTIONS FRÉQUENTES",
+        "sub": "Tout ce qu'il faut savoir sur VOLTAG, les packs, la livraison et les retours."
+      }
+    }
+  },
+  "order": [
+    "faq"
+  ]
+}

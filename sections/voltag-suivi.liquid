@@ -1,0 +1,176 @@
+{%- comment -%} VOLTAG — Suivi de commande | sections/voltag-suivi.liquid {%- endcomment -%}
+
+<style>
+#vs-{{ section.id }}{--cy:{{ section.settings.accent }};--star:{{ section.settings.btn_color }};
+  background:{{ section.settings.bg }};color:#fff;padding:64px 0 72px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+#vs-{{ section.id }} *{box-sizing:border-box}
+#vs-{{ section.id }} p{margin:0}
+#vs-{{ section.id }} .s-in{max-width:760px;margin:0 auto;padding:0 20px;text-align:center}
+#vs-{{ section.id }} .s-eye{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--cy);
+  text-shadow:0 0 10px color-mix(in srgb,var(--cy) 50%,transparent);margin-bottom:12px}
+#vs-{{ section.id }} h1,#vs-{{ section.id }} h2{margin:0;font-size:clamp(28px,4.4vw,44px);font-weight:800;
+  letter-spacing:-.02em;line-height:1.08;text-wrap:balance}
+#vs-{{ section.id }} .s-lz{display:block;width:min(220px,55%);height:3px;margin:16px auto 20px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,#FF2D55,#FFD60A,#39FF14,#00A3FF,transparent);
+  background-size:200% 100%;animation:vs-flow-{{ section.id }} 3s linear infinite}
+#vs-{{ section.id }} .s-sub{color:#9aa4bb;font-size:16px;line-height:1.65;max-width:600px;margin:0 auto}
+
+#vs-{{ section.id }} .s-box{border:1px solid #1c2335;border-radius:18px;background:#0d1424;padding:30px 26px;margin-top:36px;text-align:left}
+#vs-{{ section.id }} label{display:block;font-size:12.5px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;color:#8f9ab3;margin-bottom:7px}
+#vs-{{ section.id }} .s-field{display:flex;gap:10px;flex-wrap:wrap}
+#vs-{{ section.id }} input{flex:1 1 240px;background:#0b1120;border:1px solid #223049;border-radius:11px;color:#fff;
+  font:inherit;font-size:16px;padding:14px 16px;letter-spacing:.04em;transition:border-color .2s,box-shadow .2s}
+#vs-{{ section.id }} input:focus{outline:0;border-color:var(--cy);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--cy) 18%,transparent)}
+#vs-{{ section.id }} button{flex:none;display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 30px;border-radius:14px;border:0;background:var(--star);color:#0b1120;
+  font:inherit;font-size:16px;font-weight:700;cursor:pointer;transition:filter .2s,transform .15s,box-shadow .2s}
+#vs-{{ section.id }} button:hover{filter:brightness(1.05);transform:translateY(-2px);
+  box-shadow:0 6px 20px color-mix(in srgb,var(--star) 30%,transparent)}
+#vs-{{ section.id }} .s-hint{margin-top:12px;font-size:13px;color:#6b7690;line-height:1.6}
+#vs-{{ section.id }} .s-warn{display:none;margin-top:12px;font-size:13.5px;color:#FF2D55}
+
+#vs-{{ section.id }} .s-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:40px;text-align:left}
+#vs-{{ section.id }} .s-step{border:1px solid #1c2335;border-radius:16px;background:#0d1424;padding:20px 18px}
+#vs-{{ section.id }} .s-n{font-size:12px;font-weight:800;letter-spacing:.1em;color:var(--cy);margin-bottom:10px}
+#vs-{{ section.id }} .s-step b{display:block;font-size:15px;font-weight:800;margin-bottom:6px}
+#vs-{{ section.id }} .s-step span{display:block;font-size:13.5px;color:#9aa4bb;line-height:1.55}
+
+#vs-{{ section.id }} .s-help{margin-top:34px;font-size:14.5px;color:#9aa4bb;line-height:1.7}
+#vs-{{ section.id }} .s-help a{color:var(--cy);font-weight:700}
+
+@keyframes vs-flow-{{ section.id }}{to{background-position:200% 0}}
+@media (prefers-reduced-motion:reduce){#vs-{{ section.id }} .s-lz{animation:none}}
+@media (max-width:600px){
+  #vs-{{ section.id }}{padding:44px 0 52px}
+  #vs-{{ section.id }} .s-in{padding:0 16px}
+  #vs-{{ section.id }} .s-box{padding:22px 18px}
+  #vs-{{ section.id }} button{width:100%}
+}
+</style>
+
+<section id="vs-{{ section.id }}">
+  <div class="s-in">
+    {%- if section.settings.eyebrow != blank -%}<p class="s-eye">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- if section.settings.use_h1 -%}
+      <h1>{{ section.settings.heading }}</h1>
+    {%- else -%}
+      <h2>{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    <span class="s-lz" aria-hidden="true"></span>
+    {%- if section.settings.sub != blank -%}<p class="s-sub">{{ section.settings.sub }}</p>{%- endif -%}
+
+    <div class="s-box">
+      <label for="vs-num-{{ section.id }}">{{ section.settings.l_tracking }}</label>
+      <div class="s-field">
+        <input type="text" id="vs-num-{{ section.id }}" data-s-input
+               placeholder="{{ section.settings.ph_tracking }}" autocomplete="off" spellcheck="false">
+        <button type="button" data-s-go>{{ section.settings.btn_label }}</button>
+      </div>
+      <p class="s-hint">{{ section.settings.hint }}</p>
+      <p class="s-warn" data-s-warn>{{ section.settings.warn }}</p>
+    </div>
+
+    {%- assign sn = 0 -%}
+    {%- for block in section.blocks -%}{%- if block.type == 'step' -%}{%- assign sn = sn | plus: 1 -%}{%- endif -%}{%- endfor -%}
+    {%- if sn > 0 -%}
+      <div class="s-steps">
+        {%- assign i = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'step' -%}
+            {%- assign i = i | plus: 1 -%}
+            <div class="s-step" {{ block.shopify_attributes }}>
+              <div class="s-n">{{ i | prepend: '0' | slice: -2, 2 }}</div>
+              <b>{{ block.settings.title }}</b>
+              <span>{{ block.settings.text }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.help != blank -%}
+      <div class="s-help">{{ section.settings.help }}</div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('vs-{{ section.id }}');
+  if (!root) return;
+  var input = root.querySelector('[data-s-input]');
+  var btn   = root.querySelector('[data-s-go]');
+  var warn  = root.querySelector('[data-s-warn]');
+  var base  = {{ section.settings.tracker_url | json }};
+
+  function go() {
+    var v = (input.value || '').trim().replace(/\s+/g, '');
+    if (v.length < 6) {
+      warn.style.display = 'block';
+      input.focus();
+      return;
+    }
+    warn.style.display = 'none';
+    window.open(base + encodeURIComponent(v), '_blank', 'noopener');
+  }
+
+  btn.addEventListener('click', go);
+  input.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
+  input.addEventListener('input', function () { warn.style.display = 'none'; });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — Suivi",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#00E5FF" },
+    { "type": "color", "id": "btn_color", "label": "Couleur du bouton", "default": "#FFD60A" },
+    { "type": "checkbox", "id": "use_h1", "label": "Titre en H1", "default": true },
+
+    { "type": "header", "content": "Textes" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "OÙ EST MA COMMANDE ?" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Suivre mon colis" },
+    { "type": "textarea", "id": "sub", "label": "Introduction",
+      "default": "Saisissez le numéro de suivi reçu par e-mail au moment de l'expédition. Il vous mènera directement à l'état de votre colis chez le transporteur." },
+
+    { "type": "header", "content": "Champ de suivi" },
+    { "type": "text", "id": "l_tracking", "label": "Libellé", "default": "Numéro de suivi" },
+    { "type": "text", "id": "ph_tracking", "label": "Exemple", "default": "Ex. LZ123456789FR" },
+    { "type": "text", "id": "btn_label", "label": "Bouton", "default": "Suivre" },
+    { "type": "text", "id": "tracker_url", "label": "Service de suivi",
+      "info": "Le numéro est ajouté à la fin de cette adresse. Par défaut 17TRACK, qui reconnaît la plupart des transporteurs.",
+      "default": "https://t.17track.net/fr#nums=" },
+    { "type": "textarea", "id": "hint", "label": "Aide sous le champ",
+      "default": "Le numéro figure dans l'e-mail d'expédition. Comptez 24 à 48 heures après l'envoi avant que le suivi s'active." },
+    { "type": "text", "id": "warn", "label": "Message si numéro trop court",
+      "default": "Ce numéro semble incomplet, vérifiez-le dans votre e-mail d'expédition." },
+
+    { "type": "header", "content": "Bas de page" },
+    { "type": "richtext", "id": "help", "label": "Besoin d'aide",
+      "default": "<p>Pas de numéro de suivi, ou un colis qui n'avance plus depuis plusieurs jours ? <a href=\"/pages/contact\">Écrivez-nous</a> et nous vérifions pour vous.</p>" }
+  ],
+  "blocks": [
+    { "type": "step", "name": "Étape", "limit": 4, "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "Titre" },
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Texte." }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Suivi", "blocks": [
+      { "type": "step", "settings": { "title": "Commande confirmée",
+        "text": "Vous recevez un e-mail de confirmation dans les minutes qui suivent votre achat." } },
+      { "type": "step", "settings": { "title": "Préparation",
+        "text": "Votre colis est préparé puis remis au transporteur sous 1 à 2 jours ouvrés." } },
+      { "type": "step", "settings": { "title": "Numéro de suivi",
+        "text": "Dès l'expédition, votre numéro de suivi vous est envoyé par e-mail." } },
+      { "type": "step", "settings": { "title": "Livraison",
+        "text": "Vous suivez l'acheminement en direct avec le champ ci-dessus." } }
+    ]}
+  ]
+}
+{% endschema %}
