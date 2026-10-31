@@ -1,0 +1,121 @@
+{%- comment -%} VOLTAG — Fin de l'offre | sections/voltag-offre.liquid {%- endcomment -%}
+
+<style>
+#vto-{{ section.id }}{background:{{ section.settings.bg }};color:#EAF4FF;padding:0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+#vto-{{ section.id }} *{box-sizing:border-box}
+#vto-{{ section.id }} .o-wrap{max-width:1240px;margin:0 auto;padding:18px 16px}
+#vto-{{ section.id }} .o-box{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
+  border:1px solid color-mix(in srgb,{{ section.settings.accent }} 35%,transparent);border-radius:16px;
+  background:#101827;padding:16px 22px}
+#vto-{{ section.id }} .o-label{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:{{ section.settings.accent }}}
+#vto-{{ section.id }} .o-clock{display:flex;gap:10px;align-items:flex-start}
+#vto-{{ section.id }} .o-unit{min-width:58px;text-align:center}
+#vto-{{ section.id }} .o-num{display:block;font-size:30px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;
+  background:#05060A;border:1px solid #1E2A3C;border-radius:11px;padding:10px 6px}
+#vto-{{ section.id }} .o-cap{display:block;margin-top:6px;font-size:10px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:#8FA7BC}
+#vto-{{ section.id }} .o-end{font-size:13px;color:#8FA7BC}
+#vto-{{ section.id }} .o-over{text-align:center;font-size:15px;font-weight:700;color:#8FA7BC;padding:4px 0}
+#vto-{{ section.id }} [hidden]{display:none !important}
+@media (max-width:600px){
+  #vto-{{ section.id }} .o-box{gap:12px;padding:14px}
+  #vto-{{ section.id }} .o-unit{min-width:48px}
+  #vto-{{ section.id }} .o-num{font-size:24px;padding:8px 4px}
+}
+</style>
+
+<section id="vto-{{ section.id }}" data-end="{{ section.settings.end_date }}T{{ section.settings.end_time }}:00">
+  <div class="o-wrap">
+    <div class="o-box" data-o-live>
+      {%- if section.settings.label != blank -%}
+        <span class="o-label">{{ section.settings.label }}</span>
+      {%- endif -%}
+      <div class="o-clock">
+        <span class="o-unit"><b class="o-num" data-o-d>00</b><span class="o-cap">Jours</span></span>
+        <span class="o-unit"><b class="o-num" data-o-h>00</b><span class="o-cap">Heures</span></span>
+        <span class="o-unit"><b class="o-num" data-o-m>00</b><span class="o-cap">Min</span></span>
+        <span class="o-unit"><b class="o-num" data-o-s>00</b><span class="o-cap">Sec</span></span>
+      </div>
+      {%- if section.settings.show_end_date -%}
+        <span class="o-end" data-o-end></span>
+      {%- endif -%}
+    </div>
+    <div class="o-over" data-o-over hidden>{{ section.settings.over_text }}</div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('vto-{{ section.id }}');
+  if (!root) return;
+
+  {%- comment -%}
+    Date de fin REELLE, identique pour tous les visiteurs.
+    Interpretee dans le fuseau de la boutique, pas celui du visiteur.
+  {%- endcomment -%}
+  var OFFSET = {{ section.settings.utc_offset | default: 1 }};
+  var raw    = root.getAttribute('data-end');
+  var m      = raw && raw.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})/);
+  if (!m) return;
+
+  var end = Date.UTC(+m[1], +m[2] - 1, +m[3], +m[4] - OFFSET, +m[5], 0);
+
+  var live = root.querySelector('[data-o-live]');
+  var over = root.querySelector('[data-o-over]');
+  var dE = root.querySelector('[data-o-d]'), hE = root.querySelector('[data-o-h]');
+  var mE = root.querySelector('[data-o-m]'), sE = root.querySelector('[data-o-s]');
+  var endE = root.querySelector('[data-o-end]');
+
+  if (endE) {
+    try {
+      endE.textContent = {{ section.settings.end_prefix | json }} + ' ' +
+        new Date(end).toLocaleString('fr-FR',
+          { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+    } catch (e) {}
+  }
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function tick() {
+    var left = end - Date.now();
+    if (left <= 0) {
+      live.hidden = true;
+      over.hidden = false;
+      clearInterval(id);
+      return;
+    }
+    var s = Math.floor(left / 1000);
+    dE.textContent = pad(Math.floor(s / 86400));
+    hE.textContent = pad(Math.floor(s / 3600) % 24);
+    mE.textContent = pad(Math.floor(s / 60) % 60);
+    sE.textContent = pad(s % 60);
+  }
+
+  tick();
+  var id = setInterval(tick, 1000);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — Fin d'offre",
+  "tag": "section",
+  "settings": [
+    { "type": "paragraph", "content": "Compte à rebours vers une date de fin réelle, identique pour tous les visiteurs. Quand elle est passée, le minuteur disparaît automatiquement." },
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#00E5FF" },
+    { "type": "text", "id": "label", "label": "Intitulé", "default": "L'offre se termine dans" },
+    { "type": "text", "id": "end_date", "label": "Date de fin",
+      "info": "Format AAAA-MM-JJ, par exemple 2026-12-01.", "default": "2026-12-01" },
+    { "type": "text", "id": "end_time", "label": "Heure de fin",
+      "info": "Format HH:MM sur 24 heures, par exemple 23:59.", "default": "23:59" },
+    { "type": "range", "id": "utc_offset", "label": "Décalage horaire",
+      "info": "France métropolitaine : 1 en hiver, 2 en été.",
+      "min": -11, "max": 13, "step": 1, "default": 1, "unit": "h" },
+    { "type": "checkbox", "id": "show_end_date", "label": "Afficher la date de fin en clair", "default": true },
+    { "type": "text", "id": "end_prefix", "label": "Texte avant la date", "default": "Jusqu'au" },
+    { "type": "text", "id": "over_text", "label": "Message une fois l'offre terminée", "default": "Cette offre est terminée." }
+  ],
+  "presets": [ { "name": "VOLTAG — Fin d'offre" } ]
+}
+{% endschema %}
