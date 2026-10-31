@@ -219,7 +219,7 @@
   ];
   var CELLS    = 9;
   var DURATION = {{ section.settings.duration | default: 15 }};
-  var FLIP     = {{ section.settings.flip_ms | default: 820 }};
+  var FLIP     = {{ section.settings.flip_ms | default: 800 }};
   var RIVAL    = {{ section.settings.rival_skill | default: 55 }};
   var CODE     = {{ section.settings.promo_code | json }};
   var WIN_T    = {{ section.settings.win_title | json }};
@@ -445,18 +445,15 @@
 
     { "type": "header", "content": "Difficulté" },
     { "type": "range", "id": "duration", "label": "Durée de la manche", "min": 10, "max": 30, "step": 5, "default": 15, "unit": "s" },
-    { "type": "range", "id": "flip_ms", "label": "Vitesse de changement", "min": 400, "max": 1400, "step": 100, "default": 820, "unit": "ms" },
+    { "type": "range", "id": "flip_ms", "label": "Vitesse de changement", "min": 400, "max": 1400, "step": 100, "default": 800, "unit": "ms" },
     { "type": "range", "id": "rival_skill", "label": "Niveau des adversaires", "min": 20, "max": 95, "step": 5, "default": 55, "unit": "%" },
 
     { "type": "header", "content": "Récompense" },
     { "type": "text", "id": "promo_code", "label": "Code de réduction",
-      "info": "Créez d'abord ce code dans Réductions, sinon il ne fonctionnera pas au paiement. Laissez vide pour désactiver la récompense.",
-      "default": "" },
+      "info": "Créez d'abord ce code dans Réductions, sinon il ne fonctionnera pas au paiement. Videz le champ pour désactiver la récompense." },
     { "type": "richtext", "id": "rules", "label": "Mention sous le jeu",
       "default": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>" }
   ],
   "presets": [ { "name": "VOLTAG — Mini-bataille" } ]
 }
 {% endschema %}
-
-{%- comment -%} resync {%- endcomment -%}

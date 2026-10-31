@@ -246,7 +246,7 @@
     select(0, false);
     {%- if section.settings.autoplay -%}
     if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      autoId = setInterval(function () { select((cur + 1) % items.length, false); }, {{ section.settings.autoplay_ms }});
+      autoId = setInterval(function () { select((cur + 1) % items.length, false); }, {{ section.settings.autoplay_ms | default: 3000 }});
     }
     {%- endif -%}
   }
@@ -281,7 +281,7 @@
     { "type": "header", "content": "Balayage et animation" },
     { "type": "range", "id": "scan_seconds", "label": "Durée du balayage", "min": 2, "max": 10, "step": 1, "default": 4, "unit": "s" },
     { "type": "checkbox", "id": "autoplay", "label": "Faire défiler les points tout seul", "default": true },
-    { "type": "range", "id": "autoplay_ms", "label": "Intervalle du défilement", "min": 1500, "max": 6000, "step": 500, "default": 2800, "unit": "ms" },
+    { "type": "range", "id": "autoplay_ms", "label": "Intervalle du défilement", "min": 1500, "max": 6000, "step": 500, "default": 3000, "unit": "ms" },
 
     { "type": "header", "content": "Bandeau d'équipes" },
     { "type": "checkbox", "id": "show_teams", "label": "Afficher le bandeau", "default": true },
@@ -311,5 +311,3 @@
   ]
 }
 {% endschema %}
-
-{%- comment -%} resync {%- endcomment -%}
