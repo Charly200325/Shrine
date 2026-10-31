@@ -20,9 +20,9 @@
     "gradient_accent_1": "",
     "colors_accent_2": "#6d388b",
     "gradient_accent_2": "linear-gradient(54deg, rgba(109, 56, 139, 1) 14%, rgba(105, 14, 14, 1) 85%)",
-    "colors_text": "#121212",
+    "colors_text": "#FFFFFF",
     "colors_outline_button_labels": "#6d388b",
-    "colors_background_1": "#ffffff",
+    "colors_background_1": "#000000",
     "gradient_background_1": "",
     "colors_background_2": "#f3f3f3",
     "gradient_background_2": "",
@@ -524,24 +524,7 @@
         }
       }
     },
-    "content_for_index": [],
-    "blocks": {
-      "6544682535036668446": {
-        "type": "shopify://apps/pumper-bundles/blocks/app-embed/0856870d-2aca-4b1e-a662-cf1797f61270",
-        "disabled": false,
-        "settings": {}
-      },
-      "2975745137944656958": {
-        "type": "shopify://apps/bl-custom-html-css-js-liquid/blocks/site-wide-code/96fc73ef-2727-4174-82ec-12cfce5b3426",
-        "disabled": false,
-        "settings": {
-          "html_code": "",
-          "css_code": "",
-          "js_code": "",
-          "liquid_code": ""
-        }
-      }
-    }
+    "content_for_index": []
   },
   "presets": {
     "Default": {

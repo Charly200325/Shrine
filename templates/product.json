@@ -12,6 +12,21 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
+          "type": "rating_stars",
+          "settings": {
+            "rating": 4.8,
+            "star_color": "#FFD23F",
+            "bg_stars_style": "full",
+            "bg_star_color": "#ececec",
+            "label": "(noté 4.8/5 sur 2840 avis )",
+            "size": 13,
+            "alignment": "flex-start",
+            "scroll_id": "",
+            "margin_top": 0,
+            "margin_bottom": 9
+          }
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -22,19 +37,20 @@
             "margin_bottom": 0
           }
         },
-        "a6eb81db-40e4-43e0-972f-32db010a4a56": {
-          "type": "rating_stars",
+        "bl_custom_html_css_js_liquid_block_code_jz4bWP": {
+          "type": "shopify://apps/bl-custom-html-css-js-liquid/blocks/block-code/96fc73ef-2727-4174-82ec-12cfce5b3426",
           "settings": {
-            "rating": 4.4,
-            "star_color": "#ffcc00",
-            "bg_stars_style": "full",
-            "bg_star_color": "#ececec",
-            "label": "(xxxx Reviews)",
-            "size": 16,
-            "alignment": "flex-start",
-            "scroll_id": "",
-            "margin_top": 0,
-            "margin_bottom": 9
+            "html_code": "<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Lazrtag – Badges</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;display=swap\" rel=\"stylesheet\">\n<style>\n  body {\n    margin: 0;\n    padding: 40px 16px;\n    background: #0b0f19;\n    font-family: 'Poppins', system-ui, sans-serif;\n  }\n\n  /* ---------- Badge TikTok ---------- */\n  .lzk, .lzt {\n    display: flex;\n    justify-content: center;\n    margin: 14px 0;\n  }\n\n  .lzk__pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    padding: 7px 16px;\n    background: #1a1d29;\n    border: 1px solid rgba(255, 255, 255, .18);\n    border-radius: 999px;\n    color: #fff;\n    font-size: 14px;\n    font-weight: 700;\n    line-height: 1;\n  }\n  .lzk__pill svg {\n    width: 18px;\n    height: 18px;\n    flex: none;\n    fill: none;\n    stroke: #fff;\n    stroke-width: 2.4;\n  }\n  .lzk__pill svg .dot { fill: #fff; stroke: none; }\n  .lzk__pill b { color: #ffd24a; font-weight: 700; }\n\n  /* ---------- Badge TRENDING + timer ---------- */\n  .lzt__pill {\n    display: inline-flex;\n    align-items: center;\n    gap: 8px;\n    padding: 4px 16px 4px 6px;\n    background: #25251f;\n    border: 1px solid rgba(255, 210, 74, .4);\n    border-radius: 999px;\n    color: #fff;\n    font-size: 14px;\n    font-weight: 600;\n    line-height: 1;\n  }\n\n  .lzt__dot {\n    position: relative;\n    width: 9px;\n    height: 9px;\n    margin: 6px;\n    border-radius: 50%;\n    background: #ffd24a;\n    flex: none;\n  }\n  .lzt__dot::before {\n    content: \"\";\n    position: absolute;\n    inset: -6px;\n    border-radius: 50%;\n    background: rgba(255, 210, 74, .15);\n    animation: lzt-pulse 1.8s ease-in-out infinite;\n  }\n  @keyframes lzt-pulse {\n    0%, 100% { transform: scale(1);   opacity: 1; }\n    50%      { transform: scale(1.2); opacity: .5; }\n  }\n\n  .lzt__tag {\n    color: #ffd24a;\n    font-weight: 700;\n  }\n  .lzt__t {\n    color: #ffd24a;\n    font-weight: 700;\n    font-variant-numeric: tabular-nums;\n  }\n\n  @media (max-width: 480px) {\n    .lzk__pill, .lzt__pill { font-size: 12px; }\n  }\n</style>\n\n\n\n<div class=\"lzk\">\n  <span class=\"lzk__pill\">\n    <svg viewbox=\"0 0 24 24\" aria-hidden=\"true\"><rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"5\"></rect><circle cx=\"12\" cy=\"12\" r=\"4.2\"></circle><circle cx=\"17.3\" cy=\"6.7\" r=\"1\" class=\"dot\"></circle></svg>\n    <span>Over <b>10M views</b> on Instagram</span>\n  </span>\n</div>\n\n<div class=\"lzt\" id=\"lzt-x\">\n  <span class=\"lzt__pill\">\n    <span class=\"lzt__dot\" aria-hidden=\"true\"></span>\n    <span>\n      <span class=\"lzt__tag\">TRENDING</span>\n      · Sale ends in\n      <span class=\"lzt__t\" id=\"lzt-timer\">14:15:23</span>\n    </span>\n  </span>\n</div>\n\n<script>\n(function () {\n  var el = document.getElementById('lzt-timer');\n  var p = el.textContent.split(':');\n  var total = (+p[0]) * 3600 + (+p[1]) * 60 + (+p[2]);\n  var two = function (n) { return String(n).padStart(2, '0'); };\n\n  function render() {\n    var h = Math.floor(total / 3600),\n        m = Math.floor((total % 3600) / 60),\n        s = total % 60;\n    el.textContent = two(h) + ':' + two(m) + ':' + two(s);\n  }\n\n  setInterval(function () {\n    total = total > 0 ? total - 1 : 14 * 3600 + 15 * 60 + 23; // relance à la fin\n    render();\n  }, 1000);\n})();\n</script>",
+            "css_code": "",
+            "js_code": "",
+            "liquid_code": ""
+          }
+        },
+        "pumper_bundles_app_block_qb_JhxxCc": {
+          "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
+          "settings": {
+            "selected_product": "{{product}}",
+            "using_page_builder": false
           }
         },
         "price": {
@@ -319,8 +335,10 @@
         }
       },
       "block_order": [
-        "title",
         "a6eb81db-40e4-43e0-972f-32db010a4a56",
+        "title",
+        "bl_custom_html_css_js_liquid_block_code_jz4bWP",
+        "pumper_bundles_app_block_qb_JhxxCc",
         "price",
         "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
@@ -331,7 +349,6 @@
         "reviews_8UgFbe",
         "de158e68-5d0d-4819-a625-e2dabdff87d1"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "display_id": false,
@@ -1254,8 +1271,8 @@
       ],
       "name": "VOLTAG — La cible",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "eyebrow": "Anatomie de la cible",
         "heading": "Sept détails qui font la différence",
         "size_note": "Environ 10 × 9 cm — sangles réglables, enfants dès 8 ans et adultes.",
@@ -1273,8 +1290,8 @@
       "type": "voltag-mini-jeu",
       "name": "VOLTAG — Mini-bataille",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "eyebrow": "GAGNEZ VOTRE REMISE",
         "heading": "Finissez premier, repartez avec le code",
         "subheading": "Une manche de 15 secondes. Touchez tout sauf votre propre couleur.",
