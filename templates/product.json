@@ -894,6 +894,287 @@
         "trust_3_title": "Retour 14 jours",
         "trust_3_text": "Droit de rétractation légal"
       }
+    },
+    "voltag_etapes_q3zUgf": {
+      "type": "voltag-etapes",
+      "blocks": {
+        "step_7eXHQB": {
+          "type": "step",
+          "settings": {
+            "title": "Visez",
+            "text": "Repérez la cible de poitrine d'un adversaire, jusqu'à plusieurs dizaines de mètres."
+          }
+        },
+        "step_pyx7PL": {
+          "type": "step",
+          "settings": {
+            "title": "Tirez",
+            "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif."
+          }
+        },
+        "step_7VUW7T": {
+          "type": "step",
+          "settings": {
+            "title": "Touché",
+            "text": "La cible s'allume, vibre et émet un son. L'impact est sans ambiguïté."
+          }
+        },
+        "step_pBxFqk": {
+          "type": "step",
+          "settings": {
+            "title": "Vie en moins",
+            "text": "L'afficheur décompte. À zéro, le joueur est éliminé jusqu'à la prochaine manche."
+          }
+        },
+        "audience_zpPEmb": {
+          "type": "audience",
+          "settings": {
+            "kicker": "8 à 10 ans",
+            "title": "Le héros des anniversaires",
+            "text": "Simple à prendre en main, infrarouge sans danger, lumières et sons qui les rendent fous."
+          }
+        },
+        "audience_mW9yqW": {
+          "type": "audience",
+          "settings": {
+            "kicker": "11 à 14 ans",
+            "title": "Du canapé au terrain",
+            "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans écran."
+          }
+        },
+        "audience_wfqFMk": {
+          "type": "audience",
+          "settings": {
+            "kicker": "Soirée en famille",
+            "title": "Parents contre enfants",
+            "text": "Les impacts sont comptés par les cibles, donc le match est équitable. Les adultes jouent aussi."
+          }
+        }
+      },
+      "block_order": [
+        "step_7eXHQB",
+        "step_pyx7PL",
+        "step_7VUW7T",
+        "step_pBxFqk",
+        "audience_zpPEmb",
+        "audience_mW9yqW",
+        "audience_wfqFMk"
+      ],
+      "name": "VOLTAG — Comment jouer",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "eyebrow": "Chaque tir compte",
+        "heading": "Le score se compte tout seul. Plus personne ne triche."
+      }
+    },
+    "voltag_modes_wg9J8D": {
+      "type": "voltag-modes",
+      "blocks": {
+        "mode_Hr6rML": {
+          "type": "mode",
+          "settings": {
+            "name": "Pistolet",
+            "accent": "#00a3ff",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "12",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "1"
+          }
+        },
+        "mode_wUVGXK": {
+          "type": "mode",
+          "settings": {
+            "name": "Mitraillette",
+            "accent": "#ff2d55",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "6",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "2"
+          }
+        },
+        "mode_kMNQcH": {
+          "type": "mode",
+          "settings": {
+            "name": "Fusil de précision",
+            "accent": "#39ff14",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "6",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "2"
+          }
+        },
+        "mode_NPPz3r": {
+          "type": "mode",
+          "settings": {
+            "name": "Lance-roquettes",
+            "accent": "#ffd60a",
+            "stat_1_label": "Munitions",
+            "stat_1_value": "1",
+            "stat_2_label": "Vies retirées par tir",
+            "stat_2_value": "3"
+          }
+        }
+      },
+      "block_order": [
+        "mode_Hr6rML",
+        "mode_wUVGXK",
+        "mode_kMNQcH",
+        "mode_NPPz3r"
+      ],
+      "name": "VOLTAG — Modes de tir",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "eyebrow": "4 modes de tir",
+        "heading": "Changez d'arme en pleine partie",
+        "intro": "Un bouton sur le blaster fait défiler quatre modes. Chacun a ses munitions et sa puissance : à vous de choisir entre tirer souvent ou frapper fort.",
+        "note": "VOLTAG fonctionne à l'infrarouge, comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et aucun projectile n'est tiré."
+      }
+    },
+    "voltag_comparatif_9XRkmk": {
+      "type": "voltag-comparatif",
+      "blocks": {
+        "row_Rzm6gV": {
+          "type": "row",
+          "settings": {
+            "label": "Éloigne les enfants des écrans",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row_Hwq8cp": {
+          "type": "row",
+          "settings": {
+            "label": "Aucun projectile à ramasser",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "row_BggdkL": {
+          "type": "row",
+          "settings": {
+            "label": "Score et vies comptés automatiquement",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "row_hmLeWr": {
+          "type": "row",
+          "settings": {
+            "label": "Se joue dedans comme dehors",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row_WftTwm": {
+          "type": "row",
+          "settings": {
+            "label": "Parents et enfants à armes égales",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row_mEwRgq": {
+          "type": "row",
+          "settings": {
+            "label": "Rien qui puisse atteindre le visage",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        }
+      },
+      "block_order": [
+        "row_Rzm6gV",
+        "row_Hwq8cp",
+        "row_BggdkL",
+        "row_hmLeWr",
+        "row_WftTwm",
+        "row_mEwRgq"
+      ],
+      "name": "VOLTAG — Comparatif",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "eyebrow": "Pourquoi les familles changent",
+        "heading": "VOLTAG face aux alternatives",
+        "badge": "NOTRE CHOIX",
+        "col_us": "VOLTAG",
+        "col_b": "Blasters en mousse",
+        "col_c": "Jeux vidéo",
+        "cta_text": "Choisir mon pack",
+        "cta_link": ""
+      }
+    },
+    "voltag_faq_dHnEX7": {
+      "type": "voltag-faq",
+      "blocks": {
+        "qa_FMp8wk": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce que c'est sans danger pour les enfants ?",
+            "answer": "<p>Oui. VOLTAG utilise des <strong>signaux infrarouges</strong>, exactement comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et rien n'est projeté : il n'y a donc ni fléchette ni bille susceptible de blesser ou de se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>. Les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>"
+          }
+        },
+        "qa_x7wN7x": {
+          "type": "qa",
+          "settings": {
+            "question": "Que contient la boîte ?",
+            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe : bleu, rouge, vert et jaune.</p><p><strong>Duo</strong> : 2 blasters et 2 cibles. <strong>Squad</strong> : 4 blasters et 4 cibles. <strong>Arène</strong> : 8 blasters et 8 cibles.</p>"
+          }
+        },
+        "qa_tqmePH": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il des piles ?",
+            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Prévoyez-en un jeu complet pour pouvoir jouer dès la réception.</p>"
+          }
+        },
+        "qa_FgV8UB": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment se déroule une partie ?",
+            "answer": "<p>Chacun choisit sa couleur d'équipe, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, vibre et émet un son, et l'afficheur décompte les vies restantes. Personne ne discute le score.</p>"
+          }
+        },
+        "qa_g4kY8j": {
+          "type": "qa",
+          "settings": {
+            "question": "Peut-on jouer en intérieur et en extérieur ?",
+            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc fonctionnent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode de tir, de quoi s'éparpiller et jouer à cache-cache.</p>"
+          }
+        },
+        "qa_VDdtkg": {
+          "type": "qa",
+          "settings": {
+            "question": "Livraison et retours",
+            "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez d'un <strong>droit de rétractation de 14 jours</strong> à compter de la réception, conformément au code de la consommation. En cas de problème, contactez-nous et nous organisons le retour ou l'échange.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa_FMp8wk",
+        "qa_x7wN7x",
+        "qa_tqmePH",
+        "qa_FgV8UB",
+        "qa_g4kY8j",
+        "qa_VDdtkg"
+      ],
+      "name": "VOLTAG — FAQ",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "eyebrow": "Vos questions",
+        "heading": "Tout ce qu'il faut savoir avant de commander",
+        "open_first": true,
+        "foot": "<p>Une autre question ? Écrivez-nous, nous répondons sous 24 heures ouvrées.</p>"
+      }
     }
   },
   "order": [
@@ -904,6 +1185,10 @@
     "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a",
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
     "b321ab88-2b59-4dba-bade-54885c874ca5",
-    "voltag_produit_PDKKMW"
+    "voltag_produit_PDKKMW",
+    "voltag_etapes_q3zUgf",
+    "voltag_modes_wg9J8D",
+    "voltag_comparatif_9XRkmk",
+    "voltag_faq_dHnEX7"
   ]
 }
