@@ -72,14 +72,13 @@
 #va-{{ section.id }} .r-fade.on{height:120px;margin-top:-120px;pointer-events:none;
   background:linear-gradient(180deg,transparent,{{ section.settings.bg }} 85%)}
 #va-{{ section.id }} .r-more{display:flex;justify-content:center;margin-top:26px}
-#va-{{ section.id }} .r-more button{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:999px;
-  border:1px solid #2a3550;background:#0d1424;color:#fff;font:inherit;font-size:14.5px;font-weight:800;cursor:pointer;
-  transition:border-color .25s,background .25s,transform .15s}
-#va-{{ section.id }} .r-more button:hover{border-color:var(--cy);background:#101a2b;transform:translateY(-2px)}
-#va-{{ section.id }} .r-more svg{width:15px;height:15px;fill:none;stroke:var(--cy);stroke-width:2.4;stroke-linecap:round;
-  stroke-linejoin:round;transition:transform .35s cubic-bezier(.2,1.2,.3,1)}
-#va-{{ section.id }} .r-more button[aria-expanded="true"] svg{transform:rotate(180deg)}
-#va-{{ section.id }} .r-more .r-left{color:#8f9ab3;font-weight:600}
+#va-{{ section.id }} .r-more button{display:inline-flex;align-items:center;justify-content:center;
+  padding:15px 34px;border-radius:14px;border:0;background:var(--star);color:#0b1120;
+  font:inherit;font-size:17px;font-weight:700;cursor:pointer;
+  transition:filter .2s,transform .15s,box-shadow .2s}
+#va-{{ section.id }} .r-more button:hover{filter:brightness(1.05);transform:translateY(-2px);
+  box-shadow:0 6px 20px color-mix(in srgb,var(--star) 30%,transparent)}
+#va-{{ section.id }} .r-more button:active{transform:translateY(0)}
 
 #va-{{ section.id }} .r-empty{margin-top:30px;border:1px dashed #2a3550;border-radius:16px;padding:40px 28px;text-align:center}
 #va-{{ section.id }} .r-empty p{color:#8f9ab3;font-size:15px;line-height:1.7;max-width:560px;margin:0 auto}
@@ -244,8 +243,6 @@
       <div class="r-more">
         <button type="button" data-r-more aria-expanded="false">
           <span data-r-label>{{ section.settings.more_label }}</span>
-          <span class="r-left" data-r-left>({{ rest }})</span>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
         </button>
       </div>
     {%- endif -%}
@@ -269,7 +266,6 @@
   var extra = [].slice.call(root.querySelectorAll('[data-r-extra]'));
   var fade  = root.querySelector('[data-r-fade]');
   var label = root.querySelector('[data-r-label]');
-  var left  = root.querySelector('[data-r-left]');
   var more  = {{ section.settings.more_label | json }};
   var less  = {{ section.settings.less_label | json }};
   var rest  = extra.length;
@@ -296,10 +292,7 @@
         at = rest;
         fade.classList.remove('on');
         label.textContent = less;
-        left.textContent = '';
         btn.setAttribute('aria-expanded', 'true');
-      } else {
-        left.textContent = '(' + (rest - at) + ')';
       }
     } else {
       extra.forEach(function (el) { el.classList.add('r-hide'); });
@@ -307,7 +300,6 @@
       open = false;
       fade.classList.add('on');
       label.textContent = more;
-      left.textContent = '(' + rest + ')';
       btn.setAttribute('aria-expanded', 'false');
       root.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
