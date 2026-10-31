@@ -6,6 +6,7 @@
 #vf-{{ section.id }} *{box-sizing:border-box}
 #vf-{{ section.id }} p,#vf-{{ section.id }} h2,#vf-{{ section.id }} h3{margin:0}
 #vf-{{ section.id }} .f-in{max-width:760px;margin:0 auto;padding:0 20px}
+#vf-{{ section.id }} .f-head{text-align:center;margin-bottom:4px}
 #vf-{{ section.id }} .f-eye{font-size:13px;font-weight:800;letter-spacing:.16em;color:var(--cy);
   text-shadow:0 0 10px color-mix(in srgb,var(--cy) 50%,transparent)}
 #vf-{{ section.id }} .f-sub{margin-top:8px;font-size:14px;color:#8f9ab3}
@@ -36,7 +37,7 @@
 #vf-{{ section.id }} .f-modes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
 #vf-{{ section.id }} .f-modes span{padding:7px 4px;border-radius:9px;background:#0b1120;border:1px solid #1f2b47;
   font-size:12px;font-weight:800;letter-spacing:.06em;color:#fff;text-align:center}
-#vf-{{ section.id }} .f-foot{margin-top:24px;font-size:14px;color:#8f9ab3}
+#vf-{{ section.id }} .f-foot{margin-top:24px;font-size:14px;color:#8f9ab3;text-align:center}
 #vf-{{ section.id }} .f-foot a{color:var(--cy);font-weight:700}
 
 @media (max-width:749px){
@@ -56,8 +57,10 @@
 
 <section id="vf-{{ section.id }}">
   <div class="f-in">
-    <h2 class="f-eye">{{ section.settings.heading }}</h2>
-    {%- if section.settings.sub != blank -%}<p class="f-sub">{{ section.settings.sub }}</p>{%- endif -%}
+    <div class="f-head">
+      <h2 class="f-eye">{{ section.settings.heading }}</h2>
+      {%- if section.settings.sub != blank -%}<p class="f-sub">{{ section.settings.sub }}</p>{%- endif -%}
+    </div>
 
     <div class="f-list">
       {%- for block in section.blocks -%}
