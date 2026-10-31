@@ -1,0 +1,717 @@
+{%- comment -%} VOLTAG — Arène | sections/voltag-arene.liquid {%- endcomment -%}
+
+<style>
+#va-{{ section.id }}{--y:#FFD60A;--g:#39FF14;--b:#00A3FF;--r:#FF2D55;--cy:{{ section.settings.accent }};--cyc:8s;
+  position:relative;background:{{ section.settings.bg }};color:#fff;padding:64px 0 60px;overflow:hidden;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+#va-{{ section.id }} *{box-sizing:border-box}
+#va-{{ section.id }} p{margin:0}
+#va-{{ section.id }} .in{max-width:1000px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;align-items:center;text-align:center}
+#va-{{ section.id }} .eye{font-size:12px;font-weight:800;letter-spacing:.2em;color:var(--cy);text-shadow:0 0 10px color-mix(in srgb,var(--cy) 50%,transparent);margin-bottom:12px}
+#va-{{ section.id }} h2{margin:0;font-weight:800;font-size:clamp(28px,4.4vw,46px);line-height:1.08;letter-spacing:-.02em;color:#fff;text-wrap:balance}
+#va-{{ section.id }} .sub{margin-top:10px;color:#9aa4bb;font-size:15px;line-height:1.5}
+#va-{{ section.id }} .lz{display:block;width:min(220px,55%);height:3px;margin:16px auto 0;border-radius:3px;
+  background:linear-gradient(90deg,transparent,var(--r),var(--y),var(--g),var(--b),transparent);background-size:200% 100%;animation:va-flow-{{ section.id }} 3s linear infinite}
+
+/* ---- bandeau promo ---- */
+#va-{{ section.id }} .top{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:560px;margin-top:22px}
+#va-{{ section.id }} .promo{display:flex;flex-wrap:wrap;align-items:center;gap:14px;width:100%;padding:12px 16px;border-radius:14px;
+  border:1.5px solid var(--y);background:linear-gradient(90deg,color-mix(in srgb,var(--y) 14%,transparent),color-mix(in srgb,var(--y) 4%,transparent));
+  text-align:left;animation:va-pulse-{{ section.id }} 2.4s ease-in-out infinite}
+#va-{{ section.id }} .promo>div{flex:1 1 0;min-width:0}
+#va-{{ section.id }} .promo-pct{flex:none;font-size:28px;font-weight:900;line-height:1;color:var(--y);text-shadow:0 0 14px color-mix(in srgb,var(--y) 60%,transparent)}
+#va-{{ section.id }} .promo b{display:block;font-size:13px;font-weight:800;letter-spacing:.08em;color:#fff;line-height:1.25}
+#va-{{ section.id }} .promo span{display:block;margin-top:3px;font-size:12.5px;color:#c9d1e4;line-height:1.35}
+#va-{{ section.id }} .promo.won{border-color:var(--g);background:linear-gradient(90deg,color-mix(in srgb,var(--g) 16%,transparent),color-mix(in srgb,var(--g) 4%,transparent));animation:none;box-shadow:0 0 24px color-mix(in srgb,var(--g) 35%,transparent)}
+#va-{{ section.id }} .promo.won .promo-pct{color:var(--g);text-shadow:0 0 14px color-mix(in srgb,var(--g) 60%,transparent)}
+
+/* ---- mini-jeu ---- */
+#va-{{ section.id }} .bt{position:relative;width:100%;border-radius:16px;border:1px solid #1c2335;background:#0d1424;padding:14px 14px 0;overflow:hidden;text-align:left}
+#va-{{ section.id }} .bt-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+#va-{{ section.id }} .bt-title{font-size:12px;font-weight:800;letter-spacing:.18em;color:#fff}
+#va-{{ section.id }} .timer{font-size:15px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+#va-{{ section.id }} .timer.low{color:var(--r);animation:va-blink-{{ section.id }} .5s steps(1) infinite}
+#va-{{ section.id }} .q{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:15px;font-weight:800;letter-spacing:.06em;color:#fff}
+#va-{{ section.id }} .q i{flex:none;display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--cy);color:#06101c;font-size:13px;font-weight:800;font-style:normal}
+#va-{{ section.id }} .pills{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-bottom:14px}
+#va-{{ section.id }} .pill{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 4px;border-radius:12px;border:1.5px solid #1c2335;
+  background:#0b1120;color:#fff;font:inherit;font-size:12px;font-weight:800;letter-spacing:.1em;cursor:pointer;
+  transition:border-color .2s,box-shadow .2s,transform .2s;animation:va-pp-{{ section.id }} 1.8s ease-in-out infinite}
+#va-{{ section.id }} .pill:hover{border-color:var(--c);box-shadow:0 0 14px color-mix(in srgb,var(--c) 40%,transparent);transform:translateY(-2px)}
+#va-{{ section.id }} .pill i{width:26px;height:26px;border-radius:50%;border:3px solid var(--c);box-shadow:0 0 10px var(--c)}
+#va-{{ section.id }} .how{margin:0 0 14px;font-size:12.5px;line-height:1.55;color:#9aa4bb}
+#va-{{ section.id }} .how b{color:var(--y)}
+#va-{{ section.id }} .how u{text-decoration:underline;text-underline-offset:2px;color:#fff}
+#va-{{ section.id }} .rows{position:relative;height:138px;margin-bottom:14px}
+#va-{{ section.id }} .row{position:absolute;left:0;right:0;top:0;height:30px;display:grid;grid-template-columns:96px minmax(0,1fr) 60px;
+  align-items:center;gap:10px;transition:transform .45s cubic-bezier(.3,1.2,.4,1)}
+#va-{{ section.id }} .row span{font-size:11.5px;font-weight:800;letter-spacing:.08em;color:#c9d1e4;white-space:nowrap}
+#va-{{ section.id }} .row span small{display:inline-block;margin-left:5px;padding:1px 5px;border-radius:4px;font-size:8.5px;letter-spacing:.08em;background:#1c2335;color:#8f9ab3;vertical-align:1px}
+#va-{{ section.id }} .row.me span{color:#fff}
+#va-{{ section.id }} .row.me span small{background:var(--c);color:#06101c}
+#va-{{ section.id }} .row>div{height:10px;border-radius:6px;background:#141c2e;overflow:hidden}
+#va-{{ section.id }} .row>div i{display:block;height:100%;width:0;border-radius:6px;background:var(--c);box-shadow:0 0 10px var(--c);transition:width .25s linear}
+#va-{{ section.id }} .row b{font-size:13px;font-weight:800;color:#fff;text-align:right;font-variant-numeric:tabular-nums}
+#va-{{ section.id }} .end{text-align:center;padding:4px 0 16px}
+#va-{{ section.id }} .end-h{font-size:30px;font-weight:900;line-height:1.1;letter-spacing:.02em;animation:va-endin-{{ section.id }} .6s cubic-bezier(.2,1.5,.4,1)}
+#va-{{ section.id }} .end-s{margin-top:6px;font-size:13px;color:#9aa4bb;line-height:1.45}
+#va-{{ section.id }} .end-s strong{color:#fff}
+#va-{{ section.id }} .codebox{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px}
+#va-{{ section.id }} .codeval{padding:10px 16px;border-radius:10px;border:1.5px dashed var(--y);background:#12100a;color:var(--y);font-size:18px;font-weight:900;letter-spacing:.14em;user-select:all;-webkit-user-select:all}
+#va-{{ section.id }} .copy{padding:11px 16px;border-radius:10px;border:1.5px solid #2a3550;background:0 0;color:#fff;font:inherit;font-size:12px;font-weight:800;cursor:pointer}
+#va-{{ section.id }} .end-btns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+#va-{{ section.id }} .again{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:999px;border:1.5px solid #2a3550;background:0 0;color:#fff;font:inherit;font-size:13px;font-weight:800;cursor:pointer}
+#va-{{ section.id }} .shop{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:999px;border:0;background:var(--y);color:#0b1120;font:inherit;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 0 18px color-mix(in srgb,var(--y) 35%,transparent)}
+#va-{{ section.id }} .shop--b{width:100%;margin-top:6px;padding:15px 20px;font-size:14px}
+#va-{{ section.id }} .tbar{position:absolute;left:0;right:0;bottom:0;height:3px;background:#141c2e}
+#va-{{ section.id }} .tbar i{display:block;height:100%;width:100%;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--b),var(--cy))}
+
+/* ---- scène ---- */
+#va-{{ section.id }} .stage{position:relative;width:100%;aspect-ratio:1000/560;margin-top:26px;cursor:crosshair;touch-action:manipulation}
+#va-{{ section.id }} .svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+#va-{{ section.id }} .lead{fill:none;stroke:rgba(255,255,255,.28);stroke-width:1.2;stroke-dasharray:3 4}
+#va-{{ section.id }} .leadd{fill:none;stroke:rgba(255,255,255,.7);stroke-width:1.2;stroke-dasharray:400;stroke-dashoffset:400;
+  animation:va-draw-{{ section.id }} .9s ease-out forwards,va-dim-{{ section.id }} .6s ease-out forwards;
+  animation-delay:calc(var(--k) * .16s + .2s),calc(var(--k) * .16s + 1.2s)}
+#va-{{ section.id }} .dot{fill:#fff;filter:drop-shadow(0 0 5px var(--cy))}
+#va-{{ section.id }} .ring{fill:none;stroke:var(--cy);stroke-width:1.4;transform-box:fill-box;transform-origin:center;animation:va-ring-{{ section.id }} 2.4s ease-out infinite}
+#va-{{ section.id }} .dim{stroke:rgba(255,255,255,.22);stroke-width:1}
+#va-{{ section.id }} .dimtxt{fill:#8f9ab3;font-size:12px;font-weight:600}
+#va-{{ section.id }} .vest{transform-box:fill-box;transform-origin:center;animation:va-shake-{{ section.id }} 2s ease-out 1s infinite}
+#va-{{ section.id }} .body{fill:#111827;stroke-width:4;stroke-linejoin:round;animation:va-col-{{ section.id }} var(--cyc) steps(1,end) infinite,va-glow-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .chev{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;animation:va-col-{{ section.id }} var(--cyc) steps(1,end) infinite,va-glow-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .strap{fill:none;stroke:#2a3550;stroke-width:4;stroke-linecap:round}
+#va-{{ section.id }} .panel{fill:none;stroke:#1f2740;stroke-width:1.5}
+#va-{{ section.id }} .fill{opacity:0;animation:va-fc-{{ section.id }} var(--cyc) steps(1,end) infinite,va-hf-{{ section.id }} 2s ease-out 1s infinite}
+#va-{{ section.id }} .lcd{fill:#12070a;stroke-width:2;animation:va-col-{{ section.id }} var(--cyc) steps(1,end) infinite,va-lcd-{{ section.id }} 2s ease-out 1s infinite}
+#va-{{ section.id }} .num{fill:#ff3b3b;font:800 30px/1 ui-monospace,'Courier New',monospace;text-anchor:middle;filter:drop-shadow(0 0 6px #ff3b3b);opacity:0}
+#va-{{ section.id }} .n3{animation:va-n3-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .n2{animation:va-n2-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .n1{animation:va-n1-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .n0{animation:va-n0-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .nx{animation:va-nx-{{ section.id }} var(--cyc) steps(1,end) infinite}
+#va-{{ section.id }} .beam{fill:none;stroke:var(--sc);stroke-width:4;stroke-linecap:round;stroke-dasharray:18 300;stroke-dashoffset:18;
+  filter:drop-shadow(0 0 5px var(--sc)) drop-shadow(0 0 12px var(--sc));opacity:0;
+  animation:va-beam-{{ section.id }} var(--cyc) cubic-bezier(.3,0,.7,1) calc(var(--d) - .18s) infinite}
+#va-{{ section.id }} .core{fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;stroke-dasharray:18 300;stroke-dashoffset:18;opacity:0;
+  animation:va-beam-{{ section.id }} var(--cyc) cubic-bezier(.3,0,.7,1) calc(var(--d) - .18s) infinite}
+#va-{{ section.id }} .burst{transform-box:fill-box;transform-origin:center;opacity:0;animation:va-burst-{{ section.id }} var(--cyc) ease-out var(--d) infinite}
+#va-{{ section.id }} .burst path{stroke:#fff;stroke-width:3;stroke-linecap:round;filter:drop-shadow(0 0 4px var(--sc))}
+#va-{{ section.id }} .spot{fill:var(--sc);opacity:0;filter:blur(6px);animation:va-spot-{{ section.id }} var(--cyc) ease-out var(--d) infinite}
+#va-{{ section.id }} .wave{fill:none;stroke:var(--sc);stroke-width:2.5;transform-box:fill-box;transform-origin:center;opacity:0;animation:va-wave-{{ section.id }} var(--cyc) ease-out var(--d) infinite}
+#va-{{ section.id }} .minus{fill:#fff;font-size:24px;font-weight:900;text-anchor:middle;filter:drop-shadow(0 0 6px var(--sc));opacity:0;animation:va-min-{{ section.id }} var(--cyc) ease-out var(--d) infinite}
+#va-{{ section.id }} .vib{stroke:#fff;stroke-width:2.5;stroke-linecap:round;opacity:0;animation:va-vib-{{ section.id }} 2s ease-out 1s infinite}
+
+/* ---- étiquettes ---- */
+#va-{{ section.id }} .lab{position:absolute;max-width:190px;opacity:0;transform:translateY(6px);animation:va-in-{{ section.id }} .5s ease-out forwards;animation-delay:calc(var(--k) * .16s + .7s)}
+#va-{{ section.id }} .lab b{display:block;font-size:12.5px;font-weight:800;letter-spacing:.12em;color:#fff}
+#va-{{ section.id }} .lab span{display:block;margin-top:3px;font-size:13px;line-height:1.4;color:#8f9ab3}
+#va-{{ section.id }} .lab--r{text-align:left}
+#va-{{ section.id }} .lab--l{text-align:right}
+#va-{{ section.id }} .lab--c{text-align:center;transform:translate(-50%,6px);animation-name:va-inc-{{ section.id }}}
+#va-{{ section.id }} .lab i{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cy);box-shadow:0 0 6px var(--cy);margin:0 7px 1px 0;vertical-align:middle}
+#va-{{ section.id }} .lab--l i{margin:0 0 1px 7px}
+#va-{{ section.id }} .cd{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);font-size:72px;font-weight:900;color:#fff;pointer-events:none;z-index:3;text-shadow:0 0 24px var(--cy);opacity:0}
+#va-{{ section.id }} .cd.go{animation:va-cd-{{ section.id }} .8s ease-out}
+#va-{{ section.id }} .hs{display:none}
+#va-{{ section.id }} .card{display:none}
+
+/* ---- tableau de bord ---- */
+#va-{{ section.id }} .hud{display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:560px;margin-top:6px}
+#va-{{ section.id }} .board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:100%;border-radius:14px;border:1px solid #1c2335;background:#0d1424;overflow:hidden}
+#va-{{ section.id }} .board>div{display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 4px 9px;min-width:0}
+#va-{{ section.id }} .board>div+div{border-left:1px solid #1a2338}
+#va-{{ section.id }} .board small{font-size:9.5px;font-weight:800;letter-spacing:.16em;color:#5f6a85}
+#va-{{ section.id }} .board b{display:inline-block;font-size:20px;font-weight:800;line-height:1.15;color:#fff;font-variant-numeric:tabular-nums}
+#va-{{ section.id }} .board .sc b{color:var(--cy);text-shadow:0 0 12px color-mix(in srgb,var(--cy) 55%,transparent)}
+#va-{{ section.id }} .board b.bump{animation:va-bump-{{ section.id }} .45s cubic-bezier(.2,1.6,.4,1)}
+#va-{{ section.id }} .board .st.hot b{color:var(--y);text-shadow:0 0 12px color-mix(in srgb,var(--y) 60%,transparent)}
+#va-{{ section.id }} .last{display:flex;align-items:center;justify-content:center;gap:8px;min-height:20px;font-size:12.5px;font-weight:600;color:#8f9ab3;text-align:center}
+#va-{{ section.id }} .last i{flex:none;width:8px;height:8px;border-radius:50%;background:#2a3550}
+#va-{{ section.id }} .last strong{color:#fff;font-weight:800;letter-spacing:.06em}
+#va-{{ section.id }} .last.new{animation:va-lin-{{ section.id }} .35s ease-out}
+#va-{{ section.id }} [hidden]{display:none !important}
+#va-{{ section.id }} button{-webkit-appearance:none;appearance:none;margin:0;line-height:inherit}
+
+/* ---- équipes ---- */
+#va-{{ section.id }} .teams-h{margin-top:44px;font-weight:800;font-size:clamp(22px,3vw,30px);letter-spacing:-.01em;color:#fff}
+#va-{{ section.id }} .teams-s{margin:6px 0 20px;color:#9aa4bb;font-size:14px}
+#va-{{ section.id }} .teams{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;width:100%}
+#va-{{ section.id }} .team{border-radius:16px;padding:1.5px;background:#1c2335;animation:va-team-{{ section.id }} var(--cyc) steps(1,end) infinite;animation-delay:calc(var(--i) * -2s)}
+#va-{{ section.id }} .team>div{height:100%;border-radius:14.5px;background:#0d1424;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 10px 18px}
+#va-{{ section.id }} .team svg{width:48px;height:52px}
+#va-{{ section.id }} .team svg path{fill:#111827;stroke:var(--c);stroke-width:4;stroke-linejoin:round}
+#va-{{ section.id }} .team svg .v{fill:none;stroke-width:5;stroke-linecap:round}
+#va-{{ section.id }} .team svg rect{fill:#12070a;stroke:var(--c);stroke-width:2}
+#va-{{ section.id }} .team p{font-size:13px;font-weight:800;letter-spacing:.1em;color:#fff}
+#va-{{ section.id }} .team span{display:block;width:34px;height:3px;border-radius:2px;background:var(--c);box-shadow:0 0 8px var(--c)}
+
+@keyframes va-flow-{{ section.id }}{to{background-position:200% 0}}
+@keyframes va-pulse-{{ section.id }}{0%,100%{box-shadow:0 0 10px color-mix(in srgb,var(--y) 15%,transparent)}50%{box-shadow:0 0 26px color-mix(in srgb,var(--y) 45%,transparent)}}
+@keyframes va-pp-{{ section.id }}{0%,100%{box-shadow:0 0 0 transparent}50%{box-shadow:0 0 16px color-mix(in srgb,var(--c) 45%,transparent)}}
+@keyframes va-blink-{{ section.id }}{50%{opacity:.35}}
+@keyframes va-col-{{ section.id }}{0%{stroke:var(--y)}25%{stroke:var(--g)}50%{stroke:var(--b)}75%{stroke:var(--r)}}
+@keyframes va-fc-{{ section.id }}{0%{fill:var(--y)}25%{fill:var(--g)}50%{fill:var(--b)}75%{fill:var(--r)}}
+@keyframes va-glow-{{ section.id }}{0%{filter:drop-shadow(0 0 8px var(--y))}25%{filter:drop-shadow(0 0 8px var(--g))}50%{filter:drop-shadow(0 0 8px var(--b))}75%{filter:drop-shadow(0 0 8px var(--r))}}
+@keyframes va-hf-{{ section.id }}{0%{opacity:.55}30%,100%{opacity:0}}
+@keyframes va-lcd-{{ section.id }}{0%{fill:#5a0d14}25%,100%{fill:#12070a}}
+@keyframes va-n3-{{ section.id }}{0%{opacity:1}12.5%,100%{opacity:0}}
+@keyframes va-n2-{{ section.id }}{0%,12.4%{opacity:0}12.5%{opacity:1}37.5%,100%{opacity:0}}
+@keyframes va-n1-{{ section.id }}{0%,37.4%{opacity:0}37.5%{opacity:1}62.5%,100%{opacity:0}}
+@keyframes va-n0-{{ section.id }}{0%,62.4%{opacity:0}62.5%{opacity:1}87.5%,100%{opacity:0}}
+@keyframes va-nx-{{ section.id }}{0%,87.4%{opacity:0}87.5%,100%{opacity:1}}
+@keyframes va-beam-{{ section.id }}{0%{opacity:1;stroke-dashoffset:18}2.25%{opacity:1;stroke-dashoffset:-100}2.5%,100%{opacity:0;stroke-dashoffset:-100}}
+@keyframes va-burst-{{ section.id }}{0%{opacity:1;transform:scale(.3)}3.5%{opacity:1;transform:scale(1.15)}6.5%,100%{opacity:0;transform:scale(1.3)}}
+@keyframes va-spot-{{ section.id }}{0%{opacity:.95}8%,100%{opacity:0}}
+@keyframes va-wave-{{ section.id }}{0%{opacity:.95;transform:scale(.2)}9%,100%{opacity:0;transform:scale(2.6)}}
+@keyframes va-min-{{ section.id }}{0%{opacity:0;transform:translateY(6px)}1.5%{opacity:1}10%{opacity:1;transform:translateY(-26px)}14%,100%{opacity:0;transform:translateY(-34px)}}
+@keyframes va-shake-{{ section.id }}{0%{transform:none}3%{transform:translate(5px,-2px) rotate(1.5deg)}6%{transform:translate(-5px,1px) rotate(-1.5deg)}9%{transform:translate(3px,0)}12%{transform:translate(-2px,0)}15%,100%{transform:none}}
+@keyframes va-vib-{{ section.id }}{0%{opacity:0}2%,22%{opacity:1}30%,100%{opacity:0}}
+@keyframes va-ring-{{ section.id }}{0%{transform:scale(.6);opacity:.8}100%{transform:scale(2.6);opacity:0}}
+@keyframes va-draw-{{ section.id }}{to{stroke-dashoffset:0}}
+@keyframes va-dim-{{ section.id }}{to{stroke:rgba(255,255,255,.28)}}
+@keyframes va-in-{{ section.id }}{to{opacity:1;transform:none}}
+@keyframes va-inc-{{ section.id }}{to{opacity:1;transform:translate(-50%,0)}}
+@keyframes va-cd-{{ section.id }}{0%{opacity:0;transform:translate(-50%,-50%) scale(1.8)}25%{opacity:1;transform:translate(-50%,-50%) scale(1)}75%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(.85)}}
+@keyframes va-endin-{{ section.id }}{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+@keyframes va-bump-{{ section.id }}{0%{transform:scale(1)}40%{transform:scale(1.35)}100%{transform:scale(1)}}
+@keyframes va-lin-{{ section.id }}{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes va-team-{{ section.id }}{0%{background:var(--c);box-shadow:0 0 22px color-mix(in srgb,var(--c) 45%,transparent);transform:translateY(-4px)}25%,100%{background:#1c2335;box-shadow:none;transform:none}}
+@keyframes va-pop-{{ section.id }}{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:none}}
+@keyframes va-hsr-{{ section.id }}{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.9);opacity:0}}
+@keyframes va-wf-{{ section.id }}{0%{transform:rotate(0);opacity:0}4%{opacity:1}40%{transform:rotate(360deg);opacity:1}46%,100%{transform:rotate(360deg);opacity:0}}
+
+@media (max-width:749px){
+  #va-{{ section.id }}{padding:44px 0 40px}
+  #va-{{ section.id }} .in{padding:0 16px}
+  #va-{{ section.id }} .sub{font-size:14px}
+  #va-{{ section.id }} .stage{aspect-ratio:1/.88;margin-top:18px}
+  #va-{{ section.id }} .svg{left:-50%;width:200%;top:0;height:auto}
+  #va-{{ section.id }} .dim,#va-{{ section.id }} .dimtxt,#va-{{ section.id }} .dot,
+  #va-{{ section.id }} .lab,#va-{{ section.id }} .lead,#va-{{ section.id }} .leadd,#va-{{ section.id }} .rings{display:none}
+  #va-{{ section.id }} .hs{display:grid;place-items:center;position:absolute;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;
+    background:#0b1120;border:1.5px solid rgba(255,255,255,.7);color:#fff;font-size:11px;font-weight:800;line-height:1;padding:0;cursor:pointer;z-index:2;
+    transition:transform .35s cubic-bezier(.2,1.4,.4,1),background .25s,color .25s,border-color .25s}
+  #va-{{ section.id }} .hs::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--cy);opacity:0}
+  #va-{{ section.id }} .hs.on{transform:scale(1.3);background:var(--cy);border-color:var(--cy);color:#06101c;box-shadow:0 0 14px var(--cy)}
+  #va-{{ section.id }} .hs.on::after{animation:va-hsr-{{ section.id }} 1.2s ease-out infinite}
+  #va-{{ section.id }} .card{display:block;position:relative;width:100%;margin-top:10px;border-radius:18px;padding:1.5px;overflow:hidden;isolation:isolate;background:#1c2335;text-align:left;cursor:pointer}
+  #va-{{ section.id }} .card::before{content:"";position:absolute;inset:-150%;z-index:-1;
+    background:conic-gradient(from 0deg,transparent 0 78%,rgba(255,255,255,.15) 86%,rgba(255,255,255,.7) 94%,#fff 98%,transparent 100%);
+    animation:va-wf-{{ section.id }} 7s cubic-bezier(.45,0,.25,1) infinite}
+  #va-{{ section.id }} .list{display:block;background:#0d1424;border-radius:16.5px;padding:14px 14px 12px}
+  #va-{{ section.id }} .item{display:none;align-items:center;gap:14px;width:100%;min-height:58px;padding:0 4px;border:0;background:0 0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+  #va-{{ section.id }} .item.on{display:flex;animation:va-pop-{{ section.id }} .4s cubic-bezier(.2,1,.3,1)}
+  #va-{{ section.id }} .item i{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--cy);color:#06101c;font-size:14px;font-weight:800;font-style:normal;box-shadow:0 0 14px color-mix(in srgb,var(--cy) 60%,transparent)}
+  #va-{{ section.id }} .item div{min-width:0;flex:1}
+  #va-{{ section.id }} .item b{display:block;font-size:15px;font-weight:700;color:#fff;line-height:1.25}
+  #va-{{ section.id }} .item span{display:block;margin-top:2px;font-size:13px;color:#8f9ab3;line-height:1.35}
+  #va-{{ section.id }} .item em{flex:none;font-style:normal;color:#4a5470;font-size:22px;line-height:1}
+  #va-{{ section.id }} .dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+  #va-{{ section.id }} .dots span{width:6px;height:6px;border-radius:3px;background:#2a3550;transition:width .35s,background .35s,box-shadow .35s}
+  #va-{{ section.id }} .dots span.on{width:22px;background:var(--cy);box-shadow:0 0 8px var(--cy)}
+  #va-{{ section.id }} .board b{font-size:17px}
+  #va-{{ section.id }} .board small{font-size:8.5px;letter-spacing:.12em}
+  #va-{{ section.id }} .row{grid-template-columns:84px minmax(0,1fr) 52px;gap:8px}
+  #va-{{ section.id }} .row span{font-size:10.5px}
+  #va-{{ section.id }} .pill{font-size:10px;letter-spacing:.06em}
+  #va-{{ section.id }} .cd{font-size:56px}
+  #va-{{ section.id }} .teams{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  #va-{{ section.id }} .promo-pct{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  #va-{{ section.id }} *,#va-{{ section.id }} *::before,#va-{{ section.id }} *::after{animation:none !important}
+  #va-{{ section.id }} .lab{opacity:1;transform:none}
+  #va-{{ section.id }} .lab--c{transform:translateX(-50%)}
+  #va-{{ section.id }} .leadd{stroke-dashoffset:0}
+  #va-{{ section.id }} .n3{opacity:1}
+  #va-{{ section.id }} .body,#va-{{ section.id }} .chev,#va-{{ section.id }} .lcd{stroke:var(--g)}
+}
+</style>
+
+<section id="va-{{ section.id }}">
+  <div class="in">
+    {%- if section.settings.eyebrow != blank -%}<p class="eye">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+    {%- if section.settings.sub != blank -%}<p class="sub">{{ section.settings.sub }}</p>{%- endif -%}
+    <span class="lz" aria-hidden="true"></span>
+
+    {%- if section.settings.show_game -%}
+    <div class="top">
+      <div class="promo" data-promo>
+        <p class="promo-pct">−{{ section.settings.discount }} %</p>
+        <div>
+          <b data-promo-t>{{ section.settings.promo_title }}</b>
+          <span data-promo-d>{{ section.settings.promo_text }}</span>
+        </div>
+      </div>
+
+      <div class="bt">
+        <div class="bt-head">
+          <span class="bt-title">{{ section.settings.game_title }}</span>
+          <span class="timer" data-timer>0:{{ section.settings.duration }}</span>
+        </div>
+
+        <div data-pick>
+          <p class="q"><i>1</i>{{ section.settings.step_1 }}</p>
+          <div class="pills" data-pills>
+            <button type="button" class="pill" data-t="0" style="--c:var(--y)"><i></i>{{ section.settings.team_1 }}</button>
+            <button type="button" class="pill" data-t="1" style="--c:var(--g)"><i></i>{{ section.settings.team_2 }}</button>
+            <button type="button" class="pill" data-t="2" style="--c:var(--b)"><i></i>{{ section.settings.team_3 }}</button>
+            <button type="button" class="pill" data-t="3" style="--c:var(--r)"><i></i>{{ section.settings.team_4 }}</button>
+          </div>
+          <p class="how"><b>2</b> {{ section.settings.step_2 }}<br><b>3</b> {{ section.settings.step_3 }}</p>
+        </div>
+
+        <div class="rows" data-rows hidden>
+          <div class="row" data-t="0" style="--c:var(--y)"><span>{{ section.settings.team_1 }}<small></small></span><div><i></i></div><b>0</b></div>
+          <div class="row" data-t="1" style="--c:var(--g)"><span>{{ section.settings.team_2 }}<small></small></span><div><i></i></div><b>0</b></div>
+          <div class="row" data-t="2" style="--c:var(--b)"><span>{{ section.settings.team_3 }}<small></small></span><div><i></i></div><b>0</b></div>
+          <div class="row" data-t="3" style="--c:var(--r)"><span>{{ section.settings.team_4 }}<small></small></span><div><i></i></div><b>0</b></div>
+        </div>
+
+        <div class="end" data-end hidden>
+          <p class="end-h" data-end-h></p>
+          <p class="end-s" data-end-s></p>
+          <div class="codebox" data-codebox hidden>
+            <span class="codeval" data-code></span>
+            <button type="button" class="copy" data-copy>{{ section.settings.copy_label }}</button>
+          </div>
+          <div class="end-btns">
+            <button type="button" class="again" data-again>{{ section.settings.again_label }}</button>
+            <a class="shop" href="{{ section.settings.cta_link | default: '#' }}">{{ section.settings.cta_label }}</a>
+          </div>
+        </div>
+
+        <div class="tbar"><i data-tbar></i></div>
+      </div>
+    </div>
+    {%- endif -%}
+
+    {%- comment -%} ======== SCÈNE : le gilet ======== {%- endcomment -%}
+    <div class="stage" data-stage>
+      <svg class="svg" viewBox="0 0 1000 560" aria-hidden="true">
+        <g>
+          <path style="--k:0" class="lead" d="M500 62V22H660"/><path style="--k:0" class="leadd" d="M500 62V22H660"/>
+          <path style="--k:1" class="lead" d="M478 165L330 92H300"/><path style="--k:1" class="leadd" d="M478 165L330 92H300"/>
+          <path style="--k:2" class="lead" d="M418 48L330 178H300"/><path style="--k:2" class="leadd" d="M418 48L330 178H300"/>
+          <path style="--k:3" class="lead" d="M535 252L670 200H700"/><path style="--k:3" class="leadd" d="M535 252L670 200H700"/>
+          <path style="--k:4" class="lead" d="M612 315L690 336H710"/><path style="--k:4" class="leadd" d="M612 315L690 336H710"/>
+          <path style="--k:5" class="lead" d="M388 315L320 350H300"/><path style="--k:5" class="leadd" d="M388 315L320 350H300"/>
+          <path style="--k:6" class="lead" d="M500 412V470"/><path style="--k:6" class="leadd" d="M500 412V470"/>
+        </g>
+
+        <path class="dim" d="M652 66V374M644 66h16M644 374h16"/>
+        <text class="dimtxt" x="666" y="220" transform="rotate(90 666 220)" text-anchor="middle">{{ section.settings.dim_v }}</text>
+        <path class="dim" d="M380 400H455M545 400H620M380 392v16M620 392v16"/>
+        <text class="dimtxt" x="500" y="404" text-anchor="middle">{{ section.settings.dim_h }}</text>
+
+        <g class="vest">
+          <path class="strap" d="M442 66L414 38L386 32M558 66L586 38L614 32"/>
+          <path class="body" d="M442 66H558L620 128V312L558 374H442L380 312V128Z"/>
+          <path class="fill" d="M442 66H558L620 128V312L558 374H442L380 312V128Z"/>
+          <path class="panel" d="M462 92H538L594 148V296L538 352H462L406 296V148Z"/>
+          <path class="panel" d="M408 170l28 8M592 170l-28 8M408 280l28-8M592 280l-28-8"/>
+          <path class="chev" d="M452 140L500 200L548 140"/>
+          <rect class="lcd" x="460" y="222" width="80" height="54" rx="9"/>
+          <text class="num n3" x="500" y="260">04</text>
+          <text class="num n2" x="500" y="260">03</text>
+          <text class="num n1" x="500" y="260">02</text>
+          <text class="num n0" x="500" y="260">01</text>
+          <text class="num nx" x="500" y="260">00</text>
+        </g>
+
+        <g style="--sc:var(--r);--d:1s">
+          <path class="beam" d="M1000 100L585 190"/><path class="core" d="M1000 100L585 190"/>
+          <circle class="spot" cx="585" cy="190" r="16"/><circle class="wave" cx="585" cy="190" r="20"/>
+          <g class="burst"><path d="M585 164v-12M585 216v12M559 190h-12M611 190h12M566 171l-9-9M604 171l9-9M566 209l-9 9M604 209l9 9"/></g>
+          <text class="minus" x="615" y="168">−1</text>
+        </g>
+        <g style="--sc:var(--b);--d:3s">
+          <path class="beam" d="M0 330L420 282"/><path class="core" d="M0 330L420 282"/>
+          <circle class="spot" cx="420" cy="282" r="16"/><circle class="wave" cx="420" cy="282" r="20"/>
+          <g class="burst"><path d="M420 256v-12M420 308v12M394 282h-12M446 282h12M401 263l-9-9M439 263l9-9M401 301l-9 9M439 301l9 9"/></g>
+          <text class="minus" x="386" y="260">−1</text>
+        </g>
+        <g style="--sc:var(--y);--d:5s">
+          <path class="beam" d="M250 -40L456 150"/><path class="core" d="M250 -40L456 150"/>
+          <circle class="spot" cx="456" cy="150" r="16"/><circle class="wave" cx="456" cy="150" r="20"/>
+          <g class="burst"><path d="M456 124v-12M456 176v12M430 150h-12M482 150h12M437 131l-9-9M475 131l9-9M437 169l-9 9M475 169l9 9"/></g>
+          <text class="minus" x="426" y="130">−1</text>
+        </g>
+        <g style="--sc:var(--g);--d:7s">
+          <path class="beam" d="M1000 520L576 346"/><path class="core" d="M1000 520L576 346"/>
+          <circle class="spot" cx="576" cy="346" r="16"/><circle class="wave" cx="576" cy="346" r="20"/>
+          <g class="burst"><path d="M576 320v-12M576 372v12M550 346h-12M602 346h12M557 327l-9-9M595 327l9-9M557 365l-9 9M595 365l9 9"/></g>
+          <text class="minus" x="608" y="328">−1</text>
+        </g>
+
+        <path class="vib" d="M640 248l18-6M644 270h20M640 292l18 6M360 248l-18-6M356 270h-20M360 292l-18 6"/>
+
+        <g class="rings">
+          <circle class="ring" cx="500" cy="62" r="6"/>
+          <circle class="ring" cx="535" cy="252" r="6" style="animation-delay:.6s"/>
+          <circle class="ring" cx="612" cy="315" r="6" style="animation-delay:1.2s"/>
+          <circle class="ring" cx="388" cy="315" r="6" style="animation-delay:1.8s"/>
+        </g>
+        <circle class="dot" cx="500" cy="62" r="3.5"/><circle class="dot" cx="478" cy="165" r="3.5"/>
+        <circle class="dot" cx="418" cy="48" r="3.5"/><circle class="dot" cx="535" cy="252" r="3.5"/>
+        <circle class="dot" cx="612" cy="315" r="3.5"/><circle class="dot" cx="388" cy="315" r="3.5"/>
+        <circle class="dot" cx="500" cy="412" r="3.5"/>
+      </svg>
+
+      {%- assign pos_r = 'left:66.5%;top:0%|right:70.5%;top:12.5%|right:70.5%;top:28%|left:70.5%;top:31%|left:71.5%;top:55.5%|right:70.5%;top:58%|left:50%;top:86%' | split: '|' -%}
+      {%- assign cls = 'lab--r|lab--l|lab--l|lab--r|lab--r|lab--l|lab--c' | split: '|' -%}
+      {%- assign hsp = 'left:50%;top:14.1%|left:45.6%;top:37.5%|left:33.6%;top:10.9%|left:38.5%;top:50.5%|left:72.4%;top:71.6%|left:27.6%;top:71.6%|left:50%;top:93.6%' | split: '|' -%}
+
+      {%- for block in section.blocks -%}
+        {%- assign k = forloop.index0 -%}
+        <div class="lab {{ cls[k] }}" style="--k:{{ k }};{{ pos_r[k] }}" {{ block.shopify_attributes }}>
+          {%- if cls[k] == 'lab--l' -%}
+            <b>{{ block.settings.title }}<i></i></b>
+          {%- elsif cls[k] == 'lab--c' -%}
+            <b>{{ block.settings.title }}</b>
+          {%- else -%}
+            <b><i></i>{{ block.settings.title }}</b>
+          {%- endif -%}
+          <span>{{ block.settings.text }}</span>
+        </div>
+      {%- endfor -%}
+
+      <div class="cd" data-cd></div>
+
+      {%- for block in section.blocks -%}
+        <button type="button" class="hs{% if forloop.first %} on{% endif %}" data-hs="{{ forloop.index0 }}"
+                style="{{ hsp[forloop.index0] }}" aria-label="{{ block.settings.title | escape }}">{{ forloop.index }}</button>
+      {%- endfor -%}
+    </div>
+
+    {%- comment -%} ======== Carte mobile ======== {%- endcomment -%}
+    <div class="card" data-card>
+      <div class="list">
+        {%- for block in section.blocks -%}
+          <button type="button" class="item{% if forloop.first %} on{% endif %}" data-item="{{ forloop.index0 }}">
+            <i>{{ forloop.index }}</i>
+            <div><b>{{ block.settings.title }}</b><span>{{ block.settings.text }}</span></div>
+            <em>›</em>
+          </button>
+        {%- endfor -%}
+      </div>
+      <div class="dots" data-dots>
+        {%- for block in section.blocks -%}<span class="{% if forloop.first %}on{% endif %}"></span>{%- endfor -%}
+      </div>
+    </div>
+
+    {%- comment -%} ======== Tableau de bord ======== {%- endcomment -%}
+    <div class="hud">
+      <div class="board">
+        <div class="sc"><small>{{ section.settings.lbl_score }}</small><b data-k="score">0000</b></div>
+        <div><small>{{ section.settings.lbl_hits }}</small><b data-k="hits">0</b></div>
+        <div class="st"><small>{{ section.settings.lbl_streak }}</small><b data-k="streak">x1</b></div>
+        <div><small>{{ section.settings.lbl_acc }}</small><b data-k="acc">—</b></div>
+      </div>
+      <p class="last" data-last><i></i><span>{{ section.settings.hint }}</span></p>
+      <a class="shop shop--b" href="{{ section.settings.cta_link | default: '#' }}">{{ section.settings.cta_label }}</a>
+    </div>
+
+    {%- if section.settings.show_teams -%}
+      <p class="teams-h">{{ section.settings.teams_heading }}</p>
+      <p class="teams-s">{{ section.settings.teams_sub }}</p>
+      <div class="teams">
+        {%- assign tc = 'var(--y)|var(--g)|var(--b)|var(--r)' | split: '|' -%}
+        {%- assign tn = section.settings.team_1 | append: '|' | append: section.settings.team_2 | append: '|' | append: section.settings.team_3 | append: '|' | append: section.settings.team_4 | split: '|' -%}
+        {%- for i in (0..3) -%}
+          <div class="team" style="--c:{{ tc[i] }};--i:{{ i }}">
+            <div>
+              <svg viewBox="0 0 60 66" aria-hidden="true">
+                <path d="M30 4L42 8L52 18L54 36L52 52L44 60H16L8 52L6 36L8 18L18 8Z"/>
+                <path class="v" d="M18 20L30 34L42 20" style="stroke:var(--c)"/>
+                <rect x="20" y="38" width="20" height="14" rx="3"/>
+              </svg>
+              <p>{{ tn[i] }}</p>
+              <span></span>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.note != blank -%}
+      <p class="sub" style="margin-top:28px;font-size:12px;max-width:720px">{{ section.settings.note }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+(function () {
+  var root = document.getElementById('va-{{ section.id }}');
+  if (!root) return;
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ================= points et étiquettes ================= */
+  var hs    = [].slice.call(root.querySelectorAll('[data-hs]'));
+  var items = [].slice.call(root.querySelectorAll('[data-item]'));
+  var dots  = [].slice.call(root.querySelectorAll('[data-dots] span'));
+  var cur = 0, autoId = null;
+
+  function pick(i, manual) {
+    cur = i;
+    hs.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+    items.forEach(function (b, k) { b.classList.toggle('on', k === i); });
+    dots.forEach(function (d, k) { d.classList.toggle('on', k === i); });
+    if (manual && autoId) { clearInterval(autoId); autoId = null; }
+  }
+  hs.forEach(function (b, i) { b.addEventListener('click', function () { pick(i, true); }); });
+  items.forEach(function (b) { b.addEventListener('click', function () { pick((cur + 1) % items.length, true); }); });
+  if (items.length && !RM) autoId = setInterval(function () { pick((cur + 1) % items.length, false); }, {{ section.settings.rotate_ms }});
+
+  {%- if section.settings.show_game -%}
+  /* ================= mini-bataille ================= */
+  var TEAMS = [
+    { n: {{ section.settings.team_1 | json }}, c: 'var(--y)' },
+    { n: {{ section.settings.team_2 | json }}, c: 'var(--g)' },
+    { n: {{ section.settings.team_3 | json }}, c: 'var(--b)' },
+    { n: {{ section.settings.team_4 | json }}, c: 'var(--r)' }
+  ];
+  var DUR   = {{ section.settings.duration }};
+  var SKILL = {{ section.settings.rival_skill }};
+  var PCT   = {{ section.settings.discount }};
+  var CODE  = {{ section.settings.promo_code | json }};
+
+  var stage  = root.querySelector('[data-stage]');
+  var pickUI = root.querySelector('[data-pick]');
+  var rowsUI = root.querySelector('[data-rows]');
+  var endUI  = root.querySelector('[data-end]');
+  var timer  = root.querySelector('[data-timer]');
+  var tbar   = root.querySelector('[data-tbar]');
+  var cd     = root.querySelector('[data-cd]');
+  var promo  = root.querySelector('[data-promo]');
+  var last   = root.querySelector('[data-last] span');
+  var rows   = [].slice.call(root.querySelectorAll('[data-rows] .row'));
+
+  var me = null, pts = [0,0,0,0], live = false;
+  var score = 0, hits = 0, shots = 0, streak = 0, best = 1;
+  var tEnd = 0, rafId = null, aiId = null;
+
+  function setStat(k, v, bump) {
+    var el = root.querySelector('[data-k="' + k + '"]');
+    if (!el) return;
+    el.textContent = v;
+    if (bump) { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+  }
+  function refreshStats(bump) {
+    setStat('score', ('0000' + score).slice(-4), bump);
+    setStat('hits', hits, bump);
+    setStat('streak', 'x' + Math.max(1, streak), bump);
+    setStat('acc', shots ? Math.round(hits / shots * 100) + ' %' : '—');
+    root.querySelector('.st').classList.toggle('hot', streak >= 3);
+  }
+  function say(txt) {
+    last.innerHTML = txt;
+    last.parentNode.classList.remove('new'); void last.parentNode.offsetWidth;
+    last.parentNode.classList.add('new');
+  }
+
+  function paintRows() {
+    var max = Math.max(1, Math.max.apply(null, pts));
+    var order = pts.map(function (p, i) { return { i: i, p: p }; })
+                   .sort(function (a, b) { return b.p - a.p || a.i - b.i; });
+    order.forEach(function (o, rank) {
+      var r = rows[o.i];
+      r.style.transform = 'translateY(' + (rank * 34) + 'px)';
+      r.classList.toggle('me', o.i === me);
+      r.querySelector('div i').style.width = Math.round(o.p / max * 100) + '%';
+      r.querySelector('b').textContent = o.p;
+      r.querySelector('small').textContent = (o.i === me) ? {{ section.settings.you_label | json }} : '';
+    });
+  }
+
+  /* un tir du joueur : la couleur visée est tirée au sort à chaque clic */
+  stage.addEventListener('click', function () {
+    if (!live) return;
+    shots++;
+    var t = Math.floor(Math.random() * 4);
+    if (t === me) {
+      streak = 0;
+      pts[me] = Math.max(0, pts[me] - 1);
+      say('<strong style="color:var(--r)">' + {{ section.settings.own_color | json }} + '</strong>');
+    } else {
+      hits++; streak++; best = Math.max(best, streak);
+      var gain = 10 * Math.min(streak, 5);
+      score += gain;
+      pts[me] += 1;
+      say('<strong style="color:' + TEAMS[t].c + '">' + TEAMS[t].n + '</strong> +' + gain);
+    }
+    refreshStats(true);
+    paintRows();
+  });
+
+  function start() {
+    pts = [0,0,0,0]; score = 0; hits = 0; shots = 0; streak = 0; best = 1;
+    refreshStats(false);
+    pickUI.hidden = true; endUI.hidden = true; rowsUI.hidden = false;
+    paintRows();
+    say({{ section.settings.go_label | json }});
+
+    cd.textContent = '3'; cd.classList.remove('go'); void cd.offsetWidth; cd.classList.add('go');
+    setTimeout(function(){ cd.textContent='2'; cd.classList.remove('go'); void cd.offsetWidth; cd.classList.add('go'); }, 800);
+    setTimeout(function(){ cd.textContent='1'; cd.classList.remove('go'); void cd.offsetWidth; cd.classList.add('go'); }, 1600);
+
+    setTimeout(function () {
+      live = true;
+      tEnd = performance.now() + DUR * 1000;
+      aiId = setInterval(function () {
+        for (var i = 0; i < 4; i++) if (i !== me && Math.random() * 100 < SKILL) pts[i]++;
+        paintRows();
+      }, 950);
+      (function tick() {
+        var left = Math.max(0, tEnd - performance.now()) / 1000;
+        timer.textContent = '0:' + ('0' + Math.ceil(left)).slice(-2);
+        timer.classList.toggle('low', left <= 5);
+        tbar.style.transform = 'scaleX(' + (1 - left / DUR) + ')';
+        if (left <= 0) { finish(); return; }
+        rafId = requestAnimationFrame(tick);
+      })();
+    }, 2400);
+  }
+
+  function finish() {
+    live = false;
+    cancelAnimationFrame(rafId); clearInterval(aiId);
+    tbar.style.transform = 'scaleX(1)';
+
+    var order = pts.map(function (p, i) { return { i: i, p: p }; })
+                   .sort(function (a, b) { return b.p - a.p || a.i - b.i; });
+    var place = order.findIndex(function (o) { return o.i === me; }) + 1;
+    var won = place === 1;
+
+    rowsUI.hidden = true; endUI.hidden = false;
+    root.querySelector('[data-end-h]').textContent = won ? {{ section.settings.win_title | json }} : {{ section.settings.lose_title | json }};
+    root.querySelector('[data-end-h]').style.color = won ? 'var(--g)' : '#fff';
+    root.querySelector('[data-end-s]').innerHTML = won
+      ? {{ section.settings.win_text | json }}
+      : {{ section.settings.lose_text | json }}.replace('{n}', place);
+
+    var box = root.querySelector('[data-codebox]');
+    if (won && CODE) {
+      root.querySelector('[data-code]').textContent = CODE;
+      box.hidden = false;
+      promo.classList.add('won');
+      root.querySelector('[data-promo-t]').textContent = {{ section.settings.promo_won | json }};
+      root.querySelector('[data-promo-d]').textContent = {{ section.settings.promo_won_text | json }};
+    } else {
+      box.hidden = true;
+    }
+    say({{ section.settings.score_label | json }} + ' ' + ('0000' + score).slice(-4) + ' · x' + best);
+  }
+
+  root.querySelectorAll('[data-pills] .pill').forEach(function (b) {
+    b.addEventListener('click', function () { me = Number(b.dataset.t); start(); });
+  });
+  root.querySelector('[data-again]').addEventListener('click', function () {
+    endUI.hidden = true; pickUI.hidden = false;
+    promo.classList.remove('won');
+    timer.textContent = '0:' + DUR;
+    tbar.style.transform = 'scaleX(0)';
+  });
+  var cp = root.querySelector('[data-copy]');
+  if (cp) cp.addEventListener('click', function () {
+    var v = root.querySelector('[data-code]').textContent;
+    if (navigator.clipboard) navigator.clipboard.writeText(v).then(function () {
+      cp.textContent = {{ section.settings.copied_label | json }};
+      setTimeout(function () { cp.textContent = {{ section.settings.copy_label | json }}; }, 1800);
+    });
+  });
+  {%- endif -%}
+})();
+</script>
+
+{% schema %}
+{
+  "name": "VOLTAG — Arène",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "accent", "label": "Accent", "default": "#00E5FF" },
+
+    { "type": "header", "content": "En-tête" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "VOLTAG — LA CIBLE EN DÉTAIL" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "Sept détails qui font la différence" },
+    { "type": "text", "id": "sub", "label": "Sous-titre", "default": "Cible de poitrine infrarouge à retour lumineux, sonore et vibrant" },
+    { "type": "text", "id": "dim_v", "label": "Cote verticale", "default": "9 cm" },
+    { "type": "text", "id": "dim_h", "label": "Cote horizontale", "default": "10 cm" },
+    { "type": "range", "id": "rotate_ms", "label": "Défilement des points", "min": 1500, "max": 6000, "step": 500, "default": 3000, "unit": "ms" },
+
+    { "type": "header", "content": "Mini-bataille" },
+    { "type": "checkbox", "id": "show_game", "label": "Afficher le jeu", "default": true },
+    { "type": "text", "id": "game_title", "label": "Titre du jeu", "default": "MINI-BATAILLE" },
+    { "type": "range", "id": "duration", "label": "Durée", "min": 10, "max": 30, "step": 5, "default": 15, "unit": "s" },
+    { "type": "range", "id": "rival_skill", "label": "Niveau des adversaires", "min": 20, "max": 95, "step": 5, "default": 55, "unit": "%" },
+    { "type": "range", "id": "discount", "label": "Remise à gagner", "min": 5, "max": 30, "step": 5, "default": 5, "unit": "%" },
+    { "type": "text", "id": "promo_code", "label": "Code de réduction",
+      "info": "Créez-le d'abord dans Réductions, sinon il sera refusé au paiement. Videz le champ pour désactiver la récompense." },
+    { "type": "text", "id": "promo_title", "label": "Bandeau — titre", "default": "GAGNEZ LA MANCHE, DÉBLOQUEZ VOTRE REMISE" },
+    { "type": "text", "id": "promo_text", "label": "Bandeau — texte", "default": "Finissez premier et repartez avec un code pour votre commande." },
+    { "type": "text", "id": "promo_won", "label": "Bandeau — gagné", "default": "REMISE DÉBLOQUÉE" },
+    { "type": "text", "id": "promo_won_text", "label": "Bandeau — gagné, texte", "default": "Copiez votre code et appliquez-le au paiement." },
+
+    { "type": "header", "content": "Règles affichées" },
+    { "type": "text", "id": "step_1", "label": "Étape 1", "default": "CHOISISSEZ VOTRE COULEUR" },
+    { "type": "text", "id": "step_2", "label": "Étape 2", "default": "Touchez la cible pour tirer. Jamais sur votre propre couleur." },
+    { "type": "text", "id": "step_3", "label": "Étape 3", "default": "Finissez premier en 15 secondes pour gagner la remise." },
+
+    { "type": "header", "content": "Équipes" },
+    { "type": "text", "id": "team_1", "label": "Jaune", "default": "JAUNE" },
+    { "type": "text", "id": "team_2", "label": "Verte", "default": "VERTE" },
+    { "type": "text", "id": "team_3", "label": "Bleue", "default": "BLEUE" },
+    { "type": "text", "id": "team_4", "label": "Rouge", "default": "ROUGE" },
+    { "type": "checkbox", "id": "show_teams", "label": "Afficher les quatre équipes en bas", "default": true },
+    { "type": "text", "id": "teams_heading", "label": "Titre des équipes", "default": "Quatre couleurs, quatre équipes" },
+    { "type": "text", "id": "teams_sub", "label": "Sous-titre des équipes", "default": "Chaque cible s'allume dans la couleur de son joueur." },
+
+    { "type": "header", "content": "Tableau de bord" },
+    { "type": "text", "id": "lbl_score", "label": "Score", "default": "SCORE" },
+    { "type": "text", "id": "lbl_hits", "label": "Touches", "default": "TOUCHES" },
+    { "type": "text", "id": "lbl_streak", "label": "Série", "default": "SÉRIE" },
+    { "type": "text", "id": "lbl_acc", "label": "Précision", "default": "PRÉCISION" },
+    { "type": "text", "id": "hint", "label": "Message d'accueil", "default": "Choisissez votre couleur pour commencer" },
+    { "type": "text", "id": "go_label", "label": "Message au départ", "default": "À vous de jouer" },
+    { "type": "text", "id": "own_color", "label": "Message couleur ratée", "default": "Votre propre couleur, −1" },
+    { "type": "text", "id": "you_label", "label": "Étiquette du joueur", "default": "VOUS" },
+    { "type": "text", "id": "score_label", "label": "Libellé du score final", "default": "Score final" },
+
+    { "type": "header", "content": "Fin de manche" },
+    { "type": "text", "id": "win_title", "label": "Victoire", "default": "Première place !" },
+    { "type": "text", "id": "win_text", "label": "Victoire — texte", "default": "Votre code est prêt, copiez-le ci-dessous." },
+    { "type": "text", "id": "lose_title", "label": "Défaite", "default": "Pas cette fois" },
+    { "type": "text", "id": "lose_text", "label": "Défaite — texte",
+      "info": "Utilisez {n} pour insérer la place du joueur.", "default": "Vous finissez {n}e. Il faut la première place pour le code." },
+    { "type": "text", "id": "again_label", "label": "Bouton rejouer", "default": "Rejouer" },
+    { "type": "text", "id": "copy_label", "label": "Bouton copier", "default": "Copier" },
+    { "type": "text", "id": "copied_label", "label": "Bouton copié", "default": "Copié" },
+    { "type": "text", "id": "cta_label", "label": "Bouton vers les packs", "default": "Voir les packs →" },
+    { "type": "url", "id": "cta_link", "label": "Lien du bouton" },
+
+    { "type": "header", "content": "Mention" },
+    { "type": "textarea", "id": "note", "label": "Mention légale",
+      "default": "VOLTAG détecte les impacts par signaux infrarouges, et non par faisceau laser. Les traits lumineux de cette animation sont un effet visuel : le produit n'émet aucun rayon." }
+  ],
+  "blocks": [
+    { "type": "point", "name": "Détail", "limit": 7, "settings": [
+      { "type": "text", "id": "title", "label": "Titre", "default": "CAPTEUR INFRAROUGE" },
+      { "type": "textarea", "id": "text", "label": "Description", "default": "Détecte les tirs adverses." }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Arène", "blocks": [
+      { "type": "point", "settings": { "title": "CAPTEUR INFRAROUGE", "text": "Détecte les tirs adverses, sans contact ni projectile." } },
+      { "type": "point", "settings": { "title": "LED D'ÉQUIPE", "text": "S'allume dans votre couleur, visible de loin et dans le noir." } },
+      { "type": "point", "settings": { "title": "SANGLES RÉGLABLES", "text": "S'ajustent d'un enfant de 8 ans à un adulte." } },
+      { "type": "point", "settings": { "title": "AFFICHEUR DE VIES", "text": "Le décompte se fait en direct, plus personne ne discute." } },
+      { "type": "point", "settings": { "title": "VIBREUR", "text": "Chaque impact se sent autant qu'il se voit." } },
+      { "type": "point", "settings": { "title": "HAUT-PARLEUR", "text": "Tirs, touches et élimination sonorisés." } },
+      { "type": "point", "settings": { "title": "FORMAT LÉGER", "text": "Assez compact pour courir et se cacher des heures." } }
+    ]}
+  ]
+}
+{% endschema %}
