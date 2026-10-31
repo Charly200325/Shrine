@@ -1676,8 +1676,8 @@
       ],
       "name": "VOLTAG — Comment jouer",
       "settings": {
-        "bg": "#05060A",
-        "accent": "#00E5FF",
+        "bg": "#05060a",
+        "accent": "#00e5ff",
         "eyebrow": "RETOUR EN TEMPS RÉEL",
         "heading": "Chaque tir compte. Automatiquement.",
         "cycle": 5
@@ -1768,8 +1768,8 @@
       ],
       "name": "VOLTAG — FAQ",
       "settings": {
-        "bg": "#05060A",
-        "neon": "#00E5FF",
+        "bg": "#05060a",
+        "neon": "#00e5ff",
         "heading": "QUESTIONS SUR CE PRODUIT",
         "sub": "Tout ce qu'il faut savoir avant de commander votre pack VOLTAG",
         "open_first": true,
@@ -1778,6 +1778,25 @@
         "mode_2": "MITRAILLETTE",
         "mode_3": "PRÉCISION",
         "mode_4": "ROQUETTE"
+      }
+    },
+    "voltag_avis_BtpgDH": {
+      "type": "voltag-avis",
+      "name": "VOLTAG — Avis",
+      "settings": {
+        "bg": "#05060A",
+        "accent": "#00E5FF",
+        "star_color": "#FFD60A",
+        "heading": "Avis clients",
+        "word_single": "avis",
+        "word_plural": "avis",
+        "write_label": "Donner mon avis",
+        "write_link": "",
+        "verified_label": "ACHAT VÉRIFIÉ",
+        "highlights_title": "Ce qui revient le plus",
+        "highlights_source": "Extraits choisis parmi les avis reçus ces derniers mois",
+        "app_embed": "",
+        "empty_text": "Les premiers avis arriveront après vos premières commandes. Installez une application d'avis pour les collecter automatiquement après livraison."
       }
     }
   },
@@ -1801,6 +1820,7 @@
     "voltag_cible_aMPxEe",
     "voltag_mini_jeu_YzRfPR",
     "voltag_etapes_AHijNQ",
-    "voltag_faq_iamWGD"
+    "voltag_faq_iamWGD",
+    "voltag_avis_BtpgDH"
   ]
 }
