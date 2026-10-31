@@ -1015,94 +1015,6 @@
         "custom_colors_text": "#121212"
       }
     },
-    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a": {
-      "type": "icons-with-content",
-      "blocks": {
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1": {
-          "type": "icon",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
-          }
-        },
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2": {
-          "type": "icon",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
-          }
-        },
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3": {
-          "type": "icon",
-          "settings": {
-            "icon": "check_circle",
-            "filled_icon": false,
-            "title": "Icon with text",
-            "text": "<p>Pair text with an icon to focus on your chosen product, collection, or blog post</p>"
-          }
-        },
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1": {
-          "type": "heading",
-          "settings": {
-            "title": "Content heading",
-            "title_highlight_color": "#6d388b",
-            "heading_size": "h1"
-          }
-        },
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair icons with content to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        },
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-1",
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-2",
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-icon-3",
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-heading-1",
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-text-1",
-        "template--21507361800487__4fc05ee5-1c30-4863-b88f-81cb6fa7c41a-button-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "display_id": false,
-        "visibility": "always-display",
-        "color_scheme": "background-1",
-        "icon_size": "m",
-        "icon_position": "next-to-title",
-        "icon_color": "accent-1",
-        "icon_heading_size": "h3",
-        "icon_text_alignment": "left",
-        "icons_desktop_layout": "1-column",
-        "icons_mobile_layout": "1-column",
-        "desktop_content_alignment": "left",
-        "layout": "image_first",
-        "mobile_layout": "text_first",
-        "hide_content_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39",
-        "custom_colors_solid_button_background": "#dd1d1d",
-        "custom_colors_solid_button_text": "#ffffff",
-        "custom_colors_outline_button": "#dd1d1d"
-      }
-    },
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
       "type": "testimonials",
       "blocks": {
@@ -1780,24 +1692,9 @@
         "mode_4": "ROQUETTE"
       }
     },
-    "voltag_avis_BtpgDH": {
+    "voltag_avis_CdEiqf": {
       "type": "voltag-avis",
-      "blocks": {
-        "review_fhMMiG": {
-          "type": "review",
-          "settings": {
-            "author": "Prénom N.",
-            "stars": 5,
-            "verified": false,
-            "title": "",
-            "body": "Texte de l'avis.",
-            "source": ""
-          }
-        }
-      },
-      "block_order": [
-        "review_fhMMiG"
-      ],
+      "disabled": true,
       "name": "VOLTAG — Avis",
       "settings": {
         "bg": "#05060a",
@@ -1810,12 +1707,12 @@
         "write_link": "",
         "verified_label": "ACHAT VÉRIFIÉ",
         "from_word": "via",
-        "source_notice": "Certains avis ci-dessous portent sur le même modèle et proviennent",
+        "source_notice": "Avis recueillis sur des plateformes tierces et traduits en français. Ils concernent le même modèle de produit et ne correspondent pas nécessairement à des achats effectués sur cette boutique.",
         "highlights_title": "Ce qui revient le plus",
-        "highlights_source": "Extraits choisis parmi les avis reçus ces derniers mois",
+        "highlights_source": "Extraits issus des avis recueillis sur des plateformes tierces.",
         "bulk": "",
         "app_embed": "",
-        "empty_text": "Les premiers avis arriveront après vos premières commandes. Installez une application d'avis pour les collecter automatiquement après livraison."
+        "empty_text": "Les avis affichés concernent ce modèle et proviennent de plateformes tierces."
       }
     }
   },
@@ -1829,7 +1726,6 @@
     "related-products",
     "8beb6911-28c6-482c-976a-e5421ad3e8df",
     "eba88da5-80ac-47fc-aa75-997cfe7b2e59",
-    "4fc05ee5-1c30-4863-b88f-81cb6fa7c41a",
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
     "b321ab88-2b59-4dba-bade-54885c874ca5",
     "voltag_produit_PDKKMW",
@@ -1840,6 +1736,6 @@
     "voltag_mini_jeu_YzRfPR",
     "voltag_etapes_AHijNQ",
     "voltag_faq_iamWGD",
-    "voltag_avis_BtpgDH"
+    "voltag_avis_CdEiqf"
   ]
 }
