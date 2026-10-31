@@ -610,6 +610,89 @@
         "ars_sub": "Choisissez votre style de jeu."
       }
     },
+    "voltag_comparatif_9XRkmk": {
+      "type": "voltag-comparatif",
+      "blocks": {
+        "row_Rzm6gV": {
+          "type": "row",
+          "settings": {
+            "label": "Éloigne les enfants des écrans",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row_Hwq8cp": {
+          "type": "row",
+          "settings": {
+            "label": "Aucun projectile à ramasser",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "row_BggdkL": {
+          "type": "row",
+          "settings": {
+            "label": "Score et vies comptés automatiquement",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        },
+        "row_hmLeWr": {
+          "type": "row",
+          "settings": {
+            "label": "Se joue dedans comme dehors",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row_WftTwm": {
+          "type": "row",
+          "settings": {
+            "label": "Parents et enfants à armes égales",
+            "us": true,
+            "b": true,
+            "c": false
+          }
+        },
+        "row_mEwRgq": {
+          "type": "row",
+          "settings": {
+            "label": "Rien qui puisse atteindre le visage",
+            "us": true,
+            "b": false,
+            "c": true
+          }
+        }
+      },
+      "block_order": [
+        "row_Rzm6gV",
+        "row_Hwq8cp",
+        "row_BggdkL",
+        "row_hmLeWr",
+        "row_WftTwm",
+        "row_mEwRgq"
+      ],
+      "name": "VOLTAG — Comparatif",
+      "settings": {
+        "bg": "#05060a",
+        "neon": "#00e5ff",
+        "yes_color": "#39ff14",
+        "cta_bg": "#ffd60a",
+        "eyebrow": "Pourquoi les familles changent",
+        "heading": "VOLTAG face aux alternatives",
+        "badge": "NOTRE CHOIX",
+        "col_us": "VOLTAG",
+        "col_b": "Blasters en mousse",
+        "col_c": "Jeux vidéo",
+        "cta_text": "Choisir mon pack",
+        "cta_link": "",
+        "note": ""
+      }
+    },
     "related-products": {
       "type": "related-products",
       "disabled": true,
@@ -1265,86 +1348,6 @@
         "note": "VOLTAG fonctionne à l'infrarouge, comme une télécommande de télévision. Aucun faisceau lumineux n'est émis et aucun projectile n'est tiré."
       }
     },
-    "voltag_comparatif_9XRkmk": {
-      "type": "voltag-comparatif",
-      "blocks": {
-        "row_Rzm6gV": {
-          "type": "row",
-          "settings": {
-            "label": "Éloigne les enfants des écrans",
-            "us": true,
-            "b": true,
-            "c": false
-          }
-        },
-        "row_Hwq8cp": {
-          "type": "row",
-          "settings": {
-            "label": "Aucun projectile à ramasser",
-            "us": true,
-            "b": false,
-            "c": true
-          }
-        },
-        "row_BggdkL": {
-          "type": "row",
-          "settings": {
-            "label": "Score et vies comptés automatiquement",
-            "us": true,
-            "b": false,
-            "c": true
-          }
-        },
-        "row_hmLeWr": {
-          "type": "row",
-          "settings": {
-            "label": "Se joue dedans comme dehors",
-            "us": true,
-            "b": true,
-            "c": false
-          }
-        },
-        "row_WftTwm": {
-          "type": "row",
-          "settings": {
-            "label": "Parents et enfants à armes égales",
-            "us": true,
-            "b": true,
-            "c": false
-          }
-        },
-        "row_mEwRgq": {
-          "type": "row",
-          "settings": {
-            "label": "Rien qui puisse atteindre le visage",
-            "us": true,
-            "b": false,
-            "c": true
-          }
-        }
-      },
-      "block_order": [
-        "row_Rzm6gV",
-        "row_Hwq8cp",
-        "row_BggdkL",
-        "row_hmLeWr",
-        "row_WftTwm",
-        "row_mEwRgq"
-      ],
-      "name": "VOLTAG — Comparatif",
-      "settings": {
-        "bg": "#05060a",
-        "neon": "#00e5ff",
-        "eyebrow": "Pourquoi les familles changent",
-        "heading": "VOLTAG face aux alternatives",
-        "badge": "NOTRE CHOIX",
-        "col_us": "VOLTAG",
-        "col_b": "Blasters en mousse",
-        "col_c": "Jeux vidéo",
-        "cta_text": "Choisir mon pack",
-        "cta_link": ""
-      }
-    },
     "voltag_faq_dHnEX7": {
       "type": "voltag-faq",
       "blocks": {
@@ -1537,6 +1540,7 @@
     "voltag_equipes_aghyTc",
     "voltag_arene_JyGQGm",
     "voltag_arsenal_qC8Mfw",
+    "voltag_comparatif_9XRkmk",
     "related-products",
     "8beb6911-28c6-482c-976a-e5421ad3e8df",
     "eba88da5-80ac-47fc-aa75-997cfe7b2e59",
@@ -1546,7 +1550,6 @@
     "voltag_produit_PDKKMW",
     "voltag_etapes_q3zUgf",
     "voltag_modes_wg9J8D",
-    "voltag_comparatif_9XRkmk",
     "voltag_faq_dHnEX7",
     "voltag_cible_aMPxEe",
     "voltag_mini_jeu_YzRfPR"
