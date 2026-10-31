@@ -50,7 +50,7 @@
           "type": "shopify://apps/pumper-bundles/blocks/app-block-qb/0856870d-2aca-4b1e-a662-cf1797f61270",
           "settings": {
             "selected_product": "{{product}}",
-            "using_page_builder": true
+            "using_page_builder": false
           }
         },
         "price": {
@@ -198,6 +198,15 @@
             "margin_bottom": 15
           }
         },
+        "bl_custom_html_css_js_liquid_block_code_j9QLPX": {
+          "type": "shopify://apps/bl-custom-html-css-js-liquid/blocks/block-code/96fc73ef-2727-4174-82ec-12cfce5b3426",
+          "settings": {
+            "html_code": "<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<title>Lazrtag – Barre de stock</title>\n<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n<link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&amp;display=swap\" rel=\"stylesheet\">\n<style>\n  body {\n    margin: 0;\n    padding: 40px 16px;\n    background: #0b0f19;\n    font-family: 'Poppins', system-ui, sans-serif;\n  }\n\n  .lzu {\n    max-width: 520px;\n    margin: 14px auto;\n    padding: 14px 18px 16px;\n    box-sizing: border-box;\n    background: #1a1d29;\n    border: 1px solid rgba(255, 255, 255, .18);\n    border-radius: 16px;\n    font-family: 'Poppins', system-ui, sans-serif;\n    letter-spacing: 0;\n    color: #fff;\n  }\n  .lzu p { margin: 0; }\n\n  .lzu__top {\n    display: flex;\n    justify-content: space-between;\n    align-items: baseline;\n    gap: 12px;\n    margin-bottom: 10px;\n  }\n  .lzu__label {\n    font-size: clamp(11px, 3.2vw, 14px);\n    font-weight: 700;\n    letter-spacing: .04em;\n    color: #ffd24a;\n    text-transform: uppercase;\n  }\n  .lzu__pct {\n    font-size: clamp(11px, 3.2vw, 14px);\n    font-weight: 600;\n    white-space: nowrap;\n  }\n  .lzu__pct b { color: #ffd24a; font-weight: 700; }\n\n  .lzu__bar {\n    height: 10px;\n    background: rgba(255, 255, 255, .1);\n    border-radius: 999px;\n    overflow: hidden;\n  }\n  .lzu__bar i {\n    display: block;\n    height: 100%;\n    width: 0;\n    border-radius: 999px;\n    background: linear-gradient(90deg, #ffb703, #ffd24a);\n    box-shadow: 0 0 10px rgba(255, 210, 74, .45);\n    transition: width 1.2s cubic-bezier(.22, 1, .36, 1);\n  }\n\n  .lzu__note {\n    margin-top: 10px;\n    font-size: clamp(11px, 3vw, 13px);\n    font-weight: 600;\n    color: rgba(255, 255, 255, .85);\n  }\n  .lzu__note b { color: #ffd24a; font-weight: 700; }\n</style>\n\n\n\n<div class=\"lzu\" id=\"lzu-x\" data-pct=\"89\">\n  <div class=\"lzu__top\">\n    <p class=\"lzu__label\">PRÉVENTE BLACK FRIDAY</p>\n    <p class=\"lzu__pct\"><b>89 %</b> déjà réservés</p>\n  </div>\n  <div class=\"lzu__bar\"><i style=\"width: 89%;\"></i></div>\n  <p class=\"lzu__note\">Plus que <b>11 %</b> du stock de prévente à ce prix</p>\n</div>\n\n<script>\n(function () {\n  var root = document.getElementById('lzu-x');\n  var pct = parseFloat(root.getAttribute('data-pct')) || 0;\n  var bar = root.querySelector('.lzu__bar i');\n  bar.style.width = '0';\n  requestAnimationFrame(function () {\n    requestAnimationFrame(function () { bar.style.width = pct + '%'; });\n  });\n})();\n</script>",
+            "css_code": "",
+            "js_code": "",
+            "liquid_code": ""
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -311,6 +320,7 @@
         "price",
         "5fcc0428-e768-4cb7-bea3-eb0274198dd1",
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
+        "bl_custom_html_css_js_liquid_block_code_j9QLPX",
         "buy_buttons",
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
         "description",
