@@ -1319,6 +1319,119 @@
         "promo_code": "",
         "rules": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>"
       }
+    },
+    "voltag_arene_JyGQGm": {
+      "type": "voltag-arene",
+      "blocks": {
+        "point_LYxQ3V": {
+          "type": "point",
+          "settings": {
+            "title": "CAPTEUR INFRAROUGE",
+            "text": "Détecte les tirs adverses, sans contact ni projectile."
+          }
+        },
+        "point_Ytpf64": {
+          "type": "point",
+          "settings": {
+            "title": "LED D'ÉQUIPE",
+            "text": "S'allume dans votre couleur, visible de loin et dans le noir."
+          }
+        },
+        "point_Y8fzCa": {
+          "type": "point",
+          "settings": {
+            "title": "SANGLES RÉGLABLES",
+            "text": "S'ajustent d'un enfant de 8 ans à un adulte."
+          }
+        },
+        "point_79KCjK": {
+          "type": "point",
+          "settings": {
+            "title": "AFFICHEUR DE VIES",
+            "text": "Le décompte se fait en direct, plus personne ne discute."
+          }
+        },
+        "point_w4RVyF": {
+          "type": "point",
+          "settings": {
+            "title": "VIBREUR",
+            "text": "Chaque impact se sent autant qu'il se voit."
+          }
+        },
+        "point_QUd9c4": {
+          "type": "point",
+          "settings": {
+            "title": "HAUT-PARLEUR",
+            "text": "Tirs, touches et élimination sonorisés."
+          }
+        },
+        "point_AjMpDE": {
+          "type": "point",
+          "settings": {
+            "title": "FORMAT LÉGER",
+            "text": "Assez compact pour courir et se cacher des heures."
+          }
+        }
+      },
+      "block_order": [
+        "point_LYxQ3V",
+        "point_Ytpf64",
+        "point_Y8fzCa",
+        "point_79KCjK",
+        "point_w4RVyF",
+        "point_QUd9c4",
+        "point_AjMpDE"
+      ],
+      "name": "VOLTAG — Arène",
+      "settings": {
+        "bg": "#05060A",
+        "accent": "#00E5FF",
+        "eyebrow": "VOLTAG — LA CIBLE EN DÉTAIL",
+        "heading": "Sept détails qui font la différence",
+        "sub": "Cible de poitrine infrarouge à retour lumineux, sonore et vibrant",
+        "dim_v": "9 cm",
+        "dim_h": "10 cm",
+        "rotate_ms": 3000,
+        "show_game": true,
+        "game_title": "MINI-BATAILLE",
+        "duration": 15,
+        "rival_skill": 55,
+        "discount": 5,
+        "promo_code": "",
+        "promo_title": "GAGNEZ LA MANCHE, DÉBLOQUEZ VOTRE REMISE",
+        "promo_text": "Finissez premier et repartez avec un code pour votre commande.",
+        "promo_won": "REMISE DÉBLOQUÉE",
+        "promo_won_text": "Copiez votre code et appliquez-le au paiement.",
+        "step_1": "CHOISISSEZ VOTRE COULEUR",
+        "step_2": "Touchez la cible pour tirer. Jamais sur votre propre couleur.",
+        "step_3": "Finissez premier en 15 secondes pour gagner la remise.",
+        "team_1": "JAUNE",
+        "team_2": "VERTE",
+        "team_3": "BLEUE",
+        "team_4": "ROUGE",
+        "show_teams": true,
+        "teams_heading": "Quatre couleurs, quatre équipes",
+        "teams_sub": "Chaque cible s'allume dans la couleur de son joueur.",
+        "lbl_score": "SCORE",
+        "lbl_hits": "TOUCHES",
+        "lbl_streak": "SÉRIE",
+        "lbl_acc": "PRÉCISION",
+        "hint": "Choisissez votre couleur pour commencer",
+        "go_label": "À vous de jouer",
+        "own_color": "Votre propre couleur, −1",
+        "you_label": "VOUS",
+        "score_label": "Score final",
+        "win_title": "Première place !",
+        "win_text": "Votre code est prêt, copiez-le ci-dessous.",
+        "lose_title": "Pas cette fois",
+        "lose_text": "Vous finissez {n}e. Il faut la première place pour le code.",
+        "again_label": "Rejouer",
+        "copy_label": "Copier",
+        "copied_label": "Copié",
+        "cta_label": "Voir les packs →",
+        "cta_link": "",
+        "note": "VOLTAG détecte les impacts par signaux infrarouges, et non par faisceau laser. Les traits lumineux de cette animation sont un effet visuel : le produit n'émet aucun rayon."
+      }
     }
   },
   "order": [
@@ -1336,6 +1449,7 @@
     "voltag_comparatif_9XRkmk",
     "voltag_faq_dHnEX7",
     "voltag_cible_aMPxEe",
-    "voltag_mini_jeu_YzRfPR"
+    "voltag_mini_jeu_YzRfPR",
+    "voltag_arene_JyGQGm"
   ]
 }
