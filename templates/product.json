@@ -1627,6 +1627,158 @@
         "promo_code": "",
         "rules": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>"
       }
+    },
+    "voltag_etapes_AHijNQ": {
+      "type": "voltag-etapes",
+      "blocks": {
+        "step_bVfyCH": {
+          "type": "step",
+          "settings": {
+            "title": "VISEZ",
+            "text": "Repérez un adversaire, jusqu'à plusieurs dizaines de mètres.",
+            "color": "#39ff14",
+            "visual": "aim"
+          }
+        },
+        "step_zcNCGJ": {
+          "type": "step",
+          "settings": {
+            "title": "TIREZ",
+            "text": "Appuyez sur la détente : un signal infrarouge part, invisible et inoffensif.",
+            "color": "#ffd60a",
+            "visual": "fire"
+          }
+        },
+        "step_RjRFrL": {
+          "type": "step",
+          "settings": {
+            "title": "TOUCHÉ",
+            "text": "La cible s'allume, vibre et émet un son.",
+            "color": "#ff2d55",
+            "visual": "hit"
+          }
+        },
+        "step_69DQVq": {
+          "type": "step",
+          "settings": {
+            "title": "VIE EN MOINS",
+            "text": "L'afficheur décompte. Plus personne ne discute.",
+            "color": "#00a3ff",
+            "visual": "lives"
+          }
+        }
+      },
+      "block_order": [
+        "step_bVfyCH",
+        "step_zcNCGJ",
+        "step_RjRFrL",
+        "step_69DQVq"
+      ],
+      "name": "VOLTAG — Comment jouer",
+      "settings": {
+        "bg": "#05060A",
+        "accent": "#00E5FF",
+        "eyebrow": "RETOUR EN TEMPS RÉEL",
+        "heading": "Chaque tir compte. Automatiquement.",
+        "cycle": 5
+      }
+    },
+    "voltag_faq_iamWGD": {
+      "type": "voltag-faq",
+      "blocks": {
+        "qa_ER7aGK": {
+          "type": "qa",
+          "settings": {
+            "question": "Que contient la boîte ?",
+            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED.</p><p><strong>Duo :</strong> 2 blasters et 2 cibles, pour un duel. <strong>Squad :</strong> 4 blasters et 4 cibles dans les quatre couleurs. <strong>Arène :</strong> 8 blasters et 8 cibles.</p><p>Les piles ne sont pas fournies.</p>",
+            "icon": "box",
+            "show_teams": true,
+            "show_modes": false
+          }
+        },
+        "qa_wXbnAG": {
+          "type": "qa",
+          "settings": {
+            "question": "Comment se déroule une partie ?",
+            "answer": "<p>Chacun choisit sa couleur, enfile sa cible de poitrine et la partie démarre. Vous visez la cible des autres joueurs pour marquer. À chaque impact, la cible s'allume, l'afficheur décompte les vies restantes, et le son et la vibration rendent la touche indiscutable.</p>",
+            "icon": "check",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "qa_eGAxD7": {
+          "type": "qa",
+          "settings": {
+            "question": "Est-ce sans danger pour les enfants ?",
+            "answer": "<p>Oui. VOLTAG fonctionne par <strong>signaux infrarouges</strong>, comme une télécommande de télévision : aucun faisceau laser, aucun projectile, donc rien qui puisse blesser ou se perdre. Le fabricant indique le jeu à partir de <strong>8 ans</strong>, et les sangles réglables s'adaptent aussi bien aux enfants qu'aux adultes.</p>",
+            "icon": "heart",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "qa_gRDdDc": {
+          "type": "qa",
+          "settings": {
+            "question": "Peut-on changer de mode de tir ?",
+            "answer": "<p>Oui. Chaque blaster passe d'un mode à l'autre entre <strong>quatre modes de tir</strong>, chacun avec ses munitions et sa puissance, ce qui permet de changer de tactique en pleine partie.</p>",
+            "icon": "target",
+            "show_teams": false,
+            "show_modes": true
+          }
+        },
+        "qa_fXBUJD": {
+          "type": "qa",
+          "settings": {
+            "question": "Faut-il des piles ?",
+            "answer": "<p>Oui, et <strong>elles ne sont pas fournies</strong>. Les blasters comme les cibles fonctionnent avec des piles AAA. Aucune recharge n'est nécessaire : vous les insérez et vous jouez.</p>",
+            "icon": "bolt",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "qa_rmqXEX": {
+          "type": "qa",
+          "settings": {
+            "question": "Peut-on jouer en intérieur et en extérieur ?",
+            "answer": "<p>Les deux. Le salon, le sous-sol, le jardin ou un parc conviennent très bien. En extérieur, la portée annoncée par le fabricant va jusqu'à <strong>40 à 60 mètres</strong> selon le mode, de quoi s'éparpiller et jouer à cache-cache.</p>",
+            "icon": "globe",
+            "show_teams": false,
+            "show_modes": false
+          }
+        },
+        "qa_VcgB8m": {
+          "type": "qa",
+          "settings": {
+            "question": "Livraison et retours",
+            "answer": "<p>Chaque commande part avec un numéro de suivi. Vous disposez de <strong>30 jours</strong> à compter de la réception pour changer d'avis, soit plus que les 14 jours du droit de rétractation légal. Contactez-nous et nous organisons le retour ou l'échange.</p>",
+            "icon": "truck",
+            "show_teams": false,
+            "show_modes": false
+          }
+        }
+      },
+      "block_order": [
+        "qa_ER7aGK",
+        "qa_wXbnAG",
+        "qa_eGAxD7",
+        "qa_gRDdDc",
+        "qa_fXBUJD",
+        "qa_rmqXEX",
+        "qa_VcgB8m"
+      ],
+      "name": "VOLTAG — FAQ",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "heading": "QUESTIONS SUR CE PRODUIT",
+        "sub": "Tout ce qu'il faut savoir avant de commander votre pack VOLTAG",
+        "open_first": true,
+        "foot": "<p>Une autre question ? Écrivez-nous, nous répondons sous 24 heures ouvrées.</p>",
+        "mode_1": "PISTOLET",
+        "mode_2": "MITRAILLETTE",
+        "mode_3": "PRÉCISION",
+        "mode_4": "ROQUETTE"
+      }
     }
   },
   "order": [
@@ -1647,6 +1799,8 @@
     "voltag_modes_wg9J8D",
     "voltag_faq_dHnEX7",
     "voltag_cible_aMPxEe",
-    "voltag_mini_jeu_YzRfPR"
+    "voltag_mini_jeu_YzRfPR",
+    "voltag_etapes_AHijNQ",
+    "voltag_faq_iamWGD"
   ]
 }
