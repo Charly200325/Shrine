@@ -1,0 +1,108 @@
+{%- comment -%} VOLTAG — Pour qui ? | sections/voltag-pourqui.liquid {%- endcomment -%}
+
+<style>
+#vq-{{ section.id }}{background:{{ section.settings.bg }};color:#fff;padding:64px 0;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif}
+#vq-{{ section.id }} *{box-sizing:border-box}
+#vq-{{ section.id }} p{margin:0}
+#vq-{{ section.id }} .q-in{max-width:1080px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;align-items:center}
+#vq-{{ section.id }} .q-eye{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.2em;
+  color:{{ section.settings.eyebrow_color }};text-shadow:0 0 10px color-mix(in srgb,{{ section.settings.eyebrow_color }} 50%,transparent)}
+#vq-{{ section.id }} h2{margin:0;text-align:center;font-weight:800;letter-spacing:-.02em;line-height:1.08;font-size:clamp(28px,4.4vw,46px);text-wrap:balance}
+#vq-{{ section.id }} .q-lz{display:block;width:min(220px,55%);height:3px;margin:16px auto 32px;border-radius:3px;
+  background:linear-gradient(90deg,transparent,#FF2D55,#FFD60A,#39FF14,#00A3FF,transparent);
+  background-size:200% 100%;animation:vq-flow-{{ section.id }} 3s linear infinite}
+
+#vq-{{ section.id }} .q-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;width:100%}
+#vq-{{ section.id }} .q-card{position:relative;border-radius:18px;padding:1.5px;overflow:hidden;isolation:isolate;background:#1c2335}
+#vq-{{ section.id }} .q-card::before{content:"";position:absolute;inset:-150%;z-index:-1;opacity:0;
+  background:conic-gradient(from 0deg,transparent 0 78%,rgba(255,255,255,.15) 86%,rgba(255,255,255,.7) 94%,#fff 98%,transparent 100%);
+  animation:vq-sweep-{{ section.id }} 7s cubic-bezier(.45,0,.25,1) infinite}
+#vq-{{ section.id }} .q-card:nth-child(2)::before{animation-delay:-4.7s}
+#vq-{{ section.id }} .q-card:nth-child(3)::before{animation-delay:-2.3s}
+
+#vq-{{ section.id }} .q-body{background:#0d1424;border-radius:16.5px;overflow:hidden;height:100%;display:flex;flex-direction:column}
+#vq-{{ section.id }} .q-img{position:relative;aspect-ratio:4/3;background:#05080f;overflow:hidden}
+#vq-{{ section.id }} .q-img img,#vq-{{ section.id }} .q-img svg{width:100%;height:100%;object-fit:cover;display:block}
+#vq-{{ section.id }} .q-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,#0d1424)}
+#vq-{{ section.id }} .q-ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:18px;
+  color:#5d708a;font-size:12px;line-height:1.6;letter-spacing:.04em;z-index:1}
+#vq-{{ section.id }} .q-txt{padding:16px 20px 22px}
+#vq-{{ section.id }} .q-tag{display:inline-flex;align-items:center;gap:7px;margin:0 0 8px;font-size:11px;font-weight:800;letter-spacing:.14em;color:var(--c)}
+#vq-{{ section.id }} .q-tag i{width:7px;height:7px;border-radius:50%;background:var(--c);box-shadow:0 0 8px var(--c)}
+#vq-{{ section.id }} .q-t{margin:0 0 6px;font-size:19px;font-weight:800;line-height:1.25}
+#vq-{{ section.id }} .q-d{margin:0;color:#9aa4bb;font-size:14px;line-height:1.55}
+
+@keyframes vq-flow-{{ section.id }}{to{background-position:200% 0}}
+@keyframes vq-sweep-{{ section.id }}{0%{transform:rotate(0);opacity:0}4%{opacity:1}40%{transform:rotate(360deg);opacity:1}46%,100%{transform:rotate(360deg);opacity:0}}
+
+@media (max-width:749px){
+  #vq-{{ section.id }}{padding:44px 0}
+  #vq-{{ section.id }} .q-in{padding:0 16px}
+  #vq-{{ section.id }} .q-grid{grid-template-columns:1fr;gap:14px}
+  #vq-{{ section.id }} .q-img{aspect-ratio:16/9}
+}
+@media (prefers-reduced-motion:reduce){
+  #vq-{{ section.id }} .q-lz,#vq-{{ section.id }} .q-card::before{animation:none}
+}
+</style>
+
+<section id="vq-{{ section.id }}">
+  <div class="q-in">
+    {%- if section.settings.eyebrow != blank -%}<p class="q-eye">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    <h2>{{ section.settings.heading }}</h2>
+    <span class="q-lz" aria-hidden="true"></span>
+
+    <div class="q-grid">
+      {%- for block in section.blocks -%}
+        <div class="q-card" style="--c:{{ block.settings.color }}" {{ block.shopify_attributes }}>
+          <div class="q-body">
+            <div class="q-img">
+              {%- if block.settings.image -%}
+                {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '450,900', alt: block.settings.title }}
+              {%- else -%}
+                <div class="q-ph">Choisissez une photo<br>pour cette carte</div>
+              {%- endif -%}
+            </div>
+            <div class="q-txt">
+              <p class="q-tag"><i></i>{{ block.settings.tag }}</p>
+              <p class="q-t">{{ block.settings.title }}</p>
+              <p class="q-d">{{ block.settings.text }}</p>
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "VOLTAG — Pour qui ?",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg", "label": "Fond", "default": "#05060A" },
+    { "type": "color", "id": "eyebrow_color", "label": "Couleur du surtitre", "default": "#FF2D55" },
+    { "type": "text", "id": "eyebrow", "label": "Surtitre", "default": "LE CADEAU QU'ILS UTILISERONT VRAIMENT" },
+    { "type": "text", "id": "heading", "label": "Titre", "default": "VOLTAG, c'est pour qui ?" }
+  ],
+  "blocks": [
+    { "type": "who", "name": "Public", "limit": 3, "settings": [
+      { "type": "image_picker", "id": "image", "label": "Photo", "info": "Format paysage, idéalement 4:3." },
+      { "type": "color", "id": "color", "label": "Couleur", "default": "#00A3FF" },
+      { "type": "text", "id": "tag", "label": "Étiquette", "default": "8 À 10 ANS" },
+      { "type": "text", "id": "title", "label": "Titre", "default": "Le héros des anniversaires" },
+      { "type": "textarea", "id": "text", "label": "Texte", "default": "Description de ce public." }
+    ]}
+  ],
+  "presets": [
+    { "name": "VOLTAG — Pour qui ?", "blocks": [
+      { "type": "who", "settings": { "color": "#00A3FF", "tag": "8 À 10 ANS", "title": "Le héros des anniversaires",
+        "text": "Simple à prendre en main, infrarouge sans danger, et des lumières et des sons qui les rendent fous." } },
+      { "type": "who", "settings": { "color": "#FF2D55", "tag": "11 À 14 ANS", "title": "Du canapé au terrain",
+        "text": "Quatre modes de tir et le jeu en équipe tiennent les plus grands en haleine, sans le moindre écran." } },
+      { "type": "who", "settings": { "color": "#39FF14", "tag": "SOIRÉE EN FAMILLE", "title": "Parents contre enfants, enfin équitable",
+        "text": "Les impacts sont comptés par les cibles, donc personne ne conteste. Les adultes jouent aussi." } }
+    ]}
+  ]
+}
+{% endschema %}
