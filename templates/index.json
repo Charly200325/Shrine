@@ -129,6 +129,7 @@
           "settings": {
             "label": "ÉQUIPE BLEUE",
             "color": "#00a3ff",
+            "video": "shopify://files/videos/teambleu.mp4",
             "video_url": ""
           }
         },
@@ -137,6 +138,7 @@
           "settings": {
             "label": "ÉQUIPE ROUGE",
             "color": "#ff2d55",
+            "video": "shopify://files/videos/teamrouge.mp4",
             "video_url": ""
           }
         },
@@ -145,6 +147,7 @@
           "settings": {
             "label": "ÉQUIPE VERTE",
             "color": "#39ff14",
+            "video": "shopify://files/videos/teamvert.mp4",
             "video_url": ""
           }
         }
@@ -464,6 +467,7 @@
         "who-0": {
           "type": "who",
           "settings": {
+            "image": "shopify://shop_images/24cf5c6e4245444e873bbe6d68b514fa.thumbnail.0000000000_720x_4eabc6a2-3c09-4765-bdb3-331f4a3455c4.webp",
             "color": "#00a3ff",
             "tag": "8 À 10 ANS",
             "title": "Le héros des anniversaires",
@@ -473,6 +477,7 @@
         "who-1": {
           "type": "who",
           "settings": {
+            "image": "shopify://shop_images/3a05f44885634a9c8140140a5e587d8a.thumbnail.0000000000_720x_e38532ad-f88d-46c4-aa39-20e82ba153b7.webp",
             "color": "#ff2d55",
             "tag": "11 À 14 ANS",
             "title": "Du canapé au terrain",
@@ -482,6 +487,7 @@
         "who-2": {
           "type": "who",
           "settings": {
+            "image": "shopify://shop_images/dd128eb76d314facafbe1d3a994694d9.thumbnail.0000000000_720x_42f4f8da-c87d-4ca8-ae47-871ff7ea2568.webp",
             "color": "#39ff14",
             "tag": "SOIRÉE EN FAMILLE",
             "title": "Parents contre enfants, enfin équitable",
