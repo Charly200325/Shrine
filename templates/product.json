@@ -1782,11 +1782,26 @@
     },
     "voltag_avis_BtpgDH": {
       "type": "voltag-avis",
+      "blocks": {
+        "review_fhMMiG": {
+          "type": "review",
+          "settings": {
+            "author": "Prénom N.",
+            "stars": 5,
+            "verified": false,
+            "title": "",
+            "body": "Texte de l'avis."
+          }
+        }
+      },
+      "block_order": [
+        "review_fhMMiG"
+      ],
       "name": "VOLTAG — Avis",
       "settings": {
-        "bg": "#05060A",
-        "accent": "#00E5FF",
-        "star_color": "#FFD60A",
+        "bg": "#05060a",
+        "accent": "#00e5ff",
+        "star_color": "#ffd60a",
         "heading": "Avis clients",
         "word_single": "avis",
         "word_plural": "avis",
