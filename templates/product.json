@@ -1274,6 +1274,48 @@
         "promo_code": "",
         "rules": "<p>Jeu de démonstration. Le code obtenu est utilisable une fois par commande et ne se cumule pas avec d'autres remises.</p>"
       }
+    },
+    "voltag_equipes_aghyTc": {
+      "type": "voltag-equipes",
+      "blocks": {
+        "team_BccQCe": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE BLEUE",
+            "color": "#00a3ff",
+            "video_url": ""
+          }
+        },
+        "team_NmkcTa": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE ROUGE",
+            "color": "#ff2d55",
+            "video_url": ""
+          }
+        },
+        "team_Y8KmeB": {
+          "type": "team",
+          "settings": {
+            "label": "ÉQUIPE VERTE",
+            "color": "#39ff14",
+            "video_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "team_BccQCe",
+        "team_NmkcTa",
+        "team_Y8KmeB"
+      ],
+      "name": "VOLTAG — Équipes",
+      "settings": {
+        "bg": "#05060A",
+        "neon": "#00E5FF",
+        "heading": "Choisis ton camp. Équipe-toi. Allume l'arène.",
+        "tagline": "Vrai infrarouge. Vraies parties.",
+        "disclaimer": "VOLTAG détecte les impacts par signaux infrarouges, et non par faisceau laser. Les traits lumineux visibles dans ces vidéos sont un effet visuel ajouté : le produit n'émet aucun rayon."
+      }
     }
   },
   "order": [
@@ -1290,6 +1332,7 @@
     "voltag_comparatif_9XRkmk",
     "voltag_faq_dHnEX7",
     "voltag_cible_aMPxEe",
-    "voltag_mini_jeu_YzRfPR"
+    "voltag_mini_jeu_YzRfPR",
+    "voltag_equipes_aghyTc"
   ]
 }
