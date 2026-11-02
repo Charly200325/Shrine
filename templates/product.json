@@ -2173,12 +2173,12 @@
         "review_fEE87H": {
           "type": "review",
           "settings": {
-            "author": "N. H.",
+            "author": "Grégory Y",
             "stars": 4,
-            "verified": false,
+            "verified": true,
             "title": "Dépend de la météo",
             "body": "Forcément mieux quand il ne pleut pas et qu'il ne gèle pas.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_yRQidd": {
