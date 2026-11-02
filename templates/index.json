@@ -90,6 +90,12 @@
             "liquid_code": ""
           }
         },
+        "moon_bundles_app_block_T6JMni": {
+          "type": "shopify://apps/moon-bundles/blocks/app-block/aaf4cd95-8b9b-4a14-b929-0f7fc8fced27",
+          "settings": {
+            "moonbundle_selected_product": "{{section.settings.product}}"
+          }
+        },
         "variant_picker_VA48VU": {
           "type": "variant_picker",
           "settings": {
@@ -240,6 +246,7 @@
         "rating_stars_dYdrFV",
         "title_46THjX",
         "bl_custom_html_css_js_liquid_block_code_CkeWGE",
+        "moon_bundles_app_block_T6JMni",
         "variant_picker_VA48VU",
         "quantity_selector_NUjQjw",
         "buy_buttons_gHLfCH"
