@@ -2228,12 +2228,12 @@
         "review_pkgTrQ": {
           "type": "review",
           "settings": {
-            "author": "K. L.",
+            "author": "Bastien S",
             "stars": 4,
-            "verified": false,
-            "title": "Au sous-sol",
-            "body": "On a essayé au sous-sol. Ça marche, mais il faut faire attention à ne pas trébucher.",
-            "source": "plateforme tierce"
+            "verified": true,
+            "title": "Au garage",
+            "body": "On a essayé au  garage. C'est drole, mais il faut faire attention à ne pas trébucher.",
+            "source": ""
           }
         },
         "review_bkfYEQ": {
