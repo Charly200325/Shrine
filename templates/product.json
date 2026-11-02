@@ -1861,10 +1861,11 @@
           "settings": {
             "author": "Yannick P",
             "stars": 4,
-            "verified": false,
+            "verified": true,
             "title": "Vraiment sympa",
             "body": "Tout le monde peut jouer, des enfants aux adultes. Ils jouent longtemps sans que les piles lâchent. Ça les éloigne des écrans et les fait bouger. Le prix est élevé mais on s'en est tellement servi que ça revient moins cher qu'une sortie au laser game.",
-            "source": "plateforme tierce"
+            "source": "",
+            "photo": "shopify://shop_images/1792317110__0__WUA31hIo__hf_20261017_124421_7486d80b-917e-4257-91a7-bb83c3bcdcd0__original.webp"
           }
         },
         "review_KmYdTJ": {
