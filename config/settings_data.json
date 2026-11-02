@@ -268,7 +268,6 @@
         "blocks": {
           "058d6d0a-ba0d-48cb-9432-de85da1e5aef": {
             "type": "progress_bar",
-            "disabled": true,
             "settings": {
               "goal_type": "subtotal",
               "goal": 100,
@@ -316,7 +315,6 @@
           },
           "631b0e34-4299-400e-9f4d-c107c08cce01": {
             "type": "discount_field",
-            "disabled": true,
             "settings": {
               "bottom_separator": true,
               "placeholder": "Code promo",
