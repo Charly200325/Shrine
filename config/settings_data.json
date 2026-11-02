@@ -266,20 +266,6 @@
       "cart-drawer": {
         "type": "cart-drawer",
         "blocks": {
-          "058d6d0a-ba0d-48cb-9432-de85da1e5aef": {
-            "type": "progress_bar",
-            "settings": {
-              "goal_type": "subtotal",
-              "goal": 100,
-              "progress_message": "Plus que [amount] pour la livraison offerte",
-              "success_message": "Livraison offerte débloquée",
-              "icon": "local_shipping",
-              "icon_filled": false,
-              "accent_color": "accent-1",
-              "margin_top": 15,
-              "margin_bottom": 15
-            }
-          },
           "097b7b4f-c0b8-4073-a06b-e6d49a5aad20": {
             "type": "cart_items",
             "settings": {
@@ -383,7 +369,7 @@
               "mobile_text_size": 12,
               "icon_1": "local_shipping",
               "icon_1_fill": false,
-              "heading_1": "Livraison offerte\ndès 99,99 €",
+              "heading_1": "Livraison offerte\nen France",
               "icon_2": "undo",
               "icon_2_fill": false,
               "heading_2": "Retours gratuits\n30 jours",
@@ -394,7 +380,6 @@
           }
         },
         "block_order": [
-          "058d6d0a-ba0d-48cb-9432-de85da1e5aef",
           "097b7b4f-c0b8-4073-a06b-e6d49a5aad20",
           "631b0e34-4299-400e-9f4d-c107c08cce01",
           "4f3e2a5f-006d-40ed-8370-49b15e0e427d",
