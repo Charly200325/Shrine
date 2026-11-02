@@ -228,6 +228,12 @@
             "margin_bottom": 24
           }
         },
+        "moon_bundles_app_block_h6KVmB": {
+          "type": "shopify://apps/moon-bundles/blocks/app-block/aaf4cd95-8b9b-4a14-b929-0f7fc8fced27",
+          "settings": {
+            "moonbundle_selected_product": "{{product}}"
+          }
+        },
         "payment_badges_WcUizC": {
           "type": "payment_badges",
           "settings": {
@@ -305,6 +311,7 @@
         "04ba004e-2f54-4936-8b1c-8bcadf6573f6",
         "bl_custom_html_css_js_liquid_block_code_j9QLPX",
         "buy_buttons",
+        "moon_bundles_app_block_h6KVmB",
         "payment_badges_WcUizC",
         "e7a28cbe-03cb-4c9d-a2c4-0e3e76ffb3e5",
         "bl_custom_html_css_js_liquid_block_code_7DHbHG",
