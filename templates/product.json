@@ -2151,12 +2151,12 @@
         "review_aiGarr": {
           "type": "review",
           "settings": {
-            "author": "B. T.",
+            "author": "Stéphanie T",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Solide jusqu'ici",
             "body": "Un mois et rien de cassé. Et pourtant ils ne le ménagent pas.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_rdRnjm": {
