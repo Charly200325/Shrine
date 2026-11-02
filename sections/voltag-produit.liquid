@@ -120,6 +120,10 @@
   .vt-pack-desc { font-size: 13px; color: var(--vt-muted); margin-top: 3px; }
   .vt-pack-price { text-align: right; font-size: 18px; font-weight: 800; white-space: nowrap; }
   .vt-pack-was { display: block; font-size: 13px; font-weight: 500; color: var(--vt-muted); text-decoration: line-through; }
+  .vt-pack-save {
+    display: block; margin-top: 4px; font-size: 12.5px; font-weight: 700;
+    color: var(--vt-green);
+  }
   .vt-pack-inc {
     grid-column: 1 / -1; display: none; align-items: center; gap: 9px;
     margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--vt-line);
@@ -262,6 +266,19 @@
         {%- comment -%} ============ PACKS ============ {%- endcomment -%}
         {%- if product.variants.size > 1 -%}
           <div class="vt-packs-label">{{ section.settings.packs_label }}</div>
+          {%- liquid
+            assign base_players = 0
+            for b in section.blocks
+              if b.type == 'pack' and base_players == 0
+                assign base_players = b.settings.players
+              endif
+            endfor
+            if base_players == 0
+              assign base_players = 1
+            endif
+            assign base_unit = product.variants.first.price | divided_by: base_players
+            assign base_label = product.variants.first.title
+          -%}
           <div class="vt-packs" data-vt-packs>
             {%- for v in product.variants -%}
               {%- liquid
@@ -275,6 +292,7 @@
                 assign p_sub = ''
                 assign p_inc = ''
                 assign p_img = blank
+                assign p_players = 0
                 assign pk = 0
                 for b in section.blocks
                   if b.type == 'pack'
@@ -283,6 +301,7 @@
                       assign p_sub = b.settings.sub
                       assign p_inc = b.settings.included
                       assign p_img = b.settings.image
+                      assign p_players = b.settings.players
                     endif
                     assign pk = pk | plus: 1
                   endif
@@ -296,6 +315,12 @@
                 if p_sub == blank
                   assign p_sub = meta_desc
                 endif
+                assign save_cents = 0
+                if section.settings.show_unit_saving and p_players > base_players
+                  assign ref_price = base_unit | times: p_players
+                  assign save_cents = ref_price | minus: v.price
+                endif
+
                 assign thumb = p_img
                 if thumb == blank
                   assign thumb = v.image
@@ -328,6 +353,9 @@
                     <span class="vt-pack-desc">{{ p_sub }}</span>
                   {%- elsif v.available == false -%}
                     <span class="vt-pack-desc">Épuisé</span>
+                  {%- endif -%}
+                  {%- if save_cents > 0 -%}
+                    <span class="vt-pack-save">{{ save_cents | money }} de moins qu'en packs {{ base_label }}</span>
                   {%- endif -%}
                 </span>
                 <span class="vt-pack-price">
@@ -601,6 +629,16 @@
       "default": "Composez votre pack"
     },
     {
+      "type": "checkbox",
+      "id": "show_unit_saving",
+      "label": "Afficher l'économie par rapport au plus petit pack",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "L'économie est calculée à partir de vos propres prix : elle compare le pack au prix qu'il coûterait en achetant plusieurs fois le plus petit pack. Ce n'est pas un prix barré, donc rien à justifier sur 30 jours."
+    },
+    {
       "type": "text",
       "id": "unit_label",
       "label": "Mention prix unitaire",
@@ -697,6 +735,12 @@
           "label": "Vignette"
         },
         {
+          "type": "number",
+          "id": "players",
+          "label": "Nombre de joueurs",
+          "default": 2
+        },
+        {
           "type": "text",
           "id": "sub",
           "label": "Sous-titre",
@@ -748,6 +792,7 @@
         {
           "type": "pack",
           "settings": {
+            "players": 2,
             "sub": "2 joueurs",
             "included": "2 blasters + 2 cibles de poitrine"
           }
@@ -755,6 +800,7 @@
         {
           "type": "pack",
           "settings": {
+            "players": 4,
             "sub": "4 joueurs",
             "badge": "LE PLUS CHOISI",
             "included": "4 blasters + 4 cibles, les 4 couleurs d'équipe"
@@ -763,9 +809,19 @@
         {
           "type": "pack",
           "settings": {
+            "players": 8,
             "sub": "8 joueurs",
             "badge": "MEILLEUR PRIX",
             "included": "8 blasters + 8 cibles, deux équipes complètes"
+          }
+        },
+        {
+          "type": "pack",
+          "settings": {
+            "players": 12,
+            "sub": "12 joueurs",
+            "badge": "ANNIVERSAIRES",
+            "included": "12 blasters + 12 cibles, de quoi faire jouer toute une classe"
           }
         },
         {
