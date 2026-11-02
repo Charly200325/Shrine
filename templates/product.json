@@ -1051,33 +1051,33 @@
         "pack_a8cqhz": {
           "type": "pack",
           "settings": {
-            "players": 1,
-            "sub": "2 joueurs",
-            "badge": "",
-            "included": "2 blasters + 2 cibles de poitrine"
+            "players": 12,
+            "sub": "12 joueurs",
+            "badge": "ANNIVERSAIRES",
+            "included": "12 blasters + 12 cibles, de quoi faire jouer toute une classe"
           }
         },
         "accordion_QHpbaB": {
           "type": "accordion",
           "settings": {
             "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
-            "open": false
+            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe. Duo : 2 et 2. Squad : 4 et 4. Arène : 8 et 8. Tournoi : 12 et 12. Les piles AAA ne sont pas fournies.</p>",
+            "open": true
           }
         },
         "accordion_qr48zh": {
           "type": "accordion",
           "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "heading": "Est-ce sans danger pour les enfants ?",
+            "content": "<p>Oui. VOLTAG fonctionne par signaux infrarouges, comme une télécommande de télévision : aucun faisceau laser, aucun projectile. Le fabricant indique le jeu à partir de 8 ans, et les sangles réglables s'adaptent aux enfants comme aux adultes.</p>",
             "open": false
           }
         },
         "accordion_hmnJYP": {
           "type": "accordion",
           "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "heading": "Livraison & retours",
+            "content": "<p>Votre commande est préparée sous 1 à 2 jours ouvrés, puis remise au transporteur. Vous recevez votre numéro de suivi par e-mail dès l'expédition. Vous disposez de 30 jours après réception pour changer d'avis, soit plus que les 14 jours du droit de rétractation légal.</p>",
             "open": false
           }
         }
@@ -1112,8 +1112,8 @@
         "trust_1_text": "Numéro de suivi sur chaque commande",
         "trust_2_title": "Paiement sécurisé",
         "trust_2_text": "Transaction chiffrée",
-        "trust_3_title": "Retour 14 jours",
-        "trust_3_text": "Droit de rétractation légal"
+        "trust_3_title": "Retours sous 30 jours",
+        "trust_3_text": "Dont 14 jours de rétractation légale"
       }
     },
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
