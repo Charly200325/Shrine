@@ -1895,12 +1895,13 @@
         "review_KqJjTD": {
           "type": "review",
           "settings": {
-            "author": "G. D.",
+            "author": "Sophie M",
             "stars": 5,
-            "verified": false,
-            "title": "Les enfants lâchent les écrans",
-            "body": "C'est ce que j'ai trouvé de mieux pour les sortir du canapé, et croyez-moi ce n'est pas une mince affaire.",
-            "source": "plateforme tierce"
+            "verified": true,
+            "title": "Les enfants ont adoré",
+            "body": "C'est ce que j'ai trouvé de mieux pour les sortir du canapé, ils ont adoré",
+            "source": "",
+            "photo": "shopify://shop_images/1792317111__0__2vadeTip__hf_20261017_124620_774ac2a5-df20-4ba2-9b35-4c582d06689b__original.webp"
           }
         },
         "review_WEPmhH": {
