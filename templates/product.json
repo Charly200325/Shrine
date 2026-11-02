@@ -1942,23 +1942,23 @@
         "review_fDQEU4": {
           "type": "review",
           "settings": {
-            "author": "M. B.",
+            "author": "Pierre M",
             "stars": 3,
-            "verified": false,
+            "verified": true,
             "title": "Correct sans plus",
             "body": "C'est correct. Les enfants s'en servent de temps en temps mais ce n'est pas leur jeu préféré.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_Aaat8m": {
           "type": "review",
           "settings": {
-            "author": "J.",
+            "author": "Romain N",
             "stars": 4,
-            "verified": false,
+            "verified": true,
             "title": "Conforme à mes attentes",
             "body": "Facile à utiliser et à installer, bonne autonomie.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_MJVwPT": {
