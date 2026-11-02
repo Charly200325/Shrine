@@ -2294,23 +2294,23 @@
         "review_fJcB83": {
           "type": "review",
           "settings": {
-            "author": "T. R.",
+            "author": "Charly B",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Solide",
             "body": "Les enfants apprécient.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_4LHact": {
           "type": "review",
           "settings": {
-            "author": "L. B.",
+            "author": "Léa M",
             "stars": 5,
-            "verified": false,
-            "title": "Qualité de fabrication",
-            "body": "Les blasters ont un vrai côté solide en main. La garantie prend tout son sens quand on les manipule.",
-            "source": "plateforme tierce"
+            "verified": true,
+            "title": "Bonne qualité",
+            "body": "Les pistolets sont tres réaliste et de bonne qualité",
+            "source": ""
           }
         },
         "review_RmVCW6": {
