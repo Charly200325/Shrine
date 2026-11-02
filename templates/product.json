@@ -2338,12 +2338,12 @@
         "review_TkV7ij": {
           "type": "review",
           "settings": {
-            "author": "J. L.",
-            "stars": 2,
-            "verified": false,
+            "author": "Julien O",
+            "stars": 3,
+            "verified": true,
             "title": "Bof",
             "body": "Honnêtement je ne suis pas très fan, on s'en lasse assez vite.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_Be4LjU": {
