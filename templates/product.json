@@ -1919,12 +1919,13 @@
         "review_DWUAgU": {
           "type": "review",
           "settings": {
-            "author": "M. G.",
+            "author": "Nicolas Q",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Excellent cadeau pour un garçon de 10 ans",
             "body": "Mon fils de 10 ans a vraiment apprécié ce set, il l'a élu cadeau d'anniversaire préféré.",
-            "source": "plateforme tierce"
+            "source": "",
+            "photo": "shopify://shop_images/1792317106__0__brSHvcix__hf_20261017_124459_5021c6ca-507e-40d3-9e57-2dfed972af54__original.webp"
           }
         },
         "review_xJDcDD": {
