@@ -310,7 +310,6 @@
         "bl_custom_html_css_js_liquid_block_code_7DHbHG",
         "de158e68-5d0d-4819-a625-e2dabdff87d1"
       ],
-      "disabled": true,
       "custom_css": [],
       "settings": {
         "display_id": false,
@@ -1091,6 +1090,7 @@
         "accordion_qr48zh",
         "accordion_hmnJYP"
       ],
+      "disabled": true,
       "name": "VOLTAG — Produit",
       "settings": {
         "color_bg": "#05060a",
