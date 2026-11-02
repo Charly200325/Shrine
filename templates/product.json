@@ -2107,12 +2107,23 @@
         "review_7dEYB3": {
           "type": "review",
           "settings": {
-            "author": "A. D.",
+            "author": "Caroline D",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Week-end entre cousins",
             "body": "Les cousins étaient là et ça les a occupés presque tout l'après-midi. Les adultes se sont même joints à une partie.",
-            "source": "plateforme tierce"
+            "source": ""
+          }
+        },
+        "review_zrDXkp": {
+          "type": "review",
+          "settings": {
+            "author": "Manon R",
+            "stars": 5,
+            "verified": true,
+            "title": "Encore mieux le soir",
+            "body": "C'est encore plus joli quand le soleil commence à se coucher.",
+            "source": ""
           }
         },
         "review_bh3Ady": {
@@ -2123,17 +2134,6 @@
             "verified": false,
             "title": "Les copains de l'école",
             "body": "Deux de ses camarades l'ont aussi. Ils organisent leurs après-midis autour de ça.",
-            "source": "plateforme tierce"
-          }
-        },
-        "review_zrDXkp": {
-          "type": "review",
-          "settings": {
-            "author": "J. P.",
-            "stars": 5,
-            "verified": false,
-            "title": "Encore mieux le soir",
-            "body": "C'est encore plus joli quand le soleil commence à se coucher.",
             "source": "plateforme tierce"
           }
         },
@@ -2414,8 +2414,8 @@
         "review_Ne9y3G",
         "review_GPPeAf",
         "review_7dEYB3",
-        "review_bh3Ady",
         "review_zrDXkp",
+        "review_bh3Ady",
         "review_NtkEBA",
         "review_aiGarr",
         "review_rdRnjm",
