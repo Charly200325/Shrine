@@ -2140,12 +2140,12 @@
         "review_NtkEBA": {
           "type": "review",
           "settings": {
-            "author": "C. R.",
+            "author": "Arnaud B",
             "stars": 5,
-            "verified": false,
-            "title": "Chouette jeu",
+            "verified": true,
+            "title": "Je recommande",
             "body": "Ça vaut vraiment le détour.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_aiGarr": {
