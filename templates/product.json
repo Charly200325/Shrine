@@ -2283,12 +2283,12 @@
         "review_pT4KhQ": {
           "type": "review",
           "settings": {
-            "author": "B.",
+            "author": "Patrick J",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Ça fonctionne",
             "body": "Jusqu'ici tout va bien, je l'ai pris pour mes nièces et neveux, ils ont l'air d'adorer.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_fJcB83": {
