@@ -2162,12 +2162,12 @@
         "review_rdRnjm": {
           "type": "review",
           "settings": {
-            "author": "R. L.",
+            "author": "Sébastien L",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Recommandé pour les enfants actifs",
             "body": "Si vos enfants aiment courir partout, c'est fait pour eux.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_fEE87H": {
