@@ -2184,23 +2184,23 @@
         "review_yRQidd": {
           "type": "review",
           "settings": {
-            "author": "H. B.",
+            "author": "Simon B",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Bien",
             "body": "Ils y jouent beaucoup.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_pVHeFT": {
           "type": "review",
           "settings": {
-            "author": "M. S.",
+            "author": "Sandrine M",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Installation simple",
-            "body": "Cinq minutes environ pour être opérationnel. Ni application ni compte à créer, ce que j'apprécie. Les enfants jouaient tout de suite.",
-            "source": "plateforme tierce"
+            "body": "Cinq minutes environ pour être opérationnel. Ni application ni compte à créer les enfants joue tout de suite.",
+            "source": ""
           }
         },
         "review_kYYpj8": {
