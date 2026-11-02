@@ -2206,23 +2206,23 @@
         "review_kYYpj8": {
           "type": "review",
           "settings": {
-            "author": "J. K.",
+            "author": "Vincent J",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Parties du soir",
             "body": "Ils aiment y jouer quand la nuit commence à tomber. Les lumières ressortent mieux.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_8GfKLf": {
           "type": "review",
           "settings": {
-            "author": "C. M.",
+            "author": "Laurent R",
             "stars": 3,
-            "verified": false,
+            "verified": true,
             "title": "Correct",
             "body": "C'est bien. Les enfants y ont joué quelques fois puis sont passés à autre chose.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_pkgTrQ": {
