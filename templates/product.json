@@ -2074,12 +2074,12 @@
         "review_fNT4GC": {
           "type": "review",
           "settings": {
-            "author": "P. S.",
+            "author": "Mathieu G",
             "stars": 4,
-            "verified": false,
+            "verified": true,
             "title": "Des piles simples à trouver",
             "body": "De simples piles AAA. Aucun bloc spécial à recharger. Ça en consomme, mais c'est pratique.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_Ne9y3G": {
