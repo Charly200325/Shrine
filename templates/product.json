@@ -2096,12 +2096,12 @@
         "review_GPPeAf": {
           "type": "review",
           "settings": {
-            "author": "T. M.",
+            "author": "Julie A",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Quand les copains viennent",
             "body": "Quand des copains viennent à la maison, c'est à ça qu'ils finissent par jouer.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_7dEYB3": {
