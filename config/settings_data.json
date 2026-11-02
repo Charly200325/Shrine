@@ -286,7 +286,7 @@
               "quantity_container_padding": 0,
               "quantity_corner_radius": 6,
               "quantity_border_width": 1,
-              "quantity_border_color": "#2A3348",
+              "quantity_border_color": "#2a3348",
               "quantity_container_color_scheme": "background-1",
               "quantity_input_padding": 0.7,
               "quantity_separators_opacity": 20,
@@ -347,14 +347,6 @@
               "margin_bottom": 15
             }
           },
-          "68fdc0a0-cd7c-40b9-97b3-a76eb7917a47": {
-            "type": "payment_badges",
-            "settings": {
-              "enabled_payment_types": "",
-              "margin_top": 12,
-              "margin_bottom": 12
-            }
-          },
           "39e51a4a-1b77-49a9-ad16-dc9e4397b7a0": {
             "type": "icon_with_text",
             "settings": {
@@ -375,7 +367,17 @@
               "heading_2": "Retours gratuits\n30 jours",
               "icon_3": "lock",
               "icon_3_fill": false,
-              "heading_3": "Paiement\nsécurisé"
+              "heading_3": "Paiement\nsécurisé",
+              "margin_top": 15,
+              "margin_bottom": 15
+            }
+          },
+          "68fdc0a0-cd7c-40b9-97b3-a76eb7917a47": {
+            "type": "payment_badges",
+            "settings": {
+              "enabled_payment_types": "american_express, apple_pay, master, paypal, shopify_pay, visa",
+              "margin_top": 12,
+              "margin_bottom": 12
             }
           }
         },
@@ -394,11 +396,11 @@
           "desktop_width": "normal",
           "mobile_width": "full",
           "enable_header_bg": true,
-          "header_bg_color": "#0B0D12",
+          "header_bg_color": "#0b0d12",
           "enable_body_bg": true,
-          "body_bg_color": "#0B0D12",
+          "body_bg_color": "#0b0d12",
           "enable_footer_bg": true,
-          "footer_bg_color": "#0B0D12"
+          "footer_bg_color": "#0b0d12"
         }
       },
       "header": {
