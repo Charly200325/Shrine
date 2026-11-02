@@ -271,7 +271,7 @@
             "disabled": true,
             "settings": {
               "goal_type": "subtotal",
-              "goal": 99.99,
+              "goal": 100,
               "progress_message": "Plus que [amount] pour la livraison offerte",
               "success_message": "Livraison offerte débloquée",
               "icon": "local_shipping",
