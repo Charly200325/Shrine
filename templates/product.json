@@ -1986,45 +1986,45 @@
         "review_WFtVWq": {
           "type": "review",
           "settings": {
-            "author": "K. L.",
+            "author": "Amélie L",
             "stars": 5,
-            "verified": false,
-            "title": "Les parents s'y mettent aussi",
+            "verified": true,
+            "title": "super",
             "body": "On m'a embarquée dans une partie. J'ai ri bien plus que je ne l'aurais cru.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_nTD7yJ": {
           "type": "review",
           "settings": {
-            "author": "A. T.",
+            "author": "Guillaume V",
             "stars": 4,
-            "verified": false,
+            "verified": true,
             "title": "Fonctionne quelle que soit la lumière",
             "body": "Correct en plein jour, et meilleur quand la lumière baisse.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_QnBj4f": {
           "type": "review",
           "settings": {
-            "author": "T. P.",
+            "author": "Bastien E",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Activité du week-end",
-            "body": "On s'en est servi samedi dernier avec les voisins. Quatre enfants à courir dans le jardin pendant plus d'une heure. Aucune plainte de personne.",
-            "source": "plateforme tierce"
+            "body": "On s'en est servi samedi dernier avec les voisins. Quatre enfants à courir dans le jardin pendant plus d'une heure",
+            "source": ""
           }
         },
         "review_8CxGir": {
           "type": "review",
           "settings": {
-            "author": "G. H.",
+            "author": "Laëtitia I",
             "stars": 5,
-            "verified": false,
-            "title": "Succès dans le quartier",
-            "body": "D'autres enfants ont posé des questions dessus. Ça pourrait bien devenir une habitude dans la rue.",
-            "source": "plateforme tierce"
+            "verified": true,
+            "title": "Très sympa",
+            "body": "Mes enfants ont joués avec les voisins toute l'après midi avec",
+            "source": ""
           }
         },
         "review_CbEWCG": {
