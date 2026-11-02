@@ -60,7 +60,7 @@
           "type": "rating_stars",
           "settings": {
             "rating": 4.8,
-            "star_color": "#FFD23F",
+            "star_color": "#ffd23f",
             "bg_stars_style": "full",
             "bg_star_color": "#ececec",
             "label": "(noté 4.8/5 sur 2736 avis )",
@@ -108,7 +108,7 @@
         "buy_buttons_gHLfCH": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "skip_cart": false,
             "uppercase_text": true,
             "icon_scale": 120,
