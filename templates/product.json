@@ -1018,6 +1018,104 @@
         "custom_colors_text": "#121212"
       }
     },
+    "voltag_produit_PDKKMW": {
+      "type": "voltag-produit",
+      "blocks": {
+        "pack_AFnh8r": {
+          "type": "pack",
+          "settings": {
+            "players": 2,
+            "sub": "2 joueurs",
+            "badge": "",
+            "included": "2 blasters + 2 cibles de poitrine"
+          }
+        },
+        "pack_4696HT": {
+          "type": "pack",
+          "settings": {
+            "players": 4,
+            "sub": "4 joueurs",
+            "badge": "LE PLUS CHOISI",
+            "included": "4 blasters + 4 cibles, les 4 couleurs d'équipe"
+          }
+        },
+        "pack_8geYmj": {
+          "type": "pack",
+          "settings": {
+            "players": 8,
+            "sub": "8 joueurs",
+            "badge": "MEILLEUR PRIX",
+            "included": "8 blasters + 8 cibles, deux équipes complètes"
+          }
+        },
+        "pack_a8cqhz": {
+          "type": "pack",
+          "settings": {
+            "players": 1,
+            "sub": "2 joueurs",
+            "badge": "",
+            "included": "2 blasters + 2 cibles de poitrine"
+          }
+        },
+        "accordion_QHpbaB": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Que contient la boîte ?",
+            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "open": false
+          }
+        },
+        "accordion_qr48zh": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Que contient la boîte ?",
+            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "open": false
+          }
+        },
+        "accordion_hmnJYP": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Que contient la boîte ?",
+            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
+            "open": false
+          }
+        }
+      },
+      "block_order": [
+        "pack_AFnh8r",
+        "pack_4696HT",
+        "pack_8geYmj",
+        "pack_a8cqhz",
+        "accordion_QHpbaB",
+        "accordion_qr48zh",
+        "accordion_hmnJYP"
+      ],
+      "name": "VOLTAG — Produit",
+      "settings": {
+        "color_bg": "#05060a",
+        "color_surface": "#121826",
+        "color_neon": "#00e5ff",
+        "font_stack": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+        "badge_text": "ÉDITION 4 COULEURS",
+        "show_rating": false,
+        "rating_text": "Noté 4,8/5 par nos clients",
+        "subtitle": "Transformez le salon ou le jardin en arène de laser game. Cibles lumineuses, vibrations et bande-son à chaque tir touché.",
+        "packs_label": "Choisissez votre pack",
+        "show_unit_saving": true,
+        "unit_label": "Soit {price} par joueur",
+        "show_stock": true,
+        "low_stock_threshold": 30,
+        "atc_text": "Ajouter au panier",
+        "show_payment_icons": true,
+        "trust_1_title": "Livraison suivie",
+        "trust_1_text": "Numéro de suivi sur chaque commande",
+        "trust_2_title": "Paiement sécurisé",
+        "trust_2_text": "Transaction chiffrée",
+        "trust_3_title": "Retour 14 jours",
+        "trust_3_text": "Droit de rétractation légal"
+      }
+    },
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f": {
       "type": "testimonials",
       "blocks": {
@@ -1113,64 +1211,6 @@
         "custom_background_color": "#ffffff",
         "padding_top": 0,
         "padding_bottom": 0
-      }
-    },
-    "voltag_produit_PDKKMW": {
-      "type": "voltag-produit",
-      "blocks": {
-        "accordion_QHpbaB": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
-            "open": false
-          }
-        },
-        "accordion_qr48zh": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
-            "open": false
-          }
-        },
-        "accordion_hmnJYP": {
-          "type": "accordion",
-          "settings": {
-            "heading": "Que contient la boîte ?",
-            "content": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED, dans les quatre couleurs d'équipe.</p>",
-            "open": false
-          }
-        }
-      },
-      "block_order": [
-        "accordion_QHpbaB",
-        "accordion_qr48zh",
-        "accordion_hmnJYP"
-      ],
-      "name": "VOLTAG — Produit",
-      "settings": {
-        "color_bg": "#05060a",
-        "color_surface": "#121826",
-        "color_neon": "#00e5ff",
-        "font_stack": "'Helvetica Neue', Helvetica, Arial, sans-serif",
-        "badge_text": "ÉDITION 4 COULEURS",
-        "show_rating": true,
-        "rating_text": "Noté 4,8/5 par nos clients",
-        "subtitle": "Transformez le salon ou le jardin en arène de laser game. Cibles lumineuses, vibrations et bande-son à chaque tir touché.",
-        "packs_label": "Choisissez votre pack",
-        "show_unit_saving": true,
-        "unit_label": "Soit {price} par joueur",
-        "show_stock": true,
-        "low_stock_threshold": 30,
-        "atc_text": "Ajouter au panier",
-        "show_payment_icons": true,
-        "trust_1_title": "Livraison suivie",
-        "trust_1_text": "Numéro de suivi sur chaque commande",
-        "trust_2_title": "Paiement sécurisé",
-        "trust_2_text": "Transaction chiffrée",
-        "trust_3_title": "Retour 14 jours",
-        "trust_3_text": "Droit de rétractation légal"
       }
     },
     "voltag_etapes_q3zUgf": {
@@ -2420,9 +2460,9 @@
     "related-products",
     "8beb6911-28c6-482c-976a-e5421ad3e8df",
     "eba88da5-80ac-47fc-aa75-997cfe7b2e59",
+    "voltag_produit_PDKKMW",
     "55bd100e-3bbd-426c-a5cf-eed7b2a3706f",
     "b321ab88-2b59-4dba-bade-54885c874ca5",
-    "voltag_produit_PDKKMW",
     "voltag_etapes_q3zUgf",
     "voltag_modes_wg9J8D",
     "voltag_faq_dHnEX7",
