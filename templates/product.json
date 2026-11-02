@@ -1823,12 +1823,13 @@
         "review_heaEN6": {
           "type": "review",
           "settings": {
-            "author": "K. D.",
+            "author": "Mathilde J",
             "stars": 5,
-            "verified": false,
-            "title": "Set très amusant, les enfants adorent",
-            "body": "Set très sympa pour les enfants. Correspond à la description et fonctionne comme annoncé. Amusant pour toute la famille. Livré rapidement et bien emballé. Ma fille était ravie de le recevoir pour son anniversaire.",
-            "source": "plateforme tierce"
+            "verified": true,
+            "title": "Les enfants adorent",
+            "body": "Set très sympa pour les enfants. Correspond à la description et fonctionne comme annoncé. Amusant pour toute la famille. Livré rapidement et bien emballé.",
+            "source": "",
+            "photo": "shopify://shop_images/1792493207__0__KOAeq3ov__718OIiypiwL__original.webp"
           }
         },
         "review_bcMq3e": {
