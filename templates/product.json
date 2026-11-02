@@ -2349,12 +2349,12 @@
         "review_Be4LjU": {
           "type": "review",
           "settings": {
-            "author": "M. P.",
+            "author": "Marion J",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Les enfants le réclament",
             "body": "Ils le demandent spécifiquement, ce qui n'arrive pas avec tous les jeux.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_QnXArx": {
