@@ -1868,18 +1868,6 @@
             "photo": "shopify://shop_images/1792317110__0__WUA31hIo__hf_20261017_124421_7486d80b-917e-4257-91a7-bb83c3bcdcd0__original.webp"
           }
         },
-        "review_KmYdTJ": {
-          "type": "review",
-          "settings": {
-            "author": "Ingrid C",
-            "stars": 5,
-            "verified": true,
-            "title": "Tout le monde a joué",
-            "body": "Même papa et mamie ont fini par jouer. Bien mieux qu'un après-midi de plus devant un écran.",
-            "source": "",
-            "photo": "shopify://shop_images/1792317116__0__JOCp6frz__hf_20261017_124628_920ba211-6c72-4df4-9dd3-5f4108237137__original.webp"
-          }
-        },
         "review_c7fgQi": {
           "type": "review",
           "settings": {
@@ -2035,6 +2023,17 @@
             "verified": true,
             "title": "Plusieurs modes",
             "body": "Ils changent souvent de mode. Ça évite que le jeu devienne lassant pour eux.",
+            "source": ""
+          }
+        },
+        "review_KmYdTJ": {
+          "type": "review",
+          "settings": {
+            "author": "Ingrid C",
+            "stars": 5,
+            "verified": true,
+            "title": "Tout le monde a joué",
+            "body": "Même papa et mamie ont fini par jouer. Bien mieux qu'un après-midi de plus devant un écran.",
             "source": ""
           }
         },
@@ -2381,7 +2380,6 @@
         "review_bcMq3e",
         "review_7UBhpT",
         "review_aN6bde",
-        "review_KmYdTJ",
         "review_c7fgQi",
         "review_KqJjTD",
         "review_WEPmhH",
@@ -2396,6 +2394,7 @@
         "review_QnBj4f",
         "review_8CxGir",
         "review_CbEWCG",
+        "review_KmYdTJ",
         "review_4z9Bie",
         "review_bwkBbA",
         "review_CVwKj3",
