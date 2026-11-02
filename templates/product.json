@@ -1907,12 +1907,13 @@
         "review_WEPmhH": {
           "type": "review",
           "settings": {
-            "author": "S. T.",
+            "author": "Cindy T",
             "stars": 5,
-            "verified": false,
-            "title": "Mes enfants sont accros",
-            "body": "Les enfants adorent changer de mode de tir en cours de partie. Les lumières, le son et la vibration quand on est touché sont très satisfaisants. Des heures de jeu actif au lieu de rester devant un écran. Je trouve que c'est une excellente façon de les faire bouger, content d'avoir trouvé cette solution.",
-            "source": "plateforme tierce"
+            "verified": true,
+            "title": "Top",
+            "body": "Les lumières, le son et la vibration quand on est touché sont très satisfaisants. Des heures de jeu actif au lieu de rester devant un écran.",
+            "source": "",
+            "photo": "shopify://shop_images/1792317110__0__ohBdKNjr__hf_20261017_125021_5d1f244c-4f4d-4ff3-9a65-76bc7ba0e0da__original.webp"
           }
         },
         "review_DWUAgU": {
