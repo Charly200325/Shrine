@@ -2052,23 +2052,23 @@
         "review_bwkBbA": {
           "type": "review",
           "settings": {
-            "author": "I. B.",
+            "author": "Marion T",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Du sport dans le jardin",
             "body": "Ils se dépensent plus avec ça qu'avec la plupart des autres jeux.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_CVwKj3": {
           "type": "review",
           "settings": {
-            "author": "B. C.",
+            "author": "Émilie N",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Plusieurs enfants",
             "body": "Ça fonctionne à plus de deux joueurs, ce qui est important pour notre famille.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_fNT4GC": {
