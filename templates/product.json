@@ -2357,26 +2357,15 @@
             "source": ""
           }
         },
-        "review_QnXArx": {
-          "type": "review",
-          "settings": {
-            "author": "D. C.",
-            "stars": 4,
-            "verified": false,
-            "title": "Une activité de secours",
-            "body": "Pratique d'avoir quelque chose de prêt quand les plans tombent à l'eau.",
-            "source": "plateforme tierce"
-          }
-        },
         "review_JRnU4N": {
           "type": "review",
           "settings": {
-            "author": "C.",
+            "author": "Élodie C",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Fonctionne avec des piles AAA",
-            "body": "J'aime beaucoup le fait que les blasters soient plutôt compacts et pas encombrants, et qu'ils fonctionnent avec des piles AAA. Pas d'attente de recharge. À noter qu'aucune pile n'est fournie.",
-            "source": "plateforme tierce"
+            "body": "J'aime beaucoup, les pistolets sont plutôt compacts et pas encombrants, et fonctionnent avec des piles AAA. Pas d'attente de recharge.",
+            "source": ""
           }
         }
       },
@@ -2436,7 +2425,6 @@
         "review_febE8p",
         "review_TkV7ij",
         "review_Be4LjU",
-        "review_QnXArx",
         "review_JRnU4N"
       ],
       "name": "VOLTAG — Avis",
