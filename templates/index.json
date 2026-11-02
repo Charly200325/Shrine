@@ -608,7 +608,7 @@
           "type": "qa",
           "settings": {
             "question": "Que contient la boîte ?",
-            "answer": "<p>Chaque pack contient autant de blasters infrarouges que de cibles de poitrine à LED.</p><p><strong>Duo :</strong> 2 blasters et 2 cibles, pour un duel. <strong>Squad :</strong> 4 blasters et 4 cibles dans les quatre couleurs. <strong>Arène :</strong> 8 blasters et 8 cibles.</p><p>Les piles ne sont pas fournies.</p>",
+            "answer": "<p>Chaque pack contient autant de pistolets infrarouges que de cibles de poitrine à LED.</p><p><strong>Duo :</strong> 2 pistolets et 2 cibles, pour un duel. <strong>Battle :</strong> 4 pistolets et 4 cibles dans les quatre couleurs. <strong>Squad :</strong> 8 pistolets et 8 cibles. <strong>Tournoi</strong> : 12 pistolets et 12 cibles.</p><p>Les piles ne sont pas fournies.</p>",
             "icon": "box",
             "show_teams": true,
             "show_modes": false
