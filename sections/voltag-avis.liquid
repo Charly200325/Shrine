@@ -95,6 +95,65 @@
   #va-{{ section.id }} .r-b{font-size:14.5px}
   #va-{{ section.id }} .r-pics img{width:104px;height:104px}
 }
+
+/* ---- menus filtre / tri ---- */
+#va-{{ section.id }} .r-menu{position:relative}
+#va-{{ section.id }} .r-pop{position:absolute;top:calc(100% + 8px);right:0;z-index:40;min-width:168px;
+  background:#0d1424;border:1px solid #243049;border-radius:12px;padding:6px;
+  box-shadow:0 18px 40px rgba(0,0,0,.55);display:flex;flex-direction:column;gap:2px}
+#va-{{ section.id }} .r-pop[hidden]{display:none}
+#va-{{ section.id }} .r-pop button{appearance:none;background:none;border:0;color:#c6cfe2;font:inherit;font-size:14px;
+  text-align:left;padding:9px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+#va-{{ section.id }} .r-pop button:hover{background:#18233a;color:#fff}
+#va-{{ section.id }} .r-pop button.on{background:#18233a;color:#fff;font-weight:700}
+#va-{{ section.id }} .r-none{margin-top:28px;color:#8f9ab3;font-size:15px}
+#va-{{ section.id }} .r-none[hidden]{display:none}
+#va-{{ section.id }} .r-item.r-off{display:none}
+
+/* ---- modale avis ---- */
+#va-{{ section.id }} .r-modal{position:fixed;inset:0;z-index:9990;display:flex;align-items:center;justify-content:center;padding:20px}
+#va-{{ section.id }} .r-modal[hidden]{display:none}
+#va-{{ section.id }} .r-bd{position:absolute;inset:0;background:rgba(3,6,14,.78);backdrop-filter:blur(3px)}
+#va-{{ section.id }} .r-dlg{position:relative;z-index:1;width:100%;max-width:520px;max-height:88vh;overflow-y:auto;
+  background:#0b1223;border:1px solid #243049;border-radius:18px;padding:30px 28px 26px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6)}
+#va-{{ section.id }} .r-x{position:absolute;top:14px;right:14px;width:34px;height:34px;display:grid;place-items:center;
+  background:none;border:0;border-radius:9px;cursor:pointer;color:#8f9ab3}
+#va-{{ section.id }} .r-x:hover{background:#18233a;color:#fff}
+#va-{{ section.id }} .r-x svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+#va-{{ section.id }} .r-ft{font-size:22px;font-weight:800;letter-spacing:-.01em;margin:0 0 22px;padding-right:36px}
+#va-{{ section.id }} .r-lb{display:block;font-size:13px;font-weight:700;color:#c6cfe2;margin:0 0 7px;
+  text-transform:uppercase;letter-spacing:.06em}
+#va-{{ section.id }} .r-if{display:block;width:100%;margin:0 0 18px;background:#070d1a;color:#fff;
+  border:1px solid #243049;border-radius:10px;padding:12px 14px;font:inherit;font-size:15px}
+#va-{{ section.id }} .r-if:focus{outline:none;border-color:var(--cy);box-shadow:0 0 0 3px rgba(0,229,255,.14)}
+#va-{{ section.id }} .r-ta{resize:vertical;min-height:120px;line-height:1.6}
+#va-{{ section.id }} .r-rate{display:flex;gap:4px;margin:0 0 18px}
+#va-{{ section.id }} .r-rate input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+#va-{{ section.id }} .r-rate label{cursor:pointer;line-height:0;padding:2px}
+#va-{{ section.id }} .r-rate svg{width:30px;height:30px;fill:#273146;transition:fill .12s}
+#va-{{ section.id }} .r-rate input:checked + label svg,
+#va-{{ section.id }} .r-rate label.on svg{fill:var(--star)}
+#va-{{ section.id }} .r-rate input:focus-visible + label svg{outline:2px solid var(--cy);outline-offset:2px}
+#va-{{ section.id }} .r-ck{display:flex;gap:11px;align-items:flex-start;margin:0 0 22px;
+  color:#8f9ab3;font-size:13.5px;line-height:1.6;cursor:pointer}
+#va-{{ section.id }} .r-ck input{margin-top:3px;width:16px;height:16px;accent-color:var(--cy);flex:0 0 auto}
+#va-{{ section.id }} .r-send{width:100%;appearance:none;border:0;border-radius:11px;cursor:pointer;
+  background:var(--star);color:#0b1223;font:inherit;font-size:16px;font-weight:800;padding:15px 20px;
+  transition:filter .18s,transform .14s}
+#va-{{ section.id }} .r-send:hover{filter:brightness(1.06);transform:translateY(-1px)}
+#va-{{ section.id }} .r-note{margin-top:16px !important;color:#78839c;font-size:12.5px;line-height:1.65}
+#va-{{ section.id }} .r-done{color:#9fe8b4;font-size:16px;line-height:1.7;margin:0 0 6px !important}
+#va-{{ section.id }} .r-err{background:rgba(255,90,90,.1);border:1px solid rgba(255,90,90,.35);color:#ffb3b3;
+  border-radius:10px;padding:12px 14px;margin:0 0 18px !important;font-size:14px;line-height:1.6}
+#va-{{ section.id }} .r-err ul{margin:0;padding-left:18px}
+
+@media (max-width:749px){
+  #va-{{ section.id }} .r-dlg{padding:26px 20px 22px;max-height:92vh}
+  #va-{{ section.id }} .r-ft{font-size:19px}
+  #va-{{ section.id }} .r-rate svg{width:34px;height:34px}
+  #va-{{ section.id }} .r-pop{right:auto;left:0}
+}
 </style>
 
 <section id="va-{{ section.id }}">
@@ -112,16 +171,39 @@
       </div>
 
       <div class="r-acts">
-        {%- if section.settings.write_link != blank -%}
-          <a class="r-write" href="{{ section.settings.write_link }}">{{ section.settings.write_label }}</a>
+        {%- if section.settings.write_mode == 'link' -%}
+          {%- if section.settings.write_link != blank -%}
+            <a class="r-write" href="{{ section.settings.write_link }}">{{ section.settings.write_label }}</a>
+          {%- endif -%}
+        {%- elsif section.settings.write_mode == 'form' -%}
+          <button type="button" class="r-write" data-r-open>{{ section.settings.write_label }}</button>
         {%- endif -%}
-        <button type="button" class="r-ico" aria-label="Filtrer">
-          <svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>
-        </button>
-        <button type="button" class="r-ico" aria-label="Trier">
-          <svg viewBox="0 0 24 24"><path d="M7 4v16M7 20l-3-3M7 4l3 3M17 20V4M17 4l3 3M17 20l-3-3"/></svg>
-        </button>
+
+        <div class="r-menu">
+          <button type="button" class="r-ico" aria-label="{{ section.settings.filter_aria }}" aria-haspopup="true" aria-expanded="false" data-r-tog="f">
+            <svg viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>
+          </button>
+          <div class="r-pop" data-r-pop="f" hidden>
+            <button type="button" class="on" data-r-f="all">{{ section.settings.filter_all }}</button>
+            {%- for i in (1..5) -%}
+              {%- assign n = 6 | minus: i -%}
+              <button type="button" data-r-f="{{ n }}">{{ n }} &#9733;</button>
+            {%- endfor -%}
+          </div>
+        </div>
+
+        <div class="r-menu">
+          <button type="button" class="r-ico" aria-label="{{ section.settings.sort_aria }}" aria-haspopup="true" aria-expanded="false" data-r-tog="s">
+            <svg viewBox="0 0 24 24"><path d="M7 4v16M7 20l-3-3M7 4l3 3M17 20V4M17 4l3 3M17 20l-3-3"/></svg>
+          </button>
+          <div class="r-pop" data-r-pop="s" hidden>
+            <button type="button" class="on" data-r-s="default">{{ section.settings.sort_recent }}</button>
+            <button type="button" data-r-s="high">{{ section.settings.sort_high }}</button>
+            <button type="button" data-r-s="low">{{ section.settings.sort_low }}</button>
+          </div>
+        </div>
       </div>
+      <p class="r-none" data-r-none hidden>{{ section.settings.filter_none }}</p>
     </div>
 
     {%- assign hl = 0 -%}
@@ -172,7 +254,7 @@
             {%- assign c = rr | split: '|' -%}
             {%- assign n_stars = c[1] | plus: 0 -%}
             {%- if n_stars < 1 -%}{%- assign n_stars = 5 -%}{%- endif -%}
-            <div class="r-item{% if shown > cut %} r-hide{% endif %}"{% if shown > cut %} data-r-extra{% endif %}>
+            <div class="r-item{% if shown > cut %} r-hide{% endif %}" data-stars="{{ n_stars }}"{% if shown > cut %} data-r-extra{% endif %}>
               <div class="r-stars" role="img" aria-label="{{ n_stars }} étoiles sur 5">
                 {%- for i in (1..5) -%}
                   <svg viewBox="0 0 24 24" class="{% if i > n_stars %}off{% endif %}">
@@ -196,12 +278,12 @@
 
 
     {%- if rv > 0 -%}
-      <div class="r-list">
+      <div class="r-list" data-r-list>
         {%- assign shown = bulk_n -%}
         {%- for block in section.blocks -%}
           {%- if block.type == 'review' -%}
             {%- assign shown = shown | plus: 1 -%}
-            <div class="r-item{% if shown > cut %} r-hide{% endif %}"{% if shown > cut %} data-r-extra{% endif %} {{ block.shopify_attributes }}>
+            <div class="r-item{% if shown > cut %} r-hide{% endif %}" data-stars="{{ block.settings.stars }}"{% if shown > cut %} data-r-extra{% endif %} {{ block.shopify_attributes }}>
               <div class="r-stars" role="img" aria-label="{{ block.settings.stars }} étoiles sur 5">
                 {%- for i in (1..5) -%}
                   <svg viewBox="0 0 24 24" class="{% if i > block.settings.stars %}off{% endif %}">
@@ -254,6 +336,59 @@
     {%- endif -%}
 
   </div>
+
+  {%- if section.settings.write_mode == 'form' -%}
+    <div class="r-modal" data-r-modal hidden>
+      <div class="r-bd" data-r-close></div>
+      <div class="r-dlg" role="dialog" aria-modal="true" aria-labelledby="rft-{{ section.id }}">
+        <button type="button" class="r-x" data-r-close aria-label="{{ section.settings.f_close }}">
+          <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+        <p class="r-ft" id="rft-{{ section.id }}">{{ section.settings.form_title }}</p>
+
+        {%- form 'contact' -%}
+          {%- if form.posted_successfully? -%}
+            <span data-r-posted hidden></span>
+            <p class="r-done">{{ section.settings.form_done }}</p>
+          {%- else -%}
+            {%- if form.errors -%}
+              <p class="r-err">{{ form.errors | default_errors }}</p>
+            {%- endif -%}
+
+            <label class="r-lb" for="rn-{{ section.id }}">{{ section.settings.f_name }}</label>
+            <input class="r-if" id="rn-{{ section.id }}" type="text" name="contact[name]" autocomplete="name" required>
+
+            <label class="r-lb" for="re-{{ section.id }}">{{ section.settings.f_email }}</label>
+            <input class="r-if" id="re-{{ section.id }}" type="email" name="contact[email]" autocomplete="email" required>
+
+            <span class="r-lb">{{ section.settings.f_rating }}</span>
+            <div class="r-rate" data-r-rate>
+              {%- for i in (1..5) -%}
+                <input type="radio" name="contact[Note]" id="rr{{ i }}-{{ section.id }}" value="{{ i }}" required>
+                <label for="rr{{ i }}-{{ section.id }}" aria-label="{{ i }}/5">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                </label>
+              {%- endfor -%}
+            </div>
+
+            <label class="r-lb" for="rt-{{ section.id }}">{{ section.settings.f_title }}</label>
+            <input class="r-if" id="rt-{{ section.id }}" type="text" name="contact[Titre]">
+
+            <label class="r-lb" for="rb-{{ section.id }}">{{ section.settings.f_body }}</label>
+            <textarea class="r-if r-ta" id="rb-{{ section.id }}" name="contact[body]" rows="5" required></textarea>
+
+            <label class="r-ck">
+              <input type="checkbox" name="contact[Consentement]" value="oui" required>
+              <span>{{ section.settings.f_consent }}</span>
+            </label>
+
+            <button type="submit" class="r-send">{{ section.settings.f_submit }}</button>
+            <p class="r-note">{{ section.settings.form_notice }}</p>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  {%- endif -%}
 </section>
 
 <script>
@@ -307,6 +442,137 @@
 })();
 </script>
 
+<script>
+(function () {
+  var root = document.getElementById('va-{{ section.id }}');
+  if (!root) return;
+
+  /* ---------- menus filtre / tri ---------- */
+  var lists = [].slice.call(root.querySelectorAll('[data-r-list]'));
+  var none = root.querySelector('[data-r-none]');
+  var pops = [].slice.call(root.querySelectorAll('[data-r-pop]'));
+
+  function closeAll(except) {
+    pops.forEach(function (p) {
+      if (p === except) return;
+      p.hidden = true;
+      var t = root.querySelector('[data-r-tog="' + p.getAttribute('data-r-pop') + '"]');
+      if (t) t.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  root.querySelectorAll('[data-r-tog]').forEach(function (tog) {
+    tog.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var pop = root.querySelector('[data-r-pop="' + tog.getAttribute('data-r-tog') + '"]');
+      if (!pop) return;
+      var willOpen = pop.hidden;
+      closeAll(pop);
+      pop.hidden = !willOpen;
+      tog.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function () { closeAll(null); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeAll(null); });
+  pops.forEach(function (p) { p.addEventListener('click', function (e) { e.stopPropagation(); }); });
+
+  function items() {
+    var all = [];
+    lists.forEach(function (l) { all = all.concat([].slice.call(l.querySelectorAll('.r-item'))); });
+    return all;
+  }
+
+  var filter = 'all';
+  function applyFilter() {
+    var on = 0;
+    items().forEach(function (el) {
+      var ok = (filter === 'all') || (el.getAttribute('data-stars') === filter);
+      el.classList.toggle('r-off', !ok);
+      if (ok) on++;
+    });
+    if (none) none.hidden = on !== 0;
+  }
+
+  root.querySelectorAll('[data-r-f]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      filter = b.getAttribute('data-r-f');
+      b.parentNode.querySelectorAll('button').forEach(function (o) { o.classList.remove('on'); });
+      b.classList.add('on');
+      applyFilter();
+      closeAll(null);
+    });
+  });
+
+  var base = null;
+  root.querySelectorAll('[data-r-s]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (!lists.length) return;
+      if (!base) base = items();
+      var how = b.getAttribute('data-r-s');
+      var arr = base.slice();
+      if (how === 'high' || how === 'low') {
+        arr.sort(function (x, y) {
+          var a = parseInt(x.getAttribute('data-stars'), 10) || 0;
+          var c = parseInt(y.getAttribute('data-stars'), 10) || 0;
+          return how === 'high' ? c - a : a - c;
+        });
+      }
+      arr.forEach(function (el) { lists[0].appendChild(el); });
+      b.parentNode.querySelectorAll('button').forEach(function (o) { o.classList.remove('on'); });
+      b.classList.add('on');
+      closeAll(null);
+    });
+  });
+
+  /* ---------- modale ---------- */
+  var modal = root.querySelector('[data-r-modal]');
+  if (!modal) return;
+  var last = null;
+
+  function open() {
+    last = document.activeElement;
+    modal.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    var f = modal.querySelector('input, textarea, button');
+    if (f) f.focus();
+  }
+  function close() {
+    modal.hidden = true;
+    document.documentElement.style.overflow = '';
+    if (last && last.focus) last.focus();
+  }
+
+  root.querySelectorAll('[data-r-open]').forEach(function (b) {
+    b.addEventListener('click', open);
+  });
+  modal.querySelectorAll('[data-r-close]').forEach(function (b) {
+    b.addEventListener('click', close);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+
+  if (modal.querySelector('[data-r-posted]')) open();
+
+  /* ---------- etoiles du formulaire ---------- */
+  var rate = modal.querySelector('[data-r-rate]');
+  if (rate) {
+    var labels = [].slice.call(rate.querySelectorAll('label'));
+    function paint(n) {
+      labels.forEach(function (l, i) { l.classList.toggle('on', i < n); });
+    }
+    labels.forEach(function (l, i) {
+      l.addEventListener('mouseenter', function () { paint(i + 1); });
+      l.addEventListener('click', function () { paint(i + 1); });
+    });
+    rate.addEventListener('mouseleave', function () {
+      var c = rate.querySelector('input:checked');
+      paint(c ? parseInt(c.value, 10) : 0);
+    });
+  }
+})();
+</script>
+
 {% schema %}
 {
   "name": "VOLTAG — Avis",
@@ -322,7 +588,40 @@
     { "type": "text", "id": "word_single", "label": "Mot au singulier", "default": "avis" },
     { "type": "text", "id": "word_plural", "label": "Mot au pluriel", "default": "avis" },
     { "type": "text", "id": "write_label", "label": "Bouton", "default": "Donner mon avis" },
-    { "type": "url", "id": "write_link", "label": "Lien du bouton" },
+    { "type": "select", "id": "write_mode", "label": "Action du bouton", "default": "form",
+      "info": "Le formulaire envoie l'avis par e-mail à l'adresse de notification de la boutique. Vous le publiez ensuite vous-même dans le champ Avis.",
+      "options": [
+        { "value": "form", "label": "Ouvrir le formulaire d'avis" },
+        { "value": "link", "label": "Ouvrir un lien" },
+        { "value": "off",  "label": "Masquer le bouton" }
+      ] },
+    { "type": "url", "id": "write_link", "label": "Lien du bouton", "info": "Utilisé uniquement si l'action est « Ouvrir un lien »." },
+
+    { "type": "header", "content": "Filtrer et trier" },
+    { "type": "text", "id": "filter_aria", "label": "Libellé du bouton filtrer", "default": "Filtrer par note" },
+    { "type": "text", "id": "filter_all", "label": "Toutes les notes", "default": "Toutes les notes" },
+    { "type": "text", "id": "filter_none", "label": "Aucun résultat", "default": "Aucun avis ne correspond à ce filtre pour le moment." },
+    { "type": "text", "id": "sort_aria", "label": "Libellé du bouton trier", "default": "Trier les avis" },
+    { "type": "text", "id": "sort_recent", "label": "Tri par défaut", "default": "Les plus récents" },
+    { "type": "text", "id": "sort_high", "label": "Tri note haute", "default": "Note la plus haute" },
+    { "type": "text", "id": "sort_low", "label": "Tri note basse", "default": "Note la plus basse" },
+
+    { "type": "header", "content": "Formulaire d'avis" },
+    { "type": "paragraph", "content": "L'avis arrive par e-mail à l'adresse définie dans Paramètres &gt; Notifications. Rien n'est publié automatiquement : vous recopiez l'avis dans le champ Avis après lecture." },
+    { "type": "text", "id": "form_title", "label": "Titre", "default": "Votre avis sur le pack VOLTAG" },
+    { "type": "text", "id": "f_name", "label": "Champ nom", "default": "Votre prénom" },
+    { "type": "text", "id": "f_email", "label": "Champ e-mail", "default": "Votre e-mail" },
+    { "type": "text", "id": "f_rating", "label": "Champ note", "default": "Votre note" },
+    { "type": "text", "id": "f_title", "label": "Champ titre", "default": "Titre de votre avis (facultatif)" },
+    { "type": "text", "id": "f_body", "label": "Champ avis", "default": "Votre avis" },
+    { "type": "textarea", "id": "f_consent", "label": "Case de consentement",
+      "default": "J'accepte que mon prénom et mon avis soient publiés sur cette page. Mon e-mail ne sera pas affiché." },
+    { "type": "text", "id": "f_submit", "label": "Bouton d'envoi", "default": "Envoyer mon avis" },
+    { "type": "text", "id": "f_close", "label": "Bouton fermer", "default": "Fermer" },
+    { "type": "textarea", "id": "form_notice", "label": "Mention sous le formulaire",
+      "default": "Chaque avis est lu avant publication. Les avis négatifs sont publiés comme les autres et leur contenu n'est pas modifié. Seuls les avis manifestement faux ou injurieux sont écartés." },
+    { "type": "textarea", "id": "form_done", "label": "Message de confirmation",
+      "default": "Merci, votre avis nous est bien parvenu. Il sera publié après lecture, en général sous 48 heures." },
     { "type": "text", "id": "verified_label", "label": "Mention achat vérifié", "default": "ACHAT VÉRIFIÉ" },
     { "type": "text", "id": "from_word", "label": "Mot avant la source", "default": "via" },
 
