@@ -2129,12 +2129,12 @@
         "review_bh3Ady": {
           "type": "review",
           "settings": {
-            "author": "D. A.",
+            "author": "Patrice P",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Les copains de l'école",
             "body": "Deux de ses camarades l'ont aussi. Ils organisent leurs après-midis autour de ça.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_NtkEBA": {
