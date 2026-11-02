@@ -2030,12 +2030,12 @@
         "review_CbEWCG": {
           "type": "review",
           "settings": {
-            "author": "M. K.",
+            "author": "William U",
             "stars": 5,
-            "verified": false,
+            "verified": true,
             "title": "Plusieurs modes",
             "body": "Ils changent souvent de mode. Ça évite que le jeu devienne lassant pour eux.",
-            "source": "plateforme tierce"
+            "source": ""
           }
         },
         "review_4z9Bie": {
